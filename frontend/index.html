@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maharashtra Skill Intelligence Platform: District-level projected vocational training demand, ITI capacity, and evidence-based workforce intelligence for regional planning.">
+  <meta name="theme-color" content="#0f2b48">
+  <title>Maharashtra Skill Intelligence Platform | District Planning Console</title>
+  <!-- Premium Typography: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER: Institutional identity, platform name, and system metadata -->
+  <header class="app-header" role="banner">
+    <div class="header-inner container">
+      
+      <!-- Left: Official Emblem & Branding -->
+      <div class="header-branding">
+        <div class="emblem-container" aria-hidden="true">
+          <!-- State Emblem of India (Ashoka Lion Capital Stylized Silhouette) -->
+          <svg class="national-emblem-svg" viewBox="0 0 64 80" width="38" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#e8f0fe" opacity="0.95">
+              <path d="M12 70h40v4H12zM16 66h32v3H16zM20 62h24v3H20z"/>
+              <circle cx="32" cy="56" r="5" stroke="#e8f0fe" stroke-width="1.2" fill="none"/>
+              <circle cx="32" cy="56" r="1.5" fill="#e8f0fe"/>
+              <path d="M32 51v10M27 56h10M28.5 52.5l7 7M35.5 52.5l-7 7" stroke="#e8f0fe" stroke-width="0.8"/>
+              <path d="M14 55c2-3 5-4 8-3v3c-3 0-5 1-8 0zM50 55c-2-3-5-4-8-3v3c3 0 5 1 8 0z"/>
+              <path d="M28 20c-1-6 2-12 4-15 2 3 5 9 4 15 2 2 4 5 4 9 0 6-3 11-8 11s-8-5-8-11c0-4 2-7 4-9z"/>
+              <circle cx="32" cy="18" r="4.5"/>
+              <path d="M30 23h4v15h-4z"/>
+              <path d="M18 24c-1-5 1-10 3-13 1 3 3 7 2 12-2 1-4 4-4 8 0 5 2 9 6 10-3-1-6-4-7-8 0-4 0-7 0-9z"/>
+              <path d="M20 28h3v10h-3z"/>
+              <path d="M46 24c1-5-1-10-3-13-1 3-3 7-2 12 2 1 4 4 4 8 0 5-2 9-6 10 3-1 6-4 7-8 0-4 0-7 0-9z"/>
+              <path d="M41 28h3v10h-3z"/>
+              <path d="M30 6c1-2 3-2 4 0 1 2 0 4-2 4s-3-2-2-4z"/>
+              <path d="M16 76h32v2H16z"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="brand-text-block">
+          <div class="header-badge-row">
+            <span class="govt-label">Government of Maharashtra &bull; Department of Skill Development</span>
+            <span class="status-tag" aria-label="System Release: Prototype V1">Prototype V1</span>
+          </div>
+          <h1 class="platform-title">Maharashtra Skill Intelligence</h1>
+          <p class="platform-subtitle">District Skill &amp; Training Intelligence Platform</p>
+        </div>
+      </div>
+
+      <!-- Right: Subdued System Context & Officer Gateway -->
+      <div class="header-meta" aria-label="Platform Metadata & Authentication">
+        <div class="meta-item">
+          <span class="meta-label">Intelligence Stream</span>
+          <span class="meta-val">MSSDS &bull; DVET State Engine</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Cycle</span>
+          <span class="meta-val">2025&ndash;2026</span>
+        </div>
+        <div class="header-auth-section" id="header-auth-container">
+          <!-- Dynamically populated by auth script -->
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- DASHBOARD CANVAS (Watermarked with Indian Flag / Ashoka Chakra Government Emblem) -->
+  <main class="app-main container" id="main-content" role="main">
+
+    <!-- USER JOURNEY STEP 1 & 2: WHERE AM I? & IS THE DATA AVAILABLE? -->
+    <section class="dashboard-scope-bar" aria-label="Active District and Synchronization Status">
+      <div class="scope-left-group">
+        
+        <!-- District Selector -->
+        <div class="scope-select-wrapper">
+          <label for="district-select" class="scope-select-label">Active District:</label>
+          <div class="select-container-styled">
+            <svg class="location-icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <select id="district-select" class="scope-select-input" name="district" aria-label="Select Maharashtra District">
+              <option value="Pune" selected>Pune (Baseline Pilot — Live MSSDS Data)</option>
+            </select>
+          </div>
+          <span class="location-tag-pill">Baseline Pilot</span>
+        </div>
+
+        <div class="scope-divider-vertical" aria-hidden="true"></div>
+
+        <!-- Administrative Context -->
+        <div class="scope-meta-item">
+          <span class="scope-meta-label">Administrative Division</span>
+          <span class="scope-meta-val" id="scope-division">Pune District — Maharashtra</span>
+        </div>
+
+        <div class="scope-divider-vertical" aria-hidden="true"></div>
+
+        <!-- Truthful Data Freshness & Sync Status -->
+        <div class="scope-meta-item">
+          <span class="scope-meta-label">Data Availability</span>
+          <div class="status-indicator-badge status-synced" id="scope-status-badge">
+            <span class="status-dot" id="scope-status-dot"></span>
+            <span class="scope-meta-val" id="scope-sync">Latest synchronized data</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Strip -->
+      <div class="scope-actions-group">
+        <button type="button" class="btn-scope-action" onclick="window.print()" title="Print Executive Brief for District Skill Committee">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print Brief
+        </button>
+        <button type="button" class="btn-scope-action" onclick="app.resetDistrict()" title="Reset Selection to Pune Baseline Pilot">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Reset Baseline
+        </button>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 01 — DISTRICT SNAPSHOT
+         One coherent information family of 4 key analytical metrics
+         ========================================================================== -->
+    <section class="section-container" aria-labelledby="heading-section-snapshot">
+      <div class="section-label-row">
+        <span class="section-numeric-tag">01</span>
+        <h2 id="heading-section-snapshot" class="section-title">District Snapshot</h2>
+        <span class="section-caption">&bull; Aggregated baseline metrics from MSSDS Econometric Models &amp; DVET Capacity Feeds</span>
+      </div>
+
+      <div class="snapshot-metrics-grid" role="region" aria-label="District Key Performance Indicators">
+        
+        <!-- Metric 1: Projected Training Demand -->
+        <article class="snapshot-metric-card" id="card-metric-demand">
+          <div class="metric-head">
+            <span class="metric-label">Projected Training Demand</span>
+            <span class="metric-status-tag tag-model" id="kpi-demand-trend">MSSDS ML</span>
+          </div>
+          <div class="metric-value-wrap">
+            <div class="metric-main-val" id="kpi-demand-score">—</div>
+            <span class="metric-unit-text" id="kpi-demand-unit">trainees</span>
+          </div>
+          <div class="metric-context-foot" id="kpi-demand-sub">Top Sector Model Projection</div>
+          <div class="metric-inline-action" id="kpi-demand-action" hidden></div>
+        </article>
+
+        <!-- Metric 2: Sanctioned ITI Supply -->
+        <article class="snapshot-metric-card" id="card-metric-iti">
+          <div class="metric-head">
+            <span class="metric-label">ITI Training Supply</span>
+            <span class="metric-status-tag tag-verified" id="kpi-iti-tag">DVET Intake</span>
+          </div>
+          <div class="metric-value-wrap">
+            <div class="metric-main-val" id="kpi-sanctioned-seats">—</div>
+            <span class="metric-unit-text" id="kpi-sanctioned-unit">seats</span>
+          </div>
+          <div class="metric-context-foot" id="kpi-institutes-count">Total Technical Trade Intake</div>
+          <div class="metric-inline-action" id="kpi-iti-action" hidden></div>
+        </article>
+
+        <!-- Metric 3: Validated Sectors -->
+        <article class="snapshot-metric-card" id="card-metric-sectors">
+          <div class="metric-head">
+            <span class="metric-label">Validated Sectors</span>
+            <span class="metric-status-tag tag-active" id="kpi-sectors-tag">Calibrated</span>
+          </div>
+          <div class="metric-value-wrap">
+            <div class="metric-main-val" id="kpi-capacity-util">—</div>
+            <span class="metric-unit-text">sectors</span>
+          </div>
+          <div class="metric-context-foot" id="kpi-enrolled-meta">Projection-Ready Sectors</div>
+          <div class="metric-progress-track">
+            <div class="metric-progress-fill" id="kpi-capacity-bar" style="width: 0%;"></div>
+          </div>
+        </article>
+
+        <!-- Metric 4: Mean Data / Model Confidence -->
+        <article class="snapshot-metric-card" id="card-metric-confidence">
+          <div class="metric-head">
+            <span class="metric-label">Data Confidence</span>
+            <span class="metric-status-tag tag-confidence" id="kpi-confidence-badge">Empirical</span>
+          </div>
+          <div class="metric-value-wrap">
+            <div class="metric-main-val" id="kpi-seat-gap">—</div>
+          </div>
+          <div class="metric-context-foot" id="kpi-confidence">MSSDS Evidence Calibration</div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 02 — TRAINING INTELLIGENCE
+         Asymmetrical split: ~60% Left (Projected Demand) | ~40% Right (ITI Supply)
+         ========================================================================== -->
+    <section class="section-container" aria-labelledby="heading-section-intelligence">
+      <div class="section-label-row">
+        <span class="section-numeric-tag">02</span>
+        <h2 id="heading-section-intelligence" class="section-title">Training Intelligence</h2>
+        <span class="section-caption">&bull; Sector-wise workforce requirements aligned with institutional technical capacity</span>
+      </div>
+
+      <div class="training-intelligence-grid">
+        
+        <!-- LEFT COLUMN (~60%): PROJECTED VOCATIONAL TRAINING DEMAND BY SECTOR -->
+        <section class="analytical-panel demand-intelligence-panel" aria-labelledby="heading-demand-panel">
+          
+          <div class="panel-header-bar">
+            <div class="panel-header-titles">
+              <h3 id="heading-demand-panel" class="panel-title-primary">Projected Vocational Training Demand by Sector</h3>
+              <p class="panel-subtitle-text">Projected training requirement across sectors derived from MSSDS econometric indicators</p>
+            </div>
+            <!-- Sector Filter Buttons -->
+            <div class="filter-chip-group" role="group" aria-label="Filter sectors by demand band">
+              <button type="button" class="filter-chip-btn is-active" data-filter="all">All Sectors</button>
+              <button type="button" class="filter-chip-btn" data-filter="high">High Demand</button>
+              <button type="button" class="filter-chip-btn" data-filter="moderate">Moderate</button>
+            </div>
+          </div>
+
+          <!-- Table Header -->
+          <div class="precision-table-header" role="row">
+            <span>Priority Sector</span>
+            <span class="th-align-right">Projected Training Demand</span>
+            <span class="th-align-center">Demand Band</span>
+            <span class="th-align-right">Confidence</span>
+            <span class="th-align-center">Pipeline Status</span>
+          </div>
+
+          <!-- Dynamic Sectors List / Owned Failure State -->
+          <div class="precision-sectors-container" id="demand-sectors-list" role="feed" aria-live="polite">
+            <!-- Populated dynamically by app.js from real API -->
+          </div>
+
+          <!-- Summary Footnote -->
+          <div class="panel-footer-bar">
+            <span class="summary-pill" id="summary-sectors-count">— Priority Sectors</span>
+            <span class="summary-pill" id="summary-mean-confidence">— Mean Confidence</span>
+            <span class="summary-pill summary-peak-highlight" id="summary-peak-sector">Peak: —</span>
+          </div>
+
+        </section>
+
+        <!-- RIGHT COLUMN (~40%): ITI SUPPLY & CAPACITY -->
+        <section class="analytical-panel iti-capacity-panel" aria-labelledby="heading-iti-matrix">
+          
+          <div class="panel-header-bar">
+            <div class="panel-header-titles">
+              <h3 id="heading-iti-matrix" class="panel-title-primary">ITI Trade-wise Capacity &amp; Utilization</h3>
+              <p class="panel-subtitle-text">Sanctioned seats across Craftsmen Training Scheme (CTS) trades</p>
+            </div>
+            <span class="provenance-tag">DVET 2026&ndash;27</span>
+          </div>
+
+          <!-- Dynamic ITI Table / Owned Failure State -->
+          <div class="iti-table-scroll-container">
+            <table class="iti-table" role="table">
+              <thead>
+                <tr>
+                  <th>Trade Designation</th>
+                  <th class="th-num">Sanctioned Intake</th>
+                  <th class="th-num">Provenance</th>
+                  <th class="th-status">Capacity Share</th>
+                </tr>
+              </thead>
+              <tbody id="iti-table-body">
+                <!-- Populated dynamically by app.js from real API -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="panel-footer-bar">
+            <span class="summary-pill">Top 10 Trades &bull; Scroll to Inspect</span>
+            <span class="summary-pill">DVET CTS</span>
+            <span class="summary-pill">NSQF Aligned</span>
+          </div>
+
+        </section>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 03 — ECONOMIC CONTEXT & DEMAND DRIVERS
+         Answers "WHY might training demand exist?" - Derived 100% from Real API Data
+         ========================================================================== -->
+    <section class="section-container" aria-labelledby="heading-section-economic">
+      <div class="section-label-row">
+        <span class="section-numeric-tag">03</span>
+        <h2 id="heading-section-economic" class="section-title">Economic Context &amp; Sector Demand Drivers</h2>
+        <span class="section-caption">&bull; Live sector indicators, enterprise drivers &amp; evidence calibration from official MSSDS records</span>
+      </div>
+
+      <section class="analytical-panel economic-context-panel">
+        <div class="panel-header-bar">
+          <div class="panel-header-titles">
+            <h3 class="panel-title-primary">Verified Sector Demand Drivers &amp; Pipeline Indicators</h3>
+            <p class="panel-subtitle-text">Empirical sector evidence from Maharashtra State Skill Development Society (MSSDS) intelligence model</p>
+          </div>
+          <span class="provenance-tag">MSSDS Verified Baseline</span>
+        </div>
+
+        <div class="clusters-grid" id="clusters-container">
+          <!-- Populated dynamically 100% from real sector intelligence for selected district -->
+        </div>
+      </section>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 04 — DECISION SUPPORT & INVESTIGATION
+         User Journey: "WHAT SHOULD BE DONE?" & "WHAT ELSE CAN I INVESTIGATE?"
+         ========================================================================== -->
+    <section class="section-container" aria-labelledby="heading-section-decision">
+      <div class="section-label-row">
+        <span class="section-numeric-tag">04</span>
+        <h2 id="heading-section-decision" class="section-title">Decision Support &amp; Investigation</h2>
+        <span class="section-caption">&bull; Prescriptive planning directives derived dynamically from live demand and ITI capacity reconciliation</span>
+      </div>
+
+      <div class="decision-support-grid">
+        
+        <!-- LEFT: DISTRICT SKILL COMMITTEE ACTION DIRECTIVE -->
+        <article class="analytical-panel action-directive-panel" aria-labelledby="heading-action-directive">
+          <div class="panel-header-bar directive-header">
+            <div class="directive-badge-row">
+              <span class="directive-seal-tag">Official Planning Recommendation</span>
+              <span class="provenance-tag">DVET &bull; MSSDS Evidence</span>
+            </div>
+            <h3 id="heading-action-directive" class="directive-main-title">District Skill Committee Action Directive</h3>
+          </div>
+
+          <div class="directive-content-body">
+            <div class="directive-lead-box">
+              <div class="directive-icon-circle" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              </div>
+              <div class="directive-statement">
+                <span class="directive-lead-label">Prescribed Strategic Intervention:</span>
+                <p class="policy-text" id="policy-directive-text">Synthesizing directive from active district records…</p>
+              </div>
+            </div>
+
+            <div class="directive-rationale-grid">
+              <div class="rationale-block">
+                <span class="rationale-label">Targeted Beneficiaries</span>
+                <span class="rationale-val">Apprentices &amp; CTS NSQF Candidates</span>
+              </div>
+              <div class="rationale-block">
+                <span class="rationale-label">Implementing Authority</span>
+                <span class="rationale-val">District Skill Committee (DSC) / DSDP</span>
+              </div>
+              <div class="rationale-block">
+                <span class="rationale-label">Regulatory Alignment</span>
+                <span class="rationale-val">Skill India Mission &bull; Maharashtra Vision 2030</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-footer-bar directive-footer">
+            <span class="directive-statutory-note">&bull; Directives are dynamically reconciled from live ML demand bands and sanctioned DVET intake.</span>
+          </div>
+        </article>
+
+        <!-- RIGHT: GROUNDED SKILL INTELLIGENCE ASSISTANT (ANALYSE FURTHER) -->
+        <article class="analytical-panel assistant-investigation-panel" aria-labelledby="heading-assistant">
+          <div class="panel-header-bar">
+            <div class="panel-header-titles">
+              <h3 id="heading-assistant" class="panel-title-primary">Grounded Skill Intelligence Assistant</h3>
+              <p class="panel-subtitle-text">Investigate district skilling indicators via Verified Retrieval-Augmented Generation (RAG)</p>
+            </div>
+            <span class="provenance-tag tag-rag">Verified RAG</span>
+          </div>
+
+          <!-- Suggested Investigation Chips -->
+          <div class="assistant-controls-wrap">
+            <span class="assistant-prompt-label">Quick Strategic Inquiries:</span>
+            <div class="query-chip-group" role="group" aria-label="Suggested district queries">
+              <button type="button" class="query-chip-btn is-active" data-query="deficit">Deficit Breakdown</button>
+              <button type="button" class="query-chip-btn" data-query="intake">Capacity &amp; Intake</button>
+              <button type="button" class="query-chip-btn" data-query="growth">Demand Trend Outlook</button>
+            </div>
+          </div>
+
+          <!-- Free-Form Inquiry Box -->
+          <form class="assistant-custom-query-form" id="assistant-query-form">
+            <input 
+              type="text" 
+              id="assistant-query-input" 
+              class="assistant-query-input" 
+              placeholder="Ask a question (e.g., What skills are in demand in Pune?)"
+              aria-label="Ask about this district's training intelligence"
+            >
+            <button type="submit" class="btn-assistant-submit" id="btn-assistant-submit" title="Send query to Grounded Chatbot Engine">
+              Inquire
+            </button>
+          </form>
+
+          <!-- Assistant Response Box / Owned Error View -->
+          <div class="assistant-response-box" id="assistant-response-box" role="region" aria-live="polite">
+            <!-- Populated dynamically by app.js -->
+          </div>
+
+          <div class="panel-footer-bar">
+            <span class="summary-pill">Grounding: Official MSSDS &bull; DVET &bull; DGT Reference Records</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CONCISE INSTITUTIONAL FOOTER -->
+  <footer class="app-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-branding-block">
+        <span class="footer-title">Maharashtra Skill Intelligence Platform &bull; Official Decision Support System</span>
+        <p class="copyright-notice">
+          &copy; 2026 Government of Maharashtra &bull; Department of Skill Development, Employment and Entrepreneurship &bull; Maharashtra State Skill Development Society (MSSDS) &bull; Directorate of Vocational Education &amp; Training (DVET).
+        </p>
+      </div>
+      <div class="footer-meta-block">
+        <span class="security-classification">RESTRICTED: OFFICIAL USE ONLY &bull; PILOT PROTOTYPE</span>
+        <span class="status-indicator">Data Integrity: Verified &bull; ISO 27001 Aligned</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       EMBEDDED AUTHENTICATION COMPONENT (IN-DASHBOARD LOGIN GATE)
+       ========================================================================== -->
+  <div id="auth-gate-modal" class="auth-modal-overlay is-hidden" role="dialog" aria-modal="true" aria-labelledby="embedded-auth-title">
+    <div class="auth-modal-card">
+      
+      <!-- MODAL HEADER -->
+      <div class="auth-modal-header">
+        <div class="auth-modal-branding">
+          <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="64" height="64" rx="3" fill="#0f2b48" />
+            <circle cx="32" cy="32" r="22" stroke="#e8f0fe" stroke-width="1.5" stroke-dasharray="3 2" />
+            <circle cx="32" cy="32" r="18" stroke="#ffffff" stroke-width="1.5" />
+            <circle cx="32" cy="32" r="6" stroke="#ffffff" stroke-width="2" />
+            <path d="M32 15V25M32 39V49M15 32H25M39 32H49M20 20L27 27M37 37L44 44M20 44L27 37M37 27L44 20" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" />
+            <circle cx="32" cy="32" r="2.5" fill="#ffffff" />
+          </svg>
+          <div class="auth-modal-titles">
+            <span class="auth-modal-tag">Government of Maharashtra &bull; Official Clearance</span>
+            <h2 id="embedded-auth-title" class="auth-modal-title">Officer Authentication Gateway</h2>
+          </div>
+        </div>
+        <button type="button" class="auth-modal-close-btn" id="btn-close-modal" title="Dismiss to Guest View" aria-label="Dismiss to Guest View">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- DEMO QUICK-FILL HELPER -->
+      <div class="login-demo-credentials-box">
+        <div class="demo-box-header">
+          <span class="demo-box-tag">Official Prototype Clearance</span>
+          <button type="button" class="btn-demo-quickfill" id="embedded-btn-quickfill" title="Auto-fill credentials">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Auto-Fill Credentials
+          </button>
+        </div>
+        <div class="demo-credentials-grid">
+          <div class="demo-cred-row">
+            <span class="cred-label">User ID:</span>
+            <code class="cred-value" id="demo-user-val">admin</code>
+            <span class="cred-label" style="width: auto; margin-left: 12px;">Password:</span>
+            <code class="cred-value" id="demo-pass-val">SIH2026</code>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTH NOTIFICATION BANNER -->
+      <div id="embedded-auth-alert" class="auth-alert" role="alert" aria-live="assertive" hidden>
+        <div class="alert-content">
+          <div class="alert-title" id="embedded-alert-title"></div>
+          <div class="alert-message" id="embedded-alert-message"></div>
+        </div>
+      </div>
+
+      <!-- EMBEDDED FORM -->
+      <form id="embedded-login-form" class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="embedded-user-id" class="form-label">
+            Officer User ID <span class="required-mark" aria-hidden="true">*</span>
+          </label>
+          <div class="input-container">
+            <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <input
+              type="text"
+              id="embedded-user-id"
+              class="form-input"
+              placeholder="Enter User ID (admin)"
+              autocomplete="username"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label for="embedded-password" class="form-label">
+              Password <span class="required-mark" aria-hidden="true">*</span>
+            </label>
+            <span class="password-toggle-btn" id="embedded-toggle-password" role="button" tabindex="0">Show Password</span>
+          </div>
+          <div class="input-container">
+            <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <input
+              type="password"
+              id="embedded-password"
+              class="form-input"
+              placeholder="Enter password (SIH2026)"
+              autocomplete="current-password"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-auxiliary-row">
+          <label class="checkbox-container">
+            <input type="checkbox" id="embedded-remember-me" checked>
+            <span class="checkbox-custom"></span>
+            <span class="checkbox-label">Keep session active</span>
+          </label>
+          <button type="button" class="modal-guest-dismiss-btn" id="btn-guest-dismiss">
+            Preview as Guest
+          </button>
+        </div>
+
+        <button type="submit" class="btn-auth-submit" id="embedded-btn-submit">
+          <span class="btn-text">Authenticate &amp; Access Dashboard</span>
+          <span class="btn-spinner" aria-hidden="true" hidden></span>
+        </button>
+      </form>
+
+      <!-- SEPARATOR -->
+      <div class="auth-divider" role="separator">
+        <span class="divider-line"></span>
+        <span class="divider-text">OR AUTHENTICATE VIA WEB AUTHENTICATION SOCKET</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- SSO SOCKET BUTTONS -->
+      <div class="sso-socket-container">
+        <button type="button" class="btn-sso btn-google" id="embedded-btn-google">
+          <div class="sso-icon-box">
+            <svg class="google-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.94H1.24v3.15C3.26 21.36 7.34 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.26c-.25-.72-.38-1.49-.38-2.26s.13-1.54.38-2.26V6.59H1.24C.45 8.16 0 9.94 0 12s.45 3.84 1.24 5.41l4.04-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.24 6.59l4.04 3.15c.95-2.84 3.6-4.99 6.72-4.99z"/>
+            </svg>
+          </div>
+          <div class="sso-label-group">
+            <span class="sso-primary-label">Sign in with Google</span>
+            <span class="sso-socket-indicator"><span class="indicator-dot"></span>WebAuth Socket Ready</span>
+          </div>
+          <svg class="sso-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+
+        <button type="button" class="btn-sso btn-webauthn" id="embedded-btn-webauthn">
+          <div class="sso-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+            </svg>
+          </div>
+          <div class="sso-label-group">
+            <span class="sso-primary-label">WebAuthn / Security Key (FIDO2)</span>
+            <span class="sso-socket-indicator"><span class="indicator-dot"></span>Hardware Key Socket</span>
+          </div>
+          <svg class="sso-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT: Core Application & Embedded Auth -->
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      const modal = document.getElementById('auth-gate-modal');
+      const form = document.getElementById('embedded-login-form');
+      const userIdInput = document.getElementById('embedded-user-id');
+      const passwordInput = document.getElementById('embedded-password');
+      const rememberInput = document.getElementById('embedded-remember-me');
+      const submitBtn = document.getElementById('embedded-btn-submit');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const btnSpinner = submitBtn.querySelector('.btn-spinner');
+      const alertBox = document.getElementById('embedded-auth-alert');
+      const alertTitle = document.getElementById('embedded-alert-title');
+      const alertMessage = document.getElementById('embedded-alert-message');
+      const togglePassBtn = document.getElementById('embedded-toggle-password');
+      const quickFillBtn = document.getElementById('embedded-btn-quickfill');
+      const googleBtn = document.getElementById('embedded-btn-google');
+      const webauthnBtn = document.getElementById('embedded-btn-webauthn');
+      const closeModalBtn = document.getElementById('btn-close-modal');
+      const guestDismissBtn = document.getElementById('btn-guest-dismiss');
+      const headerAuthContainer = document.getElementById('header-auth-container');
+
+      function showModal() {
+        modal.classList.remove('is-hidden');
+        setTimeout(() => {
+          userIdInput.focus();
+        }, 100);
+      }
+
+      function hideModal() {
+        modal.classList.add('is-hidden');
+      }
+
+      function renderHeader() {
+        if (!headerAuthContainer || !window.SIHAuth) return;
+        const user = window.SIHAuth.getCurrentUser();
+
+        if (user) {
+          headerAuthContainer.innerHTML = `
+            <div class="user-session-badge" title="Authenticated as ${user.name} (${user.email || user.userId})">
+              <div class="user-info-text">
+                <span class="user-name-label">${user.userId}</span>
+                <span class="user-role-label">Planning Officer</span>
+              </div>
+              <button type="button" class="btn-header-logout" id="btn-header-logout" title="Sign out and lock dashboard">Sign Out</button>
+            </div>
+          `;
+          const logoutBtn = document.getElementById('btn-header-logout');
+          if (logoutBtn) {
+            logoutBtn.addEventListener('click', function () {
+              window.SIHAuth.logout(false);
+              showAlert('info', 'Session Terminated', 'You have been signed out. Please authenticate to continue.');
+              showModal();
+            });
+          }
+        } else {
+          headerAuthContainer.innerHTML = `
+            <button type="button" class="btn-header-login" id="btn-header-login" title="Open Officer Authentication">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+              </svg>
+              Officer Login
+            </button>
+          `;
+          const loginNavBtn = document.getElementById('btn-header-login');
+          if (loginNavBtn) {
+            loginNavBtn.addEventListener('click', showModal);
+          }
+        }
+      }
+
+      function showAlert(type, title, message) {
+        alertBox.hidden = false;
+        alertBox.className = 'auth-alert alert-' + type;
+        alertTitle.textContent = title;
+        alertMessage.textContent = message;
+      }
+
+      function hideAlert() {
+        alertBox.hidden = true;
+      }
+
+      if (window.SIHAuth && window.SIHAuth.isAuthenticated()) {
+        hideModal();
+      } else {
+        showModal();
+      }
+      renderHeader();
+
+      window.addEventListener('sih:auth:change', function () {
+        renderHeader();
+      });
+
+      quickFillBtn.addEventListener('click', function () {
+        userIdInput.value = 'admin';
+        passwordInput.value = 'SIH2026';
+        showAlert('info', 'Demo Credentials Injected', 'User ID (admin) and Password (SIH2026) loaded.');
+        userIdInput.focus();
+      });
+
+      togglePassBtn.addEventListener('click', function () {
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          togglePassBtn.textContent = 'Hide Password';
+        } else {
+          passwordInput.type = 'password';
+          togglePassBtn.textContent = 'Show Password';
+        }
+      });
+
+      closeModalBtn.addEventListener('click', hideModal);
+      guestDismissBtn.addEventListener('click', hideModal);
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const userId = userIdInput.value.trim();
+        const password = passwordInput.value.trim();
+        const remember = rememberInput.checked;
+
+        if (!userId) {
+          showAlert('error', 'Missing User ID', 'Please enter your Officer User ID.');
+          userIdInput.focus();
+          return;
+        }
+
+        if (!password) {
+          showAlert('error', 'Missing Password', 'Please enter your password.');
+          passwordInput.focus();
+          return;
+        }
+
+        submitBtn.disabled = true;
+        btnText.textContent = 'Verifying…';
+        btnSpinner.hidden = false;
+        hideAlert();
+
+        try {
+          const result = await window.SIHAuth.loginWithCredentials(userId, password, remember);
+          showAlert('success', 'Access Granted', `Welcome, ${result.user.name}. Opening dashboard…`);
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            btnText.textContent = 'Authenticate & Access Dashboard';
+            btnSpinner.hidden = true;
+            hideModal();
+          }, 500);
+        } catch (err) {
+          submitBtn.disabled = false;
+          btnText.textContent = 'Authenticate & Access Dashboard';
+          btnSpinner.hidden = true;
+          showAlert('error', 'Authentication Failed', err.message || 'Invalid Officer Credentials.');
+        }
+      });
+
+      googleBtn.addEventListener('click', async function () {
+        hideAlert();
+        showAlert('info', 'WebAuth Socket Active', 'Contacting Google OAuth 2.0 Identity Socket…');
+        try {
+          const result = await window.SIHAuth.loginWithGoogleSocket(rememberInput.checked);
+          showAlert('success', 'Google SSO Verified', `Authenticated as ${result.user.email}. Entering dashboard…`);
+          setTimeout(() => {
+            hideModal();
+          }, 500);
+        } catch (err) {
+          showAlert('error', 'Google SSO Error', err.message || 'Google authentication failed.');
+        }
+      });
+
+      webauthnBtn.addEventListener('click', async function () {
+        hideAlert();
+        showAlert('info', 'Security Key Active', 'Polling biometric / FIDO2 security token…');
+        try {
+          const result = await window.SIHAuth.loginWithWebAuthn(rememberInput.checked);
+          showAlert('success', 'Hardware Token Verified', `Welcome, ${result.user.name}.`);
+          setTimeout(() => {
+            hideModal();
+          }, 500);
+        } catch (err) {
+          showAlert('error', 'WebAuthn Error', err.message || 'Hardware token could not be verified.');
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>

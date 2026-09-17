@@ -1,0 +1,9 @@
+{
+  "name": "maharashtra-skill-intelligence-platform",
+  "version": "1.0.0",
+  "description": "Maharashtra Skill Intelligence Platform",
+  "scripts": {
+    "start": "node server.js",
+    "stop": "powershell -NoProfile -Command \"Get-NetTCPConnection -LocalPort 3000, 8000 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }\""
+  }
+}
