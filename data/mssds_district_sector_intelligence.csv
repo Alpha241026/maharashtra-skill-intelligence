@@ -1,0 +1,761 @@
+district,sector,industry_opportunity_score,training_pressure_score,evidence_confidence,projection_available,industry_size,organization_count,candidate_aspiration,mssds_trained_2022_23,dsdp_training,projected_training,source,normalized_district,normalized_sector
+Ahmednagar,Agriculture,12.54,17.24,0.67,True,1095.0,11.0,843.0,,,50.0,mssds_2023_projection_merged.csv,ahmednagar,agriculture
+Ahmednagar,Apparel,5.24,,0.17,False,,,237.0,,,,mssds_2023_projection_merged.csv,ahmednagar,apparel
+Ahmednagar,Automotive,27.29,,0.5,False,9300.0,30.0,281.0,,,,mssds_2023_projection_merged.csv,ahmednagar,automotive
+Ahmednagar,BFSI,17.91,,0.5,False,3025.0,9.0,1298.0,,,,mssds_2023_projection_merged.csv,ahmednagar,bfsi
+Ahmednagar,Beauty & Wellness,9.47,,0.33,False,,1.0,681.0,,,,mssds_2023_projection_merged.csv,ahmednagar,beauty & wellness
+Ahmednagar,Capital Goods,2.89,,0.5,False,206.0,5.0,72.0,,,,mssds_2023_projection_merged.csv,ahmednagar,capital goods
+Ahmednagar,Construction,3.9,,0.67,True,79.0,5.0,225.0,,,320.0,mssds_2023_projection_merged.csv,ahmednagar,construction
+Ahmednagar,Domestic Workers,2.43,,0.5,False,700.0,2.0,83.0,,,,mssds_2023_projection_merged.csv,ahmednagar,domestic workers
+Ahmednagar,Electronics,26.0,12.65,0.67,True,6782.0,28.0,669.0,,,160.0,mssds_2023_projection_merged.csv,ahmednagar,electronics
+Ahmednagar,Food Processing,4.45,,0.5,False,197.0,6.0,222.0,,,,mssds_2023_projection_merged.csv,ahmednagar,food processing
+Ahmednagar,Furniture & Fittings,0.77,,0.17,False,,,35.0,,,,mssds_2023_projection_merged.csv,ahmednagar,furniture & fittings
+Ahmednagar,Gem & Jewellery,1.48,,0.5,False,500.0,1.0,49.0,,,,mssds_2023_projection_merged.csv,ahmednagar,gem & jewellery
+Ahmednagar,Green Jobs,5.73,0.0,0.33,True,,,259.0,,,0.0,mssds_2023_projection_merged.csv,ahmednagar,green jobs
+Ahmednagar,Healthcare,11.1,,0.5,False,627.0,6.0,1005.0,,,,mssds_2023_projection_merged.csv,ahmednagar,healthcare
+Ahmednagar,Hydrocarbon,0.86,,0.17,False,,,39.0,,,,mssds_2023_projection_merged.csv,ahmednagar,hydrocarbon
+Ahmednagar,IT/ITeS,21.98,0.0,0.67,True,80.0,7.0,2455.0,,,0.0,mssds_2023_projection_merged.csv,ahmednagar,it/ites
+Ahmednagar,Instrumentation,,,0.0,False,,,,,,,mssds_2023_projection_merged.csv,ahmednagar,instrumentation
+Ahmednagar,Iron & Steel,23.81,,0.5,False,5101.0,40.0,50.0,,,,mssds_2023_projection_merged.csv,ahmednagar,iron & steel
+Ahmednagar,Life Science,5.94,,0.5,False,1027.0,3.0,426.0,,,,mssds_2023_projection_merged.csv,ahmednagar,life science
+Ahmednagar,Logistics,0.52,,0.5,False,2.0,1.0,14.0,,,,mssds_2023_projection_merged.csv,ahmednagar,logistics
+Ahmednagar,Management,7.49,,0.5,False,372.0,5.0,636.0,,,,mssds_2023_projection_merged.csv,ahmednagar,management
+Ahmednagar,Media & Entertainment,2.13,,0.5,False,20.0,1.0,218.0,,,,mssds_2023_projection_merged.csv,ahmednagar,media & entertainment
+Ahmednagar,Plumbing,0.94,,0.5,False,270.0,1.0,20.0,,,,mssds_2023_projection_merged.csv,ahmednagar,plumbing
+Ahmednagar,Power,1.59,,0.5,False,135.0,2.0,76.0,,,,mssds_2023_projection_merged.csv,ahmednagar,power
+Ahmednagar,Retail,,,0.17,True,,,,,,100.0,mssds_2023_projection_merged.csv,ahmednagar,retail
+Akola,Agriculture,5.38,57.97,1.0,True,79.0,6.0,363.0,87.0,360.0,120.0,mssds_2023_projection_merged.csv,akola,agriculture
+Akola,Apparel,3.03,,0.5,False,,,137.0,110.0,60.0,,mssds_2023_projection_merged.csv,akola,apparel
+Akola,Automotive,7.26,,0.83,False,2059.0,7.0,201.0,90.0,270.0,,mssds_2023_projection_merged.csv,akola,automotive
+Akola,BFSI,7.53,,0.5,False,698.0,4.0,637.0,,,,mssds_2023_projection_merged.csv,akola,bfsi
+Akola,Capital Goods,1.12,,0.83,False,36.0,2.0,33.0,120.0,180.0,,mssds_2023_projection_merged.csv,akola,capital goods
+Akola,Construction,1.88,,0.83,True,33.0,2.0,131.0,,120.0,180.0,mssds_2023_projection_merged.csv,akola,construction
+Akola,Electronics,6.25,50.0,1.0,True,50.0,3.0,639.0,180.0,180.0,180.0,mssds_2023_projection_merged.csv,akola,electronics
+Akola,Food Processing,1.35,,0.83,False,15.0,1.0,119.0,913.0,120.0,,mssds_2023_projection_merged.csv,akola,food processing
+Akola,Green Jobs,1.77,,0.5,True,,,80.0,,30.0,0.0,mssds_2023_projection_merged.csv,akola,green jobs
+Akola,Healthcare,6.71,,0.83,False,2.0,2.0,761.0,30.0,180.0,,mssds_2023_projection_merged.csv,akola,healthcare
+Akola,Iron & Steel,1.53,,0.5,False,270.0,2.0,44.0,,,,mssds_2023_projection_merged.csv,akola,iron & steel
+Akola,IT/ITeS,8.63,0.0,1.0,True,67.0,7.0,732.0,170.0,120.0,0.0,mssds_2023_projection_merged.csv,akola,it/ites
+Akola,Logistics,0.4,,0.5,False,,,18.0,90.0,60.0,,mssds_2023_projection_merged.csv,akola,logistics
+Akola,Management,4.38,,0.67,False,170.0,4.0,324.0,,60.0,,mssds_2023_projection_merged.csv,akola,management
+Akola,Plumbing,1.37,,0.5,False,,,62.0,30.0,60.0,,mssds_2023_projection_merged.csv,akola,plumbing
+Akola,Power,3.25,,0.5,False,,,147.0,55.0,60.0,,mssds_2023_projection_merged.csv,akola,power
+Akola,Telecom,1.07,33.33,1.0,True,40.0,1.0,78.0,120.0,30.0,60.0,mssds_2023_projection_merged.csv,akola,telecom
+Akola,Textile,1.11,,0.33,False,,,50.0,,60.0,,mssds_2023_projection_merged.csv,akola,textile
+Akola,Tourism & Hospitality,1.59,,0.67,False,,1.0,70.0,1606.0,90.0,,mssds_2023_projection_merged.csv,akola,tourism & hospitality
+Amravati,Agriculture,3.16,100.0,1.0,True,45.0,4.0,188.0,0.0,1560.0,840.0,mssds_2023_projection_merged.csv,amravati,agriculture
+Amravati,Apparel,1.6,,0.83,False,21.0,2.0,97.0,285.0,1020.0,,mssds_2023_projection_merged.csv,amravati,apparel
+Amravati,Automotive,7.47,,0.83,False,2885.0,6.0,134.0,90.0,390.0,,mssds_2023_projection_merged.csv,amravati,automotive
+Amravati,Beauty & Wellness,1.56,,0.83,False,0.0,1.0,148.0,180.0,360.0,,mssds_2023_projection_merged.csv,amravati,beauty & wellness
+Amravati,BFSI,10.84,,0.67,False,2926.0,8.0,455.0,,60.0,,mssds_2023_projection_merged.csv,amravati,bfsi
+Amravati,Capital Goods,0.92,,0.67,False,36.0,2.0,6.0,,300.0,,mssds_2023_projection_merged.csv,amravati,capital goods
+Amravati,Construction,2.78,,0.83,True,32.0,3.0,195.0,,1320.0,360.0,mssds_2023_projection_merged.csv,amravati,construction
+Amravati,Electronics,3.17,40.0,1.0,True,29.0,2.0,298.0,90.0,360.0,60.0,mssds_2023_projection_merged.csv,amravati,electronics
+Amravati,Food Processing,1.44,,0.5,False,,,65.0,450.0,450.0,,mssds_2023_projection_merged.csv,amravati,food processing
+Amravati,Furniture & Fittings,0.55,,0.83,False,14.0,1.0,15.0,0.0,120.0,,mssds_2023_projection_merged.csv,amravati,furniture & fittings
+Amravati,Green Jobs,1.44,0.0,1.0,True,179.0,2.0,48.0,60.0,270.0,0.0,mssds_2023_projection_merged.csv,amravati,green jobs
+Amravati,Handicraft & Carpet,0.38,,0.33,False,,,17.0,,240.0,,mssds_2023_projection_merged.csv,amravati,handicraft & carpet
+Amravati,Healthcare,5.36,,0.83,False,219.0,7.0,283.0,0.0,570.0,,mssds_2023_projection_merged.csv,amravati,healthcare
+Amravati,Infrastructure,0.53,,0.67,False,37.0,1.0,9.0,,180.0,,mssds_2023_projection_merged.csv,amravati,infrastructure
+Amravati,Iron & Steel,1.0,,0.67,False,250.0,1.0,32.0,,300.0,,mssds_2023_projection_merged.csv,amravati,iron & steel
+Amravati,IT/ITeS,11.24,0.0,1.0,True,55.0,9.0,966.0,202.0,1050.0,0.0,mssds_2023_projection_merged.csv,amravati,it/ites
+Amravati,Life Science,1.75,,0.67,False,3.0,3.0,67.0,,60.0,,mssds_2023_projection_merged.csv,amravati,life science
+Amravati,Logistics,0.91,,0.83,False,1.0,2.0,12.0,90.0,330.0,,mssds_2023_projection_merged.csv,amravati,logistics
+Amravati,Management,3.84,,0.67,False,170.0,4.0,254.0,,420.0,,mssds_2023_projection_merged.csv,amravati,management
+Amravati,Media & Entertainment,1.88,,0.33,False,,,85.0,,120.0,,mssds_2023_projection_merged.csv,amravati,media & entertainment
+Amravati,Paints & Coatings,0.15,,0.33,False,,,7.0,,60.0,,mssds_2023_projection_merged.csv,amravati,paints & coatings
+Amravati,Persons with Disability,,,0.33,False,,,,100.0,120.0,,mssds_2023_projection_merged.csv,amravati,persons with disability
+Amravati,Plumbing,0.33,,0.33,False,,,15.0,,90.0,,mssds_2023_projection_merged.csv,amravati,plumbing
+Amravati,Power,2.03,,0.5,False,,,92.0,60.0,60.0,,mssds_2023_projection_merged.csv,amravati,power
+Amravati,Retail,,,0.33,True,,,,,300.0,180.0,mssds_2023_projection_merged.csv,amravati,retail
+Amravati,Telecom,0.77,0.0,1.0,True,40.0,1.0,39.0,300.0,390.0,0.0,mssds_2023_projection_merged.csv,amravati,telecom
+Amravati,Textile,0.93,,0.67,False,200.0,1.0,31.0,,630.0,,mssds_2023_projection_merged.csv,amravati,textile
+Amravati,Tourism & Hospitality,1.52,,0.67,False,,1.0,65.0,30.0,480.0,,mssds_2023_projection_merged.csv,amravati,tourism & hospitality
+Chhatrapati Sambhajinagar,Aerospace & Aviation,1.15,,0.67,False,45.0,1.0,88.0,,60.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,aerospace & aviation
+Chhatrapati Sambhajinagar,Agriculture,1.97,60.0,1.0,True,37.0,2.0,142.0,60.0,1643.0,90.0,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,agriculture
+Chhatrapati Sambhajinagar,Automotive,22.1,,0.83,False,6146.0,30.0,172.0,20.0,980.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,automotive
+Chhatrapati Sambhajinagar,BFSI,8.81,,0.67,False,3120.0,7.0,212.0,,150.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,bfsi
+Chhatrapati Sambhajinagar,Capital Goods,10.62,,0.83,False,2150.0,18.0,36.0,207.0,680.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,capital goods
+Chhatrapati Sambhajinagar,Construction,1.93,,0.83,True,200.0,1.0,161.0,,180.0,300.0,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,construction
+Chhatrapati Sambhajinagar,Domestic Workers,0.24,,0.33,False,,,11.0,,60.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,domestic workers
+Chhatrapati Sambhajinagar,Electronics,4.87,70.0,1.0,True,284.0,5.0,314.0,90.0,640.0,210.0,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,electronics
+Chhatrapati Sambhajinagar,Food Processing,3.53,,0.67,False,483.0,6.0,52.0,,240.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,food processing
+Chhatrapati Sambhajinagar,Green Jobs,1.06,0.0,0.83,True,,1.0,29.0,30.0,90.0,0.0,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,green jobs
+Chhatrapati Sambhajinagar,Healthcare,3.62,,0.67,False,76.0,2.0,348.0,,120.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,healthcare
+Chhatrapati Sambhajinagar,Hydrocarbon,0.92,,0.67,False,50.0,2.0,4.0,,130.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,hydrocarbon
+Chhatrapati Sambhajinagar,Iron & Steel,2.54,,0.5,False,479.0,4.0,31.0,,,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,iron & steel
+Chhatrapati Sambhajinagar,IT/ITeS,15.56,,0.83,True,17.0,5.0,1742.0,,420.0,0.0,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,it/ites
+Chhatrapati Sambhajinagar,Leather,3.69,,0.5,False,878.0,6.0,3.0,,,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,leather
+Chhatrapati Sambhajinagar,Life Science,3.39,,0.83,False,531.0,4.0,132.0,50.0,150.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,life science
+Chhatrapati Sambhajinagar,Logistics,3.06,,0.83,False,999.0,4.0,6.0,29.0,40.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,logistics
+Chhatrapati Sambhajinagar,Management,7.88,,0.67,False,1259.0,10.0,264.0,,180.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,management
+Chhatrapati Sambhajinagar,Paints & Coatings,4.71,,0.67,False,1280.0,7.0,10.0,,270.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,paints & coatings
+Chhatrapati Sambhajinagar,Plumbing,0.38,,0.33,False,,,17.0,,150.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,plumbing
+Chhatrapati Sambhajinagar,Power,1.02,,0.5,False,,,46.0,90.0,210.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,power
+Chhatrapati Sambhajinagar,Retail,,,0.33,True,,,,,90.0,150.0,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,retail
+Chhatrapati Sambhajinagar,Rubber,0.88,,0.67,False,36.0,2.0,1.0,,1620.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,rubber
+Chhatrapati Sambhajinagar,Telecom,0.55,0.0,0.67,True,,,25.0,120.0,170.0,0.0,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,telecom
+Chhatrapati Sambhajinagar,Textile,1.51,,0.67,False,480.0,2.0,4.0,,60.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,textile
+Chhatrapati Sambhajinagar,Tourism & Hospitality,3.01,,0.83,False,1667.0,1.0,39.0,628.0,330.0,,mssds_2023_projection_merged.csv,chhatrapati sambhajinagar,tourism & hospitality
+Beed,Agriculture,7.51,,0.83,True,186.0,11.0,354.0,,180.0,300.0,mssds_2023_projection_merged.csv,beed,agriculture
+Beed,Apparel,1.04,,0.83,False,20.0,1.0,78.0,330.0,330.0,,mssds_2023_projection_merged.csv,beed,apparel
+Beed,Automotive,5.56,,0.83,False,2056.0,5.0,88.0,90.0,180.0,,mssds_2023_projection_merged.csv,beed,automotive
+Beed,Beauty & Wellness,1.78,,0.67,False,,1.0,85.0,90.0,30.0,,mssds_2023_projection_merged.csv,beed,beauty & wellness
+Beed,BFSI,4.35,,0.67,False,700.0,5.0,173.0,,120.0,,mssds_2023_projection_merged.csv,beed,bfsi
+Beed,Capital Goods,2.87,,0.83,False,181.0,6.0,21.0,60.0,60.0,,mssds_2023_projection_merged.csv,beed,capital goods
+Beed,Construction,2.62,,0.83,True,28.0,4.0,122.0,,90.0,300.0,mssds_2023_projection_merged.csv,beed,construction
+Beed,Electronics,3.47,0.0,1.0,True,22.0,2.0,338.0,494.0,510.0,0.0,mssds_2023_projection_merged.csv,beed,electronics
+Beed,Food Processing,4.81,,0.67,False,755.0,7.0,116.0,60.0,,,mssds_2023_projection_merged.csv,beed,food processing
+Beed,Green Jobs,1.68,,0.33,True,,,76.0,,,0.0,mssds_2023_projection_merged.csv,beed,green jobs
+Beed,Iron & Steel,1.74,,0.5,False,285.0,3.0,15.0,,,,mssds_2023_projection_merged.csv,beed,iron & steel
+Beed,IT/ITeS,7.04,0.0,0.83,True,,3.0,387.0,75.0,240.0,0.0,mssds_2023_projection_merged.csv,beed,it/ites
+Beed,Logistics,0.18,,0.5,False,,,8.0,83.0,90.0,,mssds_2023_projection_merged.csv,beed,logistics
+Beed,Media & Entertainment,1.4,,0.83,False,10.0,1.0,126.0,345.0,220.0,,mssds_2023_projection_merged.csv,beed,media & entertainment
+Beed,Telecom,0.51,0.0,1.0,True,2.0,1.0,12.0,180.0,130.0,0.0,mssds_2023_projection_merged.csv,beed,telecom
+Beed,Textile,3.0,,0.67,False,59.0,7.0,6.0,,60.0,,mssds_2023_projection_merged.csv,beed,textile
+Beed,Tourism & Hospitality,0.33,,0.5,False,,,15.0,263.0,260.0,,mssds_2023_projection_merged.csv,beed,tourism & hospitality
+Bhandara,Agriculture,5.12,,0.83,True,74.0,3.0,489.0,,660.0,160.0,mssds_2023_projection_merged.csv,bhandara,agriculture
+Bhandara,Apparel,2.42,,0.67,False,,1.0,135.0,400.0,300.0,,mssds_2023_projection_merged.csv,bhandara,apparel
+Bhandara,Automotive,7.86,,0.83,False,3215.0,5.0,178.0,30.0,90.0,,mssds_2023_projection_merged.csv,bhandara,automotive
+Bhandara,Beauty & Wellness,4.02,,0.67,False,,1.0,259.0,51.0,60.0,,mssds_2023_projection_merged.csv,bhandara,beauty & wellness
+Bhandara,BFSI,6.24,,0.67,False,700.0,6.0,364.0,,60.0,,mssds_2023_projection_merged.csv,bhandara,bfsi
+Bhandara,Capital Goods,2.4,,0.83,False,325.0,4.0,41.0,119.0,120.0,,mssds_2023_projection_merged.csv,bhandara,capital goods
+Bhandara,Construction,1.71,,0.83,True,23.0,1.0,164.0,,120.0,292.0,mssds_2023_projection_merged.csv,bhandara,construction
+Bhandara,Electronics,5.22,0.0,1.0,True,1.0,2.0,568.0,233.0,270.0,0.0,mssds_2023_projection_merged.csv,bhandara,electronics
+Bhandara,Food Processing,1.18,,0.67,False,1.0,1.0,99.0,,60.0,,mssds_2023_projection_merged.csv,bhandara,food processing
+Bhandara,Green Jobs,1.99,,0.33,True,,,90.0,,,0.0,mssds_2023_projection_merged.csv,bhandara,green jobs
+Bhandara,Healthcare,3.08,,0.83,False,10.0,2.0,290.0,20.0,180.0,,mssds_2023_projection_merged.csv,bhandara,healthcare
+Bhandara,Iron & Steel,3.18,,0.5,False,1300.0,2.0,74.0,,,,mssds_2023_projection_merged.csv,bhandara,iron & steel
+Bhandara,IT/ITeS,4.09,0.0,1.0,True,6.0,3.0,368.0,180.0,120.0,0.0,mssds_2023_projection_merged.csv,bhandara,it/ites
+Bhandara,Life Science,1.19,,0.5,False,159.0,1.0,72.0,,,,mssds_2023_projection_merged.csv,bhandara,life science
+Bhandara,Management,3.15,,0.67,False,158.0,3.0,220.0,,150.0,,mssds_2023_projection_merged.csv,bhandara,management
+Bhandara,Media & Entertainment,0.88,,0.5,False,,,40.0,450.0,120.0,,mssds_2023_projection_merged.csv,bhandara,media & entertainment
+Bhandara,Plumbing,0.8,,0.5,False,,,36.0,30.0,60.0,,mssds_2023_projection_merged.csv,bhandara,plumbing
+Bhandara,Retail,,,0.33,True,,,,,60.0,0.0,mssds_2023_projection_merged.csv,bhandara,retail
+Bhandara,Sports,2.48,,0.5,False,,,112.0,20.0,60.0,,mssds_2023_projection_merged.csv,bhandara,sports
+Buldhana,Agriculture,8.75,94.44,1.0,True,291.0,15.0,284.0,30.0,850.0,510.0,mssds_2023_projection_merged.csv,buldhana,agriculture
+Buldhana,Apparel,2.79,,0.5,False,,,126.0,380.0,300.0,,mssds_2023_projection_merged.csv,buldhana,apparel
+Buldhana,Automotive,4.23,,0.83,False,769.0,6.0,92.0,75.0,90.0,,mssds_2023_projection_merged.csv,buldhana,automotive
+Buldhana,Beauty & Wellness,2.79,,0.83,False,516.0,2.0,163.0,119.0,120.0,,mssds_2023_projection_merged.csv,buldhana,beauty & wellness
+Buldhana,BFSI,8.82,,0.67,False,2920.0,6.0,302.0,,180.0,,mssds_2023_projection_merged.csv,buldhana,bfsi
+Buldhana,Capital Goods,2.69,,0.67,False,92.0,6.0,14.0,,1459.0,,mssds_2023_projection_merged.csv,buldhana,capital goods
+Buldhana,Electronics,4.47,51.52,1.0,True,146.0,3.0,393.0,320.0,0.0,340.0,mssds_2023_projection_merged.csv,buldhana,electronics
+Buldhana,Green Jobs,1.46,,0.33,True,,,66.0,,,0.0,mssds_2023_projection_merged.csv,buldhana,green jobs
+Buldhana,Healthcare,10.26,,0.33,False,,,464.0,,60.0,,mssds_2023_projection_merged.csv,buldhana,healthcare
+Buldhana,Iron & Steel,1.54,,0.5,False,253.0,2.0,48.0,,,,mssds_2023_projection_merged.csv,buldhana,iron & steel
+Buldhana,IT/ITeS,5.81,0.0,1.0,True,5.0,5.0,485.0,173.0,210.0,0.0,mssds_2023_projection_merged.csv,buldhana,it/ites
+Buldhana,Logistics,0.71,,0.5,False,,1.0,2.0,,150.0,,mssds_2023_projection_merged.csv,buldhana,logistics
+Buldhana,Management,5.63,,0.5,False,199.0,10.0,162.0,,,,mssds_2023_projection_merged.csv,buldhana,management
+Buldhana,Media & Entertainment,1.44,,0.5,False,,,65.0,120.0,180.0,,mssds_2023_projection_merged.csv,buldhana,media & entertainment
+Buldhana,Persons with Disability,,,0.17,False,,,,,60.0,,mssds_2023_projection_merged.csv,buldhana,persons with disability
+Buldhana,Plumbing,,,0.33,False,,,,49.0,60.0,,mssds_2023_projection_merged.csv,buldhana,plumbing
+Buldhana,Retail,,,0.33,True,,,,,150.0,0.0,mssds_2023_projection_merged.csv,buldhana,retail
+Buldhana,Rubber,0.49,,0.5,False,50.0,1.0,2.0,,,,mssds_2023_projection_merged.csv,buldhana,rubber
+Buldhana,Telecom,0.58,0.0,1.0,True,40.0,1.0,15.0,150.0,150.0,0.0,mssds_2023_projection_merged.csv,buldhana,telecom
+Buldhana,Tourism & Hospitality,2.31,,0.67,False,,1.0,126.0,524.0,210.0,,mssds_2023_projection_merged.csv,buldhana,tourism & hospitality
+Chandrapur,Aerospace & Aviation,2.03,,0.17,False,,,92.0,,,,mssds_2023_projection_merged.csv,chandrapur,aerospace & aviation
+Chandrapur,Agriculture,4.31,,0.83,True,37.0,5.0,286.0,,300.0,230.0,mssds_2023_projection_merged.csv,chandrapur,agriculture
+Chandrapur,Automotive,9.78,,0.83,False,2832.0,11.0,176.0,49.0,360.0,,mssds_2023_projection_merged.csv,chandrapur,automotive
+Chandrapur,Beauty & Wellness,4.15,,0.67,False,,1.0,269.0,270.0,180.0,,mssds_2023_projection_merged.csv,chandrapur,beauty & wellness
+Chandrapur,BFSI,9.6,,0.5,False,3111.0,8.0,263.0,,,,mssds_2023_projection_merged.csv,chandrapur,bfsi
+Chandrapur,Construction,4.49,,0.83,True,88.0,3.0,406.0,,90.0,630.0,mssds_2023_projection_merged.csv,chandrapur,construction
+Chandrapur,Electronics,4.33,0.0,1.0,True,29.0,2.0,448.0,342.0,90.0,0.0,mssds_2023_projection_merged.csv,chandrapur,electronics
+Chandrapur,Green Jobs,1.53,0.0,0.67,True,,,69.0,150.0,120.0,0.0,mssds_2023_projection_merged.csv,chandrapur,green jobs
+Chandrapur,Handicraft & Carpet,0.73,,0.33,False,,,33.0,,120.0,,mssds_2023_projection_merged.csv,chandrapur,handicraft & carpet
+Chandrapur,Iron & Steel,1.56,,0.67,False,254.0,2.0,51.0,,360.0,,mssds_2023_projection_merged.csv,chandrapur,iron & steel
+Chandrapur,Logistics,0.42,,0.33,False,,,19.0,,90.0,,mssds_2023_projection_merged.csv,chandrapur,logistics
+Chandrapur,Management,2.21,,0.67,False,158.0,3.0,99.0,,210.0,,mssds_2023_projection_merged.csv,chandrapur,management
+Chandrapur,Mining,1.37,,0.33,False,,,62.0,,1100.0,,mssds_2023_projection_merged.csv,chandrapur,mining
+Chandrapur,Paints & Coatings,0.27,,0.33,False,,,12.0,,120.0,,mssds_2023_projection_merged.csv,chandrapur,paints & coatings
+Chandrapur,Power,3.27,,0.5,False,,,148.0,118.0,90.0,,mssds_2023_projection_merged.csv,chandrapur,power
+Dhule,Agriculture,2.12,52.08,1.0,True,56.0,3.0,105.0,368.0,750.0,400.0,mssds_2023_projection_merged.csv,dhule,agriculture
+Dhule,Apparel,1.47,,0.83,False,1.0,2.0,84.0,368.0,780.0,,mssds_2023_projection_merged.csv,dhule,apparel
+Dhule,Automotive,2.76,,0.83,False,663.0,3.0,80.0,60.0,330.0,,mssds_2023_projection_merged.csv,dhule,automotive
+Dhule,Beauty & Wellness,1.45,,0.83,False,0.0,1.0,134.0,250.0,240.0,,mssds_2023_projection_merged.csv,dhule,beauty & wellness
+Dhule,BFSI,8.16,,0.83,False,2920.0,6.0,216.0,61.0,150.0,,mssds_2023_projection_merged.csv,dhule,bfsi
+Dhule,Capital Goods,0.22,,0.5,False,,,10.0,232.0,570.0,,mssds_2023_projection_merged.csv,dhule,capital goods
+Dhule,Construction,1.2,,0.83,True,23.0,1.0,98.0,,270.0,300.0,mssds_2023_projection_merged.csv,dhule,construction
+Dhule,Electronics,1.49,0.0,1.0,True,1.0,1.0,139.0,1052.0,1290.0,0.0,mssds_2023_projection_merged.csv,dhule,electronics
+Dhule,Food Processing,2.33,,0.83,False,504.0,2.0,105.0,120.0,360.0,,mssds_2023_projection_merged.csv,dhule,food processing
+Dhule,Green Jobs,0.49,0.0,0.67,True,,,22.0,60.0,120.0,0.0,mssds_2023_projection_merged.csv,dhule,green jobs
+Dhule,Healthcare,5.95,,0.33,False,,,269.0,,780.0,,mssds_2023_projection_merged.csv,dhule,healthcare
+Dhule,Iron & Steel,0.81,,0.5,False,250.0,1.0,7.0,,,,mssds_2023_projection_merged.csv,dhule,iron & steel
+Dhule,IT/ITeS,6.07,0.0,1.0,True,4.0,2.0,678.0,120.0,450.0,0.0,mssds_2023_projection_merged.csv,dhule,it/ites
+Dhule,Life Science,2.85,,0.5,False,,,129.0,30.0,270.0,,mssds_2023_projection_merged.csv,dhule,life science
+Dhule,Logistics,0.09,,0.5,False,,,4.0,120.0,240.0,,mssds_2023_projection_merged.csv,dhule,logistics
+Dhule,Management,3.25,,0.83,False,1058.0,3.0,73.0,90.0,90.0,,mssds_2023_projection_merged.csv,dhule,management
+Dhule,Media & Entertainment,2.17,,0.5,False,,,98.0,540.0,420.0,,mssds_2023_projection_merged.csv,dhule,media & entertainment
+Dhule,Paints & Coatings,0.13,,0.33,False,,,6.0,,60.0,,mssds_2023_projection_merged.csv,dhule,paints & coatings
+Dhule,Plumbing,0.22,,0.5,False,,,10.0,30.0,90.0,,mssds_2023_projection_merged.csv,dhule,plumbing
+Dhule,Power,1.44,,0.5,False,,,65.0,90.0,150.0,,mssds_2023_projection_merged.csv,dhule,power
+Dhule,Retail,,,0.33,True,,,,,120.0,0.0,mssds_2023_projection_merged.csv,dhule,retail
+Dhule,Sports,1.42,,0.33,False,,,64.0,,60.0,,mssds_2023_projection_merged.csv,dhule,sports
+Dhule,Telecom,0.15,0.0,0.67,True,,,7.0,390.0,120.0,0.0,mssds_2023_projection_merged.csv,dhule,telecom
+Dhule,Textile,0.84,,0.67,False,,1.0,12.0,150.0,630.0,,mssds_2023_projection_merged.csv,dhule,textile
+Dhule,Tourism & Hospitality,0.38,,0.5,False,,,17.0,450.0,90.0,,mssds_2023_projection_merged.csv,dhule,tourism & hospitality
+Gadchiroli,Agriculture,2.36,88.54,1.0,True,26.0,3.0,142.0,202.0,600.0,1561.0,mssds_2023_projection_merged.csv,gadchiroli,agriculture
+Gadchiroli,Apparel,1.84,,0.5,False,,,83.0,143.0,180.0,,mssds_2023_projection_merged.csv,gadchiroli,apparel
+Gadchiroli,Automotive,3.86,,0.83,False,1450.0,4.0,28.0,163.0,330.0,,mssds_2023_projection_merged.csv,gadchiroli,automotive
+Gadchiroli,Beauty & Wellness,1.6,,0.67,False,,1.0,71.0,56.0,30.0,,mssds_2023_projection_merged.csv,gadchiroli,beauty & wellness
+Gadchiroli,BFSI,6.88,,0.5,False,2920.0,6.0,51.0,,,,mssds_2023_projection_merged.csv,gadchiroli,bfsi
+Gadchiroli,Capital Goods,0.47,,0.83,False,27.0,1.0,3.0,60.0,60.0,,mssds_2023_projection_merged.csv,gadchiroli,capital goods
+Gadchiroli,Electronics,1.72,0.0,1.0,True,1.0,2.0,116.0,60.0,210.0,0.0,mssds_2023_projection_merged.csv,gadchiroli,electronics
+Gadchiroli,Furniture & Fittings,0.44,,0.83,False,3.0,1.0,4.0,30.0,60.0,,mssds_2023_projection_merged.csv,gadchiroli,furniture & fittings
+Gadchiroli,Green Jobs,0.51,,0.33,True,,,23.0,,,0.0,mssds_2023_projection_merged.csv,gadchiroli,green jobs
+Gadchiroli,Iron & Steel,0.88,,0.5,False,250.0,1.0,16.0,,,,mssds_2023_projection_merged.csv,gadchiroli,iron & steel
+Gadchiroli,IT/ITeS,1.79,0.0,0.83,True,,1.0,86.0,232.0,450.0,0.0,mssds_2023_projection_merged.csv,gadchiroli,it/ites
+Gadchiroli,Logistics,0.04,,0.33,False,,,2.0,,120.0,,mssds_2023_projection_merged.csv,gadchiroli,logistics
+Gadchiroli,Management,2.19,,0.83,False,183.0,4.0,38.0,50.0,60.0,,mssds_2023_projection_merged.csv,gadchiroli,management
+Gadchiroli,Power,0.42,,0.5,False,,,19.0,111.0,120.0,,mssds_2023_projection_merged.csv,gadchiroli,power
+Gadchiroli,Tourism & Hospitality,0.62,,0.67,False,8.0,1.0,26.0,270.0,,,mssds_2023_projection_merged.csv,gadchiroli,tourism & hospitality
+Gondia,Agriculture,1.55,,0.83,True,37.0,2.0,88.0,,420.0,0.0,mssds_2023_projection_merged.csv,gondia,agriculture
+Gondia,Apparel,0.27,,0.5,False,,,12.0,1303.0,150.0,,mssds_2023_projection_merged.csv,gondia,apparel
+Gondia,Automotive,6.79,,0.83,False,3215.0,4.0,93.0,53.0,240.0,,mssds_2023_projection_merged.csv,gondia,automotive
+Gondia,Beauty & Wellness,0.84,,0.67,False,,1.0,12.0,470.0,150.0,,mssds_2023_projection_merged.csv,gondia,beauty & wellness
+Gondia,BFSI,3.41,,0.5,False,698.0,5.0,51.0,,,,mssds_2023_projection_merged.csv,gondia,bfsi
+Gondia,Capital Goods,0.09,,0.5,False,,,4.0,399.0,210.0,,mssds_2023_projection_merged.csv,gondia,capital goods
+Gondia,Construction,1.08,,0.83,True,23.0,1.0,82.0,,240.0,30.0,mssds_2023_projection_merged.csv,gondia,construction
+Gondia,Domestic Workers,0.11,,0.5,False,,,5.0,135.0,180.0,,mssds_2023_projection_merged.csv,gondia,domestic workers
+Gondia,Electronics,1.64,0.0,1.0,True,1.0,1.0,159.0,414.0,300.0,0.0,mssds_2023_projection_merged.csv,gondia,electronics
+Gondia,Furniture & Fittings,,,0.17,False,,,,,60.0,,mssds_2023_projection_merged.csv,gondia,furniture & fittings
+Gondia,Green Jobs,0.29,0.0,0.67,True,,,13.0,30.0,60.0,0.0,mssds_2023_projection_merged.csv,gondia,green jobs
+Gondia,Healthcare,1.04,,0.67,False,8.0,1.0,80.0,,270.0,,mssds_2023_projection_merged.csv,gondia,healthcare
+Gondia,Iron & Steel,0.88,,0.5,False,250.0,1.0,16.0,,,,mssds_2023_projection_merged.csv,gondia,iron & steel
+Gondia,IT/ITeS,1.86,0.0,0.67,True,,,84.0,90.0,120.0,0.0,mssds_2023_projection_merged.csv,gondia,it/ites
+Gondia,Logistics,0.04,,0.5,False,,,2.0,411.0,210.0,,mssds_2023_projection_merged.csv,gondia,logistics
+Gondia,Management,1.73,,0.83,False,158.0,3.0,37.0,90.0,210.0,,mssds_2023_projection_merged.csv,gondia,management
+Gondia,Media & Entertainment,0.18,,0.33,False,,,8.0,930.0,,,mssds_2023_projection_merged.csv,gondia,media & entertainment
+Gondia,Paints & Coatings,0.04,,0.33,False,,,2.0,,90.0,,mssds_2023_projection_merged.csv,gondia,paints & coatings
+Gondia,Plumbing,0.07,,0.33,False,,,3.0,,60.0,,mssds_2023_projection_merged.csv,gondia,plumbing
+Gondia,Power,1.31,,0.5,False,,,59.0,110.0,120.0,,mssds_2023_projection_merged.csv,gondia,power
+Gondia,Telecom,0.13,0.0,0.5,True,,,6.0,120.0,,0.0,mssds_2023_projection_merged.csv,gondia,telecom
+Gondia,Tourism & Hospitality,0.44,,0.33,False,,,20.0,300.0,,,mssds_2023_projection_merged.csv,gondia,tourism & hospitality
+Hingoli,Agriculture,4.05,,0.83,True,309.0,5.0,204.0,,600.0,180.0,mssds_2023_projection_merged.csv,hingoli,agriculture
+Hingoli,Apparel,2.5,,0.33,False,,,113.0,90.0,,,mssds_2023_projection_merged.csv,hingoli,apparel
+Hingoli,Automotive,3.68,,0.67,False,494.0,5.0,123.0,,540.0,,mssds_2023_projection_merged.csv,hingoli,automotive
+Hingoli,Beauty & Wellness,2.73,,0.67,False,667.0,2.0,128.0,21.0,,,mssds_2023_projection_merged.csv,hingoli,beauty & wellness
+Hingoli,BFSI,7.16,,0.67,False,817.0,10.0,250.0,30.0,,,mssds_2023_projection_merged.csv,hingoli,bfsi
+Hingoli,Capital Goods,10.86,,0.33,False,,,491.0,250.0,,,mssds_2023_projection_merged.csv,hingoli,capital goods
+Hingoli,Construction,2.39,,0.5,True,,,108.0,,600.0,600.0,mssds_2023_projection_merged.csv,hingoli,construction
+Hingoli,Electronics,21.96,0.0,0.67,True,,,993.0,510.0,720.0,0.0,mssds_2023_projection_merged.csv,hingoli,electronics
+Hingoli,Food Processing,8.56,,0.83,False,1588.0,12.0,188.0,76.0,120.0,,mssds_2023_projection_merged.csv,hingoli,food processing
+Hingoli,Green Jobs,1.13,,0.5,True,,,51.0,,240.0,0.0,mssds_2023_projection_merged.csv,hingoli,green jobs
+Hingoli,Healthcare,2.08,,0.67,False,4.0,1.0,215.0,,60.0,,mssds_2023_projection_merged.csv,hingoli,healthcare
+Hingoli,Iron & Steel,1.32,,0.5,False,280.0,2.0,15.0,,,,mssds_2023_projection_merged.csv,hingoli,iron & steel
+Hingoli,IT/ITeS,2.5,0.0,1.0,True,60.0,2.0,206.0,178.0,240.0,0.0,mssds_2023_projection_merged.csv,hingoli,it/ites
+Hingoli,Life Science,0.95,,0.33,False,,,43.0,,360.0,,mssds_2023_projection_merged.csv,hingoli,life science
+Hingoli,Media & Entertainment,1.39,,0.5,False,,,63.0,540.0,960.0,,mssds_2023_projection_merged.csv,hingoli,media & entertainment
+Hingoli,Plumbing,0.31,,0.33,False,,,14.0,,120.0,,mssds_2023_projection_merged.csv,hingoli,plumbing
+Hingoli,Power,0.53,,0.33,False,,,24.0,90.0,,,mssds_2023_projection_merged.csv,hingoli,power
+Hingoli,Sports,1.17,,0.33,False,,,53.0,,60.0,,mssds_2023_projection_merged.csv,hingoli,sports
+Hingoli,Telecom,0.51,0.0,0.67,True,,,23.0,270.0,120.0,0.0,mssds_2023_projection_merged.csv,hingoli,telecom
+Hingoli,Textile,1.43,,0.67,False,61.0,3.0,15.0,,420.0,,mssds_2023_projection_merged.csv,hingoli,textile
+Hingoli,Tourism & Hospitality,0.93,,0.67,False,,1.0,19.0,150.0,120.0,,mssds_2023_projection_merged.csv,hingoli,tourism & hospitality
+Jalgaon,Agriculture,6.02,75.0,1.0,True,194.0,11.0,161.0,30.0,360.0,90.0,mssds_2023_projection_merged.csv,jalgaon,agriculture
+Jalgaon,Apparel,2.37,,0.83,False,13.0,3.0,145.0,430.0,270.0,,mssds_2023_projection_merged.csv,jalgaon,apparel
+Jalgaon,Automotive,6.41,,0.5,False,2087.0,7.0,86.0,,,,mssds_2023_projection_merged.csv,jalgaon,automotive
+Jalgaon,Beauty & Wellness,3.56,,0.67,False,,1.0,223.0,180.0,180.0,,mssds_2023_projection_merged.csv,jalgaon,beauty & wellness
+Jalgaon,BFSI,9.77,,0.5,False,2920.0,8.0,319.0,,,,mssds_2023_projection_merged.csv,jalgaon,bfsi
+Jalgaon,Capital Goods,1.33,,0.67,False,293.0,2.0,14.0,60.0,,,mssds_2023_projection_merged.csv,jalgaon,capital goods
+Jalgaon,Construction,1.73,,0.83,True,35.0,3.0,59.0,,60.0,300.0,mssds_2023_projection_merged.csv,jalgaon,construction
+Jalgaon,Electronics,6.85,0.0,1.0,True,1545.0,6.0,292.0,330.0,570.0,0.0,mssds_2023_projection_merged.csv,jalgaon,electronics
+Jalgaon,Green Jobs,1.35,,0.5,True,,,61.0,,120.0,0.0,mssds_2023_projection_merged.csv,jalgaon,green jobs
+Jalgaon,Healthcare,3.17,,0.67,False,53.0,2.0,294.0,,270.0,,mssds_2023_projection_merged.csv,jalgaon,healthcare
+Jalgaon,Instrumentation,,,0.33,False,,,,150.0,210.0,,mssds_2023_projection_merged.csv,jalgaon,instrumentation
+Jalgaon,Iron & Steel,1.84,,0.5,False,420.0,2.0,57.0,,,,mssds_2023_projection_merged.csv,jalgaon,iron & steel
+Jalgaon,IT/ITeS,7.66,0.0,1.0,True,4.0,3.0,830.0,320.0,540.0,0.0,mssds_2023_projection_merged.csv,jalgaon,it/ites
+Jalgaon,Logistics,0.72,,0.5,False,,1.0,3.0,,60.0,,mssds_2023_projection_merged.csv,jalgaon,logistics
+Jalgaon,Management,4.62,,0.67,False,1070.0,4.0,194.0,,270.0,,mssds_2023_projection_merged.csv,jalgaon,management
+Jalgaon,Media & Entertainment,0.87,,0.83,False,17.0,1.0,57.0,180.0,180.0,,mssds_2023_projection_merged.csv,jalgaon,media & entertainment
+Jalgaon,Power,0.93,,0.5,False,,,42.0,127.0,60.0,,mssds_2023_projection_merged.csv,jalgaon,power
+Jalgaon,Retail,,,0.33,True,,,,,60.0,0.0,mssds_2023_projection_merged.csv,jalgaon,retail
+Jalgaon,Telecom,0.58,0.0,1.0,True,40.0,1.0,15.0,90.0,90.0,0.0,mssds_2023_projection_merged.csv,jalgaon,telecom
+Jalgaon,Tourism & Hospitality,0.58,,0.5,False,,,26.0,300.0,30.0,,mssds_2023_projection_merged.csv,jalgaon,tourism & hospitality
+Jalna,Agriculture,3.01,55.38,1.0,True,35.0,2.0,277.0,290.0,720.0,360.0,mssds_2023_projection_merged.csv,jalna,agriculture
+Jalna,Apparel,5.68,,0.83,False,840.0,7.0,214.0,2474.0,960.0,,mssds_2023_projection_merged.csv,jalna,apparel
+Jalna,Automotive,14.54,,0.67,False,4789.0,17.0,125.0,,450.0,,mssds_2023_projection_merged.csv,jalna,automotive
+Jalna,Beauty & Wellness,5.26,,0.67,False,,1.0,355.0,425.0,330.0,,mssds_2023_projection_merged.csv,jalna,beauty & wellness
+Jalna,BFSI,19.56,,0.83,False,2948.0,8.0,1578.0,450.0,240.0,,mssds_2023_projection_merged.csv,jalna,bfsi
+Jalna,Capital Goods,30.09,,0.83,False,3413.0,61.0,50.0,943.0,420.0,,mssds_2023_projection_merged.csv,jalna,capital goods
+Jalna,Construction,4.12,,0.83,True,291.0,7.0,110.0,,360.0,120.0,mssds_2023_projection_merged.csv,jalna,construction
+Jalna,Electronics,4.43,0.0,1.0,True,110.0,3.0,394.0,1741.0,780.0,0.0,mssds_2023_projection_merged.csv,jalna,electronics
+Jalna,Food Processing,4.45,,0.83,False,447.0,5.0,230.0,570.0,240.0,,mssds_2023_projection_merged.csv,jalna,food processing
+Jalna,Furniture & Fittings,1.41,,0.67,False,55.0,3.0,14.0,,60.0,,mssds_2023_projection_merged.csv,jalna,furniture & fittings
+Jalna,Gem & Jewellery,2.26,,0.5,False,,,102.0,335.0,90.0,,mssds_2023_projection_merged.csv,jalna,gem & jewellery
+Jalna,Green Jobs,1.66,,0.5,True,,,75.0,,30.0,0.0,mssds_2023_projection_merged.csv,jalna,green jobs
+Jalna,Handicraft & Carpet,0.76,,0.67,False,15.0,1.0,43.0,,90.0,,mssds_2023_projection_merged.csv,jalna,handicraft & carpet
+Jalna,Healthcare,4.81,,0.83,False,153.0,3.0,435.0,60.0,750.0,,mssds_2023_projection_merged.csv,jalna,healthcare
+Jalna,Hydrocarbon,0.35,,0.33,False,,,16.0,,60.0,,mssds_2023_projection_merged.csv,jalna,hydrocarbon
+Jalna,Iron & Steel,8.28,,0.67,False,2052.0,13.0,16.0,,60.0,,mssds_2023_projection_merged.csv,jalna,iron & steel
+Jalna,IT/ITeS,17.03,0.0,1.0,True,32.0,7.0,1824.0,450.0,690.0,0.0,mssds_2023_projection_merged.csv,jalna,it/ites
+Jalna,Life Science,3.45,,0.67,False,195.0,4.0,199.0,,30.0,,mssds_2023_projection_merged.csv,jalna,life science
+Jalna,Logistics,2.4,,0.67,False,529.0,4.0,4.0,,240.0,,mssds_2023_projection_merged.csv,jalna,logistics
+Jalna,Management,12.55,,0.67,False,4171.0,6.0,561.0,,180.0,,mssds_2023_projection_merged.csv,jalna,management
+Jalna,Media & Entertainment,3.56,,0.5,False,,,161.0,1710.0,270.0,,mssds_2023_projection_merged.csv,jalna,media & entertainment
+Jalna,Paints & Coatings,1.01,,0.5,False,300.0,1.0,24.0,,,,mssds_2023_projection_merged.csv,jalna,paints & coatings
+Jalna,Plumbing,0.18,,0.5,False,,,8.0,60.0,120.0,,mssds_2023_projection_merged.csv,jalna,plumbing
+Jalna,Power,0.83,,0.83,False,40.0,1.0,47.0,120.0,120.0,,mssds_2023_projection_merged.csv,jalna,power
+Jalna,Retail,,,0.33,True,,,,,60.0,0.0,mssds_2023_projection_merged.csv,jalna,retail
+Jalna,Telecom,0.69,0.0,0.67,True,,,31.0,360.0,150.0,0.0,mssds_2023_projection_merged.csv,jalna,telecom
+Jalna,Textile,3.63,,0.67,False,792.0,5.0,63.0,,120.0,,mssds_2023_projection_merged.csv,jalna,textile
+Jalna,Tourism & Hospitality,7.19,,0.83,False,611.0,13.0,132.0,990.0,240.0,,mssds_2023_projection_merged.csv,jalna,tourism & hospitality
+Kolhapur,Agriculture,3.01,65.44,1.0,True,35.0,2.0,277.0,290.0,720.0,549.0,mssds_2023_projection_merged.csv,kolhapur,agriculture
+Kolhapur,Apparel,5.68,,0.83,False,840.0,7.0,214.0,2474.0,960.0,,mssds_2023_projection_merged.csv,kolhapur,apparel
+Kolhapur,Automotive,14.54,,0.67,False,4789.0,17.0,125.0,,450.0,,mssds_2023_projection_merged.csv,kolhapur,automotive
+Kolhapur,Beauty & Wellness,5.26,,0.67,False,,1.0,355.0,425.0,330.0,,mssds_2023_projection_merged.csv,kolhapur,beauty & wellness
+Kolhapur,BFSI,19.56,,0.83,False,2948.0,8.0,1578.0,450.0,240.0,,mssds_2023_projection_merged.csv,kolhapur,bfsi
+Kolhapur,Capital Goods,30.09,,0.83,False,3413.0,61.0,50.0,943.0,420.0,,mssds_2023_projection_merged.csv,kolhapur,capital goods
+Kolhapur,Construction,4.12,,0.83,True,291.0,7.0,110.0,,360.0,1236.0,mssds_2023_projection_merged.csv,kolhapur,construction
+Kolhapur,Electronics,4.43,0.0,1.0,True,110.0,3.0,394.0,1741.0,780.0,0.0,mssds_2023_projection_merged.csv,kolhapur,electronics
+Kolhapur,Food Processing,4.45,,0.83,False,447.0,5.0,230.0,570.0,240.0,,mssds_2023_projection_merged.csv,kolhapur,food processing
+Kolhapur,Furniture & Fittings,1.41,,0.67,False,55.0,3.0,14.0,,60.0,,mssds_2023_projection_merged.csv,kolhapur,furniture & fittings
+Kolhapur,Gem & Jewellery,2.26,,0.5,False,,,102.0,335.0,90.0,,mssds_2023_projection_merged.csv,kolhapur,gem & jewellery
+Kolhapur,Green Jobs,1.66,,0.5,True,,,75.0,,30.0,0.0,mssds_2023_projection_merged.csv,kolhapur,green jobs
+Kolhapur,Handicraft & Carpet,0.76,,0.67,False,15.0,1.0,43.0,,90.0,,mssds_2023_projection_merged.csv,kolhapur,handicraft & carpet
+Kolhapur,Healthcare,4.81,,0.83,False,153.0,3.0,435.0,60.0,750.0,,mssds_2023_projection_merged.csv,kolhapur,healthcare
+Kolhapur,Hydrocarbon,0.17,,0.5,False,0.0,,16.0,,60.0,,mssds_2023_projection_merged.csv,kolhapur,hydrocarbon
+Kolhapur,Iron & Steel,8.28,,0.67,False,2052.0,13.0,16.0,,60.0,,mssds_2023_projection_merged.csv,kolhapur,iron & steel
+Kolhapur,IT/ITeS,17.03,0.0,1.0,True,32.0,7.0,1824.0,450.0,690.0,0.0,mssds_2023_projection_merged.csv,kolhapur,it/ites
+Kolhapur,Life Science,3.45,,0.67,False,195.0,4.0,199.0,,30.0,,mssds_2023_projection_merged.csv,kolhapur,life science
+Kolhapur,Logistics,2.4,,0.67,False,529.0,4.0,4.0,,240.0,,mssds_2023_projection_merged.csv,kolhapur,logistics
+Kolhapur,Management,12.55,,0.67,False,4171.0,6.0,561.0,,180.0,,mssds_2023_projection_merged.csv,kolhapur,management
+Kolhapur,Media & Entertainment,3.56,,0.5,False,,,161.0,1710.0,270.0,,mssds_2023_projection_merged.csv,kolhapur,media & entertainment
+Kolhapur,Paints & Coatings,1.01,,0.5,False,300.0,1.0,24.0,,,,mssds_2023_projection_merged.csv,kolhapur,paints & coatings
+Kolhapur,Plumbing,0.18,,0.5,False,,,8.0,60.0,120.0,,mssds_2023_projection_merged.csv,kolhapur,plumbing
+Kolhapur,Power,0.83,,0.83,False,40.0,1.0,47.0,120.0,120.0,,mssds_2023_projection_merged.csv,kolhapur,power
+Kolhapur,Retail,,,0.33,True,,,,,60.0,0.0,mssds_2023_projection_merged.csv,kolhapur,retail
+Kolhapur,Telecom,0.69,0.0,0.67,True,,,31.0,360.0,150.0,0.0,mssds_2023_projection_merged.csv,kolhapur,telecom
+Kolhapur,Textile,3.63,,0.67,False,792.0,5.0,63.0,,120.0,,mssds_2023_projection_merged.csv,kolhapur,textile
+Kolhapur,Tourism & Hospitality,7.19,,0.83,False,611.0,13.0,132.0,990.0,240.0,,mssds_2023_projection_merged.csv,kolhapur,tourism & hospitality
+Latur,Agriculture,33.94,58.48,1.0,True,5689.0,61.0,142.0,120.0,810.0,169.0,mssds_2023_projection_merged.csv,latur,agriculture
+Latur,Apparel,4.31,,0.83,False,56.0,7.0,176.0,1030.0,1260.0,,mssds_2023_projection_merged.csv,latur,apparel
+Latur,Automotive,17.16,,0.83,False,3492.0,29.0,60.0,72.0,510.0,,mssds_2023_projection_merged.csv,latur,automotive
+Latur,Beauty & Wellness,2.24,,0.83,False,47.0,4.0,69.0,320.0,150.0,,mssds_2023_projection_merged.csv,latur,beauty & wellness
+Latur,BFSI,8.91,,0.83,False,2935.0,8.0,205.0,60.0,390.0,,mssds_2023_projection_merged.csv,latur,bfsi
+Latur,Capital Goods,1.8,,0.67,False,58.0,4.0,10.0,,480.0,,mssds_2023_projection_merged.csv,latur,capital goods
+Latur,Construction,4.32,,0.83,True,93.0,8.0,118.0,,300.0,394.0,mssds_2023_projection_merged.csv,latur,construction
+Latur,Electronics,6.23,0.0,1.0,True,29.0,6.0,482.0,1081.0,720.0,0.0,mssds_2023_projection_merged.csv,latur,electronics
+Latur,Food Processing,5.14,,0.83,False,1084.0,8.0,48.0,300.0,390.0,,mssds_2023_projection_merged.csv,latur,food processing
+Latur,Green Jobs,0.49,0.0,0.67,True,,,22.0,60.0,120.0,0.0,mssds_2023_projection_merged.csv,latur,green jobs
+Latur,Healthcare,2.48,,0.67,False,4.0,1.0,267.0,,180.0,,mssds_2023_projection_merged.csv,latur,healthcare
+Latur,Iron & Steel,1.69,,0.67,False,273.0,3.0,11.0,,120.0,,mssds_2023_projection_merged.csv,latur,iron & steel
+Latur,IT/ITeS,7.44,0.0,0.83,True,,1.0,524.0,134.0,1110.0,0.0,mssds_2023_projection_merged.csv,latur,it/ites
+Latur,Logistics,0.11,,0.5,False,,,5.0,240.0,330.0,,mssds_2023_projection_merged.csv,latur,logistics
+Latur,Management,4.87,,0.5,False,239.0,9.0,110.0,,,,mssds_2023_projection_merged.csv,latur,management
+Latur,Media & Entertainment,2.11,,0.83,False,7.0,3.0,112.0,900.0,360.0,,mssds_2023_projection_merged.csv,latur,media & entertainment
+Latur,Paints & Coatings,0.2,,0.33,False,,,9.0,,60.0,,mssds_2023_projection_merged.csv,latur,paints & coatings
+Latur,Plumbing,0.04,,0.33,False,,,2.0,,60.0,,mssds_2023_projection_merged.csv,latur,plumbing
+Latur,Power,1.11,,0.5,False,,,50.0,172.0,270.0,,mssds_2023_projection_merged.csv,latur,power
+Latur,Telecom,2.13,0.0,1.0,True,10.0,2.0,168.0,260.0,90.0,0.0,mssds_2023_projection_merged.csv,latur,telecom
+Latur,Tourism & Hospitality,2.75,,0.83,False,32.0,4.0,138.0,440.0,210.0,,mssds_2023_projection_merged.csv,latur,tourism & hospitality
+Mumbai City,Aerospace & Aviation,3.47,,0.67,False,900.0,1.0,235.0,,90.0,,mssds_2023_projection_merged.csv,mumbai,aerospace & aviation
+Mumbai City,Agriculture,2.15,,0.5,True,,,97.0,,120.0,0.0,mssds_2023_projection_merged.csv,mumbai,agriculture
+Mumbai City,Apparel,1.73,,0.83,False,3.0,2.0,117.0,571.0,510.0,,mssds_2023_projection_merged.csv,mumbai,apparel
+Mumbai City,Automotive,3.73,,0.67,False,1295.0,3.0,93.0,,235.0,,mssds_2023_projection_merged.csv,mumbai,automotive
+Mumbai City,Beauty & Wellness,6.37,,0.83,False,18.0,3.0,661.0,322.0,560.0,,mssds_2023_projection_merged.csv,mumbai,beauty & wellness
+Mumbai City,BFSI,64.19,,0.83,False,29014.0,8.0,2701.0,270.0,1220.0,,mssds_2023_projection_merged.csv,mumbai,bfsi
+Mumbai City,Capital Goods,0.91,,0.5,False,,,41.0,102.0,410.0,,mssds_2023_projection_merged.csv,mumbai,capital goods
+Mumbai City,Construction,1.48,,0.83,True,29.0,2.0,80.0,,270.0,2415.0,mssds_2023_projection_merged.csv,mumbai,construction
+Mumbai City,Domestic Workers,0.51,,0.83,False,8.0,1.0,11.0,9.0,60.0,,mssds_2023_projection_merged.csv,mumbai,domestic workers
+Mumbai City,Electronics,4.58,0.0,1.0,True,603.0,4.0,272.0,30.0,870.0,0.0,mssds_2023_projection_merged.csv,mumbai,electronics
+Mumbai City,Food Processing,6.3,,0.33,False,,,285.0,,300.0,,mssds_2023_projection_merged.csv,mumbai,food processing
+Mumbai City,Furniture & Fittings,0.58,,0.33,False,,,26.0,,180.0,,mssds_2023_projection_merged.csv,mumbai,furniture & fittings
+Mumbai City,Gem & Jewellery,2.93,,0.67,False,742.0,2.0,140.0,,400.0,,mssds_2023_projection_merged.csv,mumbai,gem & jewellery
+Mumbai City,Green Jobs,1.02,,0.5,True,,,46.0,,120.0,0.0,mssds_2023_projection_merged.csv,mumbai,green jobs
+Mumbai City,Healthcare,6.49,,0.67,False,20.0,5.0,570.0,,1330.0,,mssds_2023_projection_merged.csv,mumbai,healthcare
+Mumbai City,IT/ITeS,28.31,0.0,1.0,True,6094.0,16.0,1724.0,270.0,1150.0,0.0,mssds_2023_projection_merged.csv,mumbai,it/ites
+Mumbai City,Leather,0.07,,0.33,False,,,3.0,,390.0,,mssds_2023_projection_merged.csv,mumbai,leather
+Mumbai City,Logistics,3.97,,0.67,False,793.0,5.0,107.0,,690.0,,mssds_2023_projection_merged.csv,mumbai,logistics
+Mumbai City,Management,28.09,,0.67,False,10117.0,9.0,1350.0,,360.0,,mssds_2023_projection_merged.csv,mumbai,management
+Mumbai City,Media & Entertainment,8.76,,0.67,False,215.0,4.0,881.0,,670.0,,mssds_2023_projection_merged.csv,mumbai,media & entertainment
+Mumbai City,Persons with Disability,,,0.17,False,,,,,180.0,,mssds_2023_projection_merged.csv,mumbai,persons with disability
+Mumbai City,Power,0.71,,0.33,False,,,32.0,,60.0,,mssds_2023_projection_merged.csv,mumbai,power
+Mumbai City,Retail,,,0.33,True,,,,,180.0,5954.0,mssds_2023_projection_merged.csv,mumbai,retail
+Mumbai City,Rubber,0.11,,0.33,False,,,5.0,,420.0,,mssds_2023_projection_merged.csv,mumbai,rubber
+Mumbai City,Telecom,0.6,0.0,1.0,True,2.0,1.0,24.0,270.0,400.0,0.0,mssds_2023_projection_merged.csv,mumbai,telecom
+Mumbai City,Textile,1.61,,0.33,False,,,73.0,,150.0,,mssds_2023_projection_merged.csv,mumbai,textile
+Mumbai City,Tourism & Hospitality,21.97,,0.83,False,12515.0,5.0,344.0,60.0,540.0,,mssds_2023_projection_merged.csv,mumbai,tourism & hospitality
+Mumbai Suburban,Aerospace & Aviation,6.46,,0.5,False,,,292.0,240.0,930.0,,mssds_2023_projection_merged.csv,mumbai suburban,aerospace & aviation
+Mumbai Suburban,Agriculture,0.97,,0.83,True,0.0,0.0,125.0,,240.0,0.0,mssds_2023_projection_merged.csv,mumbai suburban,agriculture
+Mumbai Suburban,Apparel,1.97,,0.83,False,2.0,3.0,95.0,179.0,750.0,,mssds_2023_projection_merged.csv,mumbai suburban,apparel
+Mumbai Suburban,Automotive,3.89,,0.67,False,1233.0,,157.0,150.0,180.0,,mssds_2023_projection_merged.csv,mumbai suburban,automotive
+Mumbai Suburban,Beauty & Wellness,4.68,,0.67,False,8.0,2.0,497.0,,720.0,,mssds_2023_projection_merged.csv,mumbai suburban,beauty & wellness
+Mumbai Suburban,BFSI,82.18,,0.83,False,28278.0,20.0,4521.0,31.0,420.0,,mssds_2023_projection_merged.csv,mumbai suburban,bfsi
+Mumbai Suburban,Capital Goods,1.26,,0.67,False,,1.0,45.0,20.0,180.0,,mssds_2023_projection_merged.csv,mumbai suburban,capital goods
+Mumbai Suburban,Construction,1.94,,0.83,True,2.0,3.0,91.0,,390.0,905.0,mssds_2023_projection_merged.csv,mumbai suburban,construction
+Mumbai Suburban,Electronics,7.92,11.27,1.0,True,922.0,11.0,277.0,630.0,1230.0,80.0,mssds_2023_projection_merged.csv,mumbai suburban,electronics
+Mumbai Suburban,Food Processing,5.29,,0.67,False,,2.0,304.0,27.0,180.0,,mssds_2023_projection_merged.csv,mumbai suburban,food processing
+Mumbai Suburban,Furniture & Fittings,0.53,,0.5,False,,,24.0,120.0,240.0,,mssds_2023_projection_merged.csv,mumbai suburban,furniture & fittings
+Mumbai Suburban,Gem & Jewellery,7.44,,0.67,False,912.0,13.0,110.0,,720.0,,mssds_2023_projection_merged.csv,mumbai suburban,gem & jewellery
+Mumbai Suburban,Green Jobs,1.04,0.0,0.67,True,,,47.0,30.0,180.0,0.0,mssds_2023_projection_merged.csv,mumbai suburban,green jobs
+Mumbai Suburban,Healthcare,6.29,,0.67,False,8.0,5.0,547.0,,1320.0,,mssds_2023_projection_merged.csv,mumbai suburban,healthcare
+Mumbai Suburban,Iron & Steel,0.97,,0.67,False,250.0,1.0,28.0,,60.0,,mssds_2023_projection_merged.csv,mumbai suburban,iron & steel
+Mumbai Suburban,IT/ITeS,33.19,0.0,1.0,True,5782.0,17.0,2357.0,240.0,1130.0,0.0,mssds_2023_projection_merged.csv,mumbai suburban,it/ites
+Mumbai Suburban,Leather,0.11,,0.33,False,,,5.0,,120.0,,mssds_2023_projection_merged.csv,mumbai suburban,leather
+Mumbai Suburban,Logistics,3.6,,0.83,False,768.0,4.0,116.0,88.0,360.0,,mssds_2023_projection_merged.csv,mumbai suburban,logistics
+Mumbai Suburban,Management,33.63,,0.67,False,10619.0,9.0,1977.0,,330.0,,mssds_2023_projection_merged.csv,mumbai suburban,management
+Mumbai Suburban,Media & Entertainment,10.1,,0.83,False,205.0,4.0,1057.0,940.0,1230.0,,mssds_2023_projection_merged.csv,mumbai suburban,media & entertainment
+Mumbai Suburban,Paints & Coatings,1.56,,0.5,False,,1.0,68.0,,360.0,,mssds_2023_projection_merged.csv,mumbai suburban,paints & coatings
+Mumbai Suburban,Plumbing,0.15,,0.33,False,,,7.0,,60.0,,mssds_2023_projection_merged.csv,mumbai suburban,plumbing
+Mumbai Suburban,Power,0.73,,0.83,False,42.0,1.0,34.0,153.0,270.0,,mssds_2023_projection_merged.csv,mumbai suburban,power
+Mumbai Suburban,Retail,,,0.33,True,,,,,450.0,2233.0,mssds_2023_projection_merged.csv,mumbai suburban,retail
+Mumbai Suburban,Rubber,0.13,,0.33,False,,,6.0,,240.0,,mssds_2023_projection_merged.csv,mumbai suburban,rubber
+Mumbai Suburban,Sports,13.71,,0.33,False,,,620.0,,60.0,,mssds_2023_projection_merged.csv,mumbai suburban,sports
+Mumbai Suburban,Telecom,1.02,,0.83,True,2.0,2.0,26.0,,250.0,50.0,mssds_2023_projection_merged.csv,mumbai suburban,telecom
+Mumbai Suburban,Textile,1.22,,0.33,False,,,55.0,,120.0,,mssds_2023_projection_merged.csv,mumbai suburban,textile
+Mumbai Suburban,Tourism & Hospitality,21.92,,0.83,False,12515.0,5.0,338.0,80.0,720.0,,mssds_2023_projection_merged.csv,mumbai suburban,tourism & hospitality
+Nagpur,Aerospace & Aviation,2.92,,0.5,False,,,132.0,299.0,60.0,,mssds_2023_projection_merged.csv,nagpur,aerospace & aviation
+Nagpur,Agriculture,5.55,7.19,1.0,True,37.0,4.0,499.0,1290.0,140.0,100.0,mssds_2023_projection_merged.csv,nagpur,agriculture
+Nagpur,Apparel,1.24,,0.83,False,1.0,1.0,107.0,1070.0,300.0,,mssds_2023_projection_merged.csv,nagpur,apparel
+Nagpur,Automotive,8.26,,0.83,False,2694.0,6.0,269.0,50.0,80.0,,mssds_2023_projection_merged.csv,nagpur,automotive
+Nagpur,Beauty & Wellness,5.1,,0.67,False,,1.0,342.0,479.0,160.0,,mssds_2023_projection_merged.csv,nagpur,beauty & wellness
+Nagpur,BFSI,11.56,,0.5,False,3207.0,10.0,393.0,,,,mssds_2023_projection_merged.csv,nagpur,bfsi
+Nagpur,Capital Goods,0.53,,0.83,False,27.0,1.0,11.0,190.0,160.0,,mssds_2023_projection_merged.csv,nagpur,capital goods
+Nagpur,Construction,1.71,,0.83,True,25.0,1.0,163.0,,160.0,270.0,mssds_2023_projection_merged.csv,nagpur,construction
+Nagpur,Domestic Workers,0.69,,0.5,False,,,31.0,150.0,60.0,,mssds_2023_projection_merged.csv,nagpur,domestic workers
+Nagpur,Electronics,6.57,18.4,1.0,True,168.0,4.0,607.0,399.0,220.0,90.0,mssds_2023_projection_merged.csv,nagpur,electronics
+Nagpur,Food Processing,1.89,,0.83,False,23.0,2.0,134.0,150.0,120.0,,mssds_2023_projection_merged.csv,nagpur,food processing
+Nagpur,Gem & Jewellery,0.38,,0.33,False,,,17.0,685.0,,,mssds_2023_projection_merged.csv,nagpur,gem & jewellery
+Nagpur,Green Jobs,1.24,0.0,0.67,True,,,56.0,200.0,80.0,0.0,mssds_2023_projection_merged.csv,nagpur,green jobs
+Nagpur,Instrumentation,,,0.17,False,,,,3875.0,,,mssds_2023_projection_merged.csv,nagpur,instrumentation
+Nagpur,Iron & Steel,2.3,,0.5,False,850.0,2.0,40.0,,,,mssds_2023_projection_merged.csv,nagpur,iron & steel
+Nagpur,IT/ITeS,17.45,0.0,1.0,True,5551.0,7.0,895.0,400.0,180.0,0.0,mssds_2023_projection_merged.csv,nagpur,it/ites
+Nagpur,Life Science,1.77,,0.5,False,,,80.0,60.0,60.0,,mssds_2023_projection_merged.csv,nagpur,life science
+Nagpur,Logistics,0.66,,0.83,False,125.0,1.0,10.0,0.0,180.0,,mssds_2023_projection_merged.csv,nagpur,logistics
+Nagpur,Management,4.61,,0.83,False,222.0,5.0,291.0,330.0,120.0,,mssds_2023_projection_merged.csv,nagpur,management
+Nagpur,Media & Entertainment,7.94,,0.5,False,,,359.0,2810.0,250.0,,mssds_2023_projection_merged.csv,nagpur,media & entertainment
+Nagpur,Power,2.9,,0.5,False,,,131.0,260.0,100.0,,mssds_2023_projection_merged.csv,nagpur,power
+Nagpur,Telecom,0.62,0.0,0.67,True,,,28.0,530.0,120.0,0.0,mssds_2023_projection_merged.csv,nagpur,telecom
+Nanded,Agriculture,6.05,,0.83,True,98.0,9.0,288.0,,600.0,3391.0,mssds_2023_projection_merged.csv,nanded,agriculture
+Nanded,Apparel,5.35,,0.83,False,20.0,3.0,529.0,561.0,840.0,,mssds_2023_projection_merged.csv,nanded,apparel
+Nanded,Automotive,1.77,,0.5,False,,1.0,84.0,,120.0,,mssds_2023_projection_merged.csv,nanded,automotive
+Nanded,Beauty & Wellness,8.96,,0.67,False,673.0,,748.0,30.0,120.0,,mssds_2023_projection_merged.csv,nanded,beauty & wellness
+Nanded,BFSI,8.54,,0.5,False,296.0,10.0,521.0,,,,mssds_2023_projection_merged.csv,nanded,bfsi
+Nanded,Capital Goods,9.8,,0.83,False,529.0,21.0,60.0,510.0,240.0,,mssds_2023_projection_merged.csv,nanded,capital goods
+Nanded,Construction,4.71,,0.83,True,45.0,9.0,124.0,,120.0,3220.0,mssds_2023_projection_merged.csv,nanded,construction
+Nanded,Electronics,23.21,0.0,1.0,True,127.0,11.0,2393.0,810.0,810.0,0.0,mssds_2023_projection_merged.csv,nanded,electronics
+Nanded,Food Processing,4.72,,0.67,False,50.0,10.0,71.0,,240.0,,mssds_2023_projection_merged.csv,nanded,food processing
+Nanded,Infrastructure,1.57,,0.5,False,162.0,3.0,15.0,,,,mssds_2023_projection_merged.csv,nanded,infrastructure
+Nanded,Logistics,8.29,,0.67,False,,12.0,7.0,54.0,240.0,,mssds_2023_projection_merged.csv,nanded,logistics
+Nanded,Media & Entertainment,7.72,,0.67,False,6.0,8.0,572.0,,120.0,,mssds_2023_projection_merged.csv,nanded,media & entertainment
+Nanded,Plumbing,0.2,,0.5,False,,,9.0,90.0,150.0,,mssds_2023_projection_merged.csv,nanded,plumbing
+Nanded,Power,1.84,,0.83,False,30.0,3.0,73.0,30.0,360.0,,mssds_2023_projection_merged.csv,nanded,power
+Nanded,Retail,,,0.33,True,,,,,120.0,0.0,mssds_2023_projection_merged.csv,nanded,retail
+Nanded,Telecom,5.44,0.0,1.0,True,2.0,2.0,596.0,540.0,117.0,0.0,mssds_2023_projection_merged.csv,nanded,telecom
+Nanded,Tourism & Hospitality,9.02,,0.67,False,,2.0,593.0,600.0,390.0,,mssds_2023_projection_merged.csv,nanded,tourism & hospitality
+Nandurbar,Agriculture,8.75,66.67,1.0,True,241.0,11.0,505.0,60.0,600.0,120.0,mssds_2023_projection_merged.csv,nandurbar,agriculture
+Nandurbar,Apparel,2.32,,0.83,False,1.0,1.0,247.0,210.0,240.0,,mssds_2023_projection_merged.csv,nandurbar,apparel
+Nandurbar,Automotive,1.15,,0.67,False,113.0,1.0,76.0,,420.0,,mssds_2023_projection_merged.csv,nandurbar,automotive
+Nandurbar,Beauty & Wellness,7.91,,0.67,False,,2.0,507.0,90.0,90.0,,mssds_2023_projection_merged.csv,nandurbar,beauty & wellness
+Nandurbar,Capital Goods,0.07,,0.5,False,,,3.0,120.0,180.0,,mssds_2023_projection_merged.csv,nandurbar,capital goods
+Nandurbar,Construction,1.02,,0.5,True,,,46.0,,150.0,90.0,mssds_2023_projection_merged.csv,nandurbar,construction
+Nandurbar,Electronics,6.85,0.0,0.83,True,,2.0,425.0,540.0,420.0,0.0,mssds_2023_projection_merged.csv,nandurbar,electronics
+Nandurbar,Food Processing,7.77,,0.83,False,331.0,17.0,45.0,180.0,420.0,,mssds_2023_projection_merged.csv,nandurbar,food processing
+Nandurbar,Furniture & Fittings,0.22,,0.33,False,,,10.0,,180.0,,mssds_2023_projection_merged.csv,nandurbar,furniture & fittings
+Nandurbar,Green Jobs,1.77,,0.5,True,,,80.0,,60.0,0.0,mssds_2023_projection_merged.csv,nandurbar,green jobs
+Nandurbar,Handicraft & Carpet,0.27,,0.33,False,,,12.0,,60.0,,mssds_2023_projection_merged.csv,nandurbar,handicraft & carpet
+Nandurbar,Healthcare,5.62,,0.67,False,100.0,1.0,655.0,,330.0,,mssds_2023_projection_merged.csv,nandurbar,healthcare
+Nandurbar,Iron & Steel,0.82,,0.5,False,250.0,1.0,9.0,,,,mssds_2023_projection_merged.csv,nandurbar,iron & steel
+Nandurbar,Logistics,0.04,,0.5,False,,,2.0,20.0,60.0,,mssds_2023_projection_merged.csv,nandurbar,logistics
+Nandurbar,Management,1.61,,0.67,False,58.0,2.0,92.0,,180.0,,mssds_2023_projection_merged.csv,nandurbar,management
+Nandurbar,Media & Entertainment,1.19,,0.5,False,,,54.0,60.0,120.0,,mssds_2023_projection_merged.csv,nandurbar,media & entertainment
+Nandurbar,Plumbing,0.38,,0.5,False,,,17.0,30.0,120.0,,mssds_2023_projection_merged.csv,nandurbar,plumbing
+Nandurbar,Power,0.38,,0.5,False,,,17.0,60.0,180.0,,mssds_2023_projection_merged.csv,nandurbar,power
+Nandurbar,Textile,6.8,,0.67,False,32.0,16.0,25.0,,420.0,,mssds_2023_projection_merged.csv,nandurbar,textile
+Nandurbar,Tourism & Hospitality,7.46,,0.83,False,220.0,17.0,25.0,300.0,120.0,,mssds_2023_projection_merged.csv,nandurbar,tourism & hospitality
+Nashik,Agriculture,6.99,,0.83,True,1058.0,5.0,450.0,,2850.0,200.0,mssds_2023_projection_merged.csv,nashik,agriculture
+Nashik,Apparel,2.12,,0.83,False,2.0,2.0,168.0,145.0,540.0,,mssds_2023_projection_merged.csv,nashik,apparel
+Nashik,Automotive,22.52,,0.83,False,11687.0,10.0,298.0,90.0,420.0,,mssds_2023_projection_merged.csv,nashik,automotive
+Nashik,Capital Goods,5.62,,0.83,False,1521.0,8.0,32.0,389.0,640.0,,mssds_2023_projection_merged.csv,nashik,capital goods
+Nashik,Construction,5.6,,0.5,True,,,253.0,,540.0,210.0,mssds_2023_projection_merged.csv,nashik,construction
+Nashik,Domestic Workers,0.97,,0.5,False,,,44.0,24.0,1540.0,,mssds_2023_projection_merged.csv,nashik,domestic workers
+Nashik,Electronics,7.89,42.86,1.0,True,1060.0,7.0,460.0,240.0,840.0,180.0,mssds_2023_projection_merged.csv,nashik,electronics
+Nashik,Food Processing,2.84,,0.83,False,900.0,1.0,154.0,434.0,1140.0,,mssds_2023_projection_merged.csv,nashik,food processing
+Nashik,Furniture & Fittings,0.67,,0.67,False,5.0,1.0,33.0,,790.0,,mssds_2023_projection_merged.csv,nashik,furniture & fittings
+Nashik,Green Jobs,2.46,,0.5,True,,,111.0,,520.0,0.0,mssds_2023_projection_merged.csv,nashik,green jobs
+Nashik,Handicraft & Carpet,0.55,,0.33,False,,,25.0,,1020.0,,mssds_2023_projection_merged.csv,nashik,handicraft & carpet
+Nashik,Healthcare,9.53,,0.67,False,,1.0,686.0,90.0,1230.0,,mssds_2023_projection_merged.csv,nashik,healthcare
+Nashik,Hydrocarbon,0.42,,0.5,False,,,19.0,120.0,240.0,,mssds_2023_projection_merged.csv,nashik,hydrocarbon
+Nashik,Infrastructure,0.55,,0.67,False,37.0,1.0,11.0,,240.0,,mssds_2023_projection_merged.csv,nashik,infrastructure
+Nashik,Iron & Steel,1.91,,0.5,False,264.0,3.0,41.0,,,,mssds_2023_projection_merged.csv,nashik,iron & steel
+Nashik,Leather,0.4,,0.5,False,,,18.0,30.0,240.0,,mssds_2023_projection_merged.csv,nashik,leather
+Nashik,Life Science,7.61,,0.5,False,,,344.0,40.0,210.0,,mssds_2023_projection_merged.csv,nashik,life science
+Nashik,Logistics,0.29,,0.5,False,,,13.0,20.0,480.0,,mssds_2023_projection_merged.csv,nashik,logistics
+Nashik,Management,8.16,,0.83,False,1099.0,6.0,541.0,23.0,1220.0,,mssds_2023_projection_merged.csv,nashik,management
+Nashik,Media & Entertainment,4.58,,0.5,False,,,207.0,180.0,330.0,,mssds_2023_projection_merged.csv,nashik,media & entertainment
+Nashik,Paints & Coatings,0.69,,0.67,False,50.0,1.0,27.0,,310.0,,mssds_2023_projection_merged.csv,nashik,paints & coatings
+Nashik,Plumbing,0.22,,0.5,False,,,10.0,3.0,480.0,,mssds_2023_projection_merged.csv,nashik,plumbing
+Nashik,Power,2.48,,0.5,False,,,112.0,233.0,340.0,,mssds_2023_projection_merged.csv,nashik,power
+Nashik,Retail,,,0.33,True,,,,,300.0,400.0,mssds_2023_projection_merged.csv,nashik,retail
+Nashik,Rubber,0.62,,0.67,False,133.0,1.0,3.0,,240.0,,mssds_2023_projection_merged.csv,nashik,rubber
+Nashik,Sports,5.51,,0.33,False,,,249.0,,270.0,,mssds_2023_projection_merged.csv,nashik,sports
+Nashik,Tourism & Hospitality,12.76,,0.83,False,8333.0,1.0,111.0,62.0,630.0,,mssds_2023_projection_merged.csv,nashik,tourism & hospitality
+Dharashiv,Agriculture,8.12,,0.83,True,1286.0,11.0,237.0,,540.0,196.0,mssds_2023_projection_merged.csv,dharashiv,agriculture
+Dharashiv,Apparel,3.81,,0.83,False,208.0,4.0,243.0,585.0,620.0,,mssds_2023_projection_merged.csv,dharashiv,apparel
+Dharashiv,Automotive,3.8,,0.83,False,1244.0,4.0,57.0,30.0,180.0,,mssds_2023_projection_merged.csv,dharashiv,automotive
+Dharashiv,Capital Goods,1.5,,0.67,False,61.0,3.0,24.0,,120.0,,mssds_2023_projection_merged.csv,dharashiv,capital goods
+Dharashiv,Construction,1.76,,0.83,True,43.0,3.0,61.0,,270.0,180.0,mssds_2023_projection_merged.csv,dharashiv,construction
+Dharashiv,Electronics,2.19,0.0,1.0,True,1.0,1.0,230.0,284.0,360.0,0.0,mssds_2023_projection_merged.csv,dharashiv,electronics
+Dharashiv,Food Processing,2.21,,0.83,False,298.0,4.0,21.0,60.0,270.0,,mssds_2023_projection_merged.csv,dharashiv,food processing
+Dharashiv,Healthcare,1.66,,0.67,False,10.0,1.0,160.0,,180.0,,mssds_2023_projection_merged.csv,dharashiv,healthcare
+Dharashiv,Life Science,1.28,,0.67,False,330.0,1.0,54.0,,60.0,,mssds_2023_projection_merged.csv,dharashiv,life science
+Dharashiv,Logistics,0.43,,0.83,False,7.0,1.0,2.0,145.0,180.0,,mssds_2023_projection_merged.csv,dharashiv,logistics
+Dharashiv,Management,2.03,,0.67,False,58.0,3.0,93.0,,120.0,,mssds_2023_projection_merged.csv,dharashiv,management
+Dharashiv,Media & Entertainment,1.93,,0.67,False,,1.0,97.0,450.0,270.0,,mssds_2023_projection_merged.csv,dharashiv,media & entertainment
+Dharashiv,Paints & Coatings,0.24,,0.33,False,,,11.0,,60.0,,mssds_2023_projection_merged.csv,dharashiv,paints & coatings
+Dharashiv,Telecom,0.44,0.0,0.67,True,,,20.0,150.0,120.0,0.0,mssds_2023_projection_merged.csv,dharashiv,telecom
+Dharashiv,Tourism & Hospitality,0.53,,0.5,False,,,24.0,422.0,240.0,,mssds_2023_projection_merged.csv,dharashiv,tourism & hospitality
+Parbhani,Apparel,5.47,,0.83,False,0.0,1.0,654.0,338.0,960.0,,mssds_2023_projection_merged.csv,parbhani,apparel
+Parbhani,Automotive,2.31,,0.83,False,75.0,3.0,126.0,30.0,450.0,,mssds_2023_projection_merged.csv,parbhani,automotive
+Parbhani,Beauty & Wellness,7.37,,0.83,False,667.0,2.0,727.0,180.0,330.0,,mssds_2023_projection_merged.csv,parbhani,beauty & wellness
+Parbhani,Capital Goods,2.02,,0.83,False,41.0,3.0,95.0,50.0,420.0,,mssds_2023_projection_merged.csv,parbhani,capital goods
+Parbhani,Construction,0.91,100.0,1.0,True,0.0,0.0,117.0,0.0,360.0,120.0,mssds_2023_projection_merged.csv,parbhani,construction
+Parbhani,Domestic Workers,0.41,,0.83,False,0.0,0.0,53.0,0.0,30.0,,mssds_2023_projection_merged.csv,parbhani,domestic workers
+Parbhani,Electronics,13.08,0.0,1.0,True,11.0,2.0,1582.0,655.0,780.0,0.0,mssds_2023_projection_merged.csv,parbhani,electronics
+Parbhani,Food Processing,2.73,,0.83,False,8.0,1.0,298.0,240.0,240.0,,mssds_2023_projection_merged.csv,parbhani,food processing
+Parbhani,Furniture & Fittings,1.06,,0.83,False,14.0,2.0,29.0,0.0,60.0,,mssds_2023_projection_merged.csv,parbhani,furniture & fittings
+Parbhani,Gem & Jewellery,0.61,,0.83,False,1.0,1.0,26.0,0.0,90.0,,mssds_2023_projection_merged.csv,parbhani,gem & jewellery
+Parbhani,Green Jobs,0.41,,1.0,True,0.0,0.0,53.0,0.0,30.0,0.0,mssds_2023_projection_merged.csv,parbhani,green jobs
+Parbhani,Handicraft & Carpet,0.14,,0.83,False,0.0,0.0,18.0,0.0,90.0,,mssds_2023_projection_merged.csv,parbhani,handicraft & carpet
+Parbhani,Healthcare,2.22,,0.83,False,1.0,1.0,233.0,120.0,750.0,,mssds_2023_projection_merged.csv,parbhani,healthcare
+Parbhani,Hydrocarbon,0.12,,0.83,False,0.0,0.0,15.0,0.0,60.0,,mssds_2023_projection_merged.csv,parbhani,hydrocarbon
+Parbhani,Iron & Steel,1.25,,0.83,False,276.0,2.0,7.0,0.0,60.0,,mssds_2023_projection_merged.csv,parbhani,iron & steel
+Parbhani,Leather,0.05,,0.83,False,0.0,0.0,7.0,0.0,30.0,,mssds_2023_projection_merged.csv,parbhani,leather
+Parbhani,Life Science,0.47,,0.83,False,0.0,0.0,61.0,0.0,30.0,,mssds_2023_projection_merged.csv,parbhani,life science
+Parbhani,Logistics,0.03,,0.83,False,0.0,0.0,4.0,115.0,240.0,,mssds_2023_projection_merged.csv,parbhani,logistics
+Parbhani,Management,2.36,,0.83,False,71.0,3.0,134.0,0.0,180.0,,mssds_2023_projection_merged.csv,parbhani,management
+Parbhani,Media & Entertainment,3.85,,0.83,False,0.0,1.0,444.0,450.0,270.0,,mssds_2023_projection_merged.csv,parbhani,media & entertainment
+Parbhani,Plumbing,0.14,,0.83,False,0.0,0.0,18.0,0.0,120.0,,mssds_2023_projection_merged.csv,parbhani,plumbing
+Parbhani,Power,0.29,,0.83,False,0.0,0.0,37.0,60.0,120.0,,mssds_2023_projection_merged.csv,parbhani,power
+Parbhani,Retail,0.0,,1.0,True,0.0,0.0,0.0,0.0,60.0,0.0,mssds_2023_projection_merged.csv,parbhani,retail
+Parbhani,Telecom,4.59,0.0,1.0,True,0.0,0.0,593.0,500.0,150.0,0.0,mssds_2023_projection_merged.csv,parbhani,telecom
+Parbhani,Textile,1.88,,0.83,False,645.0,2.0,22.0,0.0,120.0,,mssds_2023_projection_merged.csv,parbhani,textile
+Parbhani,Tourism & Hospitality,1.23,,0.83,False,0.0,0.0,159.0,170.0,240.0,,mssds_2023_projection_merged.csv,parbhani,tourism & hospitality
+Pune,Apparel,7.2,,0.83,False,1576.0,9.0,173.0,2870.0,210.0,,mssds_2023_projection_merged.csv,pune,apparel
+Pune,Automotive,43.88,,0.67,False,19022.0,36.0,375.0,,930.0,,mssds_2023_projection_merged.csv,pune,automotive
+Pune,Beauty & Wellness,6.2,,0.83,False,25.0,7.0,426.0,831.0,270.0,,mssds_2023_projection_merged.csv,pune,beauty & wellness
+Pune,Capital Goods,12.12,,0.83,False,2577.0,20.0,48.0,1451.0,930.0,,mssds_2023_projection_merged.csv,pune,capital goods
+Pune,Construction,3.27,,0.83,True,13.0,2.0,314.0,,270.0,169.0,mssds_2023_projection_merged.csv,pune,construction
+Pune,Domestic Workers,0.73,,0.5,False,,,33.0,738.0,150.0,,mssds_2023_projection_merged.csv,pune,domestic workers
+Pune,Electronics,15.58,17.8,1.0,True,2247.0,19.0,606.0,1561.0,960.0,338.0,mssds_2023_projection_merged.csv,pune,electronics
+Pune,Food Processing,8.46,,0.83,False,3920.0,3.0,236.0,3011.0,330.0,,mssds_2023_projection_merged.csv,pune,food processing
+Pune,Furniture & Fittings,0.67,,0.67,False,5.0,1.0,33.0,,240.0,,mssds_2023_projection_merged.csv,pune,furniture & fittings
+Pune,Gem & Jewellery,1.0,,0.33,False,,,45.0,,120.0,,mssds_2023_projection_merged.csv,pune,gem & jewellery
+Pune,Handicraft & Carpet,0.58,,0.33,False,,,26.0,,120.0,,mssds_2023_projection_merged.csv,pune,handicraft & carpet
+Pune,Healthcare,6.54,,0.67,False,402.0,3.0,614.0,,360.0,,mssds_2023_projection_merged.csv,pune,healthcare
+Pune,Hydrocarbon,0.46,,0.33,False,,,21.0,,120.0,,mssds_2023_projection_merged.csv,pune,hydrocarbon
+Pune,Infrastructure,0.57,,0.83,False,37.0,1.0,14.0,0.0,90.0,,mssds_2023_projection_merged.csv,pune,infrastructure
+Pune,Iron & Steel,5.18,,0.83,False,1260.0,7.0,74.0,0.0,210.0,,mssds_2023_projection_merged.csv,pune,iron & steel
+Pune,Life Science,31.22,,0.5,False,20444.0,4.0,180.0,,,,mssds_2023_projection_merged.csv,pune,life science
+Pune,Logistics,4.18,,0.83,False,1278.0,5.0,48.0,395.0,360.0,,mssds_2023_projection_merged.csv,pune,logistics
+Pune,Management,9.61,,0.67,False,800.0,12.0,463.0,,300.0,,mssds_2023_projection_merged.csv,pune,management
+Pune,Media & Entertainment,2.0,,0.83,False,4.0,1.0,205.0,1500.0,720.0,,mssds_2023_projection_merged.csv,pune,media & entertainment
+Pune,Mining,0.67,,0.5,False,160.0,1.0,5.0,,,,mssds_2023_projection_merged.csv,pune,mining
+Pune,Paints & Coatings,0.65,,0.5,False,110.0,1.0,12.0,,,,mssds_2023_projection_merged.csv,pune,paints & coatings
+Pune,Plumbing,0.04,,0.33,False,,,2.0,,120.0,,mssds_2023_projection_merged.csv,pune,plumbing
+Pune,Power,24.81,,0.67,False,17005.0,2.0,70.0,,600.0,,mssds_2023_projection_merged.csv,pune,power
+Pune,Retail,,,0.33,True,,,,,210.0,113.0,mssds_2023_projection_merged.csv,pune,retail
+Pune,Rubber,0.92,,0.83,False,350.0,1.0,3.0,60.0,540.0,,mssds_2023_projection_merged.csv,pune,rubber
+Pune,Telecom,1.0,0.0,0.67,True,,,45.0,660.0,390.0,0.0,mssds_2023_projection_merged.csv,pune,telecom
+Pune,Textile,2.79,,0.5,False,1500.0,1.0,40.0,,,,mssds_2023_projection_merged.csv,pune,textile
+Pune,Tourism & Hospitality,37.68,,0.83,False,24526.0,7.0,129.0,52.0,510.0,,mssds_2023_projection_merged.csv,pune,tourism & hospitality
+Raigad,Agriculture,1.32,,0.83,True,28.0,2.0,60.0,,570.0,256.0,mssds_2023_projection_merged.csv,raigad,agriculture
+Raigad,Apparel,1.09,,0.83,False,2.0,1.0,87.0,527.0,270.0,,mssds_2023_projection_merged.csv,raigad,apparel
+Raigad,Automotive,4.11,,0.67,False,2449.0,1.0,42.0,,480.0,,mssds_2023_projection_merged.csv,raigad,automotive
+Raigad,Capital Goods,1.94,,0.83,False,166.0,4.0,9.0,360.0,390.0,,mssds_2023_projection_merged.csv,raigad,capital goods
+Raigad,Electronics,2.52,0.0,1.0,True,4.0,3.0,166.0,510.0,330.0,0.0,mssds_2023_projection_merged.csv,raigad,electronics
+Raigad,Green Jobs,0.46,0.0,0.67,True,,,21.0,111.0,630.0,0.0,mssds_2023_projection_merged.csv,raigad,green jobs
+Raigad,Healthcare,2.28,,0.67,False,16.0,3.0,133.0,,450.0,,mssds_2023_projection_merged.csv,raigad,healthcare
+Raigad,Iron & Steel,1.69,,0.67,False,251.0,2.0,68.0,,90.0,,mssds_2023_projection_merged.csv,raigad,iron & steel
+Raigad,Logistics,4.07,,0.83,False,508.0,6.0,118.0,105.0,630.0,,mssds_2023_projection_merged.csv,raigad,logistics
+Raigad,Plumbing,1.24,,0.67,False,161.0,2.0,25.0,,120.0,,mssds_2023_projection_merged.csv,raigad,plumbing
+Raigad,Power,1.16,,0.83,False,140.0,2.0,19.0,22.0,120.0,,mssds_2023_projection_merged.csv,raigad,power
+Raigad,Telecom,0.22,,0.5,True,,,10.0,,60.0,0.0,mssds_2023_projection_merged.csv,raigad,telecom
+Raigad,Textile,0.11,,0.33,False,,,5.0,,210.0,,mssds_2023_projection_merged.csv,raigad,textile
+Ratnagiri,Agriculture,2.67,38.08,1.0,True,248.0,2.0,195.0,470.0,840.0,289.0,mssds_2023_projection_merged.csv,ratnagiri,agriculture
+Ratnagiri,Apparel,3.24,,0.83,False,880.0,2.0,156.0,253.0,570.0,,mssds_2023_projection_merged.csv,ratnagiri,apparel
+Ratnagiri,Automotive,7.3,,0.83,False,2537.0,5.0,227.0,20.0,330.0,,mssds_2023_projection_merged.csv,ratnagiri,automotive
+Ratnagiri,Capital Goods,2.17,,0.67,False,644.0,3.0,7.0,,300.0,,mssds_2023_projection_merged.csv,ratnagiri,capital goods
+Ratnagiri,Construction,0.73,,0.83,True,8.0,1.0,40.0,,330.0,100.0,mssds_2023_projection_merged.csv,ratnagiri,construction
+Ratnagiri,Electronics,5.06,27.03,1.0,True,148.0,3.0,468.0,270.0,150.0,100.0,mssds_2023_projection_merged.csv,ratnagiri,electronics
+Ratnagiri,Green Jobs,0.77,,0.5,True,,,35.0,,180.0,0.0,mssds_2023_projection_merged.csv,ratnagiri,green jobs
+Ratnagiri,Healthcare,3.12,,0.5,False,,,141.0,30.0,180.0,,mssds_2023_projection_merged.csv,ratnagiri,healthcare
+Ratnagiri,Logistics,1.64,,0.33,False,,,74.0,,60.0,,mssds_2023_projection_merged.csv,ratnagiri,logistics
+Ratnagiri,Management,4.64,,0.67,False,96.0,4.0,371.0,,30.0,,mssds_2023_projection_merged.csv,ratnagiri,management
+Ratnagiri,Plumbing,0.6,,0.33,False,,,27.0,,90.0,,mssds_2023_projection_merged.csv,ratnagiri,plumbing
+Ratnagiri,Power,1.2,,0.67,False,161.0,1.0,73.0,,30.0,,mssds_2023_projection_merged.csv,ratnagiri,power
+Sangli,Agriculture,6.49,,0.83,True,37.0,3.0,673.0,,1860.0,56.0,mssds_2023_projection_merged.csv,sangli,agriculture
+Sangli,Apparel,4.11,,0.83,False,300.0,3.0,319.0,900.0,1320.0,,mssds_2023_projection_merged.csv,sangli,apparel
+Sangli,Automotive,13.21,,0.83,False,3390.0,14.0,362.0,60.0,1260.0,,mssds_2023_projection_merged.csv,sangli,automotive
+Sangli,Capital Goods,3.97,,0.83,False,534.0,7.0,47.0,88.0,900.0,,mssds_2023_projection_merged.csv,sangli,capital goods
+Sangli,Construction,8.76,,0.83,True,136.0,15.0,313.0,,960.0,168.0,mssds_2023_projection_merged.csv,sangli,construction
+Sangli,Electronics,7.43,5.46,1.0,True,10.0,1.0,905.0,970.0,1170.0,56.0,mssds_2023_projection_merged.csv,sangli,electronics
+Sangli,Green Jobs,4.22,,0.67,True,,3.0,168.0,,120.0,0.0,mssds_2023_projection_merged.csv,sangli,green jobs
+Sangli,Healthcare,16.07,,0.5,False,,4.0,1034.0,,900.0,,mssds_2023_projection_merged.csv,sangli,healthcare
+Sangli,Iron & Steel,5.1,,0.67,False,609.0,9.0,74.0,,60.0,,mssds_2023_projection_merged.csv,sangli,iron & steel
+Sangli,Logistics,0.31,,0.33,False,,,14.0,,420.0,,mssds_2023_projection_merged.csv,sangli,logistics
+Sangli,Management,8.56,,0.67,False,75.0,5.0,828.0,,240.0,,mssds_2023_projection_merged.csv,sangli,management
+Sangli,Plumbing,0.39,,0.67,False,,0.0,30.0,60.0,120.0,,mssds_2023_projection_merged.csv,sangli,plumbing
+Sangli,Power,4.0,,0.67,False,,2.0,204.0,44.0,300.0,,mssds_2023_projection_merged.csv,sangli,power
+Sangli,Retail,,,0.33,True,,,,,60.0,56.0,mssds_2023_projection_merged.csv,sangli,retail
+Sangli,Telecom,0.77,,0.5,True,,,35.0,,300.0,0.0,mssds_2023_projection_merged.csv,sangli,telecom
+Sangli,Textile,1.11,,0.67,False,200.0,1.0,55.0,,60.0,,mssds_2023_projection_merged.csv,sangli,textile
+Satara,Agriculture,11.01,52.63,1.0,True,475.0,13.0,649.0,180.0,1260.0,200.0,mssds_2023_projection_merged.csv,satara,agriculture
+Satara,Apparel,9.01,,0.83,False,155.0,4.0,924.0,390.0,240.0,,mssds_2023_projection_merged.csv,satara,apparel
+Satara,Automotive,27.15,,0.83,False,9098.0,21.0,775.0,180.0,510.0,,mssds_2023_projection_merged.csv,satara,automotive
+Satara,Capital Goods,17.54,,0.83,False,3414.0,28.0,175.0,190.0,2850.0,,mssds_2023_projection_merged.csv,satara,capital goods
+Satara,Construction,6.85,,0.83,True,296.0,13.0,144.0,,60.0,169.0,mssds_2023_projection_merged.csv,satara,construction
+Satara,Electronics,9.24,17.51,1.0,True,291.0,8.0,718.0,179.0,390.0,38.0,mssds_2023_projection_merged.csv,satara,electronics
+Satara,Green Jobs,1.85,,0.67,True,70.0,2.0,121.0,,,0.0,mssds_2023_projection_merged.csv,satara,green jobs
+Satara,Healthcare,6.01,,0.67,False,200.0,1.0,688.0,,330.0,,mssds_2023_projection_merged.csv,satara,healthcare
+Satara,Iron & Steel,10.82,,0.67,False,2533.0,17.0,47.0,,30.0,,mssds_2023_projection_merged.csv,satara,iron & steel
+Satara,Logistics,1.92,,0.67,False,65.0,4.0,25.0,,210.0,,mssds_2023_projection_merged.csv,satara,logistics
+Satara,Management,15.46,,0.83,False,725.0,26.0,491.0,30.0,60.0,,mssds_2023_projection_merged.csv,satara,management
+Satara,Metal Products,,,0.17,False,,,,,480.0,,mssds_2023_projection_merged.csv,satara,metal products
+Satara,Plumbing,0.4,,0.5,False,,,18.0,30.0,60.0,,mssds_2023_projection_merged.csv,satara,plumbing
+Satara,Power,6.7,,0.5,False,,,303.0,270.0,300.0,,mssds_2023_projection_merged.csv,satara,power
+Satara,Retail,,,0.33,True,,,,,60.0,38.0,mssds_2023_projection_merged.csv,satara,retail
+Satara,Rubber,2.27,,0.83,False,395.0,4.0,11.0,11.0,30.0,,mssds_2023_projection_merged.csv,satara,rubber
+Satara,Telecom,0.71,0.0,0.67,True,,,32.0,240.0,300.0,0.0,mssds_2023_projection_merged.csv,satara,telecom
+Satara,Textile,7.61,,0.67,False,5000.0,1.0,40.0,,1440.0,,mssds_2023_projection_merged.csv,satara,textile
+Sindhudurg,Agriculture,2.79,66.67,1.0,True,69.0,5.0,83.0,60.0,870.0,120.0,mssds_2023_projection_merged.csv,sindhudurg,agriculture
+Sindhudurg,Apparel,0.8,,0.5,False,,,36.0,60.0,390.0,,mssds_2023_projection_merged.csv,sindhudurg,apparel
+Sindhudurg,Automotive,7.75,,0.67,False,2596.0,8.0,115.0,,660.0,,mssds_2023_projection_merged.csv,sindhudurg,automotive
+Sindhudurg,Construction,0.69,,0.83,True,100.0,1.0,18.0,,300.0,120.0,mssds_2023_projection_merged.csv,sindhudurg,construction
+Sindhudurg,Electronics,3.21,0.0,1.0,True,82.0,5.0,135.0,60.0,330.0,0.0,mssds_2023_projection_merged.csv,sindhudurg,electronics
+Sindhudurg,Green Jobs,0.58,,0.5,True,,,26.0,,60.0,0.0,mssds_2023_projection_merged.csv,sindhudurg,green jobs
+Sindhudurg,Healthcare,1.07,,0.67,False,50.0,1.0,77.0,,360.0,,mssds_2023_projection_merged.csv,sindhudurg,healthcare
+Sindhudurg,Hydrocarbon,,,0.17,False,,,,,120.0,,mssds_2023_projection_merged.csv,sindhudurg,hydrocarbon
+Sindhudurg,Life Science,0.99,,0.67,False,12.0,2.0,20.0,,60.0,,mssds_2023_projection_merged.csv,sindhudurg,life science
+Sindhudurg,Logistics,0.04,,0.33,False,,,2.0,,270.0,,mssds_2023_projection_merged.csv,sindhudurg,logistics
+Sindhudurg,Plumbing,0.09,,0.5,False,,,4.0,80.0,60.0,,mssds_2023_projection_merged.csv,sindhudurg,plumbing
+Sindhudurg,Retail,,,0.33,True,,,,,60.0,30.0,mssds_2023_projection_merged.csv,sindhudurg,retail
+Solapur,Agriculture,11.31,23.73,1.0,True,947.0,17.0,392.0,180.0,2340.0,56.0,mssds_2023_projection_merged.csv,solapur,agriculture
+Solapur,Apparel,2.96,,0.83,False,105.0,2.0,258.0,3951.0,1260.0,,mssds_2023_projection_merged.csv,solapur,apparel
+Solapur,Automotive,8.91,,0.83,False,2861.0,7.0,271.0,60.0,150.0,,mssds_2023_projection_merged.csv,solapur,automotive
+Solapur,Capital Goods,4.77,,0.83,False,767.0,8.0,56.0,1310.0,1140.0,,mssds_2023_projection_merged.csv,solapur,capital goods
+Solapur,Construction,10.33,,0.83,True,1848.0,15.0,211.0,,960.0,526.0,mssds_2023_projection_merged.csv,solapur,construction
+Solapur,Electronics,9.83,0.0,1.0,True,350.0,9.0,731.0,2611.0,1500.0,0.0,mssds_2023_projection_merged.csv,solapur,electronics
+Solapur,Green Jobs,1.81,0.0,0.67,True,,,82.0,30.0,120.0,0.0,mssds_2023_projection_merged.csv,solapur,green jobs
+Solapur,Healthcare,9.74,,0.67,False,1201.0,10.0,515.0,,1860.0,,mssds_2023_projection_merged.csv,solapur,healthcare
+Solapur,Logistics,0.35,,0.5,False,,,16.0,540.0,1560.0,,mssds_2023_projection_merged.csv,solapur,logistics
+Solapur,Management,5.44,,0.83,False,133.0,6.0,362.0,874.0,1080.0,,mssds_2023_projection_merged.csv,solapur,management
+Solapur,Plumbing,0.6,,0.67,False,110.0,1.0,5.0,,180.0,,mssds_2023_projection_merged.csv,solapur,plumbing
+Solapur,Power,2.06,,0.5,False,,,93.0,60.0,330.0,,mssds_2023_projection_merged.csv,solapur,power
+Solapur,Retail,,,0.33,True,,,,,300.0,38.0,mssds_2023_projection_merged.csv,solapur,retail
+Solapur,Textile,3.08,,0.67,False,228.0,6.0,39.0,,390.0,,mssds_2023_projection_merged.csv,solapur,textile
+Thane,Agriculture,2.12,,0.83,True,126.0,2.0,146.0,,360.0,133.0,mssds_2023_projection_merged.csv,thane,agriculture
+Thane,Apparel,2.73,,0.83,False,3.0,5.0,88.0,1152.0,1050.0,,mssds_2023_projection_merged.csv,thane,apparel
+Thane,Automotive,8.21,,0.83,False,2530.0,6.0,292.0,43.0,60.0,,mssds_2023_projection_merged.csv,thane,automotive
+Thane,Beauty & Wellness,4.16,,0.83,False,18.0,5.0,269.0,570.0,540.0,,mssds_2023_projection_merged.csv,thane,beauty & wellness
+Thane,BFSI,36.59,,0.67,False,16804.0,11.0,1152.0,,60.0,,mssds_2023_projection_merged.csv,thane,bfsi
+Thane,Capital Goods,18.45,,0.83,False,1339.0,39.0,80.0,360.0,1020.0,,mssds_2023_projection_merged.csv,thane,capital goods
+Thane,Construction,4.87,,0.83,True,34.0,7.0,252.0,,390.0,1445.0,mssds_2023_projection_merged.csv,thane,construction
+Thane,Domestic Workers,0.99,,0.67,False,53.0,2.0,12.0,367.0,,,mssds_2023_projection_merged.csv,thane,domestic workers
+Thane,Electronics,12.14,11.51,1.0,True,632.0,13.0,767.0,592.0,960.0,77.0,mssds_2023_projection_merged.csv,thane,electronics
+Thane,Food Processing,4.57,,0.83,False,428.0,8.0,91.0,450.0,330.0,,mssds_2023_projection_merged.csv,thane,food processing
+Thane,Furniture & Fittings,2.85,,0.67,False,155.0,6.0,23.0,,660.0,,mssds_2023_projection_merged.csv,thane,furniture & fittings
+Thane,Gem & Jewellery,0.83,,0.67,False,10.0,1.0,52.0,240.0,,,mssds_2023_projection_merged.csv,thane,gem & jewellery
+Thane,Green Jobs,0.95,,0.5,True,,,43.0,,210.0,0.0,mssds_2023_projection_merged.csv,thane,green jobs
+Thane,Handicraft & Carpet,0.46,,0.33,False,,,21.0,,300.0,,mssds_2023_projection_merged.csv,thane,handicraft & carpet
+Thane,Healthcare,11.93,,0.67,False,93.0,22.0,360.0,,2010.0,,mssds_2023_projection_merged.csv,thane,healthcare
+Thane,Iron & Steel,4.34,,0.67,False,552.0,5.0,197.0,,150.0,,mssds_2023_projection_merged.csv,thane,iron & steel
+Thane,IT/ITeS,17.85,0.0,1.0,True,84.0,18.0,1338.0,360.0,1140.0,0.0,mssds_2023_projection_merged.csv,thane,it/ites
+Thane,Logistics,5.32,,0.83,False,906.0,9.0,49.0,90.0,1580.0,,mssds_2023_projection_merged.csv,thane,logistics
+Thane,Media & Entertainment,5.1,,0.83,False,20.0,7.0,285.0,1423.0,240.0,,mssds_2023_projection_merged.csv,thane,media & entertainment
+Thane,Metal Products,,,0.17,False,,,,,810.0,,mssds_2023_projection_merged.csv,thane,metal products
+Thane,Persons with Disability,,,0.17,False,,,,,970.0,,mssds_2023_projection_merged.csv,thane,persons with disability
+Thane,Plumbing,0.24,,0.33,False,,,11.0,,730.0,,mssds_2023_projection_merged.csv,thane,plumbing
+Thane,Power,3.3,,0.5,False,,,149.0,23.0,180.0,,mssds_2023_projection_merged.csv,thane,power
+Thane,Retail,,,0.33,True,,,,,300.0,394.0,mssds_2023_projection_merged.csv,thane,retail
+Thane,Telecom,2.18,0.0,1.0,True,9.0,5.0,15.0,180.0,540.0,0.0,mssds_2023_projection_merged.csv,thane,telecom
+Thane,Textile,3.85,,0.67,False,267.0,8.0,26.0,,2450.0,,mssds_2023_projection_merged.csv,thane,textile
+Thane,Tourism & Hospitality,20.48,,0.67,False,12500.0,5.0,155.0,,360.0,,mssds_2023_projection_merged.csv,thane,tourism & hospitality
+Wardha,Agriculture,8.45,81.82,1.0,True,1374.0,13.0,158.0,20.0,860.0,90.0,mssds_2023_projection_merged.csv,wardha,agriculture
+Wardha,Apparel,2.3,,0.67,False,,1.0,125.0,419.0,820.0,,mssds_2023_projection_merged.csv,wardha,apparel
+Wardha,Automotive,7.2,,0.83,False,2643.0,7.0,89.0,172.0,450.0,,mssds_2023_projection_merged.csv,wardha,automotive
+Wardha,Beauty & Wellness,1.53,,0.5,False,,1.0,66.0,,200.0,,mssds_2023_projection_merged.csv,wardha,beauty & wellness
+Wardha,BFSI,11.25,,0.67,False,2989.0,15.0,127.0,,60.0,,mssds_2023_projection_merged.csv,wardha,bfsi
+Wardha,Capital Goods,1.79,,0.83,False,52.0,4.0,10.0,20.0,220.0,,mssds_2023_projection_merged.csv,wardha,capital goods
+Wardha,Construction,2.86,,0.83,True,58.0,6.0,41.0,,310.0,0.0,mssds_2023_projection_merged.csv,wardha,construction
+Wardha,Electronics,7.27,0.0,1.0,True,412.0,10.0,336.0,180.0,540.0,0.0,mssds_2023_projection_merged.csv,wardha,electronics
+Wardha,Food Processing,2.31,,0.83,False,41.0,5.0,27.0,30.0,235.0,,mssds_2023_projection_merged.csv,wardha,food processing
+Wardha,Green Jobs,0.42,0.0,0.67,True,,,19.0,30.0,60.0,0.0,mssds_2023_projection_merged.csv,wardha,green jobs
+Wardha,Iron & Steel,1.9,,0.67,False,282.0,3.0,37.0,,120.0,,mssds_2023_projection_merged.csv,wardha,iron & steel
+Wardha,IT/ITeS,5.69,22.66,1.0,True,13.0,3.0,574.0,256.0,740.0,75.0,mssds_2023_projection_merged.csv,wardha,it/ites
+Wardha,Life Science,2.67,,0.67,False,158.0,5.0,52.0,,60.0,,mssds_2023_projection_merged.csv,wardha,life science
+Wardha,Logistics,0.18,,0.33,False,,,8.0,,120.0,,mssds_2023_projection_merged.csv,wardha,logistics
+Wardha,Media & Entertainment,12.21,,0.5,False,,,552.0,480.0,410.0,,mssds_2023_projection_merged.csv,wardha,media & entertainment
+Wardha,Persons with Disability,,,0.17,False,,,,,80.0,,mssds_2023_projection_merged.csv,wardha,persons with disability
+Wardha,Plumbing,0.29,,0.5,False,,,13.0,70.0,100.0,,mssds_2023_projection_merged.csv,wardha,plumbing
+Wardha,Power,0.69,,0.33,False,,,31.0,,30.0,,mssds_2023_projection_merged.csv,wardha,power
+Wardha,Retail,,,0.33,True,,,,,110.0,0.0,mssds_2023_projection_merged.csv,wardha,retail
+Wardha,Textile,1.41,,0.67,False,79.0,3.0,9.0,,420.0,,mssds_2023_projection_merged.csv,wardha,textile
+Wardha,Tourism & Hospitality,0.94,,0.83,False,15.0,2.0,13.0,420.0,240.0,,mssds_2023_projection_merged.csv,wardha,tourism & hospitality
+Washim,Agriculture,4.91,90.91,1.0,True,1309.0,5.0,137.0,30.0,2730.0,300.0,mssds_2023_projection_merged.csv,washim,agriculture
+Washim,Apparel,4.51,,0.5,False,,,204.0,112.0,210.0,,mssds_2023_projection_merged.csv,washim,apparel
+Washim,Automotive,3.02,,0.83,False,1224.0,2.0,66.0,101.0,870.0,,mssds_2023_projection_merged.csv,washim,automotive
+Washim,Beauty & Wellness,2.15,,0.67,False,,1.0,114.0,90.0,150.0,,mssds_2023_projection_merged.csv,washim,beauty & wellness
+Washim,BFSI,7.68,,0.83,False,2920.0,5.0,207.0,30.0,90.0,,mssds_2023_projection_merged.csv,washim,bfsi
+Washim,Capital Goods,0.49,,0.83,False,9.0,1.0,9.0,60.0,60.0,,mssds_2023_projection_merged.csv,washim,capital goods
+Washim,Construction,0.91,,0.5,True,,,41.0,,120.0,0.0,mssds_2023_projection_merged.csv,washim,construction
+Washim,Electronics,2.35,16.67,1.0,True,29.0,2.0,192.0,300.0,780.0,60.0,mssds_2023_projection_merged.csv,washim,electronics
+Washim,Food Processing,3.58,,0.5,False,,,162.0,780.0,540.0,,mssds_2023_projection_merged.csv,washim,food processing
+Washim,Green Jobs,0.77,,0.5,True,,,35.0,,120.0,0.0,mssds_2023_projection_merged.csv,washim,green jobs
+Washim,Handicraft & Carpet,0.27,,0.33,False,,,12.0,,60.0,,mssds_2023_projection_merged.csv,washim,handicraft & carpet
+Washim,Healthcare,3.04,,0.83,False,45.0,2.0,279.0,30.0,750.0,,mssds_2023_projection_merged.csv,washim,healthcare
+Washim,Hydrocarbon,0.11,,0.33,False,,,5.0,,240.0,,mssds_2023_projection_merged.csv,washim,hydrocarbon
+Washim,IT/ITeS,2.33,,0.83,True,1.0,1.0,248.0,,240.0,0.0,mssds_2023_projection_merged.csv,washim,it/ites
+Washim,Life Science,1.79,,0.33,False,,,81.0,,60.0,,mssds_2023_projection_merged.csv,washim,life science
+Washim,Logistics,0.15,,0.33,False,,,7.0,,120.0,,mssds_2023_projection_merged.csv,washim,logistics
+Washim,Management,2.08,,0.83,False,81.0,3.0,95.0,30.0,150.0,,mssds_2023_projection_merged.csv,washim,management
+Washim,Media & Entertainment,0.93,,0.5,False,,,42.0,260.0,270.0,,mssds_2023_projection_merged.csv,washim,media & entertainment
+Washim,Plumbing,0.24,,0.33,False,,,11.0,,90.0,,mssds_2023_projection_merged.csv,washim,plumbing
+Washim,Telecom,0.51,0.0,0.67,True,,,23.0,180.0,210.0,0.0,mssds_2023_projection_merged.csv,washim,telecom
+Washim,Tourism & Hospitality,0.66,,0.5,False,,,30.0,360.0,180.0,,mssds_2023_projection_merged.csv,washim,tourism & hospitality
+Yavatmal,Agriculture,13.86,66.04,1.0,True,1407.0,14.0,798.0,180.0,1280.0,350.0,mssds_2023_projection_merged.csv,yavatmal,agriculture
+Yavatmal,Apparel,6.57,,0.5,False,,,297.0,390.0,210.0,,mssds_2023_projection_merged.csv,yavatmal,apparel
+Yavatmal,Automotive,9.62,,0.83,False,1503.0,14.0,234.0,176.0,650.0,,mssds_2023_projection_merged.csv,yavatmal,automotive
+Yavatmal,Beauty & Wellness,9.28,,0.5,False,,1.0,666.0,192.0,,,mssds_2023_projection_merged.csv,yavatmal,beauty & wellness
+Yavatmal,BFSI,15.24,,0.67,False,2941.0,12.0,810.0,,180.0,,mssds_2023_projection_merged.csv,yavatmal,bfsi
+Yavatmal,Capital Goods,2.73,,0.83,False,36.0,6.0,28.0,120.0,180.0,,mssds_2023_projection_merged.csv,yavatmal,capital goods
+Yavatmal,Construction,4.16,,0.83,True,52.0,7.0,157.0,,240.0,550.0,mssds_2023_projection_merged.csv,yavatmal,construction
+Yavatmal,Electronics,9.18,0.0,1.0,True,65.0,9.0,698.0,303.0,570.0,0.0,mssds_2023_projection_merged.csv,yavatmal,electronics
+Yavatmal,Food Processing,6.95,,0.67,False,106.0,15.0,85.0,,150.0,,mssds_2023_projection_merged.csv,yavatmal,food processing
+Yavatmal,Green Jobs,2.9,0.0,0.5,True,,,131.0,120.0,,0.0,mssds_2023_projection_merged.csv,yavatmal,green jobs
+Yavatmal,Handicraft & Carpet,1.11,,0.5,False,,1.0,33.0,,90.0,,mssds_2023_projection_merged.csv,yavatmal,handicraft & carpet
+Yavatmal,Healthcare,7.61,,0.67,False,36.0,8.0,553.0,,1150.0,,mssds_2023_projection_merged.csv,yavatmal,healthcare
+Yavatmal,Hydrocarbon,0.44,,0.67,False,14.0,1.0,2.0,,180.0,,mssds_2023_projection_merged.csv,yavatmal,hydrocarbon
+Yavatmal,Iron & Steel,2.13,,0.67,False,342.0,3.0,56.0,,60.0,,mssds_2023_projection_merged.csv,yavatmal,iron & steel
+Yavatmal,IT/ITeS,10.81,0.0,0.83,True,,1.0,785.0,178.0,270.0,0.0,mssds_2023_projection_merged.csv,yavatmal,it/ites
+Yavatmal,Logistics,0.09,,0.5,False,,,4.0,60.0,210.0,,mssds_2023_projection_merged.csv,yavatmal,logistics
+Yavatmal,Mining,2.53,,0.67,False,,3.0,37.0,120.0,180.0,,mssds_2023_projection_merged.csv,yavatmal,mining
+Yavatmal,Plumbing,0.75,,0.5,False,,,34.0,30.0,90.0,,mssds_2023_projection_merged.csv,yavatmal,plumbing
+Yavatmal,Power,2.43,,0.5,False,,,110.0,80.0,450.0,,mssds_2023_projection_merged.csv,yavatmal,power
+Yavatmal,Telecom,0.64,0.0,0.67,True,,,29.0,180.0,120.0,0.0,mssds_2023_projection_merged.csv,yavatmal,telecom
+Yavatmal,Textile,9.61,,0.67,False,180.0,22.0,45.0,,240.0,,mssds_2023_projection_merged.csv,yavatmal,textile
+Yavatmal,Tourism & Hospitality,1.88,,0.5,False,,,85.0,300.0,90.0,,mssds_2023_projection_merged.csv,yavatmal,tourism & hospitality
+Palghar,Aerospace & Aviation,2.48,,0.17,False,,,112.0,,,,mssds_2023_projection_merged.csv,palghar,aerospace & aviation
+Palghar,Agriculture,1.5,50.0,1.0,True,26.0,1.0,136.0,60.0,270.0,60.0,mssds_2023_projection_merged.csv,palghar,agriculture
+Palghar,Apparel,1.09,,0.83,False,30.0,1.0,83.0,558.0,120.0,,mssds_2023_projection_merged.csv,palghar,apparel
+Palghar,Automotive,4.61,,0.83,False,1610.0,4.0,97.0,51.0,90.0,,mssds_2023_projection_merged.csv,palghar,automotive
+Palghar,Beauty & Wellness,3.87,,0.67,False,,1.0,247.0,270.0,60.0,,mssds_2023_projection_merged.csv,palghar,beauty & wellness
+Palghar,BFSI,36.2,,0.83,False,16889.0,8.0,1245.0,178.0,120.0,,mssds_2023_projection_merged.csv,palghar,bfsi
+Palghar,Capital Goods,2.0,,0.83,False,74.0,4.0,34.0,60.0,60.0,,mssds_2023_projection_merged.csv,palghar,capital goods
+Palghar,Construction,1.18,,0.83,True,30.0,1.0,94.0,,60.0,0.0,mssds_2023_projection_merged.csv,palghar,construction
+Palghar,Electronics,6.77,0.0,0.83,True,936.0,6.0,390.0,148.0,,0.0,mssds_2023_projection_merged.csv,palghar,electronics
+Palghar,Food Processing,1.25,,0.67,False,30.0,1.0,103.0,,60.0,,mssds_2023_projection_merged.csv,palghar,food processing
+Palghar,Green Jobs,1.73,0.0,0.67,True,,,78.0,20.0,60.0,0.0,mssds_2023_projection_merged.csv,palghar,green jobs
+Palghar,Healthcare,4.88,,0.5,False,,1.0,325.0,30.0,,,mssds_2023_projection_merged.csv,palghar,healthcare
+Palghar,Iron & Steel,3.61,,0.5,False,561.0,6.0,49.0,,,,mssds_2023_projection_merged.csv,palghar,iron & steel
+Palghar,IT/ITeS,9.27,0.0,0.83,True,85.0,4.0,971.0,31.0,,0.0,mssds_2023_projection_merged.csv,palghar,it/ites
+Palghar,Life Science,6.09,,0.5,False,892.0,8.0,204.0,,,,mssds_2023_projection_merged.csv,palghar,life science
+Palghar,Logistics,0.62,,0.67,False,30.0,1.0,22.0,,60.0,,mssds_2023_projection_merged.csv,palghar,logistics
+Palghar,Management,7.11,,0.5,False,411.0,7.0,475.0,,,,mssds_2023_projection_merged.csv,palghar,management
+Palghar,Media & Entertainment,7.17,,0.5,False,,,324.0,270.0,90.0,,mssds_2023_projection_merged.csv,palghar,media & entertainment
+Palghar,Plumbing,0.2,,0.5,False,,,9.0,60.0,120.0,,mssds_2023_projection_merged.csv,palghar,plumbing
+Palghar,Power,0.67,,0.83,False,68.0,1.0,22.0,60.0,240.0,,mssds_2023_projection_merged.csv,palghar,power
+Palghar,Rubber,0.93,,0.67,False,35.0,2.0,8.0,48.0,,,mssds_2023_projection_merged.csv,palghar,rubber
+Palghar,Telecom,0.35,0.0,0.5,True,,,16.0,60.0,,0.0,mssds_2023_projection_merged.csv,palghar,telecom
+Palghar,Textile,5.72,,0.5,False,2500.0,5.0,29.0,,,,mssds_2023_projection_merged.csv,palghar,textile
+Palghar,Tourism & Hospitality,1.34,,0.67,False,7.0,1.0,119.0,60.0,,,mssds_2023_projection_merged.csv,palghar,tourism & hospitality
