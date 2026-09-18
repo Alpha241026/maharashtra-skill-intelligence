@@ -1,0 +1,21 @@
+{
+  "number_of_source_records_processed": 5934,
+  "number_of_normalized_trades": 108,
+  "number_of_districts": 36,
+  "number_of_sectors": 38,
+  "number_of_demand_signals": 17,
+  "number_of_matched_ncs_demand_signals": 0,
+  "number_of_ambiguous_ncs_demand_signals": 0,
+  "number_of_unmatched_ncs_demand_signals": 17,
+  "number_of_mssds_intelligence_records": 760,
+  "number_of_supply_records": 1268,
+  "number_of_supply_demand_comparisons": 1268,
+  "number_of_high_gap_cases": 1222,
+  "number_of_moderate_gap_cases": 31,
+  "number_of_balanced_cases": 11,
+  "number_of_oversupply_cases": 4,
+  "number_of_government_recommendations": 1268,
+  "unmatched_insufficient_data_counts": 1268,
+  "supply_demand_status": "insufficient_trade_level_demand_data",
+  "demand_data_source_note": "NCS Job Listings Snapshot is treated strictly as a supporting demand signal/snapshot, not total labour-market demand."
+}
