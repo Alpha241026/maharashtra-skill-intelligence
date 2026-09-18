@@ -1036,9 +1036,8 @@
       if (el.headerAuthContainer) el.headerAuthContainer.hidden = false;
       if (el.authStatus) el.authStatus.hidden = true;
 
-      var userDisplay = (payload && (payload.displayName || payload.email)) ? (payload.displayName || payload.email) : 'Planning Officer';
       if (el.headerUserEmail) {
-        el.headerUserEmail.textContent = userDisplay;
+        el.headerUserEmail.textContent = 'Vivek Sharma';
       }
       if (el.btnHeaderLogout) {
         el.btnHeaderLogout.disabled = false;

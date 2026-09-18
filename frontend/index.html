@@ -22,25 +22,7 @@
       <!-- Left: Official Emblem & Branding -->
       <div class="header-branding">
         <div class="emblem-container" aria-hidden="true">
-          <!-- State Emblem of India (Ashoka Lion Capital Stylized Silhouette) -->
-          <svg class="national-emblem-svg" viewBox="0 0 64 80" width="38" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g fill="#e8f0fe" opacity="0.95">
-              <path d="M12 70h40v4H12zM16 66h32v3H16zM20 62h24v3H20z"/>
-              <circle cx="32" cy="56" r="5" stroke="#e8f0fe" stroke-width="1.2" fill="none"/>
-              <circle cx="32" cy="56" r="1.5" fill="#e8f0fe"/>
-              <path d="M32 51v10M27 56h10M28.5 52.5l7 7M35.5 52.5l-7 7" stroke="#e8f0fe" stroke-width="0.8"/>
-              <path d="M14 55c2-3 5-4 8-3v3c-3 0-5 1-8 0zM50 55c-2-3-5-4-8-3v3c3 0 5 1 8 0z"/>
-              <path d="M28 20c-1-6 2-12 4-15 2 3 5 9 4 15 2 2 4 5 4 9 0 6-3 11-8 11s-8-5-8-11c0-4 2-7 4-9z"/>
-              <circle cx="32" cy="18" r="4.5"/>
-              <path d="M30 23h4v15h-4z"/>
-              <path d="M18 24c-1-5 1-10 3-13 1 3 3 7 2 12-2 1-4 4-4 8 0 5 2 9 6 10-3-1-6-4-7-8 0-4 0-7 0-9z"/>
-              <path d="M20 28h3v10h-3z"/>
-              <path d="M46 24c1-5-1-10-3-13-1 3-3 7-2 12 2 1 4 4 4 8 0 5-2 9-6 10 3-1 6-4 7-8 0-4 0-7 0-9z"/>
-              <path d="M41 28h3v10h-3z"/>
-              <path d="M30 6c1-2 3-2 4 0 1 2 0 4-2 4s-3-2-2-4z"/>
-              <path d="M16 76h32v2H16z"/>
-            </g>
-          </svg>
+          <img class="official-emblem-img" src="assets/brand/maharashtra-emblem-gold.png" alt="">
         </div>
 
         <div class="brand-text-block">
@@ -49,7 +31,10 @@
             <span class="status-tag" aria-label="System Release: Prototype V1">Prototype V1</span>
           </div>
           <h1 class="platform-title">Maharashtra Skill Intelligence</h1>
-          <p class="platform-subtitle">District Skill &amp; Training Intelligence Platform</p>
+          <div class="platform-subtitle-row">
+            <span class="msi-badge" title="Maharashtra Skill Intelligence">MSI</span>
+            <p class="platform-subtitle">District Skill &amp; Training Intelligence Platform</p>
+          </div>
         </div>
       </div>
 
@@ -66,7 +51,7 @@
         <div class="header-auth-section" id="header-auth-container" hidden>
           <div class="user-session-badge">
             <div class="user-info-text">
-              <span class="user-name-label" id="header-user-email">admin</span>
+              <span class="user-name-label" id="header-user-email">Vivek Sharma</span>
               <span class="user-role-label">Planning Officer</span>
             </div>
             <button type="button" class="btn-header-logout" id="btn-header-logout" title="Sign Out of Platform">Sign Out</button>
@@ -118,7 +103,10 @@
         </div>
         <span class="govt-label">Government of Maharashtra &bull; Department of Skill Development</span>
         <h1 class="platform-title-login">Maharashtra Skill Intelligence</h1>
-        <p class="platform-subtitle-login">District Skill &amp; Training Intelligence Platform</p>
+        <div class="platform-subtitle-row platform-subtitle-row-login">
+          <span class="msi-badge msi-badge-login" title="Maharashtra Skill Intelligence">MSI</span>
+          <p class="platform-subtitle-login">District Skill &amp; Training Intelligence Platform</p>
+        </div>
       </div>
 
       <!-- Institutional Login Card -->
@@ -217,10 +205,7 @@
         <div class="scope-select-wrapper">
           <label for="district-select" class="scope-select-label">Active District:</label>
           <div class="select-container-styled">
-            <svg class="location-icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
+            <img class="location-icon-svg" src="assets/icons/district.svg" alt="" aria-hidden="true">
             <select id="district-select" class="scope-select-input" name="district" aria-label="Select Maharashtra District">
               <option value="Pune" selected>Pune (Baseline Pilot — Live MSSDS Data)</option>
             </select>
@@ -279,7 +264,7 @@
         <!-- Metric 1: Projected Training Demand -->
         <article class="snapshot-metric-card" id="card-metric-demand">
           <div class="metric-head">
-            <span class="metric-label">Projected Training Demand</span>
+            <span class="metric-label metric-label-with-icon"><img class="metric-icon" src="assets/icons/demand.svg" alt="" aria-hidden="true">Projected Training Demand</span>
             <span class="metric-status-tag tag-model" id="kpi-demand-trend">MSSDS ML</span>
           </div>
           <div class="metric-value-wrap">
@@ -293,7 +278,7 @@
         <!-- Metric 2: Sanctioned ITI Supply -->
         <article class="snapshot-metric-card" id="card-metric-iti">
           <div class="metric-head">
-            <span class="metric-label">ITI Training Supply</span>
+            <span class="metric-label metric-label-with-icon"><img class="metric-icon" src="assets/icons/training.svg" alt="" aria-hidden="true">ITI Training Supply</span>
             <span class="metric-status-tag tag-verified" id="kpi-iti-tag">DVET Intake</span>
           </div>
           <div class="metric-value-wrap">
@@ -307,7 +292,7 @@
         <!-- Metric 3: Validated Sectors -->
         <article class="snapshot-metric-card" id="card-metric-sectors">
           <div class="metric-head">
-            <span class="metric-label">Validated Sectors</span>
+            <span class="metric-label metric-label-with-icon"><img class="metric-icon" src="assets/icons/sectors.svg" alt="" aria-hidden="true">Validated Sectors</span>
             <span class="metric-status-tag tag-active" id="kpi-sectors-tag">Calibrated</span>
           </div>
           <div class="metric-value-wrap">
@@ -323,7 +308,7 @@
         <!-- Metric 4: Mean Data / Model Confidence -->
         <article class="snapshot-metric-card" id="card-metric-confidence">
           <div class="metric-head">
-            <span class="metric-label">Data Confidence</span>
+            <span class="metric-label metric-label-with-icon"><img class="metric-icon" src="assets/icons/confidence.svg" alt="" aria-hidden="true">Data Confidence</span>
             <span class="metric-status-tag tag-confidence" id="kpi-confidence-badge">Empirical</span>
           </div>
           <div class="metric-value-wrap">
@@ -353,9 +338,12 @@
         <section class="analytical-panel demand-intelligence-panel" aria-labelledby="heading-demand-panel">
           
           <div class="panel-header-bar">
-            <div class="panel-header-titles">
+            <div class="panel-header-titles panel-title-with-icon">
+              <img class="panel-context-icon" src="assets/icons/demand.svg" alt="" aria-hidden="true">
+              <div>
               <h3 id="heading-demand-panel" class="panel-title-primary">Projected Vocational Training Demand by Sector</h3>
               <p class="panel-subtitle-text">Projected training requirement across sectors derived from MSSDS econometric indicators</p>
+              </div>
             </div>
             <!-- Sector Filter Buttons -->
             <div class="filter-chip-group" role="group" aria-label="Filter sectors by demand band">
@@ -392,9 +380,12 @@
         <section class="analytical-panel iti-capacity-panel" aria-labelledby="heading-iti-matrix">
           
           <div class="panel-header-bar">
-            <div class="panel-header-titles">
+            <div class="panel-header-titles panel-title-with-icon">
+              <img class="panel-context-icon" src="assets/icons/training.svg" alt="" aria-hidden="true">
+              <div>
               <h3 id="heading-iti-matrix" class="panel-title-primary">ITI Trade-wise Capacity &amp; Utilization</h3>
               <p class="panel-subtitle-text">Sanctioned seats across Craftsmen Training Scheme (CTS) trades</p>
+              </div>
             </div>
             <span class="provenance-tag">DVET 2026&ndash;27</span>
           </div>
@@ -441,9 +432,12 @@
 
       <section class="analytical-panel economic-context-panel">
         <div class="panel-header-bar">
-          <div class="panel-header-titles">
+          <div class="panel-header-titles panel-title-with-icon">
+            <img class="panel-context-icon" src="assets/icons/industry.svg" alt="" aria-hidden="true">
+            <div>
             <h3 class="panel-title-primary">Verified Sector Demand Drivers &amp; Pipeline Indicators</h3>
             <p class="panel-subtitle-text">Empirical sector evidence from Maharashtra State Skill Development Society (MSSDS) intelligence model</p>
+            </div>
           </div>
           <span class="provenance-tag">MSSDS Verified Baseline</span>
         </div>
@@ -481,9 +475,7 @@
           <div class="directive-content-body">
             <div class="directive-lead-box">
               <div class="directive-icon-circle" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                </svg>
+                <img src="assets/icons/directive.svg" alt="" aria-hidden="true">
               </div>
               <div class="directive-statement">
                 <span class="directive-lead-label">Prescribed Strategic Intervention:</span>
@@ -515,9 +507,12 @@
         <!-- RIGHT: GROUNDED SKILL INTELLIGENCE ASSISTANT (ANALYSE FURTHER) -->
         <article class="analytical-panel assistant-investigation-panel" aria-labelledby="heading-assistant">
           <div class="panel-header-bar">
-            <div class="panel-header-titles">
+            <div class="panel-header-titles panel-title-with-icon">
+              <img class="panel-context-icon" src="assets/icons/assistant.svg" alt="" aria-hidden="true">
+              <div>
               <h3 id="heading-assistant" class="panel-title-primary">Grounded Skill Intelligence Assistant</h3>
               <p class="panel-subtitle-text">Investigate district skilling indicators via Verified Retrieval-Augmented Generation (RAG)</p>
+              </div>
             </div>
             <span class="provenance-tag tag-rag">Verified RAG</span>
           </div>
