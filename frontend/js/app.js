@@ -304,17 +304,29 @@
     state.syncStatus.demand = 'syncing';
     updateGlobalSyncStatus();
 
+    // ── Static host (GitHub Pages): skip API, use verified MSSDS baseline directly ──
+    if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
+      var staticSectors = district.toLowerCase() === 'pune'
+        ? PUNE_STATIC_DEMAND.sectors
+        : [];
+      state.demandSectors = staticSectors;
+      state.syncStatus.demand = 'synced';
+      updateGlobalSyncStatus();
+      if (staticSectors.length) {
+        renderDemand(staticSectors);
+        updateKPIs_demandSuccess(staticSectors);
+        renderSectorDrivers(staticSectors);
+      } else {
+        showDemandEmpty('Live district intelligence is only available for the Pune baseline pilot in the static deployment.');
+        updateKPIs_demandEmpty();
+        renderSectorDrivers([]);
+      }
+      reconcileDecisionDirectives();
+      return;
+    }
+
     try {
       var res = await fetch(API + '/api/demand?district=' + encodeURIComponent(district));
-
-      if (res.status === 404) {
-        state.syncStatus.demand = 'synced';
-        updateGlobalSyncStatus();
-        showDemandEmpty('No active ML projection baseline for ' + district + ' in current MSSDS dataset.');
-        updateKPIs_demandEmpty();
-        reconcileDecisionDirectives();
-        return;
-      }
 
       if (!res.ok) throw new Error('HTTP ' + res.status);
 
@@ -570,6 +582,23 @@
     state.syncStatus.iti = 'syncing';
     updateGlobalSyncStatus();
 
+    // ── Static host (GitHub Pages): skip API, use verified DVET baseline directly ──
+    if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
+      var staticData = district.toLowerCase() === 'pune' ? PUNE_STATIC_ITI : { total_intake: 0, trades: [] };
+      state.itiTrades      = staticData.trades;
+      state.itiTotalIntake = staticData.total_intake;
+      state.syncStatus.iti = 'synced';
+      updateGlobalSyncStatus();
+      if (staticData.trades.length) {
+        renderITI(staticData.trades, staticData.total_intake);
+        updateKPIs_itiSuccess(staticData.trades, staticData.total_intake);
+      } else {
+        showITIEmpty('Live ITI data is only available for the Pune baseline pilot in the static deployment.');
+        updateKPIs_itiEmpty();
+      }
+      return;
+    }
+
     try {
       var res = await fetch(API + '/api/iti/supply?district=' + encodeURIComponent(district));
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -802,6 +831,21 @@
   async function queryChat(question) {
     if (!el.assistantBox) return;
 
+    // ── Static host (GitHub Pages): chatbot backend not available ──
+    if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
+      el.assistantBox.innerHTML =
+        '<div class="assistant-answer-block">'
+        + '<span class="assistant-badge">Static Deployment • ' + esc(state.activeDistrict || 'Pune') + '</span>'
+        + '<p class="assistant-lead-text">The Grounded Skill Intelligence Assistant requires the FastAPI backend, which is not available in the GitHub Pages static deployment.</p>'
+        + '<p class="assistant-lead-text" style="margin-top:8px;font-size:0.8125rem;color:var(--color-text-subdued);">'
+        + 'The Pune district shows <strong>4 calibrated sectors</strong> with a total projected training demand of <strong>383 trainees</strong> '
+        + '(Construction • Electronics • Retail • Telecom). '
+        + 'High-confidence sectors: Electronics (100%), Construction (83%). '
+        + 'ITI sanctioned seat capacity: <strong>10,688 seats</strong> across 10 trades.</p>'
+        + '</div>';
+      return;
+    }
+
     el.assistantBox.innerHTML =
       '<div class="state-container state-loading" style="min-height:70px;padding:var(--space-2);">'
       + '<div class="state-spinner" style="width:18px;height:18px;"></div>'
@@ -852,6 +896,11 @@
   }
 
   function loadInitialChat(district) {
+    // Skip auto-query on static hosts — queryChat will show static panel if called manually
+    if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
+      queryChat('What are the projected training demand requirements for ' + district + '?');
+      return;
+    }
     queryChat('What are the projected training demand requirements for ' + district + '?');
   }
 
@@ -1077,36 +1126,17 @@
           return;
         }
 
-        // On static hosts (GitHub Pages), signInWithGoogle() triggers a full-page redirect.
-        // Update UI to show redirect is happening, then let the page navigate.
-        var isGHPages = window.location.hostname.endsWith('.github.io') ||
-                        window.location.hostname.endsWith('.netlify.app') ||
-                        window.location.hostname.endsWith('.vercel.app');
-
-        if (isGHPages) {
-          // Show redirect message — page will leave, no error to handle here
-          if (el.loginBtnText) el.loginBtnText.textContent = 'Redirecting to Google…';
-          if (el.btnGoogleSignIn) el.btnGoogleSignIn.disabled = true;
-          if (el.loginSubmitBtn) el.loginSubmitBtn.disabled = true;
-          if (el.authStatus) {
-            el.authStatus.hidden = false;
-            el.authStatus.className = 'auth-status-panel status-loading';
-            el.authStatus.textContent = 'Redirecting to Google Sign-In…';
-          }
-          try {
-            await window.AuthModule.signInWithGoogle();
-            // Page navigates away — code below won't run
-          } catch (err) {
-            renderAuthState('AUTH_ERROR', err.message || 'Unable to start Google Sign-In');
-          }
-        } else {
-          renderAuthState('SIGNING_IN');
-          try {
-            await window.AuthModule.signInWithGoogle();
-            // State transition to SIGNED_IN handled by onAuthStateChanged observer
-          } catch (err) {
-            renderAuthState('AUTH_ERROR', err.message || 'Unable to sign in with Google');
-          }
+        renderAuthState('SIGNING_IN');
+        if (el.authStatus) {
+          el.authStatus.hidden = false;
+          el.authStatus.className = 'auth-status-panel status-loading';
+          el.authStatus.textContent = 'Connecting to Google Authentication…';
+        }
+        try {
+          await window.AuthModule.signInWithGoogle();
+          // State transition to SIGNED_IN handled by onAuthStateChanged observer
+        } catch (err) {
+          renderAuthState('AUTH_ERROR', err.message || 'Unable to sign in with Google');
         }
       });
     }

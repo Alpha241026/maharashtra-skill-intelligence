@@ -22,7 +22,7 @@ import {
 // ============================================================================
 // FIREBASE CONFIGURATION
 // ============================================================================
-const firebaseConfig = {
+const defaultFirebaseConfig = {
   apiKey: "AIzaSyBOw8GbxDMV_gZzaeMezRcimDKdaAa4qpc",
   authDomain: "neural-os-platform.firebaseapp.com",
   projectId: "neural-os-platform",
@@ -31,6 +31,8 @@ const firebaseConfig = {
   appId: "1:669082244060:web:e678d9a32514612cf63519",
   measurementId: "G-DFFYZ5V244"
 };
+
+const firebaseConfig = (window.SIH_ENV && window.SIH_ENV.FIREBASE) || defaultFirebaseConfig;
 
 let app = null;
 let auth = null;
@@ -130,16 +132,24 @@ export async function signInWithGoogle() {
   provider.setCustomParameters({ prompt: 'select_account' });
 
   try {
-    if (isStaticHost()) {
-      // Redirect flow: browser navigates to Google, then back to this page.
-      // The result is handled by getRedirectResult() inside subscribeToAuthState().
-      await signInWithRedirect(authInstance, provider);
-      return; // Page is leaving — no return value
-    } else {
-      var result = await signInWithPopup(authInstance, provider);
-      return result.user;
-    }
+    // Attempt popup first (fast, keeps page state, works on both localhost and modern static hosts)
+    var result = await signInWithPopup(authInstance, provider);
+    return result.user;
   } catch (error) {
+    // If popup was blocked by browser or environment, fallback to redirect flow
+    if (error.code === 'auth/popup-blocked' || error.code === 'auth/cancelled-popup-request') {
+      try {
+        console.warn('[Auth] Popup blocked or cancelled, falling back to redirect flow...');
+        await signInWithRedirect(authInstance, provider);
+        return; // Page will redirect
+      } catch (redirectError) {
+        var msg = mapAuthError(redirectError.code);
+        var err = new Error(msg);
+        err.code = redirectError.code;
+        throw err;
+      }
+    }
+
     console.error('[Auth] Google sign-in error:', error.code, error.message);
     var friendlyMessage = mapAuthError(error.code);
     var mappedError = new Error(friendlyMessage);
