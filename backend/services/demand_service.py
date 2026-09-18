@@ -1,35 +1,70 @@
-# import HTTPException class to return HTTP errors when the requested district is unavailable
+import os
+
+import psycopg
 from fastapi import HTTPException
 
 
-# temporary service function that provides district demand data
-# this will later be replaced with PostgreSQL data and ProjectedTrainingIntelligence processing
 def get_demand_by_district(district: str):
-    # check whether the requested district matches the temporary Pune data
-    if district.lower() == "pune":
+    db_config = {
+        "dbname": "maharashtra_skill_intelligence",
+        "user": "postgres",
+        "password": os.getenv("PGPASSWORD"),
+        "host": "localhost",
+        "port": 5432,
+    }
 
-        # return temporary data using the same structure defined in the API contract
-        return {
-            "district": "Pune",
-            "sectors": [
-                {
-                    # sector name
-                    "sector": "Construction",
+    query = """
+        SELECT
+            d.name AS district,
+            s.name AS sector,
+            dsi.projected_training,
+            dsi.evidence_confidence
+        FROM district_sector_intelligence dsi
+        JOIN districts d
+            ON dsi.district_id = d.id
+        JOIN sectors s
+            ON dsi.sector_id = s.id
+        WHERE LOWER(d.name) = LOWER(%s)
+        ORDER BY s.name
+    """
 
-                    # temporary ML-derived value from the current API contract example
-                    "projected_training": 179.87,
+    with psycopg.connect(**db_config) as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(query, (district.strip(),))
+            rows = cursor.fetchall()
 
-                    # current model classification for the projected training value
-                    "demand_band": "Moderate",
+    if not rows:
+        raise HTTPException(
+            status_code=404,
+            detail="District not found",
+        )
 
-                    # evidence/confidence value associated with the district-sector record
-                    "evidence_confidence": 0.83
-                }
-            ]
-        }
+    sectors = []
 
-    # raise HTTP 404 when the requested district is not available
-    raise HTTPException(
-        status_code=404,
-        detail="District not found"
-    )
+    for row in rows:
+        _, sector, projected_training, evidence_confidence = row
+
+        # skip sectors where a projected training value is not available
+        if projected_training is None:
+            continue
+
+        if projected_training >= 300:
+            demand_band = "High"
+        elif projected_training >= 100:
+            demand_band = "Moderate"
+        else:
+            demand_band = "Low"
+
+        sectors.append(
+            {
+                "sector": sector,
+                "projected_training": float(projected_training),
+                "demand_band": demand_band,
+                "evidence_confidence": float(evidence_confidence),
+            }
+        )
+
+    return {
+        "district": rows[0][0],
+        "sectors": sectors,
+    }
