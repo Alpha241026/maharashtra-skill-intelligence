@@ -12,6 +12,8 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged
@@ -19,12 +21,6 @@ import {
 
 // ============================================================================
 // FIREBASE CONFIGURATION
-// ============================================================================
-// Paste your Firebase web app configuration from Firebase Console below.
-// Location in Console: Project Settings -> General -> Your apps -> Web app (</>)
-//
-// NOTE: Firebase Web config keys identify your Firebase project in Google Cloud.
-// Never place server secrets, service-account keys, or Admin credentials here.
 // ============================================================================
 const firebaseConfig = {
   apiKey: "AIzaSyBOw8GbxDMV_gZzaeMezRcimDKdaAa4qpc",
@@ -40,12 +36,25 @@ let app = null;
 let auth = null;
 
 /**
+ * Returns true when running on a static host where popup auth fails.
+ * GitHub Pages, Netlify, Vercel all require redirect flow for Google Sign-In.
+ */
+function isStaticHost() {
+  var host = window.location.hostname;
+  return (
+    host.endsWith('.github.io') ||
+    host.endsWith('.netlify.app') ||
+    host.endsWith('.vercel.app') ||
+    host.endsWith('.pages.dev')
+  );
+}
+
+/**
  * Initializes the Firebase App and Auth service.
  * Safe to call multiple times; returns existing auth instance if already initialized.
  */
 export function initializeAuth() {
   if (!auth) {
-    // initialize firebase app with project configuration
     app = initializeApp(firebaseConfig);
     auth = getAuth(app);
   }
@@ -54,16 +63,28 @@ export function initializeAuth() {
 
 /**
  * Subscribes to Firebase authentication state changes.
- * Invokes callback immediately with initial state once determined.
- * 
+ * Also resolves any pending Google Sign-In redirect result.
+ *
  * @param {function(user: object|null)} callback
  * @returns {function()} unsubscribe function
  */
 export function subscribeToAuthState(callback) {
-  const authInstance = initializeAuth();
-  return onAuthStateChanged(authInstance, (user) => {
+  var authInstance = initializeAuth();
+
+  // Resolve Google redirect sign-in result (fires after page reload)
+  getRedirectResult(authInstance)
+    .then(function(result) {
+      if (result && result.user) {
+        console.log('[Auth] Google redirect sign-in resolved:', result.user.email);
+      }
+    })
+    .catch(function(error) {
+      console.warn('[Auth] Redirect result error:', error.code, error.message);
+    });
+
+  return onAuthStateChanged(authInstance, function(user) {
     callback(user);
-  }, (error) => {
+  }, function(error) {
     console.error('[Auth] State observer error:', error);
     callback(null);
   });
@@ -71,20 +92,20 @@ export function subscribeToAuthState(callback) {
 
 /**
  * Signs in user with email and password.
- * Maps raw Firebase error codes to user-friendly messages.
  *
  * @param {string} email
  * @param {string} password
- * @returns {Promise<object>} Firebase user credential
+ * @returns {Promise<object>} Firebase user
  */
 export async function signIn(email, password) {
-  const authInstance = initializeAuth();
+  var authInstance = initializeAuth();
   try {
-    const userCredential = await signInWithEmailAndPassword(authInstance, email.trim(), password);
+    var userCredential = await signInWithEmailAndPassword(authInstance, email.trim(), password);
     return userCredential.user;
   } catch (error) {
-    const friendlyMessage = mapAuthError(error.code);
-    const mappedError = new Error(friendlyMessage);
+    console.error('[Auth] Email sign-in error:', error.code, error.message);
+    var friendlyMessage = mapAuthError(error.code);
+    var mappedError = new Error(friendlyMessage);
     mappedError.code = error.code;
     throw mappedError;
   }
@@ -92,60 +113,73 @@ export async function signIn(email, password) {
 
 /**
  * Signs out the currently authenticated user.
- *
- * @returns {Promise<void>}
  */
 export async function signOutUser() {
-  const authInstance = initializeAuth();
+  var authInstance = initializeAuth();
   await signOut(authInstance);
 }
 
 /**
- * Converts Firebase error codes to simple, user-facing error text.
- * Avoids leaking raw stack traces or internal mechanics.
+ * Signs in with Google.
+ * - On GitHub Pages / static hosts: uses redirect flow (avoids popup restrictions).
+ * - On localhost / custom domains: uses popup flow for faster UX.
+ */
+export async function signInWithGoogle() {
+  var authInstance = initializeAuth();
+  var provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
+
+  try {
+    if (isStaticHost()) {
+      // Redirect flow: browser navigates to Google, then back to this page.
+      // The result is handled by getRedirectResult() inside subscribeToAuthState().
+      await signInWithRedirect(authInstance, provider);
+      return; // Page is leaving — no return value
+    } else {
+      var result = await signInWithPopup(authInstance, provider);
+      return result.user;
+    }
+  } catch (error) {
+    console.error('[Auth] Google sign-in error:', error.code, error.message);
+    var friendlyMessage = mapAuthError(error.code);
+    var mappedError = new Error(friendlyMessage);
+    mappedError.code = error.code;
+    throw mappedError;
+  }
+}
+
+/**
+ * Maps Firebase error codes to user-facing messages.
+ * The default case always shows the raw error code so you can debug.
  */
 function mapAuthError(code) {
   switch (code) {
     case 'auth/invalid-credential':
     case 'auth/user-not-found':
     case 'auth/wrong-password':
+      return 'Email or password is incorrect. Check your credentials and try again';
     case 'auth/invalid-email':
-      return 'Email or password is incorrect';
+      return 'Please enter a valid email address';
     case 'auth/user-disabled':
-      return 'This account has been disabled. Please contact an administrator';
+      return 'This account has been disabled. Contact an administrator';
     case 'auth/too-many-requests':
-      return 'Too many attempts. Please wait and try again';
+      return 'Too many failed attempts. Please wait a few minutes and try again';
     case 'auth/network-request-failed':
-      return 'Unable to reach authentication service. Check your connection';
+      return 'Network error. Check your internet connection and try again';
+    case 'auth/unauthorized-domain':
+      return 'Domain not authorized. Go to Firebase Console → Authentication → Settings → Authorized domains → Add "' + window.location.hostname + '"';
+    case 'auth/operation-not-allowed':
+      return 'Sign-in method not enabled. Go to Firebase Console → Authentication → Sign-in method and enable it';
+    case 'auth/popup-closed-by-user':
+    case 'auth/cancelled-popup-request':
+      return 'Sign-in was cancelled';
+    case 'auth/popup-blocked':
+      return 'Pop-up blocked by browser. Allow pop-ups and try again';
+    case 'auth/configuration-not-found':
+      return 'Firebase project misconfigured. Verify the project settings';
     default:
-      return 'Unable to sign in. Please try again';
-  }
-}
-
-/**
- * Signs in user using Google OAuth via Firebase popup.
- *
- * @returns {Promise<object>} Firebase user credential
- */
-export async function signInWithGoogle() {
-  const authInstance = initializeAuth();
-  const provider = new GoogleAuthProvider();
-  // Optional: prompt user to select account each time
-  provider.setCustomParameters({ prompt: 'select_account' });
-  try {
-    const result = await signInWithPopup(authInstance, provider);
-    return result.user;
-  } catch (error) {
-    if (error.code === 'auth/popup-closed-by-user') {
-      throw new Error('Google sign-in was cancelled');
-    }
-    if (error.code === 'auth/popup-blocked') {
-      throw new Error('Sign-in popup was blocked by your browser. Please allow popups');
-    }
-    const friendlyMessage = mapAuthError(error.code);
-    const mappedError = new Error(friendlyMessage);
-    mappedError.code = error.code;
-    throw mappedError;
+      // Always show the real error code for debugging
+      return 'Sign-in failed (' + (code || 'unknown') + '). Open DevTools Console for details';
   }
 }
 

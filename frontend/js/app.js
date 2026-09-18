@@ -1077,12 +1077,36 @@
           return;
         }
 
-        renderAuthState('SIGNING_IN');
-        try {
-          await window.AuthModule.signInWithGoogle();
-          // State transition to SIGNED_IN handled by onAuthStateChanged observer
-        } catch (err) {
-          renderAuthState('AUTH_ERROR', err.message || 'Unable to sign in with Google');
+        // On static hosts (GitHub Pages), signInWithGoogle() triggers a full-page redirect.
+        // Update UI to show redirect is happening, then let the page navigate.
+        var isGHPages = window.location.hostname.endsWith('.github.io') ||
+                        window.location.hostname.endsWith('.netlify.app') ||
+                        window.location.hostname.endsWith('.vercel.app');
+
+        if (isGHPages) {
+          // Show redirect message — page will leave, no error to handle here
+          if (el.loginBtnText) el.loginBtnText.textContent = 'Redirecting to Google…';
+          if (el.btnGoogleSignIn) el.btnGoogleSignIn.disabled = true;
+          if (el.loginSubmitBtn) el.loginSubmitBtn.disabled = true;
+          if (el.authStatus) {
+            el.authStatus.hidden = false;
+            el.authStatus.className = 'auth-status-panel status-loading';
+            el.authStatus.textContent = 'Redirecting to Google Sign-In…';
+          }
+          try {
+            await window.AuthModule.signInWithGoogle();
+            // Page navigates away — code below won't run
+          } catch (err) {
+            renderAuthState('AUTH_ERROR', err.message || 'Unable to start Google Sign-In');
+          }
+        } else {
+          renderAuthState('SIGNING_IN');
+          try {
+            await window.AuthModule.signInWithGoogle();
+            // State transition to SIGNED_IN handled by onAuthStateChanged observer
+          } catch (err) {
+            renderAuthState('AUTH_ERROR', err.message || 'Unable to sign in with Google');
+          }
         }
       });
     }
