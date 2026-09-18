@@ -1,0 +1,77 @@
+================================================================================
+COEP CSE CURRICULUM DATA ENGINEERING - QUALITY AUDIT REPORT
+================================================================================
+Source PDF        : data\raw\curriculum\COEP_Combined_CSE_Computer_Engineering_Curriculum.pdf
+Course Inventory  : data\processed\curriculum\coep_cse_course_inventory.csv
+Course Topics     : data\processed\curriculum\coep_cse_course_topics.csv
+Skill Inventory   : data\processed\curriculum\coep_cse_skill_inventory.csv
+
+--------------------------------------------------------------------------------
+1. AUDIT METRICS & INTEGRITY CHECKS
+--------------------------------------------------------------------------------
+[PASS] pdf_page_count                 = 205        | Total pages in source combined PDF
+[PASS] course_record_count            = 73         | Total course entries in curriculum inventory
+[PASS] unique_course_codes            = 73         | Distinct official course codes identified
+[PASS] courses_without_codes          = 0          | Electives/internships with TBD codes
+[PASS] topic_record_count             = 4914       | Granular unit-level syllabus topics extracted
+[PASS] skill_record_count             = 436        | Skill-to-course mapping instances
+[PASS] unique_normalized_skills       = 230        | Distinct technical concepts in curriculum
+[PASS] skills_without_provenance      = 0          | Skills lacking topic/page traceability (must be 0)
+[PASS] duplicate_course_records       = 0          | Duplicate rows in course inventory
+[PASS] duplicate_topic_records        = 0          | Duplicate rows in topic dataset
+[PASS] duplicate_skill_records        = 0          | Duplicate skill mentions per course
+[PASS] records_needing_review         = 0          | Concepts marked needs_review
+[PASS] extraction_status              = PASSED     | End-to-end curriculum pipeline integrity
+
+--------------------------------------------------------------------------------
+2. SKILL CATEGORY BREAKDOWN
+--------------------------------------------------------------------------------
+- Data Structures & Algorithms       :  112 mentions (25.69%)
+- Computer Networks & Cyber Security :   79 mentions (18.12%)
+- Database & Storage Systems         :   75 mentions (17.20%)
+- AI, Machine Learning & Vision      :   57 mentions (13.07%)
+- Systems, Architecture & OS         :   35 mentions (8.03%)
+- Software Engineering & Web         :   19 mentions (4.36%)
+- Core Computer Science              :   17 mentions (3.90%)
+- Theoretical Computer Science       :   14 mentions (3.21%)
+- Cloud & Distributed Systems        :   14 mentions (3.21%)
+- Foundational Engineering & Science :   14 mentions (3.21%)
+
+--------------------------------------------------------------------------------
+3. TOP 25 CURRICULUM SKILLS BY COURSE BREADTH (Number of Courses Covering Concept)
+--------------------------------------------------------------------------------
+ 1. Data Structures                     : covered in  8 distinct courses
+ 2. Machine Learning                    : covered in  7 distinct courses
+ 3. SQL                                 : covered in  7 distinct courses
+ 4. Stack                               : covered in  6 distinct courses
+ 5. Neural Networks                     : covered in  6 distinct courses
+ 6. Normalization                       : covered in  6 distinct courses
+ 7. File Systems                        : covered in  5 distinct courses
+ 8. Python                              : covered in  5 distinct courses
+ 9. Heap                                : covered in  5 distinct courses
+10. Space Complexity                    : covered in  5 distinct courses
+11. Arrays                              : covered in  5 distinct courses
+12. Cryptography                        : covered in  4 distinct courses
+13. DNS                                 : covered in  4 distinct courses
+14. Operating Systems                   : covered in  4 distinct courses
+15. Memory Management                   : covered in  4 distinct courses
+16. Cloud Computing                     : covered in  4 distinct courses
+17. AWS                                 : covered in  4 distinct courses
+18. Azure                               : covered in  4 distinct courses
+19. Google Cloud                        : covered in  4 distinct courses
+20. Ethical Hacking                     : covered in  4 distinct courses
+21. Linear Algebra                      : covered in  4 distinct courses
+22. Dynamic Programming                 : covered in  4 distinct courses
+23. GANs                                : covered in  4 distinct courses
+24. Transformers                        : covered in  4 distinct courses
+25. Binary Search                       : covered in  4 distinct courses
+
+--------------------------------------------------------------------------------
+4. PROVENANCE INTEGRITY VERIFICATION
+--------------------------------------------------------------------------------
+All extracted skills possess 100% complete traceability:
+1. Course Title & Course Code
+2. Academic Year, Program Level, and Semester
+3. Source Topic Sentence / Phrase verbatim from syllabus
+4. Exact Source Page Number in Combined PDF
+5. Extraction Method: explicit_topic

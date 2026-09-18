@@ -1,0 +1,437 @@
+skill,skill_category,course_code,course_title,year,semester,source_topic,source_page,extraction_method,mapping_status
+Code Optimization,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Identify different code optimization techniques for the various statements,6,explicit_topic,approved
+Finite Automata,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Revision of finite automata,6,explicit_topic,approved
+LEX Tool,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Introduction to LEX Tool an LEX file specification,6,explicit_topic,approved
+Error Detection,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Error detection and recovery in LEX,6,explicit_topic,approved
+CFG,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Context Free Grammers(CFG),6,explicit_topic,approved
+Ll(k) Parsing,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Predictive LL(k) Parsing,6,explicit_topic,approved
+Slr,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,SLR(1),6,explicit_topic,approved
+Lalr,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,and LALR(1) Grammars,6,explicit_topic,approved
+YACC,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Introduction to YACC Tool & YACC file specification,6,explicit_topic,approved
+Semantic Analysis,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Need of semantic analysis,6,explicit_topic,approved
+Symbol Tables,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Symbol Tables,6,explicit_topic,approved
+Intermediate Code Generation,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Intermediate code generation: Intermediate languages,6,explicit_topic,approved
+Stack,Data Structures & Algorithms,CT-26001,Compiler Construction,Final Year,Semester - VII,Stack and static allocation,6,explicit_topic,approved
+Compiler Construction,Theoretical Computer Science,CT-26001,Compiler Construction,Final Year,Semester - VII,Modern compiler construction tools,7,explicit_topic,approved
+Cryptography,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Cryptography,8,explicit_topic,approved
+Network Security,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Basic network security terminology,8,explicit_topic,approved
+DES,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Modern Block Ciphers: Data Encryption Standard (DES),8,explicit_topic,approved
+AES,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Advanced Encryption Standard (AES),8,explicit_topic,approved
+RSA,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,RSA,8,explicit_topic,approved
+Diffie-Hellman Key Exchange,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Diffie-Hellman Key Exchange,8,explicit_topic,approved
+Elliptic Curve Cryptography,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Elliptic Curve Cryptography,8,explicit_topic,approved
+Cryptographic Hash Functions,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Cryptographic Hash functions: Message Digest 5 (MD5),8,explicit_topic,approved
+MD5,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Cryptographic Hash functions: Message Digest 5 (MD5),8,explicit_topic,approved
+SHA,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Secure Hash algorithm (SHA),8,explicit_topic,approved
+Authentication,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Authentication Codes,8,explicit_topic,approved
+IDS,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,IDS,8,explicit_topic,approved
+Honeypot,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Honeypot,8,explicit_topic,approved
+Firewalls,Data Structures & Algorithms,CT-26002,Cryptography and Network Security,Final Year,Semester - VII,Firewalls,8,explicit_topic,approved
+DHCP,Computer Networks & Cyber Security,CT-26003-A,System Administration,Final Year,Semester - VII,Set up a LAN-based laboratory using DHCP.,10,explicit_topic,approved
+DNS,Computer Networks & Cyber Security,CT-26003-A,System Administration,Final Year,Semester - VII,DNS,10,explicit_topic,approved
+File Systems,"Systems, Architecture & OS",CT-26003-A,System Administration,Final Year,Semester - VII,Manage Linux file systems and data storage mechanisms.,10,explicit_topic,approved
+Operating Systems,"Systems, Architecture & OS",CT-26003-A,System Administration,Final Year,Semester - VII,Installation of multiple operating systems on desktops,10,explicit_topic,approved
+Process Management,"Systems, Architecture & OS",CT-26003-A,System Administration,Final Year,Semester - VII,Process management,10,explicit_topic,approved
+Network Security,Computer Networks & Cyber Security,CT-26003-A,System Administration,Final Year,Semester - VII,Network security tools- Nmap,10,explicit_topic,approved
+Authentication,Computer Networks & Cyber Security,CT-26003-A,System Administration,Final Year,Semester - VII,security tools Authentication mechanisms,10,explicit_topic,approved
+CUDA,"Systems, Architecture & OS",CT-26003-B,GPU Computing,Final Year,Semester - VII,CUDA Architecture overview,13,explicit_topic,approved
+Data Structures,Data Structures & Algorithms,CT-26003-B,GPU Computing,Final Year,Semester - VII,reduction. Programs for concurrent data structures.,13,explicit_topic,approved
+Memory Management,"Systems, Architecture & OS",CT-26003-B,GPU Computing,Final Year,Semester - VII,Memory management with pyCUDA,13,explicit_topic,approved
+IoT,Cloud & Distributed Systems,CT-26003-C,Internet of Things,Final Year,Semester - VII,IoT.,15,explicit_topic,approved
+Cloud Computing,Cloud & Distributed Systems,CT-26003-C,Internet of Things,Final Year,Semester - VII,Cloud computing,15,explicit_topic,approved
+Embedded Systems,Cloud & Distributed Systems,CT-26003-C,Internet of Things,Final Year,Semester - VII,embedded systems,15,explicit_topic,approved
+Internet Of Things,Cloud & Distributed Systems,CT-26003-C,Internet of Things,Final Year,Semester - VII,Internet of things privacy background,15,explicit_topic,approved
+AWS,Cloud & Distributed Systems,CT-26003-C,Internet of Things,Final Year,Semester - VII,Cloud Platforms for IoT (AWS IoT,16,explicit_topic,approved
+Azure,Cloud & Distributed Systems,CT-26003-C,Internet of Things,Final Year,Semester - VII,Microsoft Azure IoT,16,explicit_topic,approved
+Google Cloud,Cloud & Distributed Systems,CT-26003-C,Internet of Things,Final Year,Semester - VII,Google Cloud IoT),16,explicit_topic,approved
+Artificial Intelligence,"AI, Machine Learning & Vision",CT-26003-C,Internet of Things,Final Year,Semester - VII,Artificial Intelligence and Machine Learning in IoT,16,explicit_topic,approved
+Machine Learning,"AI, Machine Learning & Vision",CT-26003-C,Internet of Things,Final Year,Semester - VII,Artificial Intelligence and Machine Learning in IoT,16,explicit_topic,approved
+Blockchain,Cloud & Distributed Systems,CT-26003-C,Internet of Things,Final Year,Semester - VII,Blockchain Technology,16,explicit_topic,approved
+Ethical Hacking,Computer Networks & Cyber Security,CT-26003-C,Internet of Things,Final Year,Semester - VII,Ethical Hacking,16,explicit_topic,approved
+Linear Algebra,Data Structures & Algorithms,CT-26003-D,Deep Learning,Final Year,Semester - VII,Pre-Requisite: Linear Algebra,18,explicit_topic,approved
+Machine Learning,"AI, Machine Learning & Vision",CT-26003-D,Deep Learning,Final Year,Semester - VII,Machine Learning,18,explicit_topic,approved
+Python,"AI, Machine Learning & Vision",CT-26003-D,Deep Learning,Final Year,Semester - VII,Python,18,explicit_topic,approved
+Neural Networks,Computer Networks & Cyber Security,CT-26003-D,Deep Learning,Final Year,Semester - VII,Neural Networks: [4 Hrs],18,explicit_topic,approved
+Perceptron,"AI, Machine Learning & Vision",CT-26003-D,Deep Learning,Final Year,Semester - VII,Linear Perceptron,18,explicit_topic,approved
+Backpropagation,"AI, Machine Learning & Vision",CT-26003-D,Deep Learning,Final Year,Semester - VII,Backpropagation,18,explicit_topic,approved
+Normalization,Database & Storage Systems,CT-26003-D,Deep Learning,Final Year,Semester - VII,Batch Normalization.,18,explicit_topic,approved
+Unsupervised Learning,"AI, Machine Learning & Vision",CT-26003-D,Deep Learning,Final Year,Semester - VII,Unsupervised Learning with Deep Network,18,explicit_topic,approved
+AES,Computer Networks & Cyber Security,CT-26003-D,Deep Learning,Final Year,Semester - VII,Autoencoders (AEs),18,explicit_topic,approved
+Convolutional Neural Networks,Computer Networks & Cyber Security,CT-26003-D,Deep Learning,Final Year,Semester - VII,Convolutional Neural Networks (CNNs) and different CNN architectures: [8 Hrs],18,explicit_topic,approved
+CNN,"AI, Machine Learning & Vision",CT-26003-D,Deep Learning,Final Year,Semester - VII,Convolutional Neural Networks (CNNs) and different CNN architectures: [8 Hrs],18,explicit_topic,approved
+Recurrent Neural Networks,Computer Networks & Cyber Security,CT-26003-D,Deep Learning,Final Year,Semester - VII,Recurrent Neural Networks (RNN): [8 Hrs],18,explicit_topic,approved
+RNN,"AI, Machine Learning & Vision",CT-26003-D,Deep Learning,Final Year,Semester - VII,Recurrent Neural Networks (RNN): [8 Hrs],18,explicit_topic,approved
+Minimum Spanning Tree,Data Structures & Algorithms,CT-26003-E,Parallel Algorithms,Final Year,Semester - VII,Graphs - Connected components- dense graphs- sparse graphs. Minimum spanning tree- Solli's algorithm,21,explicit_topic,approved
+OpenMP,"Systems, Architecture & OS",CT-26003-F,Multicore Technology,Final Year,Semester - VII,Programming using OpenMP - Use of OpenMP compiler directives - #pragma with different clauses -,23,explicit_topic,approved
+Deep Learning,"Systems, Architecture & OS",CT-26003-F,Multicore Technology,Final Year,Semester - VII,Guidelines for domain specific architectures - Deep Learning Architecture - Google's Tensor Processing Unit (TPU),24,explicit_topic,approved
+Neural Networks,Computer Networks & Cyber Security,CT-26003-F,Multicore Technology,Final Year,Semester - VII,for Deep Neural Networks (DNNs) - Pixel Visual Core,24,explicit_topic,approved
+Image Processing,"Systems, Architecture & OS",CT-26003-F,Multicore Technology,Final Year,Semester - VII,a Personal Mobile Device Image Processing Unit,24,explicit_topic,approved
+Distributed Systems,Cloud & Distributed Systems,CT-26003-G,Distributed Systems,Final Year,Semester - VII,Advantages and disadvantages of distributed systems,25,explicit_topic,approved
+IPC,Cloud & Distributed Systems,CT-26003-G,Distributed Systems,Final Year,Semester - VII,Issues in IPC by message passing.,25,explicit_topic,approved
+TCP,Cloud & Distributed Systems,CT-26003-G,Distributed Systems,Final Year,Semester - VII,Relation of Network models with distributed system (TCP/IP,25,explicit_topic,approved
+Deadlock Avoidance,"Systems, Architecture & OS",CT-26003-G,Distributed Systems,Final Year,Semester - VII,Deadlock avoidance,25,explicit_topic,approved
+Hadoop,Database & Storage Systems,CT-26003-G,Distributed Systems,Final Year,Semester - VII,Hadoop Distributed File System (HDFS),26,explicit_topic,approved
+Digital Signatures,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,Introduction to digital signatures,27,explicit_topic,approved
+Cryptography,Data Structures & Algorithms,CT-26003-H,Cyber Security,Final Year,Semester - VII,Cryptography,27,explicit_topic,approved
+Public Key Infrastructure,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,Digital certificate and public key infrastructure,27,explicit_topic,approved
+Malware Analysis,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,Malware analysis techniques,27,explicit_topic,approved
+HTTPS,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,Application security: HTTPS,27,explicit_topic,approved
+SMTP,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,SMTP STS etc.,27,explicit_topic,approved
+IDS,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,Security Technologies: IDS,27,explicit_topic,approved
+IPS,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,IPS,27,explicit_topic,approved
+Ethical Hacking,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,Ethical hacking,27,explicit_topic,approved
+Penetration Testing,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,Penetration testing fundamentals: Reconnaissance,27,explicit_topic,approved
+IoT,Computer Networks & Cyber Security,CT-26003-H,Cyber Security,Final Year,Semester - VII,IoT devices security,27,explicit_topic,approved
+NLP,Computer Networks & Cyber Security,CT-26003-I,Natural Language Processing,Final Year,Semester - VII,What is NLP,29,explicit_topic,approved
+Heap,Data Structures & Algorithms,CT-26003-I,Natural Language Processing,Final Year,Semester - VII,Heap's law. Morphology-morphemes,29,explicit_topic,approved
+Tokenization,Computer Networks & Cyber Security,CT-26003-I,Natural Language Processing,Final Year,Semester - VII,Basic Text Processing- Tokenization,29,explicit_topic,approved
+Normalization,Database & Storage Systems,CT-26003-I,Natural Language Processing,Final Year,Semester - VII,Text normalization,29,explicit_topic,approved
+POS Tagging,Computer Networks & Cyber Security,CT-26003-I,Natural Language Processing,Final Year,Semester - VII,POS tagging,29,explicit_topic,approved
+Dynamic Programming,Data Structures & Algorithms,CT-26003-I,Natural Language Processing,Final Year,Semester - VII,Dynamic Programming,29,explicit_topic,approved
+Microprocessors,"Systems, Architecture & OS",CT-26003-K,Embedded Systems,Final Year,Semester - VII,Embedded Hardware based on Microprocessors,33,explicit_topic,approved
+Operating Systems,"Systems, Architecture & OS",CT-26003-K,Embedded Systems,Final Year,Semester - VII,Real-Time Operating Systems (RTOS),33,explicit_topic,approved
+Virtualization,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,Data virtualization,35,explicit_topic,approved
+Device Drivers,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,OS and device drivers - Kernel,35,explicit_topic,approved
+Virtual Memory,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,virtual memory,35,explicit_topic,approved
+Stack,Data Structures & Algorithms,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,Fibre Channel Protocol Stack & Concepts- FC,35,explicit_topic,approved
+Storage Virtualization,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,Storage Virtualization Concepts: [6 Hrs],35,explicit_topic,approved
+Virtual Machines,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,virtual Machines,35,explicit_topic,approved
+Cloud Computing,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,Cloud Computing mechanisms,35,explicit_topic,approved
+Mapreduce,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,MapReduce programming model,35,explicit_topic,approved
+AWS,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,Case study of AWS,35,explicit_topic,approved
+Google Cloud,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,Google Cloud,35,explicit_topic,approved
+Azure,Database & Storage Systems,CT-26003-L,Storage & Virtualization,Final Year,Semester - VII,Microsoft Azure and IBM Softlayer..,35,explicit_topic,approved
+GANs,"AI, Machine Learning & Vision",CT-26003-N,Generative Artificial Intelligence,Final Year,Semester - VII,Taxonomy of Modern Generative Models - GANs,39,explicit_topic,approved
+Diffusion Models,"AI, Machine Learning & Vision",CT-26003-N,Generative Artificial Intelligence,Final Year,Semester - VII,Diffusion Models,39,explicit_topic,approved
+LLMs,"AI, Machine Learning & Vision",CT-26003-N,Generative Artificial Intelligence,Final Year,Semester - VII,LLMs,39,explicit_topic,approved
+Tokenization,"AI, Machine Learning & Vision",CT-26003-N,Generative Artificial Intelligence,Final Year,Semester - VII,LLM Tokenization,39,explicit_topic,approved
+Transformers,"AI, Machine Learning & Vision",CT-26003-N,Generative Artificial Intelligence,Final Year,Semester - VII,Transformers for Vision,39,explicit_topic,approved
+RAG,"AI, Machine Learning & Vision",CT-26003-N,Generative Artificial Intelligence,Final Year,Semester - VII,RAG - Overview,39,explicit_topic,approved
+Design Patterns,Computer Networks & Cyber Security,CT-26003-O,Software Design Patterns,Final Year,Semester - VII,What is a design Pattern? Design patterns in smalltalk MVC,41,explicit_topic,approved
+Software Architecture,Computer Networks & Cyber Security,CT-26003-O,Software Design Patterns,Final Year,Semester - VII,relation between software architecture and patterns.,41,explicit_topic,approved
+LLMs,Computer Networks & Cyber Security,MDM-04,Large Language Models Theory and Deployment,Final Year,Semester - VII,Introduction to LLMs: Understanding Transformer Architecture Pre-training Techniques for LLMs: Masked Language Modeling,43,explicit_topic,approved
+AWS,Computer Networks & Cyber Security,MDM-04,Large Language Models Theory and Deployment,Final Year,Semester - VII,and Latency Reduction Deploying LLMs on Cloud: AWS,43,explicit_topic,approved
+Google Cloud,Computer Networks & Cyber Security,MDM-04,Large Language Models Theory and Deployment,Final Year,Semester - VII,Google Cloud,43,explicit_topic,approved
+Azure,Computer Networks & Cyber Security,MDM-04,Large Language Models Theory and Deployment,Final Year,Semester - VII,and Azure,43,explicit_topic,approved
+RAG,Computer Networks & Cyber Security,MDM-04,Large Language Models Theory and Deployment,Final Year,Semester - VII,Understanding RAG for supplementing LLM with additional,43,explicit_topic,approved
+Transformers,Computer Networks & Cyber Security,MDM-04,Large Language Models Theory and Deployment,Final Year,Semester - VII,Transformers,43,explicit_topic,approved
+BERT,Computer Networks & Cyber Security,MDM-04,Large Language Models Theory and Deployment,Final Year,Semester - VII,GPT & BERT,43,explicit_topic,approved
+Quantum Computing,Foundational Engineering & Science,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Quantum Computing Concepts,45,explicit_topic,approved
+Linear Algebra,Data Structures & Algorithms,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Linear algebra,45,explicit_topic,approved
+Quantum Programming,Core Computer Science,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Quantum programming paradigms,45,explicit_topic,approved
+Assembly Language,Computer Networks & Cyber Security,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Quantum assembly language,45,explicit_topic,approved
+Neural Networks,Computer Networks & Cyber Security,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Quantum neural networks,45,explicit_topic,approved
+GANs,Core Computer Science,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Quantum GANs,45,explicit_topic,approved
+Support Vector Machines,Data Structures & Algorithms,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Quantum Support Vector Machines,45,explicit_topic,approved
+Generative Ai,"AI, Machine Learning & Vision",MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Quantum generative AI,45,explicit_topic,approved
+Cryptography,Data Structures & Algorithms,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Post-quantum cryptography,46,explicit_topic,approved
+Blockchain,Core Computer Science,MDM-05,Quantum Programming and Project,Final Year,Semester - VIII,Quantum blockchain,46,explicit_topic,approved
+Distributed Systems,Database & Storage Systems,MDM-06,Advanced Database Management Systems,Final Year,Semester - VIII,Distributed systems,47,explicit_topic,approved
+Distributed Databases,Database & Storage Systems,MDM-06,Advanced Database Management Systems,Final Year,Semester - VIII,Distributed Databases,47,explicit_topic,approved
+Concurrency Control,Database & Storage Systems,MDM-06,Advanced Database Management Systems,Final Year,Semester - VIII,Concurrency control in Distributed databases,47,explicit_topic,approved
+OLAP,Database & Storage Systems,MDM-06,Advanced Database Management Systems,Final Year,Semester - VIII,Data Analysis and OLAP: Multidimensional data Model,47,explicit_topic,approved
+Data Warehousing,Database & Storage Systems,MDM-06,Advanced Database Management Systems,Final Year,Semester - VIII,Data Warehousing,47,explicit_topic,approved
+NoSQL,Database & Storage Systems,MDM-06,Advanced Database Management Systems,Final Year,Semester - VIII,Features of NoSQL databases,47,explicit_topic,approved
+SQL,Database & Storage Systems,MDM-06,Advanced Database Management Systems,Final Year,Semester - VIII,Types of No SQL databases,47,explicit_topic,approved
+Assembly Language,Computer Networks & Cyber Security,CTS-24008,Microprocessors,S.Y.,Semester - III,Develop assembly language programs for 8086 CPU,56,explicit_topic,approved
+Segmentation,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Advantages of pipelining and segmentation,56,explicit_topic,approved
+Computer Architecture,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Criteria. Influences on Language Design: computer architecture. Language Categories. Language Design,59,explicit_topic,approved
+Java,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Java).,59,explicit_topic,approved
+Syntax Analysis,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Syntax and Semantics Lexical and Syntax Analysis,59,explicit_topic,approved
+Logic Programming,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Introduction to Logic Programming. Introduction. Applications of Logic Programming. Introduction to,59,explicit_topic,approved
+Functional Programming,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Functional Programming. Introduction. Introduction to LISP. Garbage Collection Algorithms. A Comparison of,59,explicit_topic,approved
+Python,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Python as a multi-paradigm language for functional and logic programming. Case study of Ada,59,explicit_topic,approved
+Heap,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,heap,63,explicit_topic,approved
+Data Structures,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,Introduction to Data Structures: Data,63,explicit_topic,approved
+Space Complexity,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,space complexity,63,explicit_topic,approved
+Doubly Linked List,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,doubly linked list,63,explicit_topic,approved
+Circular Linked List,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,circular linked list. Application of linked linear list-,63,explicit_topic,approved
+Stack,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,Stack and queue as ADT,63,explicit_topic,approved
+Queue,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,Stack and queue as ADT,63,explicit_topic,approved
+Arrays,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,Operations on stack and queue. Implementations using arrays and linked lists.,63,explicit_topic,approved
+Linked Lists,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,Operations on stack and queue. Implementations using arrays and linked lists.,63,explicit_topic,approved
+Binary Tree,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,Binary Tree: ADT,63,explicit_topic,approved
+Binary Search Tree,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,postorder (recursive and non-recursive) and various operations. Binary Search Tree (BST): Definition,63,explicit_topic,approved
+Min Heap,Data Structures & Algorithms,CTS-24008,Microprocessors,S.Y.,Semester - III,Max and Min Heap,63,explicit_topic,approved
+Breadth First Search,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Breadth First Search (BFS),63,explicit_topic,approved
+Depth First Search,"Systems, Architecture & OS",CTS-24008,Microprocessors,S.Y.,Semester - III,Depth First Search (DFS),63,explicit_topic,approved
+Python,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Learn and apply how to interpret data in Python using multi-dimensional arrays in NumPy.,66,explicit_topic,approved
+Arrays,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,Learn and apply how to interpret data in Python using multi-dimensional arrays in NumPy.,66,explicit_topic,approved
+Indexing,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Indexing,66,explicit_topic,approved
+Object Oriented Programming,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Write small pieces of code demonstrating various object oriented programming concepts.,68,explicit_topic,approved
+Design Patterns,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Introduction to Design Patterns,68,explicit_topic,approved
+Memory Hierarchy,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Interpret the working of memory hierarchy of computer system.,71,explicit_topic,approved
+Paging,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Justify the need of paging in virtual memory and secondary storage with its advantages.,71,explicit_topic,approved
+Virtual Memory,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Justify the need of paging in virtual memory and secondary storage with its advantages.,71,explicit_topic,approved
+Interrupt Handling,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,interrupt handling mechanisms,71,explicit_topic,approved
+Cache Memory,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Cache memory &basic cache optimizations,71,explicit_topic,approved
+Instruction Pipelining,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Instruction Pipelining: [7 Hrs],71,explicit_topic,approved
+Computer Organization,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Different examples of computer organization as per Flynn's Classification,71,explicit_topic,approved
+Finite Automata,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Finite Automata: [10 Hrs],73,explicit_topic,approved
+DFA,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Minimization of DFA.,73,explicit_topic,approved
+Context-Free Grammars,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Context-free Grammars: Formal definition,73,explicit_topic,approved
+Pushdown Automata,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Chomsky Normal Form. Pushdown Automata: Formal definition,73,explicit_topic,approved
+Turing Machines,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Turing Machines and Undecidability:,73,explicit_topic,approved
+Decidability,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Decidability and Undecidability:Decidable Languages:,73,explicit_topic,approved
+Halting Problem,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,The Halting Problem.,73,explicit_topic,approved
+Set Theory,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Basic Mathematical notations and terminologies for set theory. Closure Properties of context-free,73,explicit_topic,approved
+Virtualization,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Virtualization,75,explicit_topic,approved
+Distributed Systems,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Distributed Systems,75,explicit_topic,approved
+Data Structures,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,Kernel Data Structures,75,explicit_topic,approved
+Process Management,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Process Management: [6 Hrs],75,explicit_topic,approved
+IPC,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Models of IPC,75,explicit_topic,approved
+Cpu Scheduling,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,CPU scheduling,75,explicit_topic,approved
+Mutex,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Mutex Locks,75,explicit_topic,approved
+Semaphores,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Semaphores,75,explicit_topic,approved
+Memory Management,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Memory Management: [6 Hrs],75,explicit_topic,approved
+Directory Structure,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Directory Structure,75,explicit_topic,approved
+File Systems,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,File Systems.,75,explicit_topic,approved
+Space Complexity,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,Recall and comprehend time and space complexity of algorithms and evaluate algorithmic,77,explicit_topic,approved
+Asymptotic Analysis,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,efficiency in terms of runtime and memory usage using asymptotic analysis.,77,explicit_topic,approved
+Divide And Conquer,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,Divide and Conquer: Introduction,77,explicit_topic,approved
+Binary Search,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,Binary Search,77,explicit_topic,approved
+Dynamic Programming,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,Dynamic Programming: Introduction,77,explicit_topic,approved
+Bellman-Ford Algorithm,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,Bellman-Ford algorithm,77,explicit_topic,approved
+Topological Sort,Data Structures & Algorithms,OE-01,Data Analytics,S.Y.,Semester - IV,Topological sort.,77,explicit_topic,approved
+Linux Commands,Database & Storage Systems,OE-01,Data Analytics,S.Y.,Semester - IV,Introduction to Linux commands,79,explicit_topic,approved
+Space Complexity,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Time and space complexity,81,explicit_topic,approved
+Arrays,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Arrays,81,explicit_topic,approved
+Binary Search,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Searching: linear and binary search algorithm,81,explicit_topic,approved
+Hashing,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Hashing: hashing functions,81,explicit_topic,approved
+Quick Sort,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,quick sort,81,explicit_topic,approved
+Merge Sort,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,merge sort,81,explicit_topic,approved
+Time Complexity,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,insertion sort. Time complexity analysis of searching and sorting techniques.,81,explicit_topic,approved
+Stack,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Stack and queue as ADT,81,explicit_topic,approved
+Queue,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Stack and queue as ADT,81,explicit_topic,approved
+Linked Lists,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Linked Lists: [8 Hrs],81,explicit_topic,approved
+Memory Management,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Dynamic memory management,81,explicit_topic,approved
+Doubly Linked List,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,doubly linked list,81,explicit_topic,approved
+Circular Linked List,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,circular linked list,81,explicit_topic,approved
+Binary Tree,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Types of Binary tree,81,explicit_topic,approved
+Binary Search Tree,Data Structures & Algorithms,MDM-01,"Data Structures, Files and Algorithms",S.Y.,Semester - III,Insertion and deletion of nodes in binary search tree,81,explicit_topic,approved
+Python,Core Computer Science,HON-01,Making Sense of Data,S.Y.,Semester - III,Data analytics using Python: Statistical Procedures,87,explicit_topic,approved
+Normalization,Database & Storage Systems,HON-01,Making Sense of Data,S.Y.,Semester - III,Data Normalization,87,explicit_topic,approved
+Hierarchical Clustering,"AI, Machine Learning & Vision",HON-01,Making Sense of Data,S.Y.,Semester - III,Clustering: Agglomerative Hierarchical Clustering,87,explicit_topic,approved
+K-Means Clustering,"AI, Machine Learning & Vision",HON-01,Making Sense of Data,S.Y.,Semester - III,k-Means Clustering,87,explicit_topic,approved
+Stack,Data Structures & Algorithms,HON-02,Big Data Analytics,S.Y.,Semester - IV,Introduction to Big Data Technology Stack,89,explicit_topic,approved
+Paxos,Database & Storage Systems,HON-02,Big Data Analytics,S.Y.,Semester - IV,Overview of Zookeeper and Paxos,89,explicit_topic,approved
+Hadoop,Database & Storage Systems,HON-02,Big Data Analytics,S.Y.,Semester - IV,History of Hadoop,89,explicit_topic,approved
+Apache Spark,Database & Storage Systems,HON-02,Big Data Analytics,S.Y.,Semester - IV,Overview Apache Hadoop and Apache Spark,89,explicit_topic,approved
+Mapreduce,Database & Storage Systems,HON-02,Big Data Analytics,S.Y.,Semester - IV,MapReduce Programming Model with Spark.,89,explicit_topic,approved
+SQL,Database & Storage Systems,HON-02,Big Data Analytics,S.Y.,Semester - IV,Comparison of PIG with SQL and No-SQL,89,explicit_topic,approved
+CRC,Core Computer Science,HON-03,Fundamentals of Information and Coding Theory,S.Y.,Semester - IV,Encoder and decoder - CRC,91,explicit_topic,approved
+Penetration Testing,Computer Networks & Cyber Security,HON-04,Ethical Hacking,S.Y.,Semester - IV,Identify legal and ethical issues related to vulnerability and penetration testing.,93,explicit_topic,approved
+Ethical Hacking,Computer Networks & Cyber Security,HON-04,Ethical Hacking,S.Y.,Semester - IV,Ethical hacking process,93,explicit_topic,approved
+DNS,Computer Networks & Cyber Security,HON-04,Ethical Hacking,S.Y.,Semester - IV,DNS spoofing,93,explicit_topic,approved
+SQL,Database & Storage Systems,HON-04,Ethical Hacking,S.Y.,Semester - IV,SQL injection attacks,93,explicit_topic,approved
+Vulnerability Assessment,Computer Networks & Cyber Security,HON-04,Ethical Hacking,S.Y.,Semester - IV,Penetration Testing Methodologies Vulnerability Assessment vs.,93,explicit_topic,approved
+Software Engineering,Software Engineering & Web,IDP-01,Fundamentals of Software Engineering,S.Y.,Semester - III,application in software engineering contexts,95,explicit_topic,approved
+Requirements Engineering,Software Engineering & Web,IDP-01,Fundamentals of Software Engineering,S.Y.,Semester - III,Requirements Engineering,95,explicit_topic,approved
+Ethical Hacking,Computer Networks & Cyber Security,IDP-01,Fundamentals of Software Engineering,S.Y.,Semester - III,and Compliance in Ethical Hacking,95,explicit_topic,approved
+Penetration Testing,Computer Networks & Cyber Security,IDP-01,Fundamentals of Software Engineering,S.Y.,Semester - III,Penetration Testing Methodologies Vulnerability Assessment vs.,95,explicit_topic,approved
+Vulnerability Assessment,Computer Networks & Cyber Security,IDP-01,Fundamentals of Software Engineering,S.Y.,Semester - III,Penetration Testing Methodologies Vulnerability Assessment vs.,95,explicit_topic,approved
+Data Structures,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Fundamental Data Structures: [6 Hrs],97,explicit_topic,approved
+Arrays,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Arrays and multidimensional arrays,97,explicit_topic,approved
+Linked Lists,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Singly linked lists,97,explicit_topic,approved
+Space Complexity,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Time and space complexity,97,explicit_topic,approved
+Divide And Conquer,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Divide and conquer strategy,97,explicit_topic,approved
+Sorting Algorithms,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Searching and Sorting Algorithms: [6 Hrs],97,explicit_topic,approved
+Binary Search,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Binary search,97,explicit_topic,approved
+Merge Sort,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Merge sort,97,explicit_topic,approved
+Quick Sort,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Quick sort,97,explicit_topic,approved
+Heap,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Heap sort,97,explicit_topic,approved
+Breadth First Search,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Breadth First Search (BFS),97,explicit_topic,approved
+Topological Sort,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,topological sort,97,explicit_topic,approved
+Dynamic Programming,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Dynamic Programming: Introduction,97,explicit_topic,approved
+Bellman-Ford Algorithm,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Bellman-Ford algorithm. Back tracking: subset sum,97,explicit_topic,approved
+File Systems,Data Structures & Algorithms,IDP-02,Fundamentals of Programming and Algorithms,S.Y.,Semester - IV,Applications of trees in file systems and databases,97,explicit_topic,approved
+SDLC,Software Engineering & Web,CT-25001,Software Engineering,T.Y.,Semester - V,Describe fundamental concepts of system development lifecycle through SDLC.,105,explicit_topic,approved
+Software Engineering,Software Engineering & Web,CT-25001,Software Engineering,T.Y.,Semester - V,domains and have a basis for further studies in software engineering or in computing related,105,explicit_topic,approved
+Requirements Engineering,Software Engineering & Web,CT-25001,Software Engineering,T.Y.,Semester - V,Requirements Engineering,105,explicit_topic,approved
+Black Box Testing,Software Engineering & Web,CT-25001,Software Engineering,T.Y.,Semester - V,Testing types- White Box & Black Box Testing,105,explicit_topic,approved
+Indexing,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,Improve efficiency in data retrieval by using indexing and solving analytical problems on,108,explicit_topic,approved
+Relational Algebra,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,Relational Algebra and SQL: [6 Hrs],108,explicit_topic,approved
+SQL,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,Relational Algebra and SQL: [6 Hrs],108,explicit_topic,approved
+Relational Database,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,Relational Database Design: [6 Hrs],108,explicit_topic,approved
+Normalization,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,Basic concept of normalization,108,explicit_topic,approved
+BCNF,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,Decomposition using functional dependencies (1 to BCNF and 3NF).,108,explicit_topic,approved
+3NF,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,Decomposition using functional dependencies (1 to BCNF and 3NF).,108,explicit_topic,approved
+Hashing,Data Structures & Algorithms,CT-25002,Database Management Systems,T.Y.,Semester - V,Indexing and Hashing: [6 Hrs],108,explicit_topic,approved
+Concurrency Control,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,Transactions and Concurrency control: [10 Hrs],108,explicit_topic,approved
+Deadlock Handling,Database & Storage Systems,CT-25002,Database Management Systems,T.Y.,Semester - V,deadlock handling,108,explicit_topic,approved
+Data Structures,Data Structures & Algorithms,CT-25003,Operating Systems,T.Y.,Semester - V,data structures of a file system,110,explicit_topic,approved
+Operating Systems,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,Discuss suitable changes to existing implementations of operating systems for new features.,110,explicit_topic,approved
+Virtual Machines,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,Virtual Machines,110,explicit_topic,approved
+Cpu Scheduling,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,Processes and CPU Scheduling: [6 Hrs],110,explicit_topic,approved
+Interrupt Handling,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,Interrupt and Interrupt handling,110,explicit_topic,approved
+Memory Management,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,Memory management: [10 Hrs],110,explicit_topic,approved
+Paging,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,paging,110,explicit_topic,approved
+Segmentation,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,Segmentation,110,explicit_topic,approved
+File Systems,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,System calls for file systems,110,explicit_topic,approved
+Semaphores,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,Semaphores,110,explicit_topic,approved
+IPC,"Systems, Architecture & OS",CT-25003,Operating Systems,T.Y.,Semester - V,IPC,111,explicit_topic,approved
+Machine Learning,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Introduction to Machine Learning: [4 Hrs],113,explicit_topic,approved
+Reinforcement Learning,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,reinforcement learning,113,explicit_topic,approved
+Normalization,Database & Storage Systems,OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Normalization and Scaling,113,explicit_topic,approved
+Python,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,and exporting data in Python,113,explicit_topic,approved
+Supervised Learning,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Supervised Learning: [4 Hrs],113,explicit_topic,approved
+Linear Regression,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Regression Types of Regression Techniques: Linear regression,113,explicit_topic,approved
+Logistic Regression,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Classification: Logistic Regression,113,explicit_topic,approved
+Random Forest,Software Engineering & Web,OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Random Forest,113,explicit_topic,approved
+Unsupervised Learning,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Unsupervised Learning: [4 Hrs],113,explicit_topic,approved
+Dimensionality Reduction,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Dimensionality Reduction,113,explicit_topic,approved
+Neural Networks,Computer Networks & Cyber Security,OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Artificial Neural Networks: Single Layer Neural Network,114,explicit_topic,approved
+Multilayer Perceptron,"AI, Machine Learning & Vision",OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,Multilayer Perceptron,114,explicit_topic,approved
+Recurrent Neural Networks,Computer Networks & Cyber Security,OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,to Recurrent Neural Networks and Convolutional Neural Networks.,114,explicit_topic,approved
+Convolutional Neural Networks,Computer Networks & Cyber Security,OE-02,Fundamentals of Machine Learning,T.Y.,Semester - V,to Recurrent Neural Networks and Convolutional Neural Networks.,114,explicit_topic,approved
+Remote Sensing,Cloud & Distributed Systems,CT-25004-A,Remote Sensing,T.Y.,Semester - V,Introduction to Remote Sensing: [4 Hrs],115,explicit_topic,approved
+Machine Learning,"AI, Machine Learning & Vision",CT-25004-A,Remote Sensing,T.Y.,Semester - V,Machine learning and AI in remote sensing,115,explicit_topic,approved
+Cloud Computing,Cloud & Distributed Systems,CT-25004-A,Remote Sensing,T.Y.,Semester - V,Cloud computing for,115,explicit_topic,approved
+Data Structures,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Illustrate advanced data structures to solve complex problems in various domains.,117,explicit_topic,approved
+Space Complexity,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Asymptotic notations: time and space complexity,117,explicit_topic,approved
+Binary Search,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Balanced Binary search trees- (AVL trees,117,explicit_topic,approved
+Red-Black Tree,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,red-black tree,117,explicit_topic,approved
+Heap,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Heap: [6 Hrs],117,explicit_topic,approved
+Priority Queue,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Applications Priority Queue,117,explicit_topic,approved
+Virtualization,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Virtualization: [6Hrs],120,explicit_topic,approved
+Kubernetes,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Kubernetes,120,explicit_topic,approved
+Virtual Machines,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Migration of virtual Machines and techniques,120,explicit_topic,approved
+Cloud Computing,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Cloud Computing Security: [6Hrs],120,explicit_topic,approved
+Google Cloud,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Case study of Service model using Google Cloud Platform (GCP),120,explicit_topic,approved
+AWS,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Amazon Web Services (AWS),120,explicit_topic,approved
+Azure,Data Structures & Algorithms,CT-25004-B,Advanced Data Structures,T.Y.,Semester - V,Microsoft Azure,120,explicit_topic,approved
+OpenMP,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,To program shared memory multicore computer system using OpenMP.,123,explicit_topic,approved
+MPI,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,To develop practical programming skills using MPI.,123,explicit_topic,approved
+Parallel Computing,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Need for parallel computing - SM-SIMD algorithms - Shared memory SIMD - Tree and mesh interconnection,123,explicit_topic,approved
+Transport Layer,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Identify the different transport layer functionalities and protocol and related security.,125,explicit_topic,approved
+TCP,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,TCP in wireless domain,125,explicit_topic,approved
+Routing Protocols,Computer Networks & Cyber Security,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Routing Protocols: [5 Hrs],125,explicit_topic,approved
+Mac Protocols,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,MAC protocols for sensor networks,125,explicit_topic,approved
+DHCP,Computer Networks & Cyber Security,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Setup a LAN-based laboratory using DHCP.,127,explicit_topic,approved
+DNS,Computer Networks & Cyber Security,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,DNS,127,explicit_topic,approved
+System Administration,"Systems, Architecture & OS",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Basic System Administration: [5 Hrs],127,explicit_topic,approved
+Operating Systems,"Systems, Architecture & OS",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Installation of multiple operating systems on desktops,127,explicit_topic,approved
+Process Management,"Systems, Architecture & OS",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Process management,127,explicit_topic,approved
+File Systems,"Systems, Architecture & OS",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Managing file systems,127,explicit_topic,approved
+Network Security,Computer Networks & Cyber Security,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Network security tools- Nmap,127,explicit_topic,approved
+Authentication,Computer Networks & Cyber Security,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Authentication mechanisms,127,explicit_topic,approved
+SQL,Database & Storage Systems,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,SQL,129,explicit_topic,approved
+Decision Trees,Data Structures & Algorithms,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Utilize Decision Trees and Random Forests for problem-solving.,131,explicit_topic,approved
+Neural Networks,Computer Networks & Cyber Security,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Build neural networks from scratch,131,explicit_topic,approved
+Machine Learning,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Convert machine learning and deep learning projects into research papers,131,explicit_topic,approved
+Deep Learning,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Convert machine learning and deep learning projects into research papers,131,explicit_topic,approved
+Supervised Learning,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Supervised Learning: Regression,131,explicit_topic,approved
+Logistic Regression,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Classification (Logistic Regression,131,explicit_topic,approved
+SVM,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,SVM),131,explicit_topic,approved
+Unsupervised Learning,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Unsupervised Learning: Clustering,131,explicit_topic,approved
+Reinforcement Learning,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Reinforcement Learning basics (MDP,131,explicit_topic,approved
+CNN,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,LIME). Introduction to CNN,131,explicit_topic,approved
+RNN,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,RNN,131,explicit_topic,approved
+LSTM,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,LSTM,131,explicit_topic,approved
+GRU,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,GRU,131,explicit_topic,approved
+Attention Mechanism,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Attention Mechanism and Transformers,131,explicit_topic,approved
+Transformers,"AI, Machine Learning & Vision",CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Attention Mechanism and Transformers,131,explicit_topic,approved
+GANs,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,GANs).,131,explicit_topic,approved
+Linear Algebra,Data Structures & Algorithms,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Equip students with the linear algebra background required for this course.,133,explicit_topic,approved
+Quantum Gates,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Quantum Gates and Circuits: [7 Hrs],133,explicit_topic,approved
+Quantum Algorithms,Data Structures & Algorithms,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Quantum Algorithms: [5 Hrs],133,explicit_topic,approved
+Object Oriented Programming,Core Computer Science,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Write small pieces of code demonstrating various object oriented programming concepts.,136,explicit_topic,approved
+Design Patterns,Computer Networks & Cyber Security,CT-25004-C,Parallel Computer Architecture and Programming,T.Y.,Semester - V,Introduction to Design Patterns,136,explicit_topic,approved
+Application Layer,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,application layer protocols utilized on the Internet.,139,explicit_topic,approved
+Transport Layer,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,Gain a comprehensive understanding of the transport layer's roles,139,explicit_topic,approved
+TCP,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,focusing on TCP and UDP protocols,139,explicit_topic,approved
+UDP,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,focusing on TCP and UDP protocols,139,explicit_topic,approved
+Flow Control,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,and strategies for congestion and flow control.,139,explicit_topic,approved
+Subnetting,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,Develop network designs incorporating subnetting as per given specifications,139,explicit_topic,approved
+Network Layer,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,network layer protocols employed in the Internet.,139,explicit_topic,approved
+Computer Networks,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,Introduction to Computer Networks and Internet: [4 Hrs],139,explicit_topic,approved
+Socket Programming,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,Basics of Socket Programming,139,explicit_topic,approved
+HTTP,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,Protocols: HTTP (Overview,139,explicit_topic,approved
+SMTP,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,SMTP (Overview,139,explicit_topic,approved
+DNS,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,DNS,139,explicit_topic,approved
+FTP,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,FTP,139,explicit_topic,approved
+Congestion Control,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,Congestion Control,139,explicit_topic,approved
+CIDR,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,CIDR,139,explicit_topic,approved
+IPv4,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,IPv4,139,explicit_topic,approved
+IPv6,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,IPv6: [8 Hrs],139,explicit_topic,approved
+Distance Vector Routing,Data Structures & Algorithms,CT-25006,Computer Networks,T.Y.,Semester - VI,Distance Vector Routing,139,explicit_topic,approved
+OSPF,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,OSPF,139,explicit_topic,approved
+BGP,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,BGP,139,explicit_topic,approved
+RIP,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,RIP,139,explicit_topic,approved
+Routing Protocols,Computer Networks & Cyber Security,CT-25006,Computer Networks,T.Y.,Semester - VI,Routing Protocols for Ad Hoc Wireless Networks.,140,explicit_topic,approved
+Time Complexity,Data Structures & Algorithms,CT-25007,Design and Analysis of Algorithms,T.Y.,Semester - VI,worst case) time complexity of algorithms such as bubble sort,142,explicit_topic,approved
+Heap,Data Structures & Algorithms,CT-25007,Design and Analysis of Algorithms,T.Y.,Semester - VI,heap sort etc.,142,explicit_topic,approved
+Divide And Conquer,Data Structures & Algorithms,CT-25007,Design and Analysis of Algorithms,T.Y.,Semester - VI,Divide and Conquer: Quicksort,142,explicit_topic,approved
+Greedy Algorithms,Data Structures & Algorithms,CT-25007,Design and Analysis of Algorithms,T.Y.,Semester - VI,Greedy Algorithms: Knapsack,142,explicit_topic,approved
+Dynamic Programming,Data Structures & Algorithms,CT-25007,Design and Analysis of Algorithms,T.Y.,Semester - VI,Dynamic Programming: All pairs shortest paths,142,explicit_topic,approved
+Bellman-Ford Algorithm,Data Structures & Algorithms,CT-25007,Design and Analysis of Algorithms,T.Y.,Semester - VI,Bellman-Ford algorithm,142,explicit_topic,approved
+Backtracking,Data Structures & Algorithms,CT-25007,Design and Analysis of Algorithms,T.Y.,Semester - VI,Backtracking: N-queens problem,142,explicit_topic,approved
+Search Algorithms,Data Structures & Algorithms,CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Issues in design of search algorithms.,144,explicit_topic,approved
+Knowledge Representation,"AI, Machine Learning & Vision",CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Knowledge Representation: Basic concepts,144,explicit_topic,approved
+Stack,Data Structures & Algorithms,CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Implementation using goal stack,144,explicit_topic,approved
+NLP,"AI, Machine Learning & Vision",CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Language Processing (NLP): Introduction,144,explicit_topic,approved
+Semantic Analysis,"AI, Machine Learning & Vision",CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Semantic analysis,144,explicit_topic,approved
+Machine Learning,"AI, Machine Learning & Vision",CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Machine Learning: Definition,144,explicit_topic,approved
+Neural Networks,Computer Networks & Cyber Security,CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Neural Networks and Deep Learning: [8 Hrs],144,explicit_topic,approved
+Deep Learning,"AI, Machine Learning & Vision",CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Neural Networks and Deep Learning: [8 Hrs],144,explicit_topic,approved
+Backpropagation,"AI, Machine Learning & Vision",CT-25008,Artificial Intelligence,T.Y.,Semester - VI,descent training. Multilayer networks and backpropagation,144,explicit_topic,approved
+Convolutional Neural Networks,Computer Networks & Cyber Security,CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Convolutional Neural Networks (CNNs) for,144,explicit_topic,approved
+Image Processing,"Systems, Architecture & OS",CT-25008,Artificial Intelligence,T.Y.,Semester - VI,image processing,144,explicit_topic,approved
+Recurrent Neural Networks,Computer Networks & Cyber Security,CT-25008,Artificial Intelligence,T.Y.,Semester - VI,Recurrent Neural Networks (RNNs) for sequential data,144,explicit_topic,approved
+Quantum Computing,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,Pre-requisite: Quantum Computing,148,explicit_topic,approved
+Machine Learning,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,Machine learning,148,explicit_topic,approved
+Cryptography,Data Structures & Algorithms,MDM-03,Quantum Computing,T.Y.,Semester - VI,Cryptography,148,explicit_topic,approved
+Quantum Algorithms,Data Structures & Algorithms,MDM-03,Quantum Computing,T.Y.,Semester - VI,Course Objectives: Graduate will be able to understand the core quantum algorithms and,148,explicit_topic,approved
+Quantum Gates,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,Unitary matrices of quantum gates,149,explicit_topic,approved
+Tokenization,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,tokenization,151,explicit_topic,approved
+Transformers,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,and Transformers for NLP,151,explicit_topic,approved
+NLP,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,and Transformers for NLP,151,explicit_topic,approved
+Object Detection,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,and Object Detection.,151,explicit_topic,approved
+GANs,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,Explore cutting-edge topics in CV like Generative Adversarial Networks (GANs) and Vision,151,explicit_topic,approved
+Natural Language Processing,Computer Networks & Cyber Security,MDM-03,Quantum Computing,T.Y.,Semester - VI,Natural Language Processing (NLP) Techniques: [18 Hrs],151,explicit_topic,approved
+Word2vec,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,Embeddings (Word2Vec,151,explicit_topic,approved
+RNN,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,Language Models: RNN,151,explicit_topic,approved
+LSTM,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,LSTM,151,explicit_topic,approved
+Computer Vision,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,Computer Vision (CV) Techniques: [18 Hrs],151,explicit_topic,approved
+CNN,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,CV Techniques: CNN,151,explicit_topic,approved
+BERT,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,Explore advanced NLP techniques like BERT,151,explicit_topic,approved
+Indexing,Database & Storage Systems,MDM-03,Quantum Computing,T.Y.,Semester - VI,Improve efficiency in data retrieval using indexing and solve analytical problems on serializability,153,explicit_topic,approved
+Relational Algebra,Database & Storage Systems,MDM-03,Quantum Computing,T.Y.,Semester - VI,Relational Algebra And SQL: [7 Hrs],153,explicit_topic,approved
+SQL,Database & Storage Systems,MDM-03,Quantum Computing,T.Y.,Semester - VI,Relational Algebra And SQL: [7 Hrs],153,explicit_topic,approved
+Relational Database,Database & Storage Systems,MDM-03,Quantum Computing,T.Y.,Semester - VI,Relational Database Design: [6 Hrs],153,explicit_topic,approved
+Normalization,Database & Storage Systems,MDM-03,Quantum Computing,T.Y.,Semester - VI,Theory of normalization (1NF to 3NF).,153,explicit_topic,approved
+1NF,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,Theory of normalization (1NF to 3NF).,153,explicit_topic,approved
+3NF,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,Theory of normalization (1NF to 3NF).,153,explicit_topic,approved
+Hashing,Data Structures & Algorithms,MDM-03,Quantum Computing,T.Y.,Semester - VI,Indexing and Hashing: [6 Hrs],153,explicit_topic,approved
+Concurrency Control,Database & Storage Systems,MDM-03,Quantum Computing,T.Y.,Semester - VI,Transactions and Concurrency control: [7 Hrs],153,explicit_topic,approved
+Logistic Regression,"AI, Machine Learning & Vision",MDM-03,Quantum Computing,T.Y.,Semester - VI,logistic regression,155,explicit_topic,approved
+Blockchain,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,Discuss the basics of Blockchain and cryptography.,157,explicit_topic,approved
+Smart Contracts,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,smart contracts,157,explicit_topic,approved
+Ethereum,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,Ethereum,157,explicit_topic,approved
+IoT,Cloud & Distributed Systems,MDM-03,Quantum Computing,T.Y.,Semester - VI,integration of Blockchain with other technologies like IoT,157,explicit_topic,approved
+Data Structures,Data Structures & Algorithms,MDM-03,Quantum Computing,T.Y.,Semester - VI,back patching. Data structures used for design of,159,explicit_topic,approved
+YACC,Theoretical Computer Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,YACC,159,explicit_topic,approved
+Java,Foundational Engineering & Science,MDM-03,Quantum Computing,T.Y.,Semester - VI,The Java Language Environment,159,explicit_topic,approved
+Linear Algebra,Data Structures & Algorithms,MA-23002,Linear Algebra,F.Y.,Semester - I,CO5: Apply concepts of linear algebra to various problems including real life problems.,170,explicit_topic,approved
+Linear Regression,"AI, Machine Learning & Vision",MA-23005,Probability and Statistics,F.Y.,Semester - II,linear regression.,180,explicit_topic,approved
+Probability And Statistics,Foundational Engineering & Science,MA-23005,Probability and Statistics,F.Y.,Semester - II,CO5: apply concepts of probability and statistics to various problems including real life problems.,180,explicit_topic,approved
+Data Structures,Data Structures & Algorithms,MA-23005,Probability and Statistics,F.Y.,Semester - II,data structures,180,explicit_topic,approved
+Combinatorics,Foundational Engineering & Science,MA-23005,Probability and Statistics,F.Y.,Semester - II,Review on introduction to combinatorics and probability theory.,180,explicit_topic,approved
+Flip-Flops,Computer Networks & Cyber Security,CTS-24003,Digital Logic Design,F.Y.,Semester - II,Flip-flops-RS,184,explicit_topic,approved
+Sequential Circuits,Computer Networks & Cyber Security,CTS-24003,Digital Logic Design,F.Y.,Semester - II,Synchronous Sequential Circuits: Introduction to sequential circuits,184,explicit_topic,approved
+Set Theory,Core Computer Science,CTS-24004,Discrete Structures (F.Y.),F.Y.,Semester - II,Set Theory,188,explicit_topic,approved
+Javascript,Software Engineering & Web,CTS-24004,Discrete Structures (F.Y.),F.Y.,Semester - II,CO3: Demonstrate the ability to manipulate DOM objects using JavaScript.,189,explicit_topic,approved
+HTTP,Software Engineering & Web,CTS-24004,Discrete Structures (F.Y.),F.Y.,Semester - II,HTTP 2,189,explicit_topic,approved
+HTML,Software Engineering & Web,CTS-24004,Discrete Structures (F.Y.),F.Y.,Semester - II,HTML: HTML: fundamental HTML elements,189,explicit_topic,approved
+CSS,Software Engineering & Web,CTS-24004,Discrete Structures (F.Y.),F.Y.,Semester - II,CSS,189,explicit_topic,approved
+Arrays,Data Structures & Algorithms,CTS-24004,Discrete Structures (F.Y.),F.Y.,Semester - II,arrays,189,explicit_topic,approved
+AJAX,Software Engineering & Web,CTS-24004,Discrete Structures (F.Y.),F.Y.,Semester - II,Basic introduction to AJAX.,189,explicit_topic,approved
+SQL,Database & Storage Systems,CT-EX-01,Server Side Programming,F.Y.,Certificate Exit Option,SQL: Database,192,explicit_topic,approved
+PHP,Software Engineering & Web,CT-EX-01,Server Side Programming,F.Y.,Certificate Exit Option,Server-Side Programming (using PHP/NodeJS): client request,192,explicit_topic,approved
+HTTP,Software Engineering & Web,CT-EX-01,Server Side Programming,F.Y.,Certificate Exit Option,HTTP status codes,192,explicit_topic,approved
+XML,Software Engineering & Web,CT-EX-01,Server Side Programming,F.Y.,Certificate Exit Option,XML services,192,explicit_topic,approved
+REST API,Software Engineering & Web,CT-EX-01,Server Side Programming,F.Y.,Certificate Exit Option,REST API,192,explicit_topic,approved
+Javascript,Software Engineering & Web,CT-EX-02,Client Side Programming,F.Y.,Certificate Exit Option,CO2: Demonstrate the ability to handle complex JavaScript frameworks.,193,explicit_topic,approved
+AJAX,Software Engineering & Web,CT-EX-02,Client Side Programming,F.Y.,Certificate Exit Option,AJAX using JQuery,193,explicit_topic,approved
+HTML,Software Engineering & Web,CT-EX-02,Client Side Programming,F.Y.,Certificate Exit Option,Develop interactive multiple-choice quiz using HTML,193,explicit_topic,approved
+PHP,Core Computer Science,CT-EX-02,Client Side Programming,F.Y.,Certificate Exit Option,AJAX and PHP.,193,explicit_topic,approved

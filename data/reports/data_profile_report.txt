@@ -1,0 +1,935 @@
+MAHARASHTRA SKILL DATA - DATA PROFILING REPORT
+======================================================================
+
+FILE: district_iti_supply_summary_2026.csv
+PATH: data\raw\iti\district_iti_supply_summary_2026.csv
+ROWS: 71
+COLUMNS: 6
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: district
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 36
+  Examples: ['Ahmednagar', 'Akola', 'Amravati', 'Beed', 'Bhandara']
+
+Column: iti_type
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['Government', 'Private']
+
+Column: iti_trade_rows
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 63
+  Examples: ['105', '123', '81', '15', '170']
+
+Column: total_intake
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 70
+  Examples: ['2788', '3304', '2596', '424', '5224']
+
+Column: unique_itIs
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 24
+  Examples: ['15', '27', '8', '4', '11']
+
+Column: unique_trades
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 36
+  Examples: ['40', '21', '33', '8', '10']
+
+Potentially important fields:
+  ['district', 'iti_type', 'iti_trade_rows', 'total_intake', 'unique_itIs', 'unique_trades']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: maharashtra_iti_trade_supply_2026.csv
+PATH: data\raw\iti\maharashtra_iti_trade_supply_2026.csv
+ROWS: 5143
+COLUMNS: 11
+DUPLICATE ROWS: 8
+
+COLUMNS
+----------------------------------------------------------------------
+Column: admission_year
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['2026-27']
+
+Column: source_region
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['Amravati', 'Chhatrapati Sambhajinagar', 'Nagpur', 'Nashik', 'Pune']
+
+Column: district
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 36
+  Examples: ['Amravati', 'Buldhana', 'Akola', 'Yavatmal', 'Washim']
+
+Column: taluka
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 401
+  Examples: ['AMRAVATI', 'KHAMGAON', 'AKOLA', 'YAVATMAL', 'PUSAD']
+
+Column: iti_type
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['Government', 'Private']
+
+Column: iti_name
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 828
+  Examples: ['GOVERNMENT INDUSTRIAL TRAINING INSTITUTE, AMRAVATI', 'PRIVATE INDUSTRIAL TRAINING INSTITUTE ANS INFOVALLY', 'GOVERNMENT INDUSTRIAL TRAINING INSTITUTE, (WOMAN)', 'GOVERNMENT INDUSTRIAL TRAINING INSTITUTE, YAVATMAL', 'GOVERNMENT INDUSTRIAL TRAINING INSTITUTE, PUSAD']
+
+Column: trade_name
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 108
+  Examples: ['Architectural Draughtsman (NSQF)', 'Baker and Confectioner (NSQF)', 'Computer Hardware and Network Maintenance (NSQF)', 'Computer Operator and Programming Assistant (NSQF)', 'Cosmetology (NSQF)']
+
+Column: intake
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 14
+  Examples: ['24', '48', '20', '40', '60']
+
+Column: pdf_page
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 74
+  Examples: ['1', '2', '3', '4', '5']
+
+Column: source
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['Maharashtra DVET Trade Directory for Admission in Year 2026-27 (Indicative Directory released 5 June 2026)']
+
+Column: source_file
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['1780672495023.pdf', '1781261439930.pdf', '1781261502189.pdf', '1781261531051.pdf', '1781261558610.pdf']
+
+Potentially important fields:
+  ['admission_year', 'source_region', 'district', 'iti_type', 'iti_name', 'trade_name', 'intake', 'source', 'source_file']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: region_iti_supply_summary_2026.csv
+PATH: data\raw\iti\region_iti_supply_summary_2026.csv
+ROWS: 6
+COLUMNS: 5
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: source_region
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['Amravati', 'Chhatrapati Sambhajinagar', 'Mumbai', 'Nagpur', 'Nashik']
+
+Column: rows
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['691', '826', '676', '949', '987']
+
+Column: total_intake
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['20336', '23200', '19884', '24920', '27964']
+
+Column: unique_itIs
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['87', '138', '91', '193', '176']
+
+Column: unique_trades
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['52', '69', '74', '53', '66']
+
+Potentially important fields:
+  ['source_region', 'total_intake', 'unique_itIs', 'unique_trades']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: trade_iti_supply_summary_2026.csv
+PATH: data\raw\iti\trade_iti_supply_summary_2026.csv
+ROWS: 108
+COLUMNS: 5
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: trade_name
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 108
+  Examples: ['Electrician (NSQF)', 'Fitter (NSQF)', 'Welder (NSQF)', 'Computer Operator and Programming Assistant (NSQF)', 'Mechanic Diesel (NSQF)']
+
+Column: iti_trade_rows
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 46
+  Examples: ['802', '759', '481', '283', '173']
+
+Column: total_intake
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 57
+  Examples: ['22200', '18200', '16240', '10200', '7176']
+
+Column: districts
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 30
+  Examples: ['37', '36', '35', '33', '34']
+
+Column: regions
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['6', '5', '4', '3', '2']
+
+Potentially important fields:
+  ['trade_name', 'iti_trade_rows', 'total_intake', 'districts', 'regions']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: district_sector_collisions.csv
+PATH: data\raw\mssds\district_sector_collisions.csv
+ROWS: 0
+COLUMNS: 3
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: district
+  Type: object
+  Missing: 0 (0%)
+  Unique values: 0
+  Examples: []
+
+Column: sector
+  Type: object
+  Missing: 0 (0%)
+  Unique values: 0
+  Examples: []
+
+Column: row_count
+  Type: object
+  Missing: 0 (0%)
+  Unique values: 0
+  Examples: []
+
+Potentially important fields:
+  ['district', 'sector']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: mssds_2023_master.csv
+PATH: data\raw\mssds\mssds_2023_master.csv
+ROWS: 760
+COLUMNS: 12
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: district
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 36
+  Examples: ['Ahmednagar', 'Akola', 'Amravati', 'Chhatrapati Sambhajinagar', 'Beed']
+
+Column: sector
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 38
+  Examples: ['Agriculture', 'Apparel', 'Automotive', 'BFSI', 'Beauty & Wellness']
+
+Column: candidate_aspiration
+  Type: float64
+  Missing: 33 (4.34%)
+  Unique values: 339
+  Examples: ['843.0', '237.0', '281.0', '1298.0', '681.0']
+
+Column: industry_size
+  Type: float64
+  Missing: 282 (37.11%)
+  Unique values: 287
+  Examples: ['1095.0', '9300.0', '3025.0', '206.0', '79.0']
+
+Column: organization_count
+  Type: float64
+  Missing: 240 (31.58%)
+  Unique values: 31
+  Examples: ['11.0', '30.0', '9.0', '1.0', '5.0']
+
+Column: dsdp
+  Type: float64
+  Missing: 740 (97.37%)
+  Unique values: 14
+  Examples: ['1080.0', '180.0', '870.0', '90.0', '120.0']
+
+Column: mssds_trained
+  Type: float64
+  Missing: 751 (98.82%)
+  Unique values: 9
+  Examples: ['240.0', '145.0', '55.0', '162.0', '1105.0']
+
+Column: inference
+  Type: str
+  Missing: 736 (96.84%)
+  Unique values: 24
+  Examples: ['Basis the data available for the industry size and DSDP. Hence, it can be inferred that training', 'Basis the data available for the DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Apparel sector', 'Basis the data available for the industry size, DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Automotive sector', 'Basis the data available for industry size according to the survey conducted it appears that a significant number of workforce is available followed with candidate aspiration and DSDP data. Hence, it can be inferred that training can be provided in BFSI sector', 'Basis the data available for DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Beauty & Wellness sector']
+
+Column: pdf_page
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 174
+  Examples: ['35', '36', '37', '38', '39']
+
+Column: source_batch
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 7
+  Examples: ['batch1_ahmednagar.csv', 'batch2_akola_to_bhandara.csv', 'batch3_buldhana_to_hingoli.csv', 'batch4_jalgaon_to_nagpur.csv', 'batch5_nanded_to_pune_proper_clean.csv']
+
+Column: dsdp_training
+  Type: float64
+  Missing: 92 (12.11%)
+  Unique values: 96
+  Examples: ['360.0', '60.0', '270.0', '180.0', '120.0']
+
+Column: mssds_trained_2022_23
+  Type: float64
+  Missing: 344 (45.26%)
+  Unique values: 167
+  Examples: ['87.0', '110.0', '90.0', '120.0', '180.0']
+
+Potentially important fields:
+  ['district', 'sector', 'source_batch']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: mssds_2023_projection_merged.csv
+PATH: data\raw\mssds\mssds_2023_projection_merged.csv
+ROWS: 760
+COLUMNS: 16
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: district
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 36
+  Examples: ['Ahmednagar', 'Akola', 'Amravati', 'Chhatrapati Sambhajinagar', 'Beed']
+
+Column: sector
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 38
+  Examples: ['Agriculture', 'Apparel', 'Automotive', 'BFSI', 'Beauty & Wellness']
+
+Column: candidate_aspiration
+  Type: float64
+  Missing: 33 (4.34%)
+  Unique values: 339
+  Examples: ['843.0', '237.0', '281.0', '1298.0', '681.0']
+
+Column: industry_size
+  Type: float64
+  Missing: 282 (37.11%)
+  Unique values: 287
+  Examples: ['1095.0', '9300.0', '3025.0', '206.0', '79.0']
+
+Column: organization_count
+  Type: float64
+  Missing: 240 (31.58%)
+  Unique values: 31
+  Examples: ['11.0', '30.0', '9.0', '1.0', '5.0']
+
+Column: dsdp
+  Type: float64
+  Missing: 740 (97.37%)
+  Unique values: 14
+  Examples: ['1080.0', '180.0', '870.0', '90.0', '120.0']
+
+Column: mssds_trained
+  Type: float64
+  Missing: 751 (98.82%)
+  Unique values: 9
+  Examples: ['240.0', '145.0', '55.0', '162.0', '1105.0']
+
+Column: inference
+  Type: str
+  Missing: 736 (96.84%)
+  Unique values: 24
+  Examples: ['Basis the data available for the industry size and DSDP. Hence, it can be inferred that training', 'Basis the data available for the DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Apparel sector', 'Basis the data available for the industry size, DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Automotive sector', 'Basis the data available for industry size according to the survey conducted it appears that a significant number of workforce is available followed with candidate aspiration and DSDP data. Hence, it can be inferred that training can be provided in BFSI sector', 'Basis the data available for DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Beauty & Wellness sector']
+
+Column: pdf_page
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 174
+  Examples: ['35', '36', '37', '38', '39']
+
+Column: source_batch
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 7
+  Examples: ['batch1_ahmednagar.csv', 'batch2_akola_to_bhandara.csv', 'batch3_buldhana_to_hingoli.csv', 'batch4_jalgaon_to_nagpur.csv', 'batch5_nanded_to_pune_proper_clean.csv']
+
+Column: dsdp_training
+  Type: float64
+  Missing: 92 (12.11%)
+  Unique values: 96
+  Examples: ['360.0', '60.0', '270.0', '180.0', '120.0']
+
+Column: mssds_trained_2022_23
+  Type: float64
+  Missing: 344 (45.26%)
+  Unique values: 167
+  Examples: ['87.0', '110.0', '90.0', '120.0', '180.0']
+
+Column: projected_training
+  Type: float64
+  Missing: 554 (72.89%)
+  Unique values: 51
+  Examples: ['50.0', '320.0', '160.0', '0.0', '100.0']
+
+Column: projection_available
+  Type: object
+  Missing: 548 (72.11%)
+  Unique values: 2
+  Examples: ['True', 'False']
+
+Column: projection_value_is_zero
+  Type: object
+  Missing: 548 (72.11%)
+  Unique values: 2
+  Examples: ['False', 'True']
+
+Column: projection_matched
+  Type: bool
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['True', 'False']
+
+Potentially important fields:
+  ['district', 'sector', 'source_batch', 'projection_available', 'projection_value_is_zero', 'projection_matched']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: mssds_matched_sectors.csv
+PATH: data\raw\mssds\mssds_matched_sectors.csv
+ROWS: 206
+COLUMNS: 16
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: district
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 36
+  Examples: ['Ahmednagar', 'Akola', 'Amravati', 'Chhatrapati Sambhajinagar', 'Beed']
+
+Column: sector
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 7
+  Examples: ['Agriculture', 'Construction', 'Electronics', 'Green Jobs', 'IT/ITeS']
+
+Column: candidate_aspiration
+  Type: float64
+  Missing: 20 (9.71%)
+  Unique values: 156
+  Examples: ['843.0', '225.0', '669.0', '259.0', '2455.0']
+
+Column: industry_size
+  Type: float64
+  Missing: 77 (37.38%)
+  Unique values: 87
+  Examples: ['1095.0', '79.0', '6782.0', '80.0', '33.0']
+
+Column: organization_count
+  Type: float64
+  Missing: 70 (33.98%)
+  Unique values: 21
+  Examples: ['11.0', '5.0', '28.0', '7.0', '6.0']
+
+Column: dsdp
+  Type: float64
+  Missing: 200 (97.09%)
+  Unique values: 6
+  Examples: ['1080.0', '300.0', '720.0', '390.0', '210.0']
+
+Column: mssds_trained
+  Type: float64
+  Missing: 202 (98.06%)
+  Unique values: 4
+  Examples: ['240.0', '1105.0', '150.0', '120.0']
+
+Column: inference
+  Type: str
+  Missing: 201 (97.57%)
+  Unique values: 5
+  Examples: ['Basis the data available for the industry size and DSDP. Hence, it can be inferred that training', 'Basis the data available for the number of employees currently working and the DSDP data tagged alongwith the candidate aspiration. Hence, it can be inferred that training can be provided in Construction sector', 'Basis the data available for candidate aspiration and Industry size it appears that there is a significant number of workforce. Also the DSDP data and MSSDS skilling infer that the training can be provided in Electronics sector', 'Basis the data available for candidate aspiration and industry size data not available as it is a potential sector and DSDP and MSSDS, it can be inferred that the candidates can be trained in the Green Jobs sector', 'Basis the data available for candidate aspiration which is a significant number and the DSDP futuristic data along with the MSSDS data of trained candidates, it appears that training can be provided to IT/ITeS sector']
+
+Column: pdf_page
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 141
+  Examples: ['35', '37', '38', '39', '40']
+
+Column: source_batch
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 7
+  Examples: ['batch1_ahmednagar.csv', 'batch2_akola_to_bhandara.csv', 'batch3_buldhana_to_hingoli.csv', 'batch4_jalgaon_to_nagpur.csv', 'batch5_nanded_to_pune_proper_clean.csv']
+
+Column: dsdp_training
+  Type: float64
+  Missing: 16 (7.77%)
+  Unique values: 64
+  Examples: ['360.0', '120.0', '180.0', '30.0', '1560.0']
+
+Column: mssds_trained_2022_23
+  Type: float64
+  Missing: 92 (44.66%)
+  Unique values: 58
+  Examples: ['87.0', '180.0', '170.0', '120.0', '0.0']
+
+Column: projected_training
+  Type: float64
+  Missing: 0 (0.0%)
+  Unique values: 51
+  Examples: ['50.0', '320.0', '160.0', '0.0', '100.0']
+
+Column: projection_available
+  Type: bool
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['True']
+
+Column: projection_value_is_zero
+  Type: bool
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['False', 'True']
+
+Column: projection_matched
+  Type: bool
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['True']
+
+Potentially important fields:
+  ['district', 'sector', 'source_batch', 'projection_available', 'projection_value_is_zero', 'projection_matched']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: mssds_projection_long.csv
+PATH: data\raw\mssds\mssds_projection_long.csv
+ROWS: 4788
+COLUMNS: 6
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: district
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 36
+  Examples: ['Ahmednagar', 'Akola', 'Amravati', 'Beed', 'Bhandara']
+
+Column: sector
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 133
+  Examples: ['Aerospace & Aviation', 'Agriculture', 'Allied Health Care', 'Apiculture', 'Automotive Repair']
+
+Column: sector_raw
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 133
+  Examples: ['Aerospace & Aviation', 'AGRICULTURE', 'ALLIED HEALTH CARE', 'APICULTURE', 'AUTOMOTIVE REPAIR']
+
+Column: projected_training
+  Type: float64
+  Missing: 471 (9.84%)
+  Unique values: 205
+  Examples: ['50.0', '0.0', '100.0', '420.0', '240.0']
+
+Column: projection_available
+  Type: bool
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['False', 'True']
+
+Column: projection_value_is_zero
+  Type: bool
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['True', 'False']
+
+Potentially important fields:
+  ['district', 'sector', 'sector_raw', 'projection_available', 'projection_value_is_zero']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: projection_unmatched_sectors.csv
+PATH: data\raw\mssds\projection_unmatched_sectors.csv
+ROWS: 4576
+COLUMNS: 6
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: district
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 36
+  Examples: ['Ahmednagar', 'Akola', 'Amravati', 'Beed', 'Bhandara']
+
+Column: sector
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 132
+  Examples: ['Aerospace & Aviation', 'Allied Health Care', 'Apiculture', 'Automotive Repair', 'Bamboo Fabrication']
+
+Column: sector_raw
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 132
+  Examples: ['Aerospace & Aviation', 'ALLIED HEALTH CARE', 'APICULTURE', 'AUTOMOTIVE REPAIR', 'BAMBOO FABRICATION']
+
+Column: projected_training
+  Type: float64
+  Missing: 465 (10.16%)
+  Unique values: 185
+  Examples: ['0.0', '100.0', '420.0', '240.0', '60.0']
+
+Column: projection_available
+  Type: bool
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['False', 'True']
+
+Column: projection_value_is_zero
+  Type: bool
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['True', 'False']
+
+Potentially important fields:
+  ['district', 'sector', 'sector_raw', 'projection_available', 'projection_value_is_zero']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: employment_data_source_registry.csv
+PATH: data\raw\training\employment_data_source_registry.csv
+ROWS: 5
+COLUMNS: 4
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: dataset
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 5
+  Examples: ['NCS live jobs', 'NCS employment exchange statistics', 'Mahaswayam employment', 'Maharashtra State Data Bank', 'Maharashtra Economic Survey 2025-26']
+
+Column: authority
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 4
+  Examples: ['Government of India – National Career Service', 'Government of Maharashtra – SDEED', 'Government of Maharashtra', 'Planning Department, Government of Maharashtra']
+
+Column: what_to_use_for
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 5
+  Examples: ['Searchable by state, district, sector, functional area, role, education, experience and date; dynamic listings', 'Historical state-level employment-exchange statistics; latest listed edition is 2023', 'Current opening/job-seeker/employer aggregate displayed by the portal', 'District employment/self-employment, employment in industries, industry and economic-census reports', 'Latest official state economic/employment context publication']
+
+Column: url
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 5
+  Examples: ['https://www.ncs.gov.in/job-seeker/pages/search.aspx', 'https://ncs.gov.in/EExStats', 'https://www.mahaswayam.gov.in/', 'https://mahasdb.maharashtra.gov.in/searchReports.do', 'https://plan.maharashtra.gov.in/en/publication/economic-survey-of-maharashtra-2025-26-highlights/']
+
+Potentially important fields:
+  []
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: employment_demand_indicators_2026.csv
+PATH: data\raw\training\employment_demand_indicators_2026.csv
+ROWS: 6
+COLUMNS: 7
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: geography
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['Maharashtra', 'India / NCS']
+
+Column: indicator
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['Current openings', 'Job seekers', 'Employers', 'Active vacancies', 'Active jobseekers']
+
+Column: value
+  Type: int64
+  Missing: 0 (0.0%)
+  Unique values: 6
+  Examples: ['638310', '3660769', '120877', '1768000', '28900000']
+
+Column: unit
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['count']
+
+Column: source
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['Mahaswayam', 'National Career Service / PIB']
+
+Column: date_or_qualification
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 4
+  Examples: ['indexed snapshot; not a dated statewide job-post extract', 'indexed snapshot', 'as of 15-07-2026', 'since inception; cumulative']
+
+Column: source_url
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 2
+  Examples: ['https://www.mahaswayam.gov.in/index_inner', 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294658&lang=1&reg=22']
+
+Potentially important fields:
+  ['source', 'source_url']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: ncs_maharashtra_job_listings_snapshot_2026.csv
+PATH: data\raw\training\ncs_maharashtra_job_listings_snapshot_2026.csv
+ROWS: 17
+COLUMNS: 11
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: record_type
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['NCS_live_listing_snapshot']
+
+Column: job_title
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 14
+  Examples: ['Required female Personal Secretary', 'PEN PACKING JOB WORK FROM HOME', 'Tempo required with Driver for Delivery', 'Field work', 'MOBILIZER']
+
+Column: district
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 8
+  Examples: ['Pune', 'Mumbai', 'Mumbai Suburban', 'Thane', 'Nashik']
+
+Column: skills_required
+  Type: str
+  Missing: 1 (5.88%)
+  Unique values: 8
+  Examples: ['Office Assistant/Helper', 'Packager', 'Delivery/Collections', 'Others', 'Mobilizer']
+
+Column: salary_min_inr_year
+  Type: float64
+  Missing: 1 (5.88%)
+  Unique values: 10
+  Examples: ['240000.0', '300000.0', '456000.0', '144000.0', '180000.0']
+
+Column: salary_max_inr_year
+  Type: float64
+  Missing: 1 (5.88%)
+  Unique values: 9
+  Examples: ['384000.0', '360000.0', '480000.0', '420000.0', '156000.0']
+
+Column: employer_or_source
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 3
+  Examples: ['Quikr India Pvt Ltd', 'M/S Navjeevan Lokvikas Sanstha Virar', 'Nice way real marketing']
+
+Column: posted_date
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 7
+  Examples: ['21/07/2026', '19/07/2026', '06/08/2026', '05/08/2026', '02/08/2026']
+
+Column: source
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['National Career Service (NCS)']
+
+Column: source_url
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['https://www.ncs.gov.in/job-seeker/pages/search.aspx']
+
+Column: collection_note
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 1
+  Examples: ['Search-engine-indexed NCS listing; portal is dynamic and listings change.']
+
+Potentially important fields:
+  ['job_title', 'district', 'skills_required', 'salary_min_inr_year', 'salary_max_inr_year', 'employer_or_source', 'source', 'source_url']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: official_skills_source_registry.csv
+PATH: data\raw\training\official_skills_source_registry.csv
+ROWS: 3
+COLUMNS: 4
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: source
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 3
+  Examples: ['Bharat Skills', 'National Qualification Register (NQR)', 'NSDC National Occupational Standards']
+
+Column: authority
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 3
+  Examples: ['Directorate General of Training (DGT), Ministry of Skill Development and Entrepreneurship, Government of India', 'NCVET / Government of India', 'National Skill Development Corporation']
+
+Column: use
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 3
+  Examples: ['ITI trade curriculum, trade practical/theory, learning outcomes and study material', 'Qualification job descriptions, NOS/modules, hours, NSQF levels and competency-oriented learning modules', 'NOS/QP names, codes, occupational standards and model-curriculum references']
+
+Column: url
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 3
+  Examples: ['https://bharatskills.gov.in/Home/StudyMaterial', 'https://nqr.gov.in/qualifications-search', 'https://www.nsdcindia.org/national-occupational-standards-and-model-curriculum']
+
+Potentially important fields:
+  ['source']
+Potential join/identifier keys:
+  []
+
+======================================================================
+
+FILE: official_trade_skills_reference.csv
+PATH: data\raw\training\official_trade_skills_reference.csv
+ROWS: 8
+COLUMNS: 6
+DUPLICATE ROWS: 0
+
+COLUMNS
+----------------------------------------------------------------------
+Column: trade
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 8
+  Examples: ['Electrician', 'Fitter', 'Welder', 'Computer Operator and Programming Assistant (COPA)', 'Electronics Mechanic']
+
+Column: competency_summary
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 8
+  Examples: ['Electrical safety and PPE; electrical measurements; wiring and installation; electrical machines and motors; basic electronics; installation/testing and troubleshooting.', 'Fitting and assembly; marking, hacksawing, chiselling, filing and drilling; surface finishing; fastening; dimensional accuracy and tolerances; power-tool operation.', 'Gas welding; SMAW/arc welding; oxy-acetylene cutting; welding different joint types and positions; welding equipment setup; safety; inspection/testing.', 'Computer operation; programming assistance; computer programs and updates; web-page development; cybersecurity concepts; cloud concepts/services; documentation.', 'Electronic equipment servicing; measurement and testing; soldering/desoldering; electronic component handling; troubleshooting; installation/configuration; repair and maintenance.']
+
+Column: official_source
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 8
+  Examples: ['Bharat Skills / DGT Electrician study material and curriculum', 'Bharat Skills / DGT Fitter syllabus', 'Bharat Skills / DGT Welder syllabus', 'NCVET National Qualification Register / DGT COPA qualification file', 'Bharat Skills / DGT Electronics Mechanic study material']
+
+Column: source_url
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 8
+  Examples: ['https://bharatskills.gov.in/Home/StudyMaterial?var=WSdYV6aWadK8jUuNKxoBWg%3D%3D', 'https://bharatskills.gov.in/pdf/E_Books/CTS/34/Assamese/TP/Fitter%20-%202nd%20Year%20-%20Trade%20Practical%20-%20Assamese.pdf', 'https://bharatskills.gov.in/pdf/Curriculum/CTS/English/Welder.pdf', 'https://nqr.gov.in/sites/default/files/34.%20QF_COPA_CTS2.0_NSQF-3.pdf', 'https://bharatskills.gov.in/Home/StudyMaterial?Default=No&var=CaklmiQC3MzQgfUBpEM%2Bwg%3D%3D']
+
+Column: source_type
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 5
+  Examples: ['DGT curriculum/study material', 'DGT curriculum', 'NCVET qualification file', 'DGT study material', 'NCVET qualification record']
+
+Column: evidence
+  Type: str
+  Missing: 0 (0.0%)
+  Unique values: 8
+  Examples: ['2022 New Syllabus trade practical/theory; safety, tools, measurements and electrical installation topics are explicitly covered.', 'Official syllabus lists fitting/assembly, surface finishing, fastening tools and specified tolerances.', 'Official one-year Welder syllabus lists gas welding, SMAW joints, oxy-acetylene equipment/cutting and safety.', 'Official qualification file states COPA covers computer operation/programming assistance, web pages, cybersecurity concepts and cloud concepts/services.', 'Official DGT portal provides 2022 New Syllabus practical/theory materials for Electronics Mechanic.']
+
+Potentially important fields:
+  ['trade', 'competency_summary', 'official_source', 'source_url', 'source_type']
+Potential join/identifier keys:
+  []
+
+======================================================================

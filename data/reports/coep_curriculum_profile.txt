@@ -1,0 +1,65 @@
+================================================================================
+COEP TECHNOLOGICAL UNIVERSITY - CSE CURRICULUM PROFILE REPORT
+================================================================================
+Source File         : COEP_Combined_CSE_Computer_Engineering_Curriculum.pdf
+File Path           : data\raw\curriculum\COEP_Combined_CSE_Computer_Engineering_Curriculum.pdf
+Total Page Count    : 205
+Programs Detected   : B. Tech. in Computer Science and Engineering
+Academic Years      : A.Y. 2023-24, A.Y. 2024-25, A.Y. 2025-26, A.Y. 2026-27 (4-Year NEP Compliant)
+
+--------------------------------------------------------------------------------
+1. CURRICULUM SECTIONS DETECTED
+--------------------------------------------------------------------------------
+- Section: Final Year B. Tech. CSE (Semesters VII & VIII) [Level 6, UG Degree]
+  Pages        : Pages 1 to 50
+  Academic Year: A.Y. 2024-25
+  Level / Year : Final Year
+  Description  : Final year curriculum structure, departmental electives (PEC), multidisciplinary minors (MDM), and detailed course syllabi.
+
+- Section: S.Y. B. Tech. CSE & Lateral Entry (Semesters III & IV) [Level 5, UG Diploma]
+  Pages        : Pages 51 to 101
+  Academic Year: A.Y. 2024-25
+  Level / Year : S.Y.
+  Description  : Second year core computing curriculum structure, open electives, and detailed core course syllabi.
+
+- Section: T.Y. B. Tech. CSE (Semesters V & VI) [Effective A.Y. 2025-26]
+  Pages        : Pages 102 to 160
+  Academic Year: Effective A.Y. 2025-26
+  Level / Year : T.Y.
+  Description  : Third year revised curriculum structure, advanced department electives, and comprehensive course syllabi.
+
+- Section: F.Y. B. Tech. CSE (Semesters I & II) [Level 4.5, UG Certificate]
+  Pages        : Pages 161 to 194
+  Academic Year: A.Y. 2023-24
+  Level / Year : F.Y.
+  Description  : First year foundational engineering & science curriculum structure, discrete structures, digital logic, and exit option syllabi.
+
+- Section: Complete 4-Year B. Tech. CSE Master Curriculum Scheme
+  Pages        : Pages 195 to 205
+  Academic Year: A.Y. 2023-24 to 2026-27
+  Level / Year : Complete 4-Year Scheme
+  Description  : Master semester-wise credit distribution, official course codes (PH-23001, CTS-24008, CT-25001, etc.), and multidisciplinary minor paths.
+
+--------------------------------------------------------------------------------
+2. COVERAGE AND EXTRACTION SCOPE
+--------------------------------------------------------------------------------
+Coverage includes full 4-year undergraduate B.Tech Computer Science and Engineering:
+- Basic Sciences (BSC): Physics, Linear Algebra, Probability & Statistics, Biology.
+- Engineering Sciences (ESC): Digital Logic Design, Basic Electronics, Basic Electrical Engineering, Engineering Drawing.
+- Program Core Courses (PCC): Data Structures & Algorithms, Discrete Structures, Microprocessors,
+  Computer Organization, Theory of Computation, Operating Systems, Database Management Systems,
+  Computer Networks, Software Engineering, Compiler Construction, Cryptography & Network Security,
+  Design & Analysis of Algorithms, Artificial Intelligence.
+- Program Elective Courses (PEC): Cloud Computing, Machine Learning, Deep Learning, Big Data Analytics,
+  Computer Vision, Natural Language Processing, GPU Computing, Blockchain, IoT, System Administration,
+  Advanced System Programming, Parallel Architecture, Distributed Systems, Web Technologies.
+- Multidisciplinary Minors (MDM): AI/ML Mastery, Large Language Models, Generative AI, Quantum Computing.
+
+--------------------------------------------------------------------------------
+3. EXTRACTION LIMITATIONS
+--------------------------------------------------------------------------------
+1. Pages 1, 107, 161 contain cover titles / divider layouts with minimal body text.
+2. Section 1 (Final Year) draft tables list elective placeholders ('Programme Elective-3', '<TBD>')
+   which are elaborated in subsequent syllabus pages (Pages 10-49) and Section 5 Elective baskets (Page 204).
+3. Project works, internships, and liberal learning contain credit allocations without technical unit-wise syllabi.
+4. All extracted topics and skills are strictly traceable to specific PDF pages and syllabus units.

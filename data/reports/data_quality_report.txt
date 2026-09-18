@@ -1,0 +1,78 @@
+================================================================================
+MAHARASHTRA JOB MARKET 2025 - FINAL DATA QUALITY AUDIT REPORT
+================================================================================
+Validation Result : PASSED (100% Integrity)
+Raw Source File   : data\raw\employment\maharashtra_indian_job_market_2025_filtered.xlsx (MD5: bde02ca32dd0...)
+Cleaned Jobs File : data\processed\jobs\cleaned_job_data.csv
+MH Skill Demand   : data\processed\jobs\job_skill_demand_maharashtra_only.csv
+
+--------------------------------------------------------------------------------
+AUDIT METRICS & VALIDATION RESULTS
+--------------------------------------------------------------------------------
+[PASS] raw_source_immutability             = VERIFIED        | MD5 matches expected bde02ca3...
+[PASS] raw_source_rows                     = 24276           | Total rows in raw Excel
+[PASS] raw_source_cols                     = 20              | Total columns in raw Excel
+[PASS] cleaned_rows                        = 24218           | Total rows in cleaned dataset
+[PASS] cleaned_cols                        = 34              | Total columns in cleaned dataset
+[PASS] exact_duplicate_rows                = 0               | Exact duplicate rows in cleaned data
+[PASS] duplicate_job_ids                   = 0               | Repeated job_id values in cleaned data
+[PASS] rows_removed                        = 58              | Total duplicate rows pruned
+[PASS] raw_columns_preserved               = 20              | All original attributes preserved in snake_case
+[PASS] new_standardized_columns            = 14              | All required standardized columns present
+[PASS] experience_valid_numeric            = 24109           | Rows with valid numeric experience bounds
+[PASS] experience_missing                  = 109             | Rows with missing experience (NaN)
+[PASS] experience_min_gt_max               = 0               | Contradictions where min_exp > max_exp
+[PASS] salary_parsed_inr                   = 7820            | Postings with valid disclosed INR salary ranges
+[PASS] salary_not_disclosed                = 16277           | Postings with undisclosed salary marked as NaN
+[PASS] salary_non_inr_currency             = 12              | Postings in USD preserved without external rate conversion
+[PASS] salary_missing                      = 109             | Corrupted / missing salary entries marked as NaN
+[PASS] salary_min_gt_max                   = 0               | Contradictions where min_sal > max_sal
+[PASS] dates_parsed_explicit               = 8               | Standardized YYYY-MM-DD explicit calendar dates
+[PASS] dates_unresolved_relative           = 24109           | Relative historical dates left as NaN without guessing
+[PASS] dates_future_start                  = 101             | Relative future starts preserved as NaN
+[PASS] population_maharashtra_only         = 19467           | Primary Maharashtra-exclusive analysis population
+[PASS] population_multi_location           = 4722            | Secondary multi-location signals
+[PASS] population_non_maharashtra          = 29              | Excluded non-Maharashtra records
+[PASS] population_sum_reconciled           = 24218           | Sum of populations equals total cleaned rows (24218)
+[PASS] mh_only_unique_skills               = 17398           | Total unique clean skills in Maharashtra-only postings
+[PASS] jobs_with_duplicate_skills          = 0               | Per-job skill deduplication check
+[PASS] mh_skill_demand_max                 = 1589            | Max single skill demand <= total MH-only jobs (19467)
+[PASS] overall_pipeline_validation         = PASSED          | End-to-end data quality checks
+
+--------------------------------------------------------------------------------
+POPULATION & FEATURE SUMMARY
+--------------------------------------------------------------------------------
+1. Total Cleaned Job Postings    : 24,218
+2. Maharashtra-Only Population   : 19,467 (80.38%)
+3. Multi-Location Signals        : 4,722 (19.50%)
+4. Non-Maharashtra Excluded      : 29 (0.12%)
+5. Total Unique Skills (MH-Only) : 17,398
+6. Valid Numeric Experience      : 24,109 (99.55%)
+7. Disclosed INR Salaries        : 7,820 (32.29%)
+8. Undisclosed Salaries (NaN)    : 16,277 (67.21%)
+9. Explicit Standardized Dates   : 8 (0.03%)
+10. Relative Dates (NaN)         : 24,109 (99.55%)
+
+--------------------------------------------------------------------------------
+TOP 20 MAHARASHTRA-ONLY SKILLS (Denominator = 19,467 jobs)
+--------------------------------------------------------------------------------
+ 1. Customer Service               : 1,589 jobs (8.16%)
+ 2. Sales                          : 1,512 jobs (7.77%)
+ 3. Project Management             : 1,402 jobs (7.20%)
+ 4. Python                         : 1,016 jobs (5.22%)
+ 5. SAP                            : 988 jobs (5.08%)
+ 6. Management                     : 934 jobs (4.80%)
+ 7. CSS                            : 881 jobs (4.53%)
+ 8. SQL                            : 735 jobs (3.78%)
+ 9. Communication Skills           : 706 jobs (3.63%)
+10. Business Development           : 691 jobs (3.55%)
+11. Java                           : 664 jobs (3.41%)
+12. C#                             : 583 jobs (2.99%)
+13. Analytical Skills              : 579 jobs (2.97%)
+14. Accounting                     : 558 jobs (2.87%)
+15. JavaScript                     : 554 jobs (2.85%)
+16. Team Management                : 539 jobs (2.77%)
+17. Agile                          : 516 jobs (2.65%)
+18. Troubleshooting                : 474 jobs (2.43%)
+19. Development                    : 470 jobs (2.41%)
+20. Market Research                : 466 jobs (2.39%)

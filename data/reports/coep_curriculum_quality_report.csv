@@ -1,0 +1,14 @@
+metric,value,status,note
+pdf_page_count,205,PASS,Total pages in source combined PDF
+course_record_count,73,PASS,Total course entries in curriculum inventory
+unique_course_codes,73,PASS,Distinct official course codes identified
+courses_without_codes,0,PASS,Electives/internships with TBD codes
+topic_record_count,4914,PASS,Granular unit-level syllabus topics extracted
+skill_record_count,436,PASS,Skill-to-course mapping instances
+unique_normalized_skills,230,PASS,Distinct technical concepts in curriculum
+skills_without_provenance,0,PASS,Skills lacking topic/page traceability (must be 0)
+duplicate_course_records,0,PASS,Duplicate rows in course inventory
+duplicate_topic_records,0,PASS,Duplicate rows in topic dataset
+duplicate_skill_records,0,PASS,Duplicate skill mentions per course
+records_needing_review,0,PASS,Concepts marked needs_review
+extraction_status,PASSED,PASS,End-to-end curriculum pipeline integrity

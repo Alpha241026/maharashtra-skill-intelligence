@@ -1,0 +1,116 @@
+================================================================================
+MAHARASHTRA JOB MARKET 2025 - RAW DATASET INSPECTION & PROFILING REPORT
+================================================================================
+Source File: data\raw\employment\maharashtra_indian_job_market_2025_filtered.xlsx
+Total Row Count: 24,276
+Total Column Count: 20
+
+--------------------------------------------------------------------------------
+1. COLUMN INVENTORY & METRICS
+--------------------------------------------------------------------------------
+              Column   Dtype  Nulls Null %  Unique                                   Sample
+      source_dataset     str      0  0.00%       1    Indian Job Market Dataset 2025 (97K+)
+    geography_filter     str      0  0.00%       1              Maharashtra location signal
+location_filter_note     str      0  0.00%       1 Selected because the source location ...
+               title     str      0  0.00%   15685               Officer/Engineer Technical
+               jobId   int64      0  0.00%   24218                             270925006659
+            currency     str      0  0.00%       2                                      INR
+         jobUploaded     str      0  0.00%      21                               6 Days Ago
+         companyName     str      0  0.00%    5687              Balkrishna Industries (BKT)
+       tagsAndSkills     str    109  0.45%   22109 M.S Office,SAP,Computer Skills,MS Off...
+          experience     str    429  1.77%     205                                  2-3 Yrs
+              salary     str      0  0.00%     775                            Not disclosed
+            location     str      0  0.00%    2670                        Aurangabad(Waluj)
+           companyId   int64      0  0.00%    5609                                123591869
+        ReviewsCount float64   8197 33.77%     957                                    462.0
+     AggregateRating float64   8197 33.77%      41                                      4.1
+      jobDescription     str      0  0.00%   20844 Ready to work in all shifts . Underst...
+       minimumSalary float64    109  0.45%     115                                      0.0
+       maximumSalary float64    109  0.45%     144                                      0.0
+   minimumExperience float64    109  0.45%      24                                      2.0
+   maximumExperience float64    109  0.45%      31                                      3.0
+
+--------------------------------------------------------------------------------
+2. IDENTIFIERS & CARDINALITY
+--------------------------------------------------------------------------------
+Exact Duplicate Rows (all columns matched): 58
+Unique jobId Count: 24,218
+Duplicate jobId Rows: 58
+Unique Job Titles: 15,685
+Unique Companies: 5,687
+Unique Locations: 2,670
+
+--------------------------------------------------------------------------------
+3. TARGET COLUMN EXISTENCE AUDIT
+--------------------------------------------------------------------------------
+- tagsAndSkills: EXISTS
+- jobDescription: EXISTS
+- experience: EXISTS
+- minExperience (named 'minimumExperience'): EXISTS
+- maxExperience (named 'maximumExperience'): EXISTS
+- minSalary (named 'minimumSalary'): EXISTS
+- maxSalary (named 'maximumSalary'): EXISTS
+- jobUploaded: EXISTS
+
+--------------------------------------------------------------------------------
+4. FORMAT INSPECTIONS
+--------------------------------------------------------------------------------
+--- tagsAndSkills ---
+Non-null count: 24,167, Null count: 109
+Sample entries:
+  1. M.S Office,SAP,Computer Skills,MS Office,Technical,Computer Knowledge,Computer,Office
+  2. SAP,Laboratory Knowledge,Microsoft,Technical,Lab
+  3. ATM Implementation,Linux,BNA System,Screen Design,MySQL,MariaDB,Screen Flow,ATM
+  4. ISO8583,Finsim,EFT,PoS,ATM,Tandem,Postilion,Base
+  5. Product quality,Manager Quality Assurance,Analytical,Process improvement,Scheduling,Continuous improvement,Talent management,Monitoring
+
+--- location ---
+Top 10 location strings:
+  - Pune: 6,112
+  - Mumbai: 4,157
+  - Navi Mumbai: 1,453
+  - Hybrid - Pune: 480
+  - Thane: 410
+  - Nagpur: 407
+  - Mumbai Suburban: 380
+  - Hyderabad, Pune, Bengaluru: 258
+  - Mumbai, Pune, Delhi / NCR: 258
+  - Nashik: 251
+
+--- experience / minimumExperience / maximumExperience ---
+experience null count: 429
+minimumExperience range: [0.0 to 30.0] (mean: 4.10)
+maximumExperience range: [0.0 to 31.0] (mean: 7.90)
+minExperience > maxExperience contradictions: 0
+
+--- salary / minimumSalary / maximumSalary / currency ---
+salary text 'Not disclosed' count: 16,301
+minimumSalary == 0 and maximumSalary == 0 count: 16,312
+currency breakdown: {'INR': np.int64(24259), 'USD': np.int64(17)}
+minimumSalary range: [0 to 20,000,000]
+maximumSalary range: [0 to 30,000,000]
+minSalary > maxSalary contradictions: 0
+
+--- jobUploaded ---
+Top 10 jobUploaded values:
+  - 10 Days Ago: 3,693
+  - 3 Days Ago: 3,271
+  - 4 Days Ago: 3,234
+  - 8 Days Ago: 2,948
+  - 9 Days Ago: 2,843
+  - 7 Days Ago: 2,502
+  - 2 Days Ago: 2,153
+  - Just Now: 955
+  - Few Hours Ago: 911
+  - 6 Days Ago: 752
+
+================================================================================
+5. DATA QUALITY ISSUES IDENTIFIED
+================================================================================
+1. Duplication: 58 exact duplicate rows and 58 duplicate jobId values (116 affected rows in total).
+2. Missing values: 109 rows completely lack tagsAndSkills, minimumSalary, maximumSalary, minimumExperience, maximumExperience. 429 rows have missing experience strings. 8,197 rows (33.77%) lack ReviewsCount and AggregateRating.
+3. Undisclosed Salaries: 16,312 postings (67.19%) have 0 for minSalary/maxSalary and 'Not disclosed' in salary text.
+4. Heterogeneous Location Strings: Multi-location lists (e.g. 'Hyderabad, Pune, Bengaluru'), work-mode prefixes ('Hybrid - Pune'), and neighborhood notations ('Pune(Chakan)') require geographical standardization.
+5. Relative Date Strings in jobUploaded: Formatted as '10 Days Ago', 'Just Now', 'Starts in 1-3 months', rather than calendar timestamps.
+6. HTML Formatting in jobDescription: Contains HTML markup tags (<p>, <strong>, <ul>, <li>, <br>) that need parsing.
+7. Currency Heterogeneity: 24,259 INR postings and 17 USD postings.

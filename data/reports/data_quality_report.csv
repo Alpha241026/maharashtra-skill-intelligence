@@ -1,0 +1,30 @@
+metric,value,status,note
+raw_source_immutability,VERIFIED,PASS,MD5 matches expected bde02ca3...
+raw_source_rows,24276,PASS,Total rows in raw Excel
+raw_source_cols,20,PASS,Total columns in raw Excel
+cleaned_rows,24218,PASS,Total rows in cleaned dataset
+cleaned_cols,34,PASS,Total columns in cleaned dataset
+exact_duplicate_rows,0,PASS,Exact duplicate rows in cleaned data
+duplicate_job_ids,0,PASS,Repeated job_id values in cleaned data
+rows_removed,58,PASS,Total duplicate rows pruned
+raw_columns_preserved,20,PASS,All original attributes preserved in snake_case
+new_standardized_columns,14,PASS,All required standardized columns present
+experience_valid_numeric,24109,PASS,Rows with valid numeric experience bounds
+experience_missing,109,PASS,Rows with missing experience (NaN)
+experience_min_gt_max,0,PASS,Contradictions where min_exp > max_exp
+salary_parsed_inr,7820,PASS,Postings with valid disclosed INR salary ranges
+salary_not_disclosed,16277,PASS,Postings with undisclosed salary marked as NaN
+salary_non_inr_currency,12,PASS,Postings in USD preserved without external rate conversion
+salary_missing,109,PASS,Corrupted / missing salary entries marked as NaN
+salary_min_gt_max,0,PASS,Contradictions where min_sal > max_sal
+dates_parsed_explicit,8,PASS,Standardized YYYY-MM-DD explicit calendar dates
+dates_unresolved_relative,24109,PASS,Relative historical dates left as NaN without guessing
+dates_future_start,101,PASS,Relative future starts preserved as NaN
+population_maharashtra_only,19467,PASS,Primary Maharashtra-exclusive analysis population
+population_multi_location,4722,PASS,Secondary multi-location signals
+population_non_maharashtra,29,PASS,Excluded non-Maharashtra records
+population_sum_reconciled,24218,PASS,Sum of populations equals total cleaned rows (24218)
+mh_only_unique_skills,17398,PASS,Total unique clean skills in Maharashtra-only postings
+jobs_with_duplicate_skills,0,PASS,Per-job skill deduplication check
+mh_skill_demand_max,1589,PASS,Max single skill demand <= total MH-only jobs (19467)
+overall_pipeline_validation,PASSED,PASS,End-to-end data quality checks

@@ -1,0 +1,200 @@
+================================================================================
+MAHARASHTRA LOCATION VALIDATION & CLASSIFICATION REPORT
+================================================================================
+Source Dataset: data\raw\employment\maharashtra_indian_job_market_2025_filtered.xlsx
+Total Records Inspected: 24,276
+
+--------------------------------------------------------------------------------
+1. CLASSIFICATION BREAKDOWN
+--------------------------------------------------------------------------------
+- Maharashtra-Only Records (maharashtra_only)             : 19,515 (80.39%)
+- Maharashtra Multi-Location (maharashtra_multi_location) : 4,732 (19.49%)
+- Non-Maharashtra Records (non_maharashtra)               : 29 (0.12%)
+- Uncertain Records (uncertain)                           : 0 (0.00%)
+
+--------------------------------------------------------------------------------
+2. TOP 30 MAHARASHTRA CITIES / DISTRICTS IDENTIFIED (Across MH Postings)
+--------------------------------------------------------------------------------
+ 1. Pune                         : 11,709 postings (48.23%)
+ 2. Mumbai                       : 9,156 postings (37.72%)
+ 3. Navi Mumbai                  : 2,852 postings (11.75%)
+ 4. Thane                        : 1,498 postings (6.17%)
+ 5. Mumbai Suburban              : 1,129 postings (4.65%)
+ 6. Nagpur                       : 682 postings (2.81%)
+ 7. Nashik                       : 553 postings (2.28%)
+ 8. Chhatrapati Sambhajinagar    : 418 postings (1.72%)
+ 9. Palghar                      : 165 postings (0.68%)
+10. Kolhapur                     : 118 postings (0.49%)
+11. Raigad                       : 98 postings (0.40%)
+12. Sangli                       : 81 postings (0.33%)
+13. Solapur                      : 77 postings (0.32%)
+14. Ahmednagar                   : 66 postings (0.27%)
+15. Satara                       : 54 postings (0.22%)
+16. Amravati                     : 52 postings (0.21%)
+17. Chandrapur                   : 38 postings (0.16%)
+18. Nanded                       : 33 postings (0.14%)
+19. Jalgaon                      : 31 postings (0.13%)
+20. Dhule                        : 24 postings (0.10%)
+21. Wardha                       : 22 postings (0.09%)
+22. Ratnagiri                    : 21 postings (0.09%)
+23. Latur                        : 21 postings (0.09%)
+24. Akola                        : 18 postings (0.07%)
+25. Sindhudurg                   : 15 postings (0.06%)
+26. Maharashtra                  : 12 postings (0.05%)
+27. Jalna                        : 11 postings (0.05%)
+28. Buldhana                     : 8 postings (0.03%)
+29. Yavatmal                     : 8 postings (0.03%)
+30. Parbhani                     : 7 postings (0.03%)
+
+--------------------------------------------------------------------------------
+3. 20 REPRESENTATIVE EXAMPLES OF MULTI-LOCATION & UNCERTAIN RECORDS
+--------------------------------------------------------------------------------
+Example  1:
+  Job ID    : 260925027837
+  Title     : Equity Specialist
+  Raw Loc   : Kolhapur, Kolkata, North Goa
+  Assigned  : Kolhapur
+  Reason    : Maharashtra city + non-Maharashtra city (Kolkata, North Goa)
+
+Example  2:
+  Job ID    : 230925037553
+  Title     : Python Software Developer
+  Raw Loc   : Hybrid - Indore, Nagpur
+  Assigned  : Nagpur
+  Reason    : Maharashtra city + non-Maharashtra city (Indore)
+
+Example  3:
+  Job ID    : 170125011874
+  Title     : Hematologist
+  Raw Loc   : Indore, Nashik, Rajkot
+  Assigned  : Nashik
+  Reason    : Maharashtra city + non-Maharashtra city (Indore, Rajkot)
+
+Example  4:
+  Job ID    : 130525012555
+  Title     : Critical Care
+  Raw Loc   : Indore, Jaipur, Amravati
+  Assigned  : Amravati
+  Reason    : Maharashtra city + non-Maharashtra city (Indore, Jaipur)
+
+Example  5:
+  Job ID    : 250925038708
+  Title     : HUMAN Capital Kronos
+  Raw Loc   : Hybrid - Kolkata, Hyderabad, Pune, Chennai, Bengaluru, Delhi / NCR, Mumbai (All Areas)
+  Assigned  : Pune, Mumbai
+  Reason    : Maharashtra city + non-Maharashtra city (Kolkata, Hyderabad, Chennai)
+
+Example  6:
+  Job ID    : 250925033848
+  Title     : Marketo Developer
+  Raw Loc   : Hybrid - Noida, Mumbai, Hyderabad, Pune, Chennai, Bengaluru
+  Assigned  : Mumbai, Pune
+  Reason    : Maharashtra city + non-Maharashtra city (Noida, Hyderabad, Chennai)
+
+Example  7:
+  Job ID    : 250925020779
+  Title     : TS - Servicenow Developer
+  Raw Loc   : Kolkata, Hyderabad, Pune, Chennai, Bengaluru, Mumbai (All Areas)
+  Assigned  : Pune, Mumbai
+  Reason    : Maharashtra city + non-Maharashtra city (Kolkata, Hyderabad, Chennai)
+
+Example  8:
+  Job ID    : 250925010736
+  Title     : GCP data engineer
+  Raw Loc   : Hybrid - Kolkata, Hyderabad, Pune, Ahmedabad, Chennai, Bengaluru, Delhi / NCR, Mumbai (All Areas)
+  Assigned  : Pune, Mumbai
+  Reason    : Maharashtra city + non-Maharashtra city (Kolkata, Hyderabad, Ahmedabad)
+
+Example  9:
+  Job ID    : 250925001598
+  Title     : Field Sales Officer- Chemical Industry
+  Raw Loc   : Hybrid - Vapi, Kolkata, Hyderabad, Pune, Ahmedabad, Bengaluru, Delhi / NCR, Raipur, Mumbai (All Areas)
+  Assigned  : Pune, Mumbai
+  Reason    : Maharashtra city + non-Maharashtra city (Vapi, Kolkata, Hyderabad)
+
+Example 10:
+  Job ID    : 250825010522
+  Title     : Key Accounts Manager/Senior Sales Engineer Elevator Segment
+  Raw Loc   : Hyderabad, Pune, Gurugram, Chennai, Bengaluru, Mumbai (All Areas)
+  Assigned  : Pune, Mumbai
+  Reason    : Maharashtra city + non-Maharashtra city (Hyderabad, Gurugram, Chennai)
+
+Example 11:
+  Job ID    : 290623007860
+  Title     : Safety Engineer
+  Raw Loc   : Bangalore/Bengaluru(Kalyan nagar)
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Bangalore, Bengaluru(Kalyan nagar))
+
+Example 12:
+  Job ID    : 260925013322
+  Title     : Senior Accountant
+  Raw Loc   : Bengaluru(Kalyan nagar)
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Bengaluru(Kalyan nagar))
+
+Example 13:
+  Job ID    : 300925505002
+  Title     : Customer Service Representative
+  Raw Loc   : Kalyani
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Kalyani)
+
+Example 14:
+  Job ID    : 11025013936
+  Title     : Obstetrics and Gynaecology // Senior Resident
+  Raw Loc   : Kalyani, Chinsurah - Magra
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Kalyani, Chinsurah - Magra)
+
+Example 15:
+  Job ID    : 11025013401
+  Title     : General Surgery // Senior Resident & Assistant Professor
+  Raw Loc   : Kalyani, Chakdah, Durgapur
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Kalyani, Chakdah, Durgapur)
+
+Example 16:
+  Job ID    : 260925026572
+  Title     : Hiring Freshers (12th Pass!) | Walk-in Interviews | Bangalore
+  Raw Loc   : Bangalore Rural, Bengaluru(Kalyan nagar +1)
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Bangalore Rural, Bengaluru(Kalyan nagar +1))
+
+Example 17:
+  Job ID    : 280725006508
+  Title     : Sales Manager - Personal Loan(DSA, Channel)
+  Raw Loc   : Kalyani, Kolkata
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Kalyani, Kolkata)
+
+Example 18:
+  Job ID    : 270925011016
+  Title     : Accountant
+  Raw Loc   : Kurukshetra(Thanesar)
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Kurukshetra(Thanesar))
+
+Example 19:
+  Job ID    : 31025013942
+  Title     : Immediate Hiring - Channel Sales Manager | On roll | CTC- Upto 4.25LPA
+  Raw Loc   : Kalyani, Kolkata, Howrah
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Kalyani, Kolkata, Howrah)
+
+Example 20:
+  Job ID    : 300925025704
+  Title     : Kolkata -BDM- Hdfc Life Insurance
+  Raw Loc   : Guwahati, Kalyani, Kolkata, Siliguri, Barasat, Bengaluru, Jalpaiguri, Salt Lake, Park Street
+  Assigned  : [None]
+  Reason    : Non-Maharashtra location (Guwahati, Kalyani, Kolkata)
+
+--------------------------------------------------------------------------------
+4. ASSUMPTIONS & METHODOLOGY NOTES
+--------------------------------------------------------------------------------
+1. Work-mode qualifiers ('Hybrid -', 'Remote -', 'Work from home -', 'Temp. WFH -') are stripped to evaluate the true geographical intent of the posting.
+2. Suburbs, industrial estates, and talukas in Maharashtra (e.g. Chakan, Hinjewadi, Waluj, Airoli, Vashi, Vasai, Panvel, Butibori) are mapped to their recognized district/city administrative center.
+3. Multi-location postings containing both Maharashtra and other Indian tech hubs (e.g. 'Hyderabad, Pune, Bengaluru') are classified as 'maharashtra_multi_location'. In 'district_or_city', all identified Maharashtra locations are preserved (e.g. 'Pune') without inventing an arbitrary single primary district.
+4. Pure non-Maharashtra postings that slipped through broad keyword filters (e.g. 'Kawardha', 'Durg', 'Gandhidham') are strictly tagged as 'non_maharashtra' with empty 'district_or_city'.
+5. Generic search placeholders ('Anywhere India', 'MIDC' without city) are tagged as 'uncertain'.
+6. Original 'location' column is preserved 100% untouched. No rows deleted.

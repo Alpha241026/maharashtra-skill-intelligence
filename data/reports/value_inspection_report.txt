@@ -1,0 +1,1706 @@
+MAHARASHTRA SKILL DATA - VALUE INSPECTION REPORT
+======================================================================
+
+FILE: district_iti_supply_summary_2026.csv
+PATH: data\raw\iti\district_iti_supply_summary_2026.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 36
+  - Ahmednagar
+  - Akola
+  - Amravati
+  - Beed
+  - Bhandara
+  - Buldhana
+  - Chandrapur
+  - Chhatrapati Sambhajinagar
+  - Dharashiv
+  - Dhule
+  - Gadchiroli
+  - Gondia
+  - Hingoli
+  - Jalgaon
+  - Jalna
+  - Kolhapur
+  - Latur
+  - Mumbai City
+  - Mumbai Suburban
+  - Nagpur
+  - Nanded
+  - Nandurbar
+  - Nashik
+  - Palghar
+  - Parbhani
+  - Pune
+  - Raigad
+  - Ratnagiri
+  - Sangli
+  - Satara
+  - Sindhudurg
+  - Solapur
+  - Thane
+  - Wardha
+  - Washim
+  - Yavatmal
+
+COLUMN: iti_type
+Unique values: 2
+  - Government
+  - Private
+
+======================================================================
+
+FILE: maharashtra_iti_trade_supply_2026.csv
+PATH: data\raw\iti\maharashtra_iti_trade_supply_2026.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 36
+  - Ahmednagar
+  - Akola
+  - Amravati
+  - Beed
+  - Bhandara
+  - Buldhana
+  - Chandrapur
+  - Chhatrapati Sambhajinagar
+  - Dharashiv
+  - Dhule
+  - Gadchiroli
+  - Gondia
+  - Hingoli
+  - Jalgaon
+  - Jalna
+  - Kolhapur
+  - Latur
+  - Mumbai City
+  - Mumbai Suburban
+  - Nagpur
+  - Nanded
+  - Nandurbar
+  - Nashik
+  - Palghar
+  - Parbhani
+  - Pune
+  - Raigad
+  - Ratnagiri
+  - Sangli
+  - Satara
+  - Sindhudurg
+  - Solapur
+  - Thane
+  - Wardha
+  - Washim
+  - Yavatmal
+
+COLUMN: source_region
+Unique values: 6
+  - Amravati
+  - Chhatrapati Sambhajinagar
+  - Mumbai
+  - Nagpur
+  - Nashik
+  - Pune
+
+COLUMN: trade_name
+Unique values: 108
+  - Aeronautical Structure and Equipment Fitter (NSQF)
+  - Architectural Draughtsman (NSQF)
+  - Attendant Operator (Chemical Plant) (NSQF)
+  - Baker and Confectioner (NSQF)
+  - Computer Hardware and Network Maintenance (NSQF)
+  - Computer Operator and Programming Assistant (NSQF)
+  - Computer Operator and Programming Assistant Under Dual Training System
+  - Cosmetology (NSQF)
+  - Desktop Publishing Operator (NSQF)
+  - Draughtsman Civil (NSQF)
+  - Draughtsman Mechanical (NSQF)
+  - Draughtsman Mechanical Under Dual System Training (NSQF)
+  - Dress Making (NSQF)
+  - Dress Making Under Dual Training System (NSQF)
+  - Electrician (NSQF)
+  - Electrician Under Dual System Training (NSQF)
+  - Electronics Mechanic (NSQF)
+  - Electronics Mechanic Under Dual Training System (NSQF)
+  - Electroplater (NSQF)
+  - Fashion Design and Technology (NSQF)
+  - Fashion Design and Technology under Dual System Training (NSQF)
+  - Fire Technology and Industrial Safety Management (NSQF)
+  - Fitter (NSQF)
+  - Fitter Under Dual Training System (NSQF)
+  - Food Production (General) (NSQF)
+  - Food Production (General) Under Dual Training System (NSQF)
+  - Food and Beverages Services Assistant (NSQF)
+  - Food and Beverages Services Assistant Under Dual Training System (NSQF)
+  - Foundryman (NSQF)
+  - Foundryman Under Dual Training System (NSQF)
+  - Front Office Assistant (NSQF)
+  - Fruit and Vegetable Processing (NSQF)
+  - Geo-Informatics Assistant (NSQF)
+  - Health Sanitary Inspector (NSQF)
+  - Hospital Housekeeping (NSQF)
+  - Human Resourse Executive (NSQF)
+  - Industrial Painter (NSQF)
+  - Information and Communication Technology System Maintenance (NSQF)
+  - Instrument Mechanic (Chemical Plant) (NSQF)
+  - Instrument Mechanic (NSQF)
+  - Interior Design and Decoration (NSQF)
+  - IoT Technician (Smart City) (NSQF)
+  - Lift and Escalator Mechanic (NSQF)
+  - Lift and Escalator Mechanic Under Dual Training System (NSQF)
+  - MECHANIC ELECTRIC VEHICLE (NSQF)
+  - Machinist (NSQF)
+  - Machinist Grinder (NSQF)
+  - Machinist Grinder Under Dual Training System (NSQF)
+  - Machinist Under Dual Training System (NSQF)
+  - Maintenance Mechanic (Chemical Plant) (NSQF)
+  - Marine Fitter (NSQF)
+  - Marketing Executive (NSQF)
+  - Mason (Building Constructor) (NSQF)
+  - Mechanic Agricultural Machinery (NSQF)
+  - Mechanic Auto Body Painting (NSQF)
+  - Mechanic Auto Body Repair (NSQF)
+  - Mechanic Auto Electrical and Electronics (NSQF)
+  - Mechanic Auto Electrical and Electronics Under Dual Training System (NSQF)
+  - Mechanic Consumer Electronic Appliances (NSQF)
+  - Mechanic Diesel (NSQF)
+  - Mechanic Diesel Under Dual System Training (NSQF)
+  - Mechanic Machine Tool Maintenance (NSQF)
+  - Mechanic Motor Vehicle (NSQF)
+  - Mechanic Motor Vehicle Under Dual System Training (NSQF)
+  - Mechanic Tractor (NSQF)
+  - Mechanic Two And Three wheeler Under Dual Training System (NSQF)
+  - Multimedia, Animation and Special Effects (NSQF)
+  - Operator Advance Machine Tool (NSQF)
+  - Painter General (NSQF)
+  - Painter General Under Dual Training System (NSQF)
+  - Photographer (NSQF)
+  - Physiotherapy Technician (NSQF)
+  - Plastic Processing Operator (NSQF)
+  - Plastic Processing Operator Under Dual Training System (NSQF)
+  - Plumber (NSQF)
+  - Plumber Under Dual Training System (NSQF)
+  - Pump Operator cum Mechanic (NSQF)
+  - Refrigeration and Air Conditioner Technician (NSQF)
+  - Refrigeration and Air Conditioner Technician Under Dual Training System (NSQF)
+  - SMARTPHONE TECHNICIAN CUM APP TESTER (NSQF)
+  - Secretarial Practice (English) (NSQF)
+  - Sewing Technology (NSQF)
+  - Sewing Technology Under Dual Training System (NSQF)
+  - Sheet Metal Worker (NSQF)
+  - Sheet Metal Worker Under Dual System Training (NSQF)
+  - Solar Technician (Electrical) (NSQF)
+  - Spinning Technician (NSQF)
+  - Stenographer Secretarial Assistant (English) (NSQF)
+  - Surface Ornamentation Techniques (Embroidery) (NSQF)
+  - Surveyor (NSQF)
+  - Technician Mechatronics (NSQF)
+  - Technician Medical Electronics (NSQF)
+  - Technician Power Electronic Systems (NSQF)
+  - Technician Power Electronic Systems Under Dual Training System (NSQF)
+  - Textile Wet Processing Technician (NSQF)
+  - Tool and Die Maker (Dies and Moulds) (NSQF)
+  - Tool and Die Maker (Press Tools, Jigs and Fixtures) (NSQF)
+  - Tool and Die Maker (Press Tools, Jigs and Fixtures) Under Dual Training System
+  - Turner (NSQF)
+  - Turner Under Dual Training System (NSQF)
+  - Weaving Technician (NSQF)
+  - Welder (GMAW and GTAW) (NSQF)
+  - Welder (GMAW and GTAW) Under Dual System Training (NSQF)
+  - Welder (NSQF)
+  - Welder under Dual System Training (NSQF)
+  - Wireman (NSQF)
+  - Wireman Under Dual Training System (NSQF)
+  - Wood Work Technician (NSQF)
+
+COLUMN: taluka
+Unique values: 401
+  - AARVI
+  - ACHALPUR
+  - AHAMADPUR
+  - AHERI
+  - AHILYANAGAR
+  - AHMADPUR
+  - AJARA
+  - AKKALKOT
+  - AKKALKUWA
+  - AKOLA
+  - AKOLE
+  - AKOT
+  - AKRANI
+  - ALIBAG
+  - ALLAPALLI
+  - AMALNER
+  - AMBAD
+  - AMBEGAON
+  - AMBEJOGAI
+  - AMBERNATH
+  - AMGAON
+  - AMRAVATI
+  - ANDHERI
+  - ANJANGAON
+  - ANJANGAON SURJI
+  - ARDHAPUR
+  - ARJUNI MOREGAON
+  - ARMORI
+  - ARNI
+  - ASHTI
+  - ATPADI
+  - AUNDHA NAGNATH
+  - AUSA
+  - BABHULGAON
+  - BADNAPUR
+  - BAGLAN (SATANA)
+  - BALAPUR
+  - BALLARPUR
+  - BARAMATI
+  - BARSHI
+  - BARSHITAKALI
+  - BASMATH
+  - BASMATNAGER
+  - BEED
+  - BHADGAON
+  - BHADRAWATI
+  - BHAMRAGAD
+  - BHANDARA
+  - BHATKULI
+  - BHIVAPUR
+  - BHIWANDI
+  - BHOKAR
+  - BHOKARDAN
+  - BHOR
+  - BHUDARGAD
+  - BHUM
+  - BHUSAWAL
+  - BILOLI
+  - BODWAD
+  - BORIVALI
+  - BORIVALI, SUBURBAN
+  - BRAMHAPURI
+  - BULDHANA
+  - BUTIBORI
+  - CHAKUR
+  - CHALISGAON
+  - CHANDGAD
+  - CHANDRAPUR
+  - CHANDUR BAZAR
+  - CHANDUR RLY
+  - CHANDURBAZAR
+  - CHANDWAD
+  - CHARMORSHI
+  - CHHATRAPATI R SAMBHAJINAGAR
+  - CHHATRAPATI SAMBHAJINAGAR
+  - CHHATRAPATI SAMBHAJINAGAR SAMBHAJINAGA SAMBHAJINAGAR SAMBHAJINAGAR
+  - CHHATRAPATI SAMBHAJINAGAR, SAMBHAJINAGAR SAMBHAJINAGA SAMBHAJINAGAR
+  - CHIKHALDARA
+  - CHIKHALI
+  - CHIMUR
+  - CHIPLUN
+  - CHOPADA
+  - CHOPDA
+  - DAHANU
+  - DANDEGAON
+  - DAPOLI
+  - DARWHA
+  - DARYAPUR
+  - DAUND
+  - DEGLOOR
+  - DEOLA
+  - DEOLI
+  - DEORI
+  - DESAIGANJ
+  - DEULGAON RAJA
+  - DEVANI
+  - DEVGAD
+  - DEWARI
+  - DHAMANGAON RAILWAY
+  - DHANORA
+  - DHARANGAON
+  - DHARASHIV
+  - DHARASHIV, SAMBHAJINAGAR
+  - DHARMABAD
+  - DHARNI
+  - DHARUR
+  - DHULE
+  - DIGRAS
+  - DINDORI
+  - DODAMARG
+  - ERANDOL
+  - ETAPALLI
+  - GADCHIROLI
+  - GADHINGLAJ
+  - GAGANBAVADA
+  - GANGAKHED
+  - GANGAPUR
+  - GEVRAI
+  - GHANSAVANGI
+  - GHATANJI
+  - GONDIA
+  - GONDIYA
+  - GONDPIPARI
+  - GOREGAON
+  - GUHAGAR
+  - HADGAON
+  - HATKANANGALE
+  - HATKANANGLE
+  - HIMAYATNAGAR
+  - HINGANA
+  - HINGANGHAT
+  - HINGNA
+  - HINGOLI
+  - HINGOLI, SAMBHAJINAGAR
+  - IGATPURI
+  - INDAPUR
+  - JAFRABAD
+  - JALGAON
+  - JALGAON JAMOD
+  - JALKOTH
+  - JALNA
+  - JAMKHED
+  - JAMNER
+  - JAT
+  - JAWHAR
+  - JINTUR
+  - JIVATI
+  - JUNNAR
+  - KADEGAON
+  - KAGAL
+  - KAIJ
+  - KALAMB
+  - KALAMESHWAR
+  - KALAMNURI
+  - KALLAMB
+  - KALMESHWAR
+  - KALWAN
+  - KALYAN
+  - KAMPTEE
+  - KAMTHI
+  - KANDHAR
+  - KANKAVALI
+  - KANNAD
+  - KARAD
+  - KARANJA
+  - KARANJA GH
+  - KARANJA LAD
+  - KARJAT
+  - KARMALA
+  - KARVEER
+  - KATOL
+  - KAVATHE MAHANKAL
+  - KEJ
+  - KELAPUR
+  - KHALAPUR
+  - KHAMGAON
+  - KHANAPUR
+  - KHANDALA
+  - KHATAV
+  - KHED
+  - KHULTABAD
+  - KINWAT
+  - KOPARGAON
+  - KORCHI
+  - KOREGAON
+  - KORPANA
+  - KUDAL
+  - KUHI
+  - KURKHEDA
+  - KURLA
+  - LAKHANDUR
+  - LAKHANI
+  - LANJA
+  - LATUR
+  - LATUR, SAMBHAJINAGAR
+  - LATUR.
+  - LOHA
+  - LOHARA
+  - LONAR
+  - MADHA
+  - MAHABALESHWAR
+  - MAHAD
+  - MAHAGAON
+  - MAHUR
+  - MAJALGAON
+  - MALEGAON
+  - MALKAPUR
+  - MALSHIRAS
+  - MALWAN
+  - MAN (DAHIWADI)
+  - MANDANGAD
+  - MANGALWEDHA
+  - MANGAON
+  - MANGRULPIR
+  - MANORA
+  - MANTHA
+  - MANVAT
+  - MAREGAON
+  - MAUDA
+  - MAVAL
+  - MEDHA
+  - MEHAKAR
+  - MHASALA
+  - MIRAJ
+  - MOHADI
+  - MOHOL
+  - MOHPA
+  - MOKHADA
+  - MORSHI
+  - MOTALA
+  - MOUDA
+  - MUDKHED
+  - MUKHED
+  - MUKTAINAGAR
+  - MUL
+  - MULCHERA
+  - MULSHI
+  - MULUND
+  - MUMBAI
+  - MUMBAI CITY
+  - MURBAD
+  - MURTIJAPUR
+  - MURUD
+  - Mahad
+  - NAGAR
+  - NAGBHID
+  - NAGPUR
+  - NAGPUR RURAL
+  - NAGPUR URBAN
+  - NAGPUR(URBAN)
+  - NAIGAON
+  - NANDED
+  - NANDED SAMBHAJINAGAR
+  - NANDGAON
+  - NANDGAON KHANDESHWAR
+  - NANDURA
+  - NANDURBAR
+  - NARKHED
+  - NASHIK
+  - NAVAPUR
+  - NAVI MUMBAI
+  - NER
+  - NEWASA
+  - NILANGA
+  - NIPHAD
+  - NORTH SOLAPUR
+  - OMERGA
+  - PACHORA
+  - PAITHAN
+  - PALAM
+  - PALAM, SAMBHAJINAGAR
+  - PALGHAR
+  - PALUS
+  - PANDHARPUR
+  - PANHALA
+  - PANVEL
+  - PAONI
+  - PARALI VAIJNATH
+  - PARANDA
+  - PARBHANI
+  - PARLI
+  - PARNER
+  - PAROLA
+  - PARSHEONI
+  - PARTUR
+  - PATAN
+  - PATHARDI
+  - PATHARI
+  - PATHRI
+  - PATODA
+  - PATUR
+  - PEN
+  - PETH
+  - PHALTAN
+  - PHULAMBRI
+  - POLADPUR
+  - POMBHURNA
+  - PUNE CITY / HAVELI
+  - PURANDAR
+  - PURNA
+  - PUSAD
+  - RADHANAGARI
+  - RAHATA
+  - RAHTA
+  - RAHURI
+  - RAJAPUR
+  - RAJURA
+  - RALEGAON
+  - RAMTEK
+  - RATNAGIRI
+  - RAVER
+  - RENAPUR
+  - RISOD
+  - ROHA
+  - SADAK ARJUNI
+  - SAILU
+  - SAKOLI
+  - SAKRI
+  - SALEKASA
+  - SAMUDRAPUR
+  - SANGAMESHWAR
+  - SANGAMNER
+  - SANGOLA
+  - SANGRAMPUR
+  - SAONER
+  - SATARA
+  - SAWALI
+  - SAWANTWADI
+  - SELU
+  - SENGAON
+  - SHAHADA
+  - SHAHAPUR
+  - SHAHUWADI
+  - SHEGAON
+  - SHEVGAON
+  - SHINDKHEDA
+  - SHIRALA
+  - SHIROL
+  - SHIRPUR
+  - SHIRUR
+  - SHIRUR KASAR
+  - SHRIGONDA
+  - SHRIRAMPUR
+  - SHRIWARDHAN
+  - SILLOD
+  - SINDEWAHI
+  - SINDHAKHED RAJA
+  - SINDKHEDA
+  - SINDKHEDE
+  - SINNAR
+  - SIRONCHA
+  - SOLAPUR
+  - SOLAPUR NORTH
+  - SOLAPUR SOUTH
+  - SONPETH
+  - SONPETH, SAMBHAJINAGAR
+  - SOUTH SOLAPUR
+  - SOYGAON
+  - SUDHAGAD
+  - SURGANA
+  - TALA
+  - TALASARI
+  - TALODA
+  - TASGAON
+  - TELHARA
+  - THANE
+  - TIOSA
+  - TIRODA
+  - TRIMBAK
+  - TRIMBAKESHWAR
+  - TULJAPUR
+  - TUMSAR
+  - UDGIR
+  - UGWA
+  - ULHASNAGAR
+  - UMARKHED
+  - UMRED
+  - UMRI
+  - URAN
+  - VADWANI
+  - VAIBHAVWADI
+  - VAIJAPUR
+  - VASAI
+  - VASHI
+  - VELHE
+  - VENGURLA
+  - VIKRAMGAD
+  - VITA (KHANAPUR)
+  - WADA
+  - WAI
+  - WALWA
+  - WANI
+  - WARDHA
+  - WARORA
+  - WARUD
+  - WASHI
+  - WASHIM
+  - YAVATMAL
+  - YAWAL
+  - YEOLA
+  - ZARI-JAMANI
+
+COLUMN: iti_type
+Unique values: 2
+  - Government
+  - Private
+
+======================================================================
+
+FILE: region_iti_supply_summary_2026.csv
+PATH: data\raw\iti\region_iti_supply_summary_2026.csv
+----------------------------------------------------------------------
+
+COLUMN: source_region
+Unique values: 6
+  - Amravati
+  - Chhatrapati Sambhajinagar
+  - Mumbai
+  - Nagpur
+  - Nashik
+  - Pune
+
+======================================================================
+
+FILE: trade_iti_supply_summary_2026.csv
+PATH: data\raw\iti\trade_iti_supply_summary_2026.csv
+----------------------------------------------------------------------
+
+COLUMN: trade_name
+Unique values: 108
+  - Aeronautical Structure and Equipment Fitter (NSQF)
+  - Architectural Draughtsman (NSQF)
+  - Attendant Operator (Chemical Plant) (NSQF)
+  - Baker and Confectioner (NSQF)
+  - Computer Hardware and Network Maintenance (NSQF)
+  - Computer Operator and Programming Assistant (NSQF)
+  - Computer Operator and Programming Assistant Under Dual Training System
+  - Cosmetology (NSQF)
+  - Desktop Publishing Operator (NSQF)
+  - Draughtsman Civil (NSQF)
+  - Draughtsman Mechanical (NSQF)
+  - Draughtsman Mechanical Under Dual System Training (NSQF)
+  - Dress Making (NSQF)
+  - Dress Making Under Dual Training System (NSQF)
+  - Electrician (NSQF)
+  - Electrician Under Dual System Training (NSQF)
+  - Electronics Mechanic (NSQF)
+  - Electronics Mechanic Under Dual Training System (NSQF)
+  - Electroplater (NSQF)
+  - Fashion Design and Technology (NSQF)
+  - Fashion Design and Technology under Dual System Training (NSQF)
+  - Fire Technology and Industrial Safety Management (NSQF)
+  - Fitter (NSQF)
+  - Fitter Under Dual Training System (NSQF)
+  - Food Production (General) (NSQF)
+  - Food Production (General) Under Dual Training System (NSQF)
+  - Food and Beverages Services Assistant (NSQF)
+  - Food and Beverages Services Assistant Under Dual Training System (NSQF)
+  - Foundryman (NSQF)
+  - Foundryman Under Dual Training System (NSQF)
+  - Front Office Assistant (NSQF)
+  - Fruit and Vegetable Processing (NSQF)
+  - Geo-Informatics Assistant (NSQF)
+  - Health Sanitary Inspector (NSQF)
+  - Hospital Housekeeping (NSQF)
+  - Human Resourse Executive (NSQF)
+  - Industrial Painter (NSQF)
+  - Information and Communication Technology System Maintenance (NSQF)
+  - Instrument Mechanic (Chemical Plant) (NSQF)
+  - Instrument Mechanic (NSQF)
+  - Interior Design and Decoration (NSQF)
+  - IoT Technician (Smart City) (NSQF)
+  - Lift and Escalator Mechanic (NSQF)
+  - Lift and Escalator Mechanic Under Dual Training System (NSQF)
+  - MECHANIC ELECTRIC VEHICLE (NSQF)
+  - Machinist (NSQF)
+  - Machinist Grinder (NSQF)
+  - Machinist Grinder Under Dual Training System (NSQF)
+  - Machinist Under Dual Training System (NSQF)
+  - Maintenance Mechanic (Chemical Plant) (NSQF)
+  - Marine Fitter (NSQF)
+  - Marketing Executive (NSQF)
+  - Mason (Building Constructor) (NSQF)
+  - Mechanic Agricultural Machinery (NSQF)
+  - Mechanic Auto Body Painting (NSQF)
+  - Mechanic Auto Body Repair (NSQF)
+  - Mechanic Auto Electrical and Electronics (NSQF)
+  - Mechanic Auto Electrical and Electronics Under Dual Training System (NSQF)
+  - Mechanic Consumer Electronic Appliances (NSQF)
+  - Mechanic Diesel (NSQF)
+  - Mechanic Diesel Under Dual System Training (NSQF)
+  - Mechanic Machine Tool Maintenance (NSQF)
+  - Mechanic Motor Vehicle (NSQF)
+  - Mechanic Motor Vehicle Under Dual System Training (NSQF)
+  - Mechanic Tractor (NSQF)
+  - Mechanic Two And Three wheeler Under Dual Training System (NSQF)
+  - Multimedia, Animation and Special Effects (NSQF)
+  - Operator Advance Machine Tool (NSQF)
+  - Painter General (NSQF)
+  - Painter General Under Dual Training System (NSQF)
+  - Photographer (NSQF)
+  - Physiotherapy Technician (NSQF)
+  - Plastic Processing Operator (NSQF)
+  - Plastic Processing Operator Under Dual Training System (NSQF)
+  - Plumber (NSQF)
+  - Plumber Under Dual Training System (NSQF)
+  - Pump Operator cum Mechanic (NSQF)
+  - Refrigeration and Air Conditioner Technician (NSQF)
+  - Refrigeration and Air Conditioner Technician Under Dual Training System (NSQF)
+  - SMARTPHONE TECHNICIAN CUM APP TESTER (NSQF)
+  - Secretarial Practice (English) (NSQF)
+  - Sewing Technology (NSQF)
+  - Sewing Technology Under Dual Training System (NSQF)
+  - Sheet Metal Worker (NSQF)
+  - Sheet Metal Worker Under Dual System Training (NSQF)
+  - Solar Technician (Electrical) (NSQF)
+  - Spinning Technician (NSQF)
+  - Stenographer Secretarial Assistant (English) (NSQF)
+  - Surface Ornamentation Techniques (Embroidery) (NSQF)
+  - Surveyor (NSQF)
+  - Technician Mechatronics (NSQF)
+  - Technician Medical Electronics (NSQF)
+  - Technician Power Electronic Systems (NSQF)
+  - Technician Power Electronic Systems Under Dual Training System (NSQF)
+  - Textile Wet Processing Technician (NSQF)
+  - Tool and Die Maker (Dies and Moulds) (NSQF)
+  - Tool and Die Maker (Press Tools, Jigs and Fixtures) (NSQF)
+  - Tool and Die Maker (Press Tools, Jigs and Fixtures) Under Dual Training System
+  - Turner (NSQF)
+  - Turner Under Dual Training System (NSQF)
+  - Weaving Technician (NSQF)
+  - Welder (GMAW and GTAW) (NSQF)
+  - Welder (GMAW and GTAW) Under Dual System Training (NSQF)
+  - Welder (NSQF)
+  - Welder under Dual System Training (NSQF)
+  - Wireman (NSQF)
+  - Wireman Under Dual Training System (NSQF)
+  - Wood Work Technician (NSQF)
+
+======================================================================
+
+FILE: district_sector_collisions.csv
+PATH: data\raw\mssds\district_sector_collisions.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 0
+
+COLUMN: sector
+Unique values: 0
+
+======================================================================
+
+FILE: mssds_2023_master.csv
+PATH: data\raw\mssds\mssds_2023_master.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 36
+  - Ahmednagar
+  - Akola
+  - Amravati
+  - Beed
+  - Bhandara
+  - Buldhana
+  - Chandrapur
+  - Chhatrapati Sambhajinagar
+  - Dharashiv
+  - Dhule
+  - Gadchiroli
+  - Gondia
+  - Hingoli
+  - Jalgaon
+  - Jalna
+  - Kolhapur
+  - Latur
+  - Mumbai City
+  - Mumbai Suburban
+  - Nagpur
+  - Nanded
+  - Nandurbar
+  - Nashik
+  - Palghar
+  - Parbhani
+  - Pune
+  - Raigad
+  - Ratnagiri
+  - Sangli
+  - Satara
+  - Sindhudurg
+  - Solapur
+  - Thane
+  - Wardha
+  - Washim
+  - Yavatmal
+
+COLUMN: sector
+Unique values: 38
+  - Aerospace & Aviation
+  - Agriculture
+  - Apparel
+  - Automotive
+  - BFSI
+  - Beauty & Wellness
+  - Capital Goods
+  - Construction
+  - Domestic Workers
+  - Electronics
+  - Food Processing
+  - Furniture & Fittings
+  - Gem & Jewellery
+  - Green Jobs
+  - Handicraft & Carpet
+  - Healthcare
+  - Hydrocarbon
+  - IT/ITeS
+  - Infrastructure
+  - Instrumentation
+  - Iron & Steel
+  - Leather
+  - Life Science
+  - Logistics
+  - Management
+  - Media & Entertainment
+  - Metal Products
+  - Mining
+  - Paints & Coatings
+  - Persons with Disability
+  - Plumbing
+  - Power
+  - Retail
+  - Rubber
+  - Sports
+  - Telecom
+  - Textile
+  - Tourism & Hospitality
+
+======================================================================
+
+FILE: mssds_2023_projection_merged.csv
+PATH: data\raw\mssds\mssds_2023_projection_merged.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 36
+  - Ahmednagar
+  - Akola
+  - Amravati
+  - Beed
+  - Bhandara
+  - Buldhana
+  - Chandrapur
+  - Chhatrapati Sambhajinagar
+  - Dharashiv
+  - Dhule
+  - Gadchiroli
+  - Gondia
+  - Hingoli
+  - Jalgaon
+  - Jalna
+  - Kolhapur
+  - Latur
+  - Mumbai City
+  - Mumbai Suburban
+  - Nagpur
+  - Nanded
+  - Nandurbar
+  - Nashik
+  - Palghar
+  - Parbhani
+  - Pune
+  - Raigad
+  - Ratnagiri
+  - Sangli
+  - Satara
+  - Sindhudurg
+  - Solapur
+  - Thane
+  - Wardha
+  - Washim
+  - Yavatmal
+
+COLUMN: sector
+Unique values: 38
+  - Aerospace & Aviation
+  - Agriculture
+  - Apparel
+  - Automotive
+  - BFSI
+  - Beauty & Wellness
+  - Capital Goods
+  - Construction
+  - Domestic Workers
+  - Electronics
+  - Food Processing
+  - Furniture & Fittings
+  - Gem & Jewellery
+  - Green Jobs
+  - Handicraft & Carpet
+  - Healthcare
+  - Hydrocarbon
+  - IT/ITeS
+  - Infrastructure
+  - Instrumentation
+  - Iron & Steel
+  - Leather
+  - Life Science
+  - Logistics
+  - Management
+  - Media & Entertainment
+  - Metal Products
+  - Mining
+  - Paints & Coatings
+  - Persons with Disability
+  - Plumbing
+  - Power
+  - Retail
+  - Rubber
+  - Sports
+  - Telecom
+  - Textile
+  - Tourism & Hospitality
+
+======================================================================
+
+FILE: mssds_matched_sectors.csv
+PATH: data\raw\mssds\mssds_matched_sectors.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 36
+  - Ahmednagar
+  - Akola
+  - Amravati
+  - Beed
+  - Bhandara
+  - Buldhana
+  - Chandrapur
+  - Chhatrapati Sambhajinagar
+  - Dharashiv
+  - Dhule
+  - Gadchiroli
+  - Gondia
+  - Hingoli
+  - Jalgaon
+  - Jalna
+  - Kolhapur
+  - Latur
+  - Mumbai City
+  - Mumbai Suburban
+  - Nagpur
+  - Nanded
+  - Nandurbar
+  - Nashik
+  - Palghar
+  - Parbhani
+  - Pune
+  - Raigad
+  - Ratnagiri
+  - Sangli
+  - Satara
+  - Sindhudurg
+  - Solapur
+  - Thane
+  - Wardha
+  - Washim
+  - Yavatmal
+
+COLUMN: sector
+Unique values: 7
+  - Agriculture
+  - Construction
+  - Electronics
+  - Green Jobs
+  - IT/ITeS
+  - Retail
+  - Telecom
+
+======================================================================
+
+FILE: mssds_projection_long.csv
+PATH: data\raw\mssds\mssds_projection_long.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 36
+  - Ahmednagar
+  - Akola
+  - Amravati
+  - Beed
+  - Bhandara
+  - Buldhana
+  - Chandrapur
+  - Chhatrapati Sambhajinagar
+  - Dharashiv
+  - Dhule
+  - Gadchiroli
+  - Gondia
+  - Hingoli
+  - Jalgaon
+  - Jalna
+  - Kolhapur
+  - Latur
+  - Mumbai City
+  - Mumbai Suburban
+  - Nagpur
+  - Nanded
+  - Nandurbar
+  - Nashik
+  - Palghar
+  - Parbhani
+  - Pune
+  - Raigad
+  - Ratnagiri
+  - Sangli
+  - Satara
+  - Sindhudurg
+  - Solapur
+  - Thane
+  - Wardha
+  - Washim
+  - Yavatmal
+
+COLUMN: sector
+Unique values: 133
+  - Aerospace & Aviation
+  - Agriculture
+  - Allied Health Care
+  - Apiculture
+  - Automotive Repair
+  - Bamboo Fabrication
+  - Banking Accounting And Finance
+  - Banking And Accounting
+  - Beauty Culture And Hair Dressing
+  - Business And Commerce
+  - Carpet
+  - Chemical
+  - Construction
+  - Construction Equipment
+  - Construction Skill Development Council Of India
+  - Counselling Skill
+  - Courier And Logistics
+  - Electrical
+  - Electro-Mechanical
+  - Electronics
+  - Fabrication
+  - Fashion Design
+  - Fast Moving Consumer Goods (Fmcg)
+  - Fire And Safety Engineering
+  - Fle
+  - Food Processing And Preservation
+  - Fragrance, Flavour And Perfume
+  - Garment Making
+  - Gem And Jewellery
+  - Glassware
+  - Green Jobs
+  - Handicrafts & Carpets
+  - Handmade Paper And Paper Products
+  - Home Decor - Art Jewellery
+  - Hospitality
+  - Htex
+  - Hydrocarbons
+  - IT/ITeS
+  - Ict Flexi-Mou Course
+  - Indian Sweets, Snacks And Food
+  - Industrial Electrical
+  - Information And Communication Technology
+  - Instrumentation, Automation, Surveillance & Commun
+  - Insurance
+  - Jute Diversified Products Sector
+  - Jute Sector
+  - Khadi
+  - Leather And Sports Goods
+  - Leather Sector Skill Council
+  - Life Sciences Sector Skill Development Council
+  - Logistics Sector Skill Council
+  - Marine Engineering
+  - Material Handling
+  - Material Management
+  - Media
+  - Medical And Nursing
+  - Medical And Nursing Flexi- Mou
+  - Mscvt - Electrical And Electronics
+  - Mscvt - Gems & Jewellery
+  - Mscvt - Information Technology And Communication
+  - Mscvt - Manufacturing
+  - Nutrition And Health Education
+  - Paint
+  - Plastic Processing
+  - Printing
+  - Process Instrumentation
+  - Production And Manufacturing
+  - Rain Water Harvesting
+  - Refrigeration And Air Conditioning
+  - Renewable Energy
+  - Retail
+  - Security
+  - Sericulture
+  - Ship Construction
+  - Soft And Entrepreneurship Skill
+  - Soft Skills
+  - Spa And Wellness
+  - Sponge Iron
+  - Ssc-Aerospace
+  - Ssc-Agriculture
+  - Ssc-Apparel
+  - Ssc-Automotive
+  - Ssc-Beauty And Wellness
+  - Ssc-Bfsi
+  - Ssc-Capital Goods
+  - Ssc-Construction
+  - Ssc-Domestic Worker
+  - Ssc-Electronics
+  - Ssc-Food Processing
+  - Ssc-Furniture And Fittings
+  - Ssc-Gems And Jewellery
+  - Ssc-Handicrafts
+  - Ssc-Healthcare
+  - Ssc-Infrastructure
+  - Ssc-Infrastructure Equipment
+  - Ssc-Instrumentation
+  - Ssc-Iron And Steel
+  - Ssc-It-Ites
+  - Ssc-Leather
+  - Ssc-Life Science
+  - Ssc-Life Sciences
+  - Ssc-Logistics
+  - Ssc-Management And Entrepreneurship
+  - Ssc-Media And Entertainment
+  - Ssc-Mining
+  - Ssc-Paints And Coatings
+  - Ssc-People With Disability*
+  - Ssc-Plumbing
+  - Ssc-Power
+  - Ssc-Retail
+  - Ssc-Rubber
+  - Ssc-Security
+  - Ssc-Sports
+  - Ssc-Sports Ssc
+  - Ssc-Strategic Manufacturing
+  - Ssc-Telecom
+  - Ssc-Textile
+  - Ssc-Textiles And Handlooms
+  - Ssc-Tourism And Hospitality
+  - Telecom
+  - Textile - Cotton Spinning
+  - Textiles - Chemical Processing
+  - Textiles - Hdpe/Pp
+  - Textiles - Knitting
+  - Textiles - Quality Control
+  - Textiles - Weaving
+  - Textiles - Weaving Preparation
+  - Textiles - Winding
+  - Toy Making
+  - Travel And Tourism
+  - Ttc
+  - Water Management And Plumbing Skill Council
+  - Wood Work
+
+COLUMN: sector_raw
+Unique values: 133
+  - AGRICULTURE
+  - ALLIED HEALTH CARE
+  - APICULTURE
+  - AUTOMOTIVE REPAIR
+  - Aerospace & Aviation
+  - BAMBOO FABRICATION
+  - BANKING ACCOUNTING AND FINANCE
+  - BANKING AND ACCOUNTING
+  - BEAUTY CULTURE AND HAIR DRESSING
+  - BUSINESS AND COMMERCE
+  - CARPET
+  - CHEMICAL
+  - CONSTRUCTION
+  - CONSTRUCTION EQUIPMENT
+  - COUNSELLING SKILL
+  - COURIER AND LOGISTICS
+  - Construction Skill Development Council of India
+  - ELECTRICAL
+  - ELECTRO-MECHANICAL
+  - ELECTRONICS
+  - FABRICATION
+  - FASHION DESIGN
+  - FAST MOVING CONSUMER GOODS (FMCG)
+  - FIRE AND SAFETY ENGINEERING
+  - FLE
+  - FOOD PROCESSING AND PRESERVATION
+  - FRAGRANCE, FLAVOUR AND PERFUME
+  - GARMENT MAKING
+  - GEM AND JEWELLERY
+  - GLASSWARE
+  - HANDMADE PAPER AND PAPER PRODUCTS
+  - HOME DECOR - ART JEWELLERY
+  - HOSPITALITY
+  - HTEX
+  - Handicrafts & Carpets
+  - Hydrocarbons
+  - ICT Flexi-MoU Course
+  - INDIAN SWEETS, SNACKS AND FOOD
+  - INDUSTRIAL ELECTRICAL
+  - INFORMATION AND COMMUNICATION TECHNOLOGY
+  - INSURANCE
+  - IT/ITeS
+  - Instrumentation, Automation, Surveillance & Commun
+  - JUTE DIVERSIFIED PRODUCTS SECTOR
+  - JUTE SECTOR
+  - KHADI
+  - LEATHER AND SPORTS GOODS
+  - Leather Sector Skill Council
+  - Life Sciences Sector Skill Development Council
+  - Logistics Sector Skill Council
+  - MARINE ENGINEERING
+  - MATERIAL HANDLING
+  - MATERIAL MANAGEMENT
+  - MEDIA
+  - MEDICAL AND NURSING
+  - MEDICAL AND NURSING Flexi- MoU
+  - MSCVT - Electrical and Electronics
+  - MSCVT - Gems & Jewellery
+  - MSCVT - INFORMATION TECHNOLOGY AND COMMUNICATION
+  - MSCVT - Manufacturing
+  - NUTRITION AND HEALTH EDUCATION
+  - PAINT
+  - PLASTIC PROCESSING
+  - PRINTING
+  - PROCESS INSTRUMENTATION
+  - PRODUCTION AND MANUFACTURING
+  - RAIN WATER HARVESTING
+  - REFRIGERATION AND AIR CONDITIONING
+  - RENEWABLE ENERGY
+  - RETAIL
+  - SECURITY
+  - SERICULTURE
+  - SHIP CONSTRUCTION
+  - SOFT AND ENTREPRENEURSHIP SKILL
+  - SOFT SKILLS
+  - SPA AND WELLNESS
+  - SPONGE IRON
+  - SSC-AGRICULTURE
+  - SSC-APPAREL
+  - SSC-AUTOMOTIVE
+  - SSC-Aerospace
+  - SSC-BEAUTY AND WELLNESS
+  - SSC-BFSI
+  - SSC-CAPITAL GOODS
+  - SSC-CONSTRUCTION
+  - SSC-DOMESTIC WORKER
+  - SSC-ELECTRONICS
+  - SSC-FOOD PROCESSING
+  - SSC-FURNITURE AND FITTINGS
+  - SSC-GEMS AND JEWELLERY
+  - SSC-HANDICRAFTS
+  - SSC-HEALTHCARE
+  - SSC-INFRASTRUCTURE
+  - SSC-IRON AND STEEL
+  - SSC-IT-ITES
+  - SSC-Infrastructure Equipment
+  - SSC-Instrumentation
+  - SSC-LEATHER
+  - SSC-LIFE SCIENCE
+  - SSC-LOGISTICS
+  - SSC-Life Sciences
+  - SSC-MEDIA AND ENTERTAINMENT
+  - SSC-MINING
+  - SSC-Management and Entrepreneurship
+  - SSC-PLUMBING
+  - SSC-POWER
+  - SSC-Paints AND Coatings
+  - SSC-People with Disability*
+  - SSC-RETAIL
+  - SSC-RUBBER
+  - SSC-SECURITY
+  - SSC-SPORTS SSC
+  - SSC-Sports
+  - SSC-Strategic Manufacturing
+  - SSC-TELECOM
+  - SSC-TEXTILE
+  - SSC-TOURISM AND HOSPITALITY
+  - SSC-Textiles AND Handlooms
+  - TELECOM
+  - TEXTILE - COTTON SPINNING
+  - TEXTILES - CHEMICAL PROCESSING
+  - TEXTILES - HDPE/PP
+  - TEXTILES - KNITTING
+  - TEXTILES - QUALITY CONTROL
+  - TEXTILES - WEAVING
+  - TEXTILES - WEAVING PREPARATION
+  - TEXTILES - WINDING
+  - TOY MAKING
+  - TRAVEL AND TOURISM
+  - TTC
+  - WOOD WORK
+  - Water Management and Plumbing Skill Council
+  - green jobs
+
+======================================================================
+
+FILE: projection_unmatched_sectors.csv
+PATH: data\raw\mssds\projection_unmatched_sectors.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 36
+  - Ahmednagar
+  - Akola
+  - Amravati
+  - Beed
+  - Bhandara
+  - Buldhana
+  - Chandrapur
+  - Chhatrapati Sambhajinagar
+  - Dharashiv
+  - Dhule
+  - Gadchiroli
+  - Gondia
+  - Hingoli
+  - Jalgaon
+  - Jalna
+  - Kolhapur
+  - Latur
+  - Mumbai City
+  - Mumbai Suburban
+  - Nagpur
+  - Nanded
+  - Nandurbar
+  - Nashik
+  - Palghar
+  - Parbhani
+  - Pune
+  - Raigad
+  - Ratnagiri
+  - Sangli
+  - Satara
+  - Sindhudurg
+  - Solapur
+  - Thane
+  - Wardha
+  - Washim
+  - Yavatmal
+
+COLUMN: sector
+Unique values: 132
+  - Aerospace & Aviation
+  - Agriculture
+  - Allied Health Care
+  - Apiculture
+  - Automotive Repair
+  - Bamboo Fabrication
+  - Banking Accounting And Finance
+  - Banking And Accounting
+  - Beauty Culture And Hair Dressing
+  - Business And Commerce
+  - Carpet
+  - Chemical
+  - Construction
+  - Construction Equipment
+  - Construction Skill Development Council Of India
+  - Counselling Skill
+  - Courier And Logistics
+  - Electrical
+  - Electro-Mechanical
+  - Fabrication
+  - Fashion Design
+  - Fast Moving Consumer Goods (Fmcg)
+  - Fire And Safety Engineering
+  - Fle
+  - Food Processing And Preservation
+  - Fragrance, Flavour And Perfume
+  - Garment Making
+  - Gem And Jewellery
+  - Glassware
+  - Green Jobs
+  - Handicrafts & Carpets
+  - Handmade Paper And Paper Products
+  - Home Decor - Art Jewellery
+  - Hospitality
+  - Htex
+  - Hydrocarbons
+  - IT/ITeS
+  - Ict Flexi-Mou Course
+  - Indian Sweets, Snacks And Food
+  - Industrial Electrical
+  - Information And Communication Technology
+  - Instrumentation, Automation, Surveillance & Commun
+  - Insurance
+  - Jute Diversified Products Sector
+  - Jute Sector
+  - Khadi
+  - Leather And Sports Goods
+  - Leather Sector Skill Council
+  - Life Sciences Sector Skill Development Council
+  - Logistics Sector Skill Council
+  - Marine Engineering
+  - Material Handling
+  - Material Management
+  - Media
+  - Medical And Nursing
+  - Medical And Nursing Flexi- Mou
+  - Mscvt - Electrical And Electronics
+  - Mscvt - Gems & Jewellery
+  - Mscvt - Information Technology And Communication
+  - Mscvt - Manufacturing
+  - Nutrition And Health Education
+  - Paint
+  - Plastic Processing
+  - Printing
+  - Process Instrumentation
+  - Production And Manufacturing
+  - Rain Water Harvesting
+  - Refrigeration And Air Conditioning
+  - Renewable Energy
+  - Retail
+  - Security
+  - Sericulture
+  - Ship Construction
+  - Soft And Entrepreneurship Skill
+  - Soft Skills
+  - Spa And Wellness
+  - Sponge Iron
+  - Ssc-Aerospace
+  - Ssc-Agriculture
+  - Ssc-Apparel
+  - Ssc-Automotive
+  - Ssc-Beauty And Wellness
+  - Ssc-Bfsi
+  - Ssc-Capital Goods
+  - Ssc-Construction
+  - Ssc-Domestic Worker
+  - Ssc-Electronics
+  - Ssc-Food Processing
+  - Ssc-Furniture And Fittings
+  - Ssc-Gems And Jewellery
+  - Ssc-Handicrafts
+  - Ssc-Healthcare
+  - Ssc-Infrastructure
+  - Ssc-Infrastructure Equipment
+  - Ssc-Instrumentation
+  - Ssc-Iron And Steel
+  - Ssc-It-Ites
+  - Ssc-Leather
+  - Ssc-Life Science
+  - Ssc-Life Sciences
+  - Ssc-Logistics
+  - Ssc-Management And Entrepreneurship
+  - Ssc-Media And Entertainment
+  - Ssc-Mining
+  - Ssc-Paints And Coatings
+  - Ssc-People With Disability*
+  - Ssc-Plumbing
+  - Ssc-Power
+  - Ssc-Retail
+  - Ssc-Rubber
+  - Ssc-Security
+  - Ssc-Sports
+  - Ssc-Sports Ssc
+  - Ssc-Strategic Manufacturing
+  - Ssc-Telecom
+  - Ssc-Textile
+  - Ssc-Textiles And Handlooms
+  - Ssc-Tourism And Hospitality
+  - Telecom
+  - Textile - Cotton Spinning
+  - Textiles - Chemical Processing
+  - Textiles - Hdpe/Pp
+  - Textiles - Knitting
+  - Textiles - Quality Control
+  - Textiles - Weaving
+  - Textiles - Weaving Preparation
+  - Textiles - Winding
+  - Toy Making
+  - Travel And Tourism
+  - Ttc
+  - Water Management And Plumbing Skill Council
+  - Wood Work
+
+COLUMN: sector_raw
+Unique values: 132
+  - AGRICULTURE
+  - ALLIED HEALTH CARE
+  - APICULTURE
+  - AUTOMOTIVE REPAIR
+  - Aerospace & Aviation
+  - BAMBOO FABRICATION
+  - BANKING ACCOUNTING AND FINANCE
+  - BANKING AND ACCOUNTING
+  - BEAUTY CULTURE AND HAIR DRESSING
+  - BUSINESS AND COMMERCE
+  - CARPET
+  - CHEMICAL
+  - CONSTRUCTION
+  - CONSTRUCTION EQUIPMENT
+  - COUNSELLING SKILL
+  - COURIER AND LOGISTICS
+  - Construction Skill Development Council of India
+  - ELECTRICAL
+  - ELECTRO-MECHANICAL
+  - FABRICATION
+  - FASHION DESIGN
+  - FAST MOVING CONSUMER GOODS (FMCG)
+  - FIRE AND SAFETY ENGINEERING
+  - FLE
+  - FOOD PROCESSING AND PRESERVATION
+  - FRAGRANCE, FLAVOUR AND PERFUME
+  - GARMENT MAKING
+  - GEM AND JEWELLERY
+  - GLASSWARE
+  - HANDMADE PAPER AND PAPER PRODUCTS
+  - HOME DECOR - ART JEWELLERY
+  - HOSPITALITY
+  - HTEX
+  - Handicrafts & Carpets
+  - Hydrocarbons
+  - ICT Flexi-MoU Course
+  - INDIAN SWEETS, SNACKS AND FOOD
+  - INDUSTRIAL ELECTRICAL
+  - INFORMATION AND COMMUNICATION TECHNOLOGY
+  - INSURANCE
+  - IT/ITeS
+  - Instrumentation, Automation, Surveillance & Commun
+  - JUTE DIVERSIFIED PRODUCTS SECTOR
+  - JUTE SECTOR
+  - KHADI
+  - LEATHER AND SPORTS GOODS
+  - Leather Sector Skill Council
+  - Life Sciences Sector Skill Development Council
+  - Logistics Sector Skill Council
+  - MARINE ENGINEERING
+  - MATERIAL HANDLING
+  - MATERIAL MANAGEMENT
+  - MEDIA
+  - MEDICAL AND NURSING
+  - MEDICAL AND NURSING Flexi- MoU
+  - MSCVT - Electrical and Electronics
+  - MSCVT - Gems & Jewellery
+  - MSCVT - INFORMATION TECHNOLOGY AND COMMUNICATION
+  - MSCVT - Manufacturing
+  - NUTRITION AND HEALTH EDUCATION
+  - PAINT
+  - PLASTIC PROCESSING
+  - PRINTING
+  - PROCESS INSTRUMENTATION
+  - PRODUCTION AND MANUFACTURING
+  - RAIN WATER HARVESTING
+  - REFRIGERATION AND AIR CONDITIONING
+  - RENEWABLE ENERGY
+  - RETAIL
+  - SECURITY
+  - SERICULTURE
+  - SHIP CONSTRUCTION
+  - SOFT AND ENTREPRENEURSHIP SKILL
+  - SOFT SKILLS
+  - SPA AND WELLNESS
+  - SPONGE IRON
+  - SSC-AGRICULTURE
+  - SSC-APPAREL
+  - SSC-AUTOMOTIVE
+  - SSC-Aerospace
+  - SSC-BEAUTY AND WELLNESS
+  - SSC-BFSI
+  - SSC-CAPITAL GOODS
+  - SSC-CONSTRUCTION
+  - SSC-DOMESTIC WORKER
+  - SSC-ELECTRONICS
+  - SSC-FOOD PROCESSING
+  - SSC-FURNITURE AND FITTINGS
+  - SSC-GEMS AND JEWELLERY
+  - SSC-HANDICRAFTS
+  - SSC-HEALTHCARE
+  - SSC-INFRASTRUCTURE
+  - SSC-IRON AND STEEL
+  - SSC-IT-ITES
+  - SSC-Infrastructure Equipment
+  - SSC-Instrumentation
+  - SSC-LEATHER
+  - SSC-LIFE SCIENCE
+  - SSC-LOGISTICS
+  - SSC-Life Sciences
+  - SSC-MEDIA AND ENTERTAINMENT
+  - SSC-MINING
+  - SSC-Management and Entrepreneurship
+  - SSC-PLUMBING
+  - SSC-POWER
+  - SSC-Paints AND Coatings
+  - SSC-People with Disability*
+  - SSC-RETAIL
+  - SSC-RUBBER
+  - SSC-SECURITY
+  - SSC-SPORTS SSC
+  - SSC-Sports
+  - SSC-Strategic Manufacturing
+  - SSC-TELECOM
+  - SSC-TEXTILE
+  - SSC-TOURISM AND HOSPITALITY
+  - SSC-Textiles AND Handlooms
+  - TELECOM
+  - TEXTILE - COTTON SPINNING
+  - TEXTILES - CHEMICAL PROCESSING
+  - TEXTILES - HDPE/PP
+  - TEXTILES - KNITTING
+  - TEXTILES - QUALITY CONTROL
+  - TEXTILES - WEAVING
+  - TEXTILES - WEAVING PREPARATION
+  - TEXTILES - WINDING
+  - TOY MAKING
+  - TRAVEL AND TOURISM
+  - TTC
+  - WOOD WORK
+  - Water Management and Plumbing Skill Council
+  - green jobs
+
+======================================================================
+
+FILE: employment_data_source_registry.csv
+PATH: data\raw\training\employment_data_source_registry.csv
+----------------------------------------------------------------------
+No target columns found in this dataset.
+
+FILE: employment_demand_indicators_2026.csv
+PATH: data\raw\training\employment_demand_indicators_2026.csv
+----------------------------------------------------------------------
+No target columns found in this dataset.
+
+FILE: ncs_maharashtra_job_listings_snapshot_2026.csv
+PATH: data\raw\training\ncs_maharashtra_job_listings_snapshot_2026.csv
+----------------------------------------------------------------------
+
+COLUMN: district
+Unique values: 8
+  - Kolhapur
+  - Latur
+  - Mumbai
+  - Mumbai Suburban
+  - Nashik
+  - Pune
+  - Raigad
+  - Thane
+
+COLUMN: job_title
+Unique values: 14
+  - Anuj more payboy
+  - Field work
+  - MOBILIZER
+  - PEN PACKING JOB WORK FROM HOME
+  - Pencil Packing job Work from home
+  - Required female Personal Secretary
+  - Rohan sonawane
+  - SAREE PACKING JOB WORK FROM HOME
+  - SEEKING NEW BANKING JOB
+  - STARTER TIPS TO MAKE MONEY ONLINE OFFLINE
+  - Soldering operator
+  - Tattoo Artists
+  - Tempo required with Driver for Delivery
+  - pen pencil packing homework job
+
+COLUMN: skills_required
+Unique values: 8
+  - CV; DSA; KYC Verification; Operator; WP
+  - Data Entry / Back Office
+  - Delivery/Collections
+  - Mobilizer
+  - Office Assistant/Helper
+  - Others
+  - Packager
+  - Soldering Operator
+
+======================================================================
+
+FILE: official_skills_source_registry.csv
+PATH: data\raw\training\official_skills_source_registry.csv
+----------------------------------------------------------------------
+No target columns found in this dataset.
+
+FILE: official_trade_skills_reference.csv
+PATH: data\raw\training\official_trade_skills_reference.csv
+----------------------------------------------------------------------
+
+COLUMN: trade
+Unique values: 8
+  - Aerospace Structure and Equipment Fitter
+  - Computer Operator and Programming Assistant (COPA)
+  - Draughtsman (Civil)
+  - Electrician
+  - Electronics Mechanic
+  - Fitter
+  - Plumber
+  - Welder
+
+======================================================================

@@ -1,0 +1,138 @@
+MAHARASHTRA SKILL DATA - FULL PIPELINE QUALITY & VALIDATION REPORT
+===========================================================================
+
+SECTION 1: DATASET INVENTORY & INTEGRITY VALIDATION
+---------------------------------------------------------------------------
+[WARNING] ITI Supply Standardized v3
+  Path: data\processed\iti\iti_supply_standardized_v3.csv
+  Rows: 5143 | Columns: 19
+  Duplicate Rows: 8 | Duplicate Keys: 0
+  Numeric summary:
+    - intake: non_null=5143, nulls=0, sum=144,292.00
+  WARNINGS: ['Contains 8 duplicate rows originating from raw source directory (preserved for row fidelity)']
+
+[PASS] MSSDS Baseline Standardized
+  Path: data\processed\mssds\mssds_baseline_standardized.csv
+  Rows: 760 | Columns: 14
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - candidate_aspiration: non_null=727, nulls=33, sum=150,744.00
+    - industry_size: non_null=478, nulls=282, sum=565,958.00
+    - organization_count: non_null=520, nulls=240, sum=2,713.00
+    - dsdp_training: non_null=668, nulls=92, sum=236,499.00
+    - mssds_trained_2022_23: non_null=416, nulls=344, sum=130,013.00
+  Missing values: {'candidate_aspiration': 33, 'industry_size': 282, 'organization_count': 240, 'dsdp': 740, 'mssds_trained': 751, 'inference': 736, 'dsdp_training': 92, 'mssds_trained_2022_23': 344}
+
+[PASS] MSSDS Projection Standardized
+  Path: data\processed\mssds\mssds_projection_standardized.csv
+  Rows: 4788 | Columns: 11
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - projected_training: non_null=4317, nulls=471, sum=205,014.00
+  Missing values: {'sector_standardized': 3060, 'projected_training': 471}
+
+[PASS] Employment Demand Standardized
+  Path: data\processed\employment\employment_demand_standardized.csv
+  Rows: 6 | Columns: 9
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - value: non_null=6, nulls=0, sum=135,587,956.00
+
+[PASS] NCS Jobs Standardized
+  Path: data\processed\employment\ncs_jobs_standardized.csv
+  Rows: 17 | Columns: 14
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - salary_min_inr_year: non_null=16, nulls=1, sum=4,602,000.00
+    - salary_max_inr_year: non_null=16, nulls=1, sum=5,688,000.00
+  Missing values: {'skills_required': 1, 'skills_required_raw': 1, 'salary_min_inr_year': 1, 'salary_max_inr_year': 1}
+
+[PASS] Integration: ITI Supply by District
+  Path: data\processed\integration\iti_supply_by_district.csv
+  Rows: 36 | Columns: 14
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - total_iti_count: non_null=36, nulls=0, sum=908.00
+    - total_intake_capacity: non_null=36, nulls=0, sum=144,292.00
+    - government_intake_capacity: non_null=36, nulls=0, sum=95,344.00
+    - private_intake_capacity: non_null=36, nulls=0, sum=48,948.00
+
+[PASS] Integration: MSSDS Baseline by District-Sector
+  Path: data\processed\integration\mssds_baseline_by_district_sector.csv
+  Rows: 760 | Columns: 14
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - candidate_aspiration: non_null=727, nulls=33, sum=150,744.00
+    - industry_size: non_null=478, nulls=282, sum=565,958.00
+    - dsdp_training: non_null=668, nulls=92, sum=236,499.00
+    - mssds_trained_2022_23: non_null=416, nulls=344, sum=130,013.00
+  Missing values: {'candidate_aspiration': 33, 'industry_size': 282, 'organization_count': 240, 'dsdp_training': 92, 'mssds_trained_2022_23': 344, 'inference': 736}
+
+[PASS] Integration: MSSDS Projection by District-Sector
+  Path: data\processed\integration\mssds_projection_by_district_sector.csv
+  Rows: 4788 | Columns: 14
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - projected_training: non_null=4317, nulls=471, sum=205,014.00
+  Missing values: {'sector_standardized': 3060, 'projected_training': 471}
+
+[PASS] Integration: Employment Demand Indicators
+  Path: data\processed\integration\employment_demand_indicators.csv
+  Rows: 6 | Columns: 11
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - value: non_null=6, nulls=0, sum=135,587,956.00
+
+[PASS] Integration: NCS Job Signals
+  Path: data\processed\integration\ncs_job_signals.csv
+  Rows: 17 | Columns: 16
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - salary_min_inr_year: non_null=16, nulls=1, sum=4,602,000.00
+    - salary_max_inr_year: non_null=16, nulls=1, sum=5,688,000.00
+  Missing values: {'skills_required': 1, 'skills_required_raw': 1, 'salary_min_inr_year': 1, 'salary_max_inr_year': 1}
+
+[PASS] Integration: Government Skill Supply-Demand
+  Path: data\processed\integration\government_skill_supply_demand.csv
+  Rows: 36 | Columns: 25
+  Duplicate Rows: 0 | Duplicate Keys: 0
+  Numeric summary:
+    - total_iti_count: non_null=36, nulls=0, sum=908.00
+    - total_intake_capacity: non_null=36, nulls=0, sum=144,292.00
+    - total_candidate_aspiration: non_null=36, nulls=0, sum=150,744.00
+    - total_industry_workforce_surveyed: non_null=36, nulls=0, sum=565,958.00
+    - total_dsdp_target: non_null=36, nulls=0, sum=236,499.00
+    - total_projected_training_all_sectors: non_null=36, nulls=0, sum=205,014.00
+
+===========================================================================
+SECTION 2: CROSS-DATASET CONSISTENCY & IMPORTANT TOTALS
+---------------------------------------------------------------------------
+[PASS if True] 36 Standard District Consistency Across Datasets: True
+[PASS if True] All Standardized Projection Sectors in Master Vocabulary: True
+[PASS if True] All Approved Trades Correspond to Official Reference: True
+[PASS if True] Mapping Statuses Restricted to (approved, needs_review, unmatched): True
+
+CRITICAL TOTALS VERIFICATION:
+  - ITI Intake Capacity: 144,292 (Expected: 144,292) -> PASS
+  - MSSDS Projected Training: 205,014.0 (Expected: 205,014.0) -> PASS
+  - MSSDS Candidate Aspiration: 150,744.0 (Expected: 150,744.0) -> PASS
+  - Mahaswayam Registered Job Seekers: 3,660,769 (Expected: 3,660,769) -> PASS
+  - Integrated District Table Matches Source Totals Exactly: PASS
+
+===========================================================================
+SECTION 3: DOCUMENTED DATA ENGINEERING LIMITATIONS & ASSUMPTIONS
+---------------------------------------------------------------------------
+1. ITI intake capacity represents approved training seat supply, NOT actual enrollment, completion, placement, or employment.
+2. NCS job listings are a sample snapshot signal and do NOT represent total Maharashtra employment demand.
+3. Mahaswayam and NCS employment indicators are administrative registration snapshots, not complete labor-market demand.
+4. MSSDS projected training targets represent administrative planning aspirations, NOT guaranteed future economic employment.
+5. 92 ITI trades currently remain unmatched to the limited 8-trade official curriculum reference.
+6. 40 MSSDS projection sector mappings remain 'needs_review' (Sector Skill Council variants).
+7. 85 MSSDS projection sectors remain 'unmatched' (granular courses preserved without forced aggregation).
+8. NCS job titles are not force-mapped to ITI trades.
+9. NCS skills are not force-mapped to official trade competencies.
+10. ITI trades are not force-mapped to MSSDS sectors.
+
+===========================================================================
+OVERALL PIPELINE STATUS: READY WITH DOCUMENTED LIMITATIONS
+===========================================================================

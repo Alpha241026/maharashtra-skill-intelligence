@@ -1,0 +1,141 @@
+MAHARASHTRA SKILL DATA - INTEGRATION LAYER VALIDATION REPORT
+===========================================================================
+
+DATASET: ITI Supply by District
+Path: data\processed\integration\iti_supply_by_district.csv
+---------------------------------------------------------------------------
+Row Count: 36 (Expected: 36)
+Row Count Match: PASSED
+Column Count: 14
+Columns: ['district', 'district_raw', 'source_region', 'total_iti_count', 'government_iti_count', 'private_iti_count', 'total_intake_capacity', 'government_intake_capacity', 'private_intake_capacity', 'unique_trades_offered', 'admission_year', 'source_dataset', 'source_file', 'data_nature_note']
+Duplicate key count on ['district']: 0
+Unique districts: 36
+District raw preserved: True
+Numeric column checks:
+  - total_iti_count: non_null=36, nulls=0, sum=908.00
+  - government_iti_count: non_null=36, nulls=0, sum=356.00
+  - private_iti_count: non_null=36, nulls=0, sum=552.00
+  - total_intake_capacity: non_null=36, nulls=0, sum=144,292.00
+  - government_intake_capacity: non_null=36, nulls=0, sum=95,344.00
+  - private_intake_capacity: non_null=36, nulls=0, sum=48,948.00
+  - unique_trades_offered: non_null=36, nulls=0, sum=1,268.00
+Source/Provenance fields present: True
+Data nature qualification note present: True
+Overall Status for ITI Supply by District: PASSED
+
+===========================================================================
+
+DATASET: MSSDS Baseline by District-Sector
+Path: data\processed\integration\mssds_baseline_by_district_sector.csv
+---------------------------------------------------------------------------
+Row Count: 760 (Expected: 760)
+Row Count Match: PASSED
+Column Count: 14
+Columns: ['district', 'district_raw', 'sector', 'sector_raw', 'candidate_aspiration', 'industry_size', 'organization_count', 'dsdp_training', 'mssds_trained_2022_23', 'inference', 'pdf_page', 'source_batch', 'source_dataset', 'data_nature_note']
+Duplicate key count on ['district', 'sector']: 0
+Unique districts: 36
+District raw preserved: True
+Unique sectors (sector_raw): 38
+Numeric column checks:
+  - candidate_aspiration: non_null=727, nulls=33, sum=150,744.00
+  - industry_size: non_null=478, nulls=282, sum=565,958.00
+  - organization_count: non_null=520, nulls=240, sum=2,713.00
+  - dsdp_training: non_null=668, nulls=92, sum=236,499.00
+  - mssds_trained_2022_23: non_null=416, nulls=344, sum=130,013.00
+  - pdf_page: non_null=760, nulls=0, sum=175,682.00
+Source/Provenance fields present: True
+Data nature qualification note present: True
+Overall Status for MSSDS Baseline by District-Sector: PASSED
+
+===========================================================================
+
+DATASET: MSSDS Projection by District-Sector
+Path: data\processed\integration\mssds_projection_by_district_sector.csv
+---------------------------------------------------------------------------
+Row Count: 4788 (Expected: 4788)
+Row Count Match: PASSED
+Column Count: 14
+Columns: ['district', 'district_raw', 'sector', 'sector_raw', 'sector_standardized', 'mapping_status', 'mapping_method', 'mapping_note', 'projected_training', 'projection_available', 'projection_value_is_zero', 'projection_context_year', 'source_dataset', 'data_nature_note']
+Duplicate key count on ['district', 'sector_raw']: 0
+Unique districts: 36
+District raw preserved: True
+Unique sectors (sector_raw): 133
+Mapping status distribution: {'unmatched': 3060, 'needs_review': 1440, 'approved': 288}
+Numeric column checks:
+  - projected_training: non_null=4317, nulls=471, sum=205,014.00
+Source/Provenance fields present: True
+Data nature qualification note present: True
+Overall Status for MSSDS Projection by District-Sector: PASSED
+
+===========================================================================
+
+DATASET: Employment Demand Indicators
+Path: data\processed\integration\employment_demand_indicators.csv
+---------------------------------------------------------------------------
+Row Count: 6 (Expected: 6)
+Row Count Match: PASSED
+Column Count: 11
+Columns: ['geography', 'geography_raw', 'indicator', 'indicator_raw', 'value', 'unit', 'source', 'date_or_qualification', 'source_url', 'source_dataset', 'data_nature_note']
+Duplicate key count on ['geography', 'indicator']: 0
+Numeric column checks:
+  - value: non_null=6, nulls=0, sum=135,587,956.00
+Source/Provenance fields present: True
+Data nature qualification note present: True
+Overall Status for Employment Demand Indicators: PASSED
+
+===========================================================================
+
+DATASET: NCS Job Signals
+Path: data\processed\integration\ncs_job_signals.csv
+---------------------------------------------------------------------------
+Row Count: 17 (Expected: 17)
+Row Count Match: PASSED
+Column Count: 16
+Columns: ['record_type', 'job_title', 'job_title_raw', 'district', 'district_raw', 'skills_required', 'skills_required_raw', 'salary_min_inr_year', 'salary_max_inr_year', 'employer_or_source', 'posted_date', 'source', 'source_url', 'collection_note', 'source_dataset', 'data_nature_note']
+Duplicate key count on ['job_title_raw', 'district', 'posted_date']: 0
+Unique districts: 8
+District raw preserved: True
+Numeric column checks:
+  - salary_min_inr_year: non_null=16, nulls=1, sum=4,602,000.00
+  - salary_max_inr_year: non_null=16, nulls=1, sum=5,688,000.00
+Source/Provenance fields present: True
+Data nature qualification note present: True
+Overall Status for NCS Job Signals: PASSED
+
+===========================================================================
+
+DATASET: Government Skill Supply-Demand District Integration
+Path: data\processed\integration\government_skill_supply_demand.csv
+---------------------------------------------------------------------------
+Row Count: 36 (Expected: 36)
+Row Count Match: PASSED
+Column Count: 25
+Columns: ['district', 'district_raw', 'source_region', 'total_iti_count', 'government_iti_count', 'private_iti_count', 'total_intake_capacity', 'government_intake_capacity', 'private_intake_capacity', 'unique_trades_offered', 'total_candidate_aspiration', 'total_industry_workforce_surveyed', 'total_organizations_surveyed', 'total_dsdp_target', 'total_mssds_trained_2022_23', 'sectors_surveyed_count', 'total_projected_training_all_sectors', 'total_projected_training_approved_sectors', 'projection_sectors_count', 'ncs_job_listings_sample_count', 'supply_source_dataset', 'mssds_source_dataset', 'ncs_source_dataset', 'integration_grain', 'data_nature_note']
+Duplicate key count on ['district']: 0
+Unique districts: 36
+District raw preserved: True
+Numeric column checks:
+  - total_iti_count: non_null=36, nulls=0, sum=908.00
+  - government_iti_count: non_null=36, nulls=0, sum=356.00
+  - private_iti_count: non_null=36, nulls=0, sum=552.00
+  - total_intake_capacity: non_null=36, nulls=0, sum=144,292.00
+  - government_intake_capacity: non_null=36, nulls=0, sum=95,344.00
+  - private_intake_capacity: non_null=36, nulls=0, sum=48,948.00
+  - unique_trades_offered: non_null=36, nulls=0, sum=1,268.00
+  - total_candidate_aspiration: non_null=36, nulls=0, sum=150,744.00
+  - total_industry_workforce_surveyed: non_null=36, nulls=0, sum=565,958.00
+  - total_organizations_surveyed: non_null=36, nulls=0, sum=2,713.00
+  - total_dsdp_target: non_null=36, nulls=0, sum=236,499.00
+  - total_mssds_trained_2022_23: non_null=36, nulls=0, sum=130,013.00
+  - sectors_surveyed_count: non_null=36, nulls=0, sum=760.00
+  - total_projected_training_all_sectors: non_null=36, nulls=0, sum=205,014.00
+  - total_projected_training_approved_sectors: non_null=36, nulls=0, sum=43,167.00
+  - projection_sectors_count: non_null=36, nulls=0, sum=4,788.00
+  - ncs_job_listings_sample_count: non_null=36, nulls=0, sum=11.00
+Source/Provenance fields present: True
+Data nature qualification note present: True
+Overall Status for Government Skill Supply-Demand District Integration: PASSED
+
+===========================================================================
+
+FINAL INTEGRATION SUITE STATUS: PASSED

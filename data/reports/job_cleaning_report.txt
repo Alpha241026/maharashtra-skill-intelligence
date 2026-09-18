@@ -1,0 +1,101 @@
+================================================================================
+MAHARASHTRA JOB MARKET 2025 - COMPREHENSIVE CLEANING & PREPROCESSING REPORT
+================================================================================
+Source File                  : data\raw\employment\maharashtra_indian_job_market_2025_filtered.xlsx
+Cleaned Jobs File            : data\processed\jobs\cleaned_job_data.csv
+MH-Only Skill Demand File    : data\processed\jobs\job_skill_demand_maharashtra_only.csv
+All-Records Skill Demand File: data\processed\jobs\job_skill_demand_all_records.csv
+
+--------------------------------------------------------------------------------
+1. ROW INTEGRITY & DEDUPLICATION
+--------------------------------------------------------------------------------
+Original Raw Rows            : 24,276
+Exact Duplicate Rows Removed : 58
+Repeated job_id Count        : 58
+Total Rows Removed           : 58
+Final Cleaned Rows           : 24,218
+Final Exact Duplicate Rows   : 0
+Final Duplicate job_id Count : 0
+
+--------------------------------------------------------------------------------
+2. MAHARASHTRA POPULATION BREAKDOWN
+--------------------------------------------------------------------------------
+Primary: Maharashtra-Only (maharashtra_only)       : 19,467 (80.38%)
+Secondary: Multi-Location (maharashtra_multi_loc)  : 4,722 (19.50%)
+Excluded: Non-Maharashtra (non_maharashtra)        : 29 (0.12%)
+
+--------------------------------------------------------------------------------
+3. STANDARDIZED FEATURE DISTRIBUTIONS
+--------------------------------------------------------------------------------
+Experience Valid Numeric     : 24,109 (99.55%)
+Experience Missing           : 109 (0.45%)
+Salary Parsed INR            : 7,820 (32.29%)
+Salary Not Disclosed         : 16,277 (67.21%)
+Salary Non-INR Currency      : 12 (0.05%)
+Salary Missing (Unparsed)    : 109 (0.45%)
+Explicit Parsed Dates        : 8 (0.03%)
+Unresolved Relative Dates    : 24,109 (99.55%)
+Future Start Dates (Rel)     : 101 (0.42%)
+
+--------------------------------------------------------------------------------
+4. PRIMARY MAHARASHTRA-ONLY SKILL DEMAND (TOP 20)
+--------------------------------------------------------------------------------
+ 1. Customer Service               : 1,589 jobs (8.16%)
+ 2. Sales                          : 1,512 jobs (7.77%)
+ 3. Project Management             : 1,402 jobs (7.20%)
+ 4. Python                         : 1,016 jobs (5.22%)
+ 5. SAP                            : 988 jobs (5.08%)
+ 6. Management                     : 934 jobs (4.80%)
+ 7. CSS                            : 881 jobs (4.53%)
+ 8. SQL                            : 735 jobs (3.78%)
+ 9. Communication Skills           : 706 jobs (3.63%)
+10. Business Development           : 691 jobs (3.55%)
+11. Java                           : 664 jobs (3.41%)
+12. C#                             : 583 jobs (2.99%)
+13. Analytical Skills              : 579 jobs (2.97%)
+14. Accounting                     : 558 jobs (2.87%)
+15. JavaScript                     : 554 jobs (2.85%)
+16. Team Management                : 539 jobs (2.77%)
+17. Agile                          : 516 jobs (2.65%)
+18. Troubleshooting                : 474 jobs (2.43%)
+19. Development                    : 470 jobs (2.41%)
+20. Market Research                : 466 jobs (2.39%)
+
+--------------------------------------------------------------------------------
+5. COMPLETE COLUMN AUDIT
+--------------------------------------------------------------------------------
+                         Column   Dtype  Null Count Null %                   Sample Value
+                 source_dataset     str           0  0.00% Indian Job Market Dataset 2...
+               geography_filter     str           0  0.00%    Maharashtra location signal
+           location_filter_note     str           0  0.00% Selected because the source...
+                          title     str           0  0.00%     Officer/Engineer Technical
+                         job_id   int64           0  0.00%                   270925006659
+                       currency     str           0  0.00%                            INR
+                   job_uploaded     str           0  0.00%                     6 Days Ago
+                   company_name     str           0  0.00%    Balkrishna Industries (BKT)
+                tags_and_skills     str         109  0.45% M.S Office,SAP,Computer Ski...
+                     experience     str         429  1.77%                        2-3 Yrs
+                         salary     str           0  0.00%                  Not disclosed
+                       location     str           0  0.00%              Aurangabad(Waluj)
+                     company_id   int64           0  0.00%                      123591869
+                  reviews_count float64        8173 33.75%                          462.0
+               aggregate_rating float64        8173 33.75%                            4.1
+                job_description     str           0  0.00% Ready to work in all shifts...
+                 minimum_salary float64         109  0.45%                            0.0
+                 maximum_salary float64         109  0.45%                            0.0
+             minimum_experience float64         109  0.45%                            2.0
+             maximum_experience float64         109  0.45%                            3.0
+                job_title_clean     str           0  0.00%     officer/engineer technical
+    maharashtra_location_status     str           0  0.00%               maharashtra_only
+               district_or_city     str           0  0.00%      Chhatrapati Sambhajinagar
+    maharashtra_location_reason     str           0  0.00% Exact Maharashtra city matc...
+maharashtra_analysis_population     str           0  0.00%               maharashtra_only
+           experience_min_years float64         109  0.45%                            2.0
+           experience_max_years float64         109  0.45%                            3.0
+                 salary_min_inr float64       16398 67.71%                       450000.0
+                 salary_max_inr float64       16398 67.71%                       550000.0
+       salary_currency_original     str           0  0.00%                            INR
+            salary_parse_status     str           0  0.00%                  not_disclosed
+       posted_date_standardized     str       24210 99.97%                     2025-10-06
+              date_parse_status     str           0  0.00%       unresolved_relative_date
+                   skills_clean     str         109  0.45% MS Office, SAP, Computer Sk...
