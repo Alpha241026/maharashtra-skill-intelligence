@@ -213,30 +213,30 @@
           </div>
         </div>
 
-        <!-- FORM: USERNAME & PASSWORD -->
+        <!-- FORM: EMAIL & PASSWORD -->
         <form id="login-form" class="auth-form" novalidate>
           <div class="form-group">
             <label for="user-id" class="form-label">
-              Officer User ID
+              Email Address
               <span class="required-mark" aria-hidden="true">*</span>
             </label>
             <div class="input-container">
               <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
               <input
-                type="text"
+                type="email"
                 id="user-id"
-                name="userId"
+                name="email"
                 class="form-input"
-                placeholder="Enter User ID (e.g. admin)"
+                placeholder="officer@maharashtra.gov.in"
                 autocomplete="username"
                 required
                 aria-required="true"
               >
             </div>
-            <span class="input-hint">Default prototype user identifier: <code>admin</code></span>
+            <span class="input-hint">Enter your Firebase-registered email address</span>
           </div>
 
           <div class="form-group">
@@ -359,152 +359,138 @@
     </div>
   </footer>
 
-  <!-- AUTH SCRIPT -->
-  <script src="js/auth.js"></script>
-  <script>
-    (function () {
-      'use strict';
+  <!-- AUTH SCRIPT: Firebase Authentication via auth.js module -->
+  <script type="module" src="js/auth.js"></script>
+  <script type="module">
+    'use strict';
 
-      const form = document.getElementById('login-form');
-      const userIdInput = document.getElementById('user-id');
-      const passwordInput = document.getElementById('password');
-      const rememberInput = document.getElementById('remember-me');
-      const submitBtn = document.getElementById('btn-submit');
-      const btnText = submitBtn.querySelector('.btn-text');
-      const btnSpinner = submitBtn.querySelector('.btn-spinner');
-      const alertBox = document.getElementById('auth-alert');
-      const alertTitle = document.getElementById('alert-title');
-      const alertMessage = document.getElementById('alert-message');
-      const togglePassBtn = document.getElementById('toggle-password');
-      const quickFillBtn = document.getElementById('btn-quick-fill');
-      const googleLoginBtn = document.getElementById('btn-google-login');
-      const webauthnBtn = document.getElementById('btn-webauthn-login');
-
-      // Check if redirect query param exists
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirectTarget = urlParams.get('redirect') ? decodeURIComponent(urlParams.get('redirect')) : 'index.html';
-
-      // If user is already authenticated, allow instant navigation or show notice
-      const currentUser = window.SIHAuth.getCurrentUser();
-      if (currentUser) {
-        showAlert('info', 'Active Session Found', `Currently authenticated as ${currentUser.name} (${currentUser.userId}). Redirecting to platform...`);
-        setTimeout(() => {
-          window.location.href = redirectTarget;
-        }, 1200);
+    // Wait for AuthModule to be available (set by auth.js module)
+    function waitForAuthModule(callback, attempts) {
+      attempts = attempts || 0;
+      if (window.AuthModule && typeof window.AuthModule.subscribeToAuthState === 'function') {
+        callback();
+      } else if (attempts < 60) {
+        setTimeout(function () { waitForAuthModule(callback, attempts + 1); }, 50);
       }
+    }
 
-      // Password visibility toggle
-      togglePassBtn.addEventListener('click', function () {
-        if (passwordInput.type === 'password') {
-          passwordInput.type = 'text';
-          togglePassBtn.textContent = 'Hide Password';
-        } else {
-          passwordInput.type = 'password';
-          togglePassBtn.textContent = 'Show Password';
-        }
-      });
+    const form = document.getElementById('login-form');
+    const emailInput = document.getElementById('user-id');
+    const passwordInput = document.getElementById('password');
+    const submitBtn = document.getElementById('btn-submit');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnSpinner = submitBtn.querySelector('.btn-spinner');
+    const alertBox = document.getElementById('auth-alert');
+    const alertTitle = document.getElementById('alert-title');
+    const alertMessage = document.getElementById('alert-message');
+    const togglePassBtn = document.getElementById('toggle-password');
+    const quickFillBtn = document.getElementById('btn-quick-fill');
+    const googleLoginBtn = document.getElementById('btn-google-login');
+    const webauthnBtn = document.getElementById('btn-webauthn-login');
 
-      // Quick fill demo credentials
-      quickFillBtn.addEventListener('click', function () {
-        userIdInput.value = 'admin';
-        passwordInput.value = 'SIH2026';
-        userIdInput.focus();
-        showAlert('info', 'Demo Credentials Injected', 'User ID (admin) and Password (SIH2026) filled. Press Authenticate to continue.');
-      });
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectTarget = urlParams.get('redirect') ? decodeURIComponent(urlParams.get('redirect')) : 'index.html';
 
-      // Form submission handler
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const userId = userIdInput.value.trim();
-        const password = passwordInput.value.trim();
-        const remember = rememberInput.checked;
+    // Password visibility toggle
+    togglePassBtn.addEventListener('click', function () {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePassBtn.textContent = 'Hide Password';
+      } else {
+        passwordInput.type = 'password';
+        togglePassBtn.textContent = 'Show Password';
+      }
+    });
 
-        if (!userId) {
-          showAlert('error', 'Missing User ID', 'Please enter your Officer User ID.');
-          userIdInput.focus();
-          return;
-        }
+    // Quick fill demo credentials
+    quickFillBtn.addEventListener('click', function () {
+      emailInput.value = 'demo@maharashtra.gov.in';
+      passwordInput.value = 'SIH2026';
+      emailInput.focus();
+      showAlert('info', 'Demo Credentials Injected', 'Email and Password filled. Press Authenticate to continue.');
+    });
 
-        if (!password) {
-          showAlert('error', 'Missing Password', 'Please enter your password.');
-          passwordInput.focus();
-          return;
-        }
+    // WebAuthn placeholder
+    webauthnBtn.addEventListener('click', function () {
+      showAlert('info', 'Feature Coming Soon', 'Hardware security key authentication is not yet available in this prototype.');
+    });
 
-        setLoading(true);
-        hideAlert();
-
-        try {
-          const result = await window.SIHAuth.loginWithCredentials(userId, password, remember);
-          showAlert('success', 'Authentication Successful', `Welcome, ${result.user.name}. Opening Intelligence Platform...`);
-          setTimeout(() => {
+    // Boot: subscribe to auth state, redirect if already signed in
+    waitForAuthModule(function () {
+      window.AuthModule.subscribeToAuthState(function (user) {
+        if (user) {
+          showAlert('success', 'Active Session Found', 'Redirecting to platform...');
+          setTimeout(function () {
             window.location.href = redirectTarget;
           }, 800);
-        } catch (err) {
-          setLoading(false);
-          showAlert('error', 'Authentication Failed', err.message || 'Invalid Officer Credentials.');
         }
       });
+    });
 
-      // Google SSO Web Authentication Socket handler
-      googleLoginBtn.addEventListener('click', async function () {
-        hideAlert();
-        googleLoginBtn.classList.add('is-authenticating');
-        showAlert('info', 'WebAuth Socket Initiated', 'Connecting to Google OAuth 2.0 Identity Socket...');
+    // Form submission (email + password)
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
 
-        try {
-          const result = await window.SIHAuth.loginWithGoogleSocket(rememberInput.checked);
-          googleLoginBtn.classList.remove('is-authenticating');
-          showAlert('success', 'Google SSO Verified', `Authenticated as ${result.user.email}. Transferring to Platform...`);
-          setTimeout(() => {
-            window.location.href = redirectTarget;
-          }, 800);
-        } catch (err) {
-          googleLoginBtn.classList.remove('is-authenticating');
-          showAlert('error', 'Google SSO Error', err.message || 'Google authentication failed.');
-        }
-      });
-
-      // WebAuthn / FIDO2 Hardware Key Socket handler
-      webauthnBtn.addEventListener('click', async function () {
-        hideAlert();
-        showAlert('info', 'Security Key Socket Active', 'Polling biometric / FIDO2 security key...');
-
-        try {
-          const result = await window.SIHAuth.loginWithWebAuthn(rememberInput.checked);
-          showAlert('success', 'Hardware Security Token Verified', `Welcome, ${result.user.name}. Entering Platform...`);
-          setTimeout(() => {
-            window.location.href = redirectTarget;
-          }, 800);
-        } catch (err) {
-          showAlert('error', 'WebAuthn Error', err.message || 'Hardware token could not be verified.');
-        }
-      });
-
-      function setLoading(isLoading) {
-        if (isLoading) {
-          submitBtn.disabled = true;
-          btnText.textContent = 'Verifying Credentials...';
-          btnSpinner.hidden = false;
-        } else {
-          submitBtn.disabled = false;
-          btnText.textContent = 'Authenticate & Access Dashboard';
-          btnSpinner.hidden = true;
-        }
+      if (!email || !password) {
+        showAlert('error', 'Missing Credentials', 'Please enter your email and password.');
+        if (!email) emailInput.focus();
+        else passwordInput.focus();
+        return;
       }
 
-      function showAlert(type, title, message) {
-        alertBox.hidden = false;
-        alertBox.className = 'auth-alert alert-' + type;
-        alertTitle.textContent = title;
-        alertMessage.textContent = message;
+      if (!window.AuthModule || typeof window.AuthModule.signIn !== 'function') {
+        showAlert('error', 'Service Unavailable', 'Authentication service is not ready. Please refresh.');
+        return;
       }
 
-      function hideAlert() {
-        alertBox.hidden = true;
-      }
+      setLoading(true);
+      hideAlert();
 
-    })();
+      try {
+        await window.AuthModule.signIn(email, password);
+        // Auth state observer above will handle the redirect
+      } catch (err) {
+        setLoading(false);
+        showAlert('error', 'Authentication Failed', err.message || 'Invalid credentials.');
+      }
+    });
+
+    // Google Sign In
+    googleLoginBtn.addEventListener('click', async function () {
+      if (!window.AuthModule || typeof window.AuthModule.signInWithGoogle !== 'function') {
+        showAlert('error', 'Service Unavailable', 'Authentication service is not ready.');
+        return;
+      }
+      hideAlert();
+      googleLoginBtn.disabled = true;
+      showAlert('info', 'Google Sign-In', 'Connecting to Google OAuth...');
+      try {
+        await window.AuthModule.signInWithGoogle();
+        // Auth state observer handles redirect
+      } catch (err) {
+        googleLoginBtn.disabled = false;
+        showAlert('error', 'Google Sign-In Failed', err.message || 'Google authentication failed.');
+      }
+    });
+
+    function setLoading(isLoading) {
+      submitBtn.disabled = isLoading;
+      btnText.textContent = isLoading ? 'Verifying Credentials...' : 'Authenticate & Access Dashboard';
+      btnSpinner.hidden = !isLoading;
+    }
+
+    function showAlert(type, title, message) {
+      alertBox.hidden = false;
+      alertBox.className = 'auth-alert alert-' + type;
+      alertTitle.textContent = title;
+      alertMessage.textContent = message;
+    }
+
+    function hideAlert() {
+      alertBox.hidden = true;
+    }
   </script>
 </body>
 </html>

@@ -126,7 +126,23 @@
       assistantBox:         document.getElementById('assistant-response-box'),
       queryChips:           document.querySelectorAll('.query-chip-btn'),
       assistantForm:        document.getElementById('assistant-query-form'),
-      assistantInput:       document.getElementById('assistant-query-input')
+      assistantInput:       document.getElementById('assistant-query-input'),
+
+      /* Authentication UI elements */
+      authLoadingView:      document.getElementById('auth-loading-view'),
+      loginView:            document.getElementById('login-view'),
+      dashboardView:        document.getElementById('dashboard-view'),
+      loginForm:            document.getElementById('login-form'),
+      loginEmail:           document.getElementById('login-email'),
+      loginPassword:        document.getElementById('login-password'),
+      loginSubmitBtn:       document.getElementById('btn-login-submit'),
+      loginBtnText:         document.querySelector('.btn-login-text'),
+      loginBtnSpinner:      document.querySelector('.btn-login-submit .btn-spinner'),
+      authStatus:           document.getElementById('auth-status'),
+      headerAuthContainer:  document.getElementById('header-auth-container'),
+      headerUserEmail:      document.getElementById('header-user-email'),
+      btnHeaderLogout:      document.getElementById('btn-header-logout'),
+      btnGoogleSignIn:      document.getElementById('btn-google-signin')
     };
   }
 
@@ -901,6 +917,239 @@
   }
 
   /* ══════════════════════════════════════════════════════════════
+     AUTHENTICATION STATE COORDINATION (Firebase Auth Integration)
+     Supported States:
+       INITIALIZING | SIGNED_OUT | SIGNING_IN | SIGNED_IN | SIGNING_OUT | AUTH_ERROR
+     ══════════════════════════════════════════════════════════════ */
+  var authState = 'INITIALIZING';
+  var dashboardInitialized = false;
+
+  function renderAuthState(targetState, payload) {
+    authState = targetState;
+
+    if (targetState === 'INITIALIZING') {
+      if (el.authLoadingView) el.authLoadingView.hidden = false;
+      if (el.loginView) el.loginView.hidden = true;
+      if (el.dashboardView) el.dashboardView.hidden = true;
+      if (el.headerAuthContainer) el.headerAuthContainer.hidden = true;
+      return;
+    }
+
+    if (targetState === 'SIGNED_OUT') {
+      if (el.authLoadingView) el.authLoadingView.hidden = true;
+      if (el.loginView) el.loginView.hidden = false;
+      if (el.dashboardView) el.dashboardView.hidden = true;
+      if (el.headerAuthContainer) el.headerAuthContainer.hidden = true;
+
+      // Reset login form fields and status
+      if (el.loginSubmitBtn) {
+        el.loginSubmitBtn.disabled = false;
+        if (el.loginBtnText) el.loginBtnText.textContent = 'Sign In';
+        if (el.loginBtnSpinner) el.loginBtnSpinner.hidden = true;
+      }
+      if (el.btnGoogleSignIn) el.btnGoogleSignIn.disabled = false;
+      if (el.loginEmail) el.loginEmail.disabled = false;
+      if (el.loginPassword) {
+        el.loginPassword.disabled = false;
+        el.loginPassword.value = '';
+      }
+      if (el.btnHeaderLogout) {
+        el.btnHeaderLogout.disabled = false;
+        el.btnHeaderLogout.textContent = 'Sign Out';
+      }
+      if (el.authStatus) {
+        el.authStatus.hidden = true;
+        el.authStatus.textContent = '';
+        el.authStatus.className = 'auth-status-panel';
+      }
+      return;
+    }
+
+    if (targetState === 'SIGNING_IN') {
+      if (el.loginSubmitBtn) el.loginSubmitBtn.disabled = true;
+      if (el.btnGoogleSignIn) el.btnGoogleSignIn.disabled = true;
+      if (el.loginEmail) el.loginEmail.disabled = true;
+      if (el.loginPassword) el.loginPassword.disabled = true;
+      if (el.loginBtnText) el.loginBtnText.textContent = 'Signing In...';
+      if (el.loginBtnSpinner) el.loginBtnSpinner.hidden = false;
+      if (el.authStatus) {
+        el.authStatus.hidden = false;
+        el.authStatus.className = 'auth-status-panel status-loading';
+        el.authStatus.textContent = 'Authenticating clearance…';
+      }
+      return;
+    }
+
+    if (targetState === 'SIGNED_IN') {
+      if (el.authLoadingView) el.authLoadingView.hidden = true;
+      if (el.loginView) el.loginView.hidden = true;
+      if (el.dashboardView) el.dashboardView.hidden = false;
+      if (el.headerAuthContainer) el.headerAuthContainer.hidden = false;
+      if (el.authStatus) el.authStatus.hidden = true;
+
+      var userDisplay = (payload && (payload.displayName || payload.email)) ? (payload.displayName || payload.email) : 'Planning Officer';
+      if (el.headerUserEmail) {
+        el.headerUserEmail.textContent = userDisplay;
+      }
+      if (el.btnHeaderLogout) {
+        el.btnHeaderLogout.disabled = false;
+        el.btnHeaderLogout.textContent = 'Sign Out';
+      }
+
+      // Initialize dashboard data once signed in
+      if (!dashboardInitialized) {
+        dashboardInitialized = true;
+        onDistrictChange(DEFAULT_DISTRICT);
+        loadDistricts();
+      }
+      return;
+    }
+
+    if (targetState === 'AUTH_ERROR') {
+      if (el.loginSubmitBtn) el.loginSubmitBtn.disabled = false;
+      if (el.btnGoogleSignIn) el.btnGoogleSignIn.disabled = false;
+      if (el.loginEmail) el.loginEmail.disabled = false;
+      if (el.loginPassword) el.loginPassword.disabled = false;
+      if (el.loginBtnText) el.loginBtnText.textContent = 'Sign In';
+      if (el.loginBtnSpinner) el.loginBtnSpinner.hidden = true;
+      if (el.authStatus) {
+        el.authStatus.hidden = false;
+        el.authStatus.className = 'auth-status-panel status-error';
+        el.authStatus.textContent = payload || 'Unable to sign in';
+      }
+      return;
+    }
+
+    if (targetState === 'SIGNING_OUT') {
+      if (el.btnHeaderLogout) {
+        el.btnHeaderLogout.disabled = true;
+        el.btnHeaderLogout.textContent = 'Signing Out…';
+      }
+      return;
+    }
+  }
+
+  function bindAuthEvents() {
+    // 1. Handle Login Form Submit
+    if (el.loginForm) {
+      el.loginForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        var email = (el.loginEmail ? el.loginEmail.value : '').trim();
+        var password = (el.loginPassword ? el.loginPassword.value : '').trim();
+
+        if (!email || !password) {
+          renderAuthState('AUTH_ERROR', 'Please enter your email and password');
+          if (!email && el.loginEmail) el.loginEmail.focus();
+          else if (el.loginPassword) el.loginPassword.focus();
+          return;
+        }
+
+        // Email validation check
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          renderAuthState('AUTH_ERROR', 'Please enter a valid email address');
+          if (el.loginEmail) el.loginEmail.focus();
+          return;
+        }
+
+        if (!window.AuthModule || typeof window.AuthModule.signIn !== 'function') {
+          renderAuthState('AUTH_ERROR', 'Authentication service is not ready');
+          return;
+        }
+
+        renderAuthState('SIGNING_IN');
+
+        try {
+          await window.AuthModule.signIn(email, password);
+          // State transition to SIGNED_IN handled by onAuthStateChanged observer
+        } catch (err) {
+          renderAuthState('AUTH_ERROR', err.message || 'Unable to sign in');
+        }
+      });
+    }
+
+    // 2. Handle Google Sign In
+    if (el.btnGoogleSignIn) {
+      el.btnGoogleSignIn.addEventListener('click', async function() {
+        if (!window.AuthModule || typeof window.AuthModule.signInWithGoogle !== 'function') {
+          renderAuthState('AUTH_ERROR', 'Authentication service is not ready');
+          return;
+        }
+
+        renderAuthState('SIGNING_IN');
+        try {
+          await window.AuthModule.signInWithGoogle();
+          // State transition to SIGNED_IN handled by onAuthStateChanged observer
+        } catch (err) {
+          renderAuthState('AUTH_ERROR', err.message || 'Unable to sign in with Google');
+        }
+      });
+    }
+
+    // 3. Connect existing Header Sign Out button
+    if (el.btnHeaderLogout) {
+      el.btnHeaderLogout.addEventListener('click', async function() {
+        if (!window.AuthModule || typeof window.AuthModule.signOutUser !== 'function') return;
+        renderAuthState('SIGNING_OUT');
+        try {
+          await window.AuthModule.signOutUser();
+          // State transition to SIGNED_OUT handled by onAuthStateChanged observer
+        } catch (err) {
+          console.warn('[SIH] Sign out error:', err);
+          renderAuthState('SIGNED_OUT');
+        }
+      });
+    }
+
+    // 4. Subscribe to Auth state changes via AuthModule
+    renderAuthState('INITIALIZING');
+
+    function connectAuthObserver() {
+      if (window.AuthModule && typeof window.AuthModule.subscribeToAuthState === 'function') {
+        try {
+          window.AuthModule.subscribeToAuthState(function(user) {
+            if (user) {
+              renderAuthState('SIGNED_IN', user);
+            } else {
+              renderAuthState('SIGNED_OUT');
+            }
+          });
+        } catch (err) {
+          console.warn('[SIH] Firebase initialization notice:', err.message);
+          renderAuthState('SIGNED_OUT');
+        }
+      } else {
+        // Retry shortly until modular script finishes evaluating
+        var attempts = 0;
+        var timer = setInterval(function() {
+          attempts++;
+          if (window.AuthModule && typeof window.AuthModule.subscribeToAuthState === 'function') {
+            clearInterval(timer);
+            try {
+              window.AuthModule.subscribeToAuthState(function(user) {
+                if (user) {
+                  renderAuthState('SIGNED_IN', user);
+                } else {
+                  renderAuthState('SIGNED_OUT');
+                }
+              });
+            } catch (err) {
+              console.warn('[SIH] Firebase initialization notice:', err.message);
+              renderAuthState('SIGNED_OUT');
+            }
+          } else if (attempts > 50) {
+            clearInterval(timer);
+            renderAuthState('SIGNED_OUT');
+          }
+        }, 50);
+      }
+    }
+
+    connectAuthObserver();
+  }
+
+  /* ══════════════════════════════════════════════════════════════
      INITIALIZATION
      ══════════════════════════════════════════════════════════════ */
   function init() {
@@ -911,12 +1160,7 @@
     bindAssistantForm();
     bindScrollEffects();
     bindKeyboardShortcuts();
-
-    // Default to Pune with real live backend data
-    onDistrictChange(DEFAULT_DISTRICT);
-
-    // Populate all canonical Maharashtra districts
-    loadDistricts();
+    bindAuthEvents();
   }
 
   /* ── Scroll-aware header shadow ── */
