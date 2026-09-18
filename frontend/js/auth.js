@@ -1,235 +1,203 @@
 /**
- * Maharashtra Skill Intelligence Platform — Authentication & WebAuth Socket Module
- * 
- * Architectural Purpose:
- * - Provides authentication for Government Planning Officers & System Administrators.
- * - Enforces required credentials:
- *     User ID:  admin
- *     Password: SIH2026
- * - Implements Web Authentication Sockets (Google OAuth 2.0 / GIS socket & WebAuthn / FIDO2 socket)
- *   ready for production identity-provider plug-in with seamless mock fallback.
- * - Session state persistence across sessionStorage and optional localStorage (Remember Me).
+ * Maharashtra Skill Intelligence Platform — Firebase Authentication Module
+ *
+ * Responsibility:
+ * - Owns all Firebase Web SDK initialization and authentication operations.
+ * - Exposes a minimal, isolated API for the application layer.
+ * - Does NOT perform DOM manipulations or hold dashboard state.
  */
 
-(function (window) {
-  'use strict';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
+  GoogleAuthProvider,
+  signOut,
+  onAuthStateChanged
+} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 
-  const STORAGE_KEY = 'sih_skill_intel_auth';
-  const REMEMBER_KEY = 'sih_skill_intel_remember';
+// ============================================================================
+// FIREBASE CONFIGURATION
+// ============================================================================
+const defaultFirebaseConfig = {
+  apiKey: "AIzaSyBOw8GbxDMV_gZzaeMezRcimDKdaAa4qpc",
+  authDomain: "neural-os-platform.firebaseapp.com",
+  projectId: "neural-os-platform",
+  storageBucket: "neural-os-platform.firebasestorage.app",
+  messagingSenderId: "669082244060",
+  appId: "1:669082244060:web:e678d9a32514612cf63519",
+  measurementId: "G-DFFYZ5V244"
+};
 
-  // Configurable Socket parameters for production integrations
-  const AUTH_CONFIG = {
-    googleClientId: window.GOOGLE_CLIENT_ID || 'mock-google-client-id-sih-maharashtra.apps.googleusercontent.com',
-    oauthRedirectUri: window.location.origin + '/login.html',
-    apiAuthEndpoint: '/api/auth', // Future FastAPI authentication router
-    demoCredentials: {
-      userId: 'admin',
-      password: 'SIH2026',
-      name: 'System Administrator',
-      role: 'State Planning & Skill Intelligence Officer',
-      division: 'State Directorate (HQ, Mumbai)',
-      email: 'admin.skills@maharashtra.gov.in'
-    }
-  };
+const firebaseConfig = (window.SIH_ENV && window.SIH_ENV.FIREBASE) || defaultFirebaseConfig;
 
-  /**
-   * Reads current active session from storage
-   */
-  function getCurrentUser() {
-    try {
-      const session = sessionStorage.getItem(STORAGE_KEY) || localStorage.getItem(STORAGE_KEY);
-      return session ? JSON.parse(session) : null;
-    } catch (e) {
-      console.warn('Failed to parse auth session:', e);
-      return null;
-    }
+let app = null;
+let auth = null;
+
+/**
+ * Returns true when running on a static host where popup auth fails.
+ * GitHub Pages, Netlify, Vercel all require redirect flow for Google Sign-In.
+ */
+function isStaticHost() {
+  var host = window.location.hostname;
+  return (
+    host.endsWith('.github.io') ||
+    host.endsWith('.netlify.app') ||
+    host.endsWith('.vercel.app') ||
+    host.endsWith('.pages.dev')
+  );
+}
+
+/**
+ * Initializes the Firebase App and Auth service.
+ * Safe to call multiple times; returns existing auth instance if already initialized.
+ */
+export function initializeAuth() {
+  if (!auth) {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
   }
+  return auth;
+}
 
-  /**
-   * Persists session
-   */
-  function saveSession(userData, remember) {
-    const sessionPayload = {
-      ...userData,
-      token: 'sih_jwt_' + Math.random().toString(36).substring(2) + Date.now(),
-      issuedAt: new Date().toISOString()
-    };
+/**
+ * Subscribes to Firebase authentication state changes.
+ * Also resolves any pending Google Sign-In redirect result.
+ *
+ * @param {function(user: object|null)} callback
+ * @returns {function()} unsubscribe function
+ */
+export function subscribeToAuthState(callback) {
+  var authInstance = initializeAuth();
 
-    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(sessionPayload));
-    if (remember) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(sessionPayload));
-      localStorage.setItem(REMEMBER_KEY, 'true');
-    } else {
-      localStorage.removeItem(STORAGE_KEY);
-      localStorage.removeItem(REMEMBER_KEY);
-    }
-
-    dispatchAuthEvent('login', sessionPayload);
-    return sessionPayload;
-  }
-
-  /**
-   * Clears session
-   */
-  function clearSession() {
-    sessionStorage.removeItem(STORAGE_KEY);
-    localStorage.removeItem(STORAGE_KEY);
-    localStorage.removeItem(REMEMBER_KEY);
-    dispatchAuthEvent('logout', null);
-  }
-
-  function dispatchAuthEvent(type, payload) {
-    const evt = new CustomEvent('sih:auth:change', {
-      detail: { type: type, user: payload }
+  // Resolve Google redirect sign-in result (fires after page reload)
+  getRedirectResult(authInstance)
+    .then(function(result) {
+      if (result && result.user) {
+        console.log('[Auth] Google redirect sign-in resolved:', result.user.email);
+      }
+    })
+    .catch(function(error) {
+      console.warn('[Auth] Redirect result error:', error.code, error.message);
     });
-    window.dispatchEvent(evt);
+
+  return onAuthStateChanged(authInstance, function(user) {
+    callback(user);
+  }, function(error) {
+    console.error('[Auth] State observer error:', error);
+    callback(null);
+  });
+}
+
+/**
+ * Signs in user with email and password.
+ *
+ * @param {string} email
+ * @param {string} password
+ * @returns {Promise<object>} Firebase user
+ */
+export async function signIn(email, password) {
+  var authInstance = initializeAuth();
+  try {
+    var userCredential = await signInWithEmailAndPassword(authInstance, email.trim(), password);
+    return userCredential.user;
+  } catch (error) {
+    console.error('[Auth] Email sign-in error:', error.code, error.message);
+    var friendlyMessage = mapAuthError(error.code);
+    var mappedError = new Error(friendlyMessage);
+    mappedError.code = error.code;
+    throw mappedError;
   }
+}
 
-  /**
-   * Core Authentication Service
-   */
-  const AuthService = {
-    config: AUTH_CONFIG,
+/**
+ * Signs out the currently authenticated user.
+ */
+export async function signOutUser() {
+  var authInstance = initializeAuth();
+  await signOut(authInstance);
+}
 
-    /**
-     * Verifies standard officer credentials:
-     * User ID: admin
-     * Password: SIH2026
-     */
-    loginWithCredentials: function (userId, password, remember = false) {
-      return new Promise((resolve, reject) => {
-        // Deterministic simulated latency for realistic feel
-        setTimeout(() => {
-          const trimmedId = (userId || '').trim();
-          const trimmedPass = (password || '').trim();
+/**
+ * Signs in with Google.
+ * - On GitHub Pages / static hosts: uses redirect flow (avoids popup restrictions).
+ * - On localhost / custom domains: uses popup flow for faster UX.
+ */
+export async function signInWithGoogle() {
+  var authInstance = initializeAuth();
+  var provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
 
-          if (trimmedId === AUTH_CONFIG.demoCredentials.userId && trimmedPass === AUTH_CONFIG.demoCredentials.password) {
-            const user = saveSession({
-              userId: trimmedId,
-              name: AUTH_CONFIG.demoCredentials.name,
-              role: AUTH_CONFIG.demoCredentials.role,
-              division: AUTH_CONFIG.demoCredentials.division,
-              email: AUTH_CONFIG.demoCredentials.email,
-              authMethod: 'password_credentials'
-            }, remember);
-            resolve({ success: true, user: user });
-          } else {
-            reject(new Error('Invalid Officer ID or Password. (Expected: admin / SIH2026)'));
-          }
-        }, 350);
-      });
-    },
-
-    /**
-     * Google Web Authentication Socket
-     * Emits token and authenticates with official state identity
-     */
-    loginWithGoogleSocket: function (remember = false) {
-      return new Promise((resolve, reject) => {
-        // If Google Identity Services (GIS) SDK is loaded on page:
-        if (window.google && window.google.accounts && window.google.accounts.id) {
-          try {
-            window.google.accounts.id.prompt((notification) => {
-              if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                fallbackMockGoogleAuth(resolve, reject, remember);
-              }
-            });
-            return;
-          } catch (err) {
-            console.warn('GIS SDK error, utilizing socket fallback:', err);
-          }
-        }
-
-        // Web Authentication Socket Fallback:
-        // Demonstrates realistic federated OAuth 2.0 handshake
-        fallbackMockGoogleAuth(resolve, reject, remember);
-      });
-    },
-
-    /**
-     * WebAuthn / FIDO2 Hardware Key or Biometrics Socket
-     */
-    loginWithWebAuthn: function (remember = false) {
-      return new Promise((resolve, reject) => {
-        if (!window.PublicKeyCredential) {
-          reject(new Error('WebAuthn is not supported on this browser or platform.'));
-          return;
-        }
-
-        setTimeout(() => {
-          const user = saveSession({
-            userId: 'admin',
-            name: 'System Administrator',
-            role: 'State Planning & Skill Intelligence Officer (FIDO2 Verified)',
-            division: 'State Directorate (HQ, Mumbai)',
-            email: 'admin.skills@maharashtra.gov.in',
-            authMethod: 'webauthn_hardware_token',
-            authenticatorTier: 'FIDO2 Level 2 Authenticated'
-          }, remember);
-          resolve({ success: true, user: user });
-        }, 400);
-      });
-    },
-
-    /**
-     * Log out officer and clear session (optionally redirect)
-     */
-    logout: function (redirect = false) {
-      clearSession();
-      if (redirect) {
-        window.location.href = 'login.html';
-      }
-    },
-
-    getCurrentUser: getCurrentUser,
-
-    isAuthenticated: function () {
-      return getCurrentUser() !== null;
-    },
-
-    /**
-     * Route protection guard for sensitive views
-     */
-    requireAuth: function (redirectTo = 'login.html') {
-      const user = getCurrentUser();
-      if (!user) {
-        const returnUrl = encodeURIComponent(window.location.pathname + window.location.search);
-        window.location.href = `${redirectTo}?redirect=${returnUrl}`;
-        return false;
-      }
-      return true;
-    },
-
-    /**
-     * Redirects to dashboard if already authenticated
-     */
-    redirectIfAuthenticated: function (destination = 'index.html') {
-      if (getCurrentUser()) {
-        window.location.href = destination;
+  try {
+    // Attempt popup first (fast, keeps page state, works on both localhost and modern static hosts)
+    var result = await signInWithPopup(authInstance, provider);
+    return result.user;
+  } catch (error) {
+    // If popup was blocked by browser or environment, fallback to redirect flow
+    if (error.code === 'auth/popup-blocked' || error.code === 'auth/cancelled-popup-request') {
+      try {
+        console.warn('[Auth] Popup blocked or cancelled, falling back to redirect flow...');
+        await signInWithRedirect(authInstance, provider);
+        return; // Page will redirect
+      } catch (redirectError) {
+        var msg = mapAuthError(redirectError.code);
+        var err = new Error(msg);
+        err.code = redirectError.code;
+        throw err;
       }
     }
-  };
 
-  /**
-   * Helper for Google OAuth Socket simulation
-   */
-  function fallbackMockGoogleAuth(resolve, reject, remember) {
-    setTimeout(() => {
-      const user = saveSession({
-        userId: 'admin',
-        name: 'Administrator (Google SSO)',
-        role: 'State Planning & Skill Intelligence Officer',
-        division: 'State Directorate (HQ, Mumbai)',
-        email: 'admin.skills@maharashtra.gov.in',
-        authMethod: 'google_oauth2_sso',
-        googleId: '109283746192837461',
-        picture: null
-      }, remember);
-      resolve({ success: true, user: user });
-    }, 450);
+    console.error('[Auth] Google sign-in error:', error.code, error.message);
+    var friendlyMessage = mapAuthError(error.code);
+    var mappedError = new Error(friendlyMessage);
+    mappedError.code = error.code;
+    throw mappedError;
   }
+}
 
-  // Expose to global namespace
-  window.SIHAuth = AuthService;
+/**
+ * Maps Firebase error codes to user-facing messages.
+ * The default case always shows the raw error code so you can debug.
+ */
+function mapAuthError(code) {
+  switch (code) {
+    case 'auth/invalid-credential':
+    case 'auth/user-not-found':
+    case 'auth/wrong-password':
+      return 'Email or password is incorrect. Check your credentials and try again';
+    case 'auth/invalid-email':
+      return 'Please enter a valid email address';
+    case 'auth/user-disabled':
+      return 'This account has been disabled. Contact an administrator';
+    case 'auth/too-many-requests':
+      return 'Too many failed attempts. Please wait a few minutes and try again';
+    case 'auth/network-request-failed':
+      return 'Network error. Check your internet connection and try again';
+    case 'auth/unauthorized-domain':
+      return 'Domain not authorized. Go to Firebase Console → Authentication → Settings → Authorized domains → Add "' + window.location.hostname + '"';
+    case 'auth/operation-not-allowed':
+      return 'Sign-in method not enabled. Go to Firebase Console → Authentication → Sign-in method and enable it';
+    case 'auth/popup-closed-by-user':
+    case 'auth/cancelled-popup-request':
+      return 'Sign-in was cancelled';
+    case 'auth/popup-blocked':
+      return 'Pop-up blocked by browser. Allow pop-ups and try again';
+    case 'auth/configuration-not-found':
+      return 'Firebase project misconfigured. Verify the project settings';
+    default:
+      // Always show the real error code for debugging
+      return 'Sign-in failed (' + (code || 'unknown') + '). Open DevTools Console for details';
+  }
+}
 
-})(window);
+// Expose on global window object for non-module integration with app.js
+window.AuthModule = {
+  initializeAuth,
+  signIn,
+  signInWithGoogle,
+  signOutUser,
+  subscribeToAuthState
+};

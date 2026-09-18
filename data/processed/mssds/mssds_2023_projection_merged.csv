@@ -1,0 +1,761 @@
+﻿district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Ahmednagar,Agriculture,843.0,1095.0,11.0,1080.0,240.0,"Basis the data available for the industry size and DSDP. Hence, it can be inferred that training",35,batch1_ahmednagar.csv,,,50.0,True,False,True
+Ahmednagar,Apparel,237.0,,,180.0,145.0,"Basis the data available for the DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Apparel sector",36,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Automotive,281.0,9300.0,30.0,870.0,55.0,"Basis the data available for the industry size, DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Automotive sector",36,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,BFSI,1298.0,3025.0,9.0,90.0,,"Basis the data available for industry size according to the survey conducted it appears that a significant number of workforce is available followed with candidate aspiration and DSDP data. Hence, it can be inferred that training can be provided in BFSI sector",36,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Beauty & Wellness,681.0,,1.0,120.0,162.0,"Basis the data available for DSDP and MSSDS trained data. Hence, it can be inferred that training can be provided in Beauty & Wellness sector",36,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Capital Goods,72.0,206.0,5.0,,,"Basis the data available for the industry size for the number of organizations surveyed, it appears that there is a moderate number or workforce. Hence, can be inferred that training can be provided in the Capital goods sector",36,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Construction,225.0,79.0,5.0,300.0,,"Basis the data available for the number of employees currently working and the DSDP data tagged alongwith the candidate aspiration. Hence, it can be inferred that training can be provided in Construction sector",37,batch1_ahmednagar.csv,,,320.0,True,False,True
+Ahmednagar,Domestic Workers,83.0,700.0,2.0,,,"Basis the data available for the industry size, it can be inferred that there is an existing workforce and therefore, training can be provided for Domestic Workers sector",37,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Electronics,669.0,6782.0,28.0,720.0,1105.0,Basis the data available for candidate aspiration and Industry size it appears that there is a significant number of workforce. Also the DSDP data and MSSDS skilling infer that the training can be provided in Electronics sector,37,batch1_ahmednagar.csv,,,160.0,True,False,True
+Ahmednagar,Food Processing,222.0,197.0,6.0,360.0,445.0,"Basis the data available for candidate aspiration and the industry size which is the number of employees in that organization along with the DSDP and MSSDS data, it can be inferred that the candidates can be trained in the Food Processing sector",37,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Furniture & Fittings,35.0,,,90.0,,"available, it can be inferred that DSDP envisages to train the candidates in future. Hence, training can be provided in the Furniture & Fittings sector",37,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Gem & Jewellery,49.0,500.0,1.0,,,"Basis the data available for Industry size which depicts the number of employees in that organization and despite the data not being available for DSDP and MSSDS, it can be inferred that training can be provided in the Gem & Jewellery sector",38,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Green Jobs,259.0,,,390.0,150.0,"Basis the data available for candidate aspiration and industry size data not available as it is a potential sector and DSDP and MSSDS, it can be inferred that the candidates can be trained in the Green Jobs sector",38,batch1_ahmednagar.csv,,,0.0,True,True,True
+Ahmednagar,Healthcare,1005.0,627.0,6.0,450.0,,"Basis the data available for candidate aspirations and the number of employees for the industry surveyed along with the DSDP data, it can be inferred that the candidates can be trained in the Healthcare sector.",38,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Hydrocarbon,39.0,,,150.0,,Basis the data available for DSDP which envisages for the number of candidates to be future trained. It can be inferred that the candidates can be trained in the Hydrocarbon sector,38,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,IT/ITeS,2455.0,80.0,7.0,210.0,120.0,"Basis the data available for candidate aspiration which is a significant number and the DSDP futuristic data along with the MSSDS data of trained candidates, it appears that training can be provided to IT/ITeS sector",39,batch1_ahmednagar.csv,,,0.0,True,True,True
+Ahmednagar,Instrumentation,,,,60.0,,"Basis the data available for the DSDP sector which envisages to train 60 candidates, it can be inferred that the candidates can be trained in the Instrumentation sector",39,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Iron & Steel,50.0,5101.0,40.0,,,Basis the data available for the significant number of employees in the industry and the number of organizations it can be inferred that the candidates can be trained in the Iron & Steel sector,39,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Life Science,426.0,1027.0,3.0,60.0,,"Basis the data available for the candidates aspiring to work and the number of employees pertaining to the industry size and the DSDP data available for future candidates, it can be inferred that candidates can be trained in the Life Science sector",39,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Logistics,14.0,2.0,1.0,240.0,,"Basis the data available for DSDP projecting the future training of candidates, it can be inferred",39,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Management,636.0,372.0,5.0,,,Basis the data available for significant number of candidates aspiring along with the number of employees working it can be inferred that candidates can be trained for management sector,40,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Media & Entertainment,218.0,20.0,1.0,60.0,,"Basis the data available for the number of candidates aspiring and the DSDP data projecting the future candidates training , it can be inferred that training can be provided for Media & Entertainment sector",40,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Plumbing,20.0,270.0,1.0,120.0,,"Basis the data available for the number of employees currently working and the DSDP data for the future number of candidates, it can be inferred that training can be provided to candidates in the Plumbing sector",40,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Power,76.0,135.0,2.0,240.0,80.0,"Basis the data available for the industry size which is the number of employees working along with the DSDP data which is the future number and MSSDS data which is the data of candidates trained, it can be inferred that candidates can be trained in Power sector",40,batch1_ahmednagar.csv,,,,,,False
+Ahmednagar,Retail,,,,120.0,,,40,batch1_ahmednagar.csv,,,100.0,True,False,True
+Akola,Agriculture,363.0,79.0,6.0,,,,47,batch2_akola_to_bhandara.csv,360.0,87.0,120.0,True,False,True
+Akola,Apparel,137.0,,,,,,47,batch2_akola_to_bhandara.csv,60.0,110.0,,,,False
+Akola,Automotive,201.0,2059.0,7.0,,,,47,batch2_akola_to_bhandara.csv,270.0,90.0,,,,False
+Akola,BFSI,637.0,698.0,4.0,,,,48,batch2_akola_to_bhandara.csv,,,,,,False
+Akola,Capital Goods,33.0,36.0,2.0,,,,48,batch2_akola_to_bhandara.csv,180.0,120.0,,,,False
+Akola,Construction,131.0,33.0,2.0,,,,48,batch2_akola_to_bhandara.csv,120.0,,180.0,True,False,True
+Akola,Electronics,639.0,50.0,3.0,,,,48,batch2_akola_to_bhandara.csv,180.0,180.0,180.0,True,False,True
+Akola,Food Processing,119.0,15.0,1.0,,,,49,batch2_akola_to_bhandara.csv,120.0,913.0,,,,False
+Akola,Green Jobs,80.0,,,,,,49,batch2_akola_to_bhandara.csv,30.0,,0.0,True,True,True
+Akola,Healthcare,761.0,2.0,2.0,,,,49,batch2_akola_to_bhandara.csv,180.0,30.0,,,,False
+Akola,Iron & Steel,44.0,270.0,2.0,,,,49,batch2_akola_to_bhandara.csv,,,,,,False
+Akola,IT/ITeS,732.0,67.0,7.0,,,,49,batch2_akola_to_bhandara.csv,120.0,170.0,0.0,True,True,True
+Akola,Logistics,18.0,,,,,,49,batch2_akola_to_bhandara.csv,60.0,90.0,,,,False
+Akola,Management,324.0,170.0,4.0,,,,50,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Akola,Plumbing,62.0,,,,,,50,batch2_akola_to_bhandara.csv,60.0,30.0,,,,False
+Akola,Power,147.0,,,,,,50,batch2_akola_to_bhandara.csv,60.0,55.0,,,,False
+Akola,Telecom,78.0,40.0,1.0,,,,50,batch2_akola_to_bhandara.csv,30.0,120.0,60.0,True,False,True
+Akola,Textile,50.0,,,,,,50,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Akola,Tourism & Hospitality,70.0,,1.0,,,,50,batch2_akola_to_bhandara.csv,90.0,1606.0,,,,False
+Amravati,Agriculture,188.0,45.0,4.0,,,,57,batch2_akola_to_bhandara.csv,1560.0,0.0,840.0,True,False,True
+Amravati,Apparel,97.0,21.0,2.0,,,,57,batch2_akola_to_bhandara.csv,1020.0,285.0,,,,False
+Amravati,Automotive,134.0,2885.0,6.0,,,,57,batch2_akola_to_bhandara.csv,390.0,90.0,,,,False
+Amravati,Beauty & Wellness,148.0,0.0,1.0,,,,57,batch2_akola_to_bhandara.csv,360.0,180.0,,,,False
+Amravati,BFSI,455.0,2926.0,8.0,,,,58,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Amravati,Capital Goods,6.0,36.0,2.0,,,,58,batch2_akola_to_bhandara.csv,300.0,,,,,False
+Amravati,Construction,195.0,32.0,3.0,,,,58,batch2_akola_to_bhandara.csv,1320.0,,360.0,True,False,True
+Amravati,Electronics,298.0,29.0,2.0,,,,58,batch2_akola_to_bhandara.csv,360.0,90.0,60.0,True,False,True
+Amravati,Food Processing,65.0,,,,,,59,batch2_akola_to_bhandara.csv,450.0,450.0,,,,False
+Amravati,Furniture & Fittings,15.0,14.0,1.0,,,,59,batch2_akola_to_bhandara.csv,120.0,0.0,,,,False
+Amravati,Green Jobs,48.0,179.0,2.0,,,,59,batch2_akola_to_bhandara.csv,270.0,60.0,0.0,True,True,True
+Amravati,Handicraft & Carpet,17.0,,,,,,59,batch2_akola_to_bhandara.csv,240.0,,,,,False
+Amravati,Healthcare,283.0,219.0,7.0,,,,60,batch2_akola_to_bhandara.csv,570.0,0.0,,,,False
+Amravati,Infrastructure,9.0,37.0,1.0,,,,60,batch2_akola_to_bhandara.csv,180.0,,,,,False
+Amravati,Iron & Steel,32.0,250.0,1.0,,,,60,batch2_akola_to_bhandara.csv,300.0,,,,,False
+Amravati,IT/ITeS,966.0,55.0,9.0,,,,60,batch2_akola_to_bhandara.csv,1050.0,202.0,0.0,True,True,True
+Amravati,Life Science,67.0,3.0,3.0,,,,61,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Amravati,Logistics,12.0,1.0,2.0,,,,61,batch2_akola_to_bhandara.csv,330.0,90.0,,,,False
+Amravati,Management,254.0,170.0,4.0,,,,61,batch2_akola_to_bhandara.csv,420.0,,,,,False
+Amravati,Media & Entertainment,85.0,,,,,,61,batch2_akola_to_bhandara.csv,120.0,,,,,False
+Amravati,Paints & Coatings,7.0,,,,,,62,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Amravati,Persons with Disability,,,,,,,62,batch2_akola_to_bhandara.csv,120.0,100.0,,,,False
+Amravati,Plumbing,15.0,,,,,,62,batch2_akola_to_bhandara.csv,90.0,,,,,False
+Amravati,Power,92.0,,,,,,62,batch2_akola_to_bhandara.csv,60.0,60.0,,,,False
+Amravati,Retail,,,,,,,62,batch2_akola_to_bhandara.csv,300.0,,180.0,True,False,True
+Amravati,Telecom,39.0,40.0,1.0,,,,63,batch2_akola_to_bhandara.csv,390.0,300.0,0.0,True,True,True
+Amravati,Textile,31.0,200.0,1.0,,,,63,batch2_akola_to_bhandara.csv,630.0,,,,,False
+Amravati,Tourism & Hospitality,65.0,,1.0,,,,63,batch2_akola_to_bhandara.csv,480.0,30.0,,,,False
+Chhatrapati Sambhajinagar,Aerospace & Aviation,88.0,45.0,1.0,,,,69,batch2_akola_to_bhandara.csv,60.0,,,False,True,False
+Chhatrapati Sambhajinagar,Agriculture,142.0,37.0,2.0,,,,69,batch2_akola_to_bhandara.csv,1643.0,60.0,90.0,True,False,True
+Chhatrapati Sambhajinagar,Automotive,172.0,6146.0,30.0,,,,69,batch2_akola_to_bhandara.csv,980.0,20.0,,,,False
+Chhatrapati Sambhajinagar,BFSI,212.0,3120.0,7.0,,,,70,batch2_akola_to_bhandara.csv,150.0,,,,,False
+Chhatrapati Sambhajinagar,Capital Goods,36.0,2150.0,18.0,,,,70,batch2_akola_to_bhandara.csv,680.0,207.0,,,,False
+Chhatrapati Sambhajinagar,Construction,161.0,200.0,1.0,,,,70,batch2_akola_to_bhandara.csv,180.0,,300.0,True,False,True
+Chhatrapati Sambhajinagar,Domestic Workers,11.0,,,,,,70,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Chhatrapati Sambhajinagar,Electronics,314.0,284.0,5.0,,,,70,batch2_akola_to_bhandara.csv,640.0,90.0,210.0,True,False,True
+Chhatrapati Sambhajinagar,Food Processing,52.0,483.0,6.0,,,,70,batch2_akola_to_bhandara.csv,240.0,,,,,False
+Chhatrapati Sambhajinagar,Green Jobs,29.0,,1.0,,,,71,batch2_akola_to_bhandara.csv,90.0,30.0,0.0,True,True,True
+Chhatrapati Sambhajinagar,Healthcare,348.0,76.0,2.0,,,,71,batch2_akola_to_bhandara.csv,120.0,,,,,False
+Chhatrapati Sambhajinagar,Hydrocarbon,4.0,50.0,2.0,,,,71,batch2_akola_to_bhandara.csv,130.0,,,,,False
+Chhatrapati Sambhajinagar,Iron & Steel,31.0,479.0,4.0,,,,71,batch2_akola_to_bhandara.csv,,,,,,False
+Chhatrapati Sambhajinagar,IT/ITeS,1742.0,17.0,5.0,,,,71,batch2_akola_to_bhandara.csv,420.0,,0.0,True,True,True
+Chhatrapati Sambhajinagar,Leather,3.0,878.0,6.0,,,,71,batch2_akola_to_bhandara.csv,,,,,,False
+Chhatrapati Sambhajinagar,Life Science,132.0,531.0,4.0,,,,71,batch2_akola_to_bhandara.csv,150.0,50.0,,,,False
+Chhatrapati Sambhajinagar,Logistics,6.0,999.0,4.0,,,,72,batch2_akola_to_bhandara.csv,40.0,29.0,,,,False
+Chhatrapati Sambhajinagar,Management,264.0,1259.0,10.0,,,,72,batch2_akola_to_bhandara.csv,180.0,,,,,False
+Chhatrapati Sambhajinagar,Paints & Coatings,10.0,1280.0,7.0,,,,72,batch2_akola_to_bhandara.csv,270.0,,,,,False
+Chhatrapati Sambhajinagar,Plumbing,17.0,,,,,,72,batch2_akola_to_bhandara.csv,150.0,,,,,False
+Chhatrapati Sambhajinagar,Power,46.0,,,,,,72,batch2_akola_to_bhandara.csv,210.0,90.0,,,,False
+Chhatrapati Sambhajinagar,Retail,,,,,,,73,batch2_akola_to_bhandara.csv,90.0,,150.0,True,False,True
+Chhatrapati Sambhajinagar,Rubber,1.0,36.0,2.0,,,,73,batch2_akola_to_bhandara.csv,1620.0,,,,,False
+Chhatrapati Sambhajinagar,Telecom,25.0,,,,,,73,batch2_akola_to_bhandara.csv,170.0,120.0,0.0,True,True,True
+Chhatrapati Sambhajinagar,Textile,4.0,480.0,2.0,,,,73,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Chhatrapati Sambhajinagar,Tourism & Hospitality,39.0,1667.0,1.0,,,,73,batch2_akola_to_bhandara.csv,330.0,628.0,,,,False
+Beed,Agriculture,354.0,186.0,11.0,,,,80,batch2_akola_to_bhandara.csv,180.0,,300.0,True,False,True
+Beed,Apparel,78.0,20.0,1.0,,,,80,batch2_akola_to_bhandara.csv,330.0,330.0,,,,False
+Beed,Automotive,88.0,2056.0,5.0,,,,80,batch2_akola_to_bhandara.csv,180.0,90.0,,,,False
+Beed,Beauty & Wellness,85.0,,1.0,,,,80,batch2_akola_to_bhandara.csv,30.0,90.0,,,,False
+Beed,BFSI,173.0,700.0,5.0,,,,81,batch2_akola_to_bhandara.csv,120.0,,,,,False
+Beed,Capital Goods,21.0,181.0,6.0,,,,81,batch2_akola_to_bhandara.csv,60.0,60.0,,,,False
+Beed,Construction,122.0,28.0,4.0,,,,81,batch2_akola_to_bhandara.csv,90.0,,300.0,True,False,True
+Beed,Electronics,338.0,22.0,2.0,,,,81,batch2_akola_to_bhandara.csv,510.0,494.0,0.0,True,True,True
+Beed,Food Processing,116.0,755.0,7.0,,,,82,batch2_akola_to_bhandara.csv,,60.0,,,,False
+Beed,Green Jobs,76.0,,,,,,82,batch2_akola_to_bhandara.csv,,,0.0,True,True,True
+Beed,Iron & Steel,15.0,285.0,3.0,,,,82,batch2_akola_to_bhandara.csv,,,,,,False
+Beed,IT/ITeS,387.0,,3.0,,,,82,batch2_akola_to_bhandara.csv,240.0,75.0,0.0,True,True,True
+Beed,Logistics,8.0,,,,,,82,batch2_akola_to_bhandara.csv,90.0,83.0,,,,False
+Beed,Media & Entertainment,126.0,10.0,1.0,,,,82,batch2_akola_to_bhandara.csv,220.0,345.0,,,,False
+Beed,Telecom,12.0,2.0,1.0,,,,83,batch2_akola_to_bhandara.csv,130.0,180.0,0.0,True,True,True
+Beed,Textile,6.0,59.0,7.0,,,,83,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Beed,Tourism & Hospitality,15.0,,,,,,83,batch2_akola_to_bhandara.csv,260.0,263.0,,,,False
+Bhandara,Agriculture,489.0,74.0,3.0,,,,90,batch2_akola_to_bhandara.csv,660.0,,160.0,True,False,True
+Bhandara,Apparel,135.0,,1.0,,,,90,batch2_akola_to_bhandara.csv,300.0,400.0,,,,False
+Bhandara,Automotive,178.0,3215.0,5.0,,,,90,batch2_akola_to_bhandara.csv,90.0,30.0,,,,False
+Bhandara,Beauty & Wellness,259.0,,1.0,,,,91,batch2_akola_to_bhandara.csv,60.0,51.0,,,,False
+Bhandara,BFSI,364.0,700.0,6.0,,,,91,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Bhandara,Capital Goods,41.0,325.0,4.0,,,,91,batch2_akola_to_bhandara.csv,120.0,119.0,,,,False
+Bhandara,Construction,164.0,23.0,1.0,,,,91,batch2_akola_to_bhandara.csv,120.0,,292.0,True,False,True
+Bhandara,Electronics,568.0,1.0,2.0,,,,91,batch2_akola_to_bhandara.csv,270.0,233.0,0.0,True,True,True
+Bhandara,Food Processing,99.0,1.0,1.0,,,,92,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Bhandara,Green Jobs,90.0,,,,,,92,batch2_akola_to_bhandara.csv,,,0.0,True,True,True
+Bhandara,Healthcare,290.0,10.0,2.0,,,,92,batch2_akola_to_bhandara.csv,180.0,20.0,,,,False
+Bhandara,Iron & Steel,74.0,1300.0,2.0,,,,92,batch2_akola_to_bhandara.csv,,,,,,False
+Bhandara,IT/ITeS,368.0,6.0,3.0,,,,92,batch2_akola_to_bhandara.csv,120.0,180.0,0.0,True,True,True
+Bhandara,Life Science,72.0,159.0,1.0,,,,93,batch2_akola_to_bhandara.csv,,,,,,False
+Bhandara,Management,220.0,158.0,3.0,,,,93,batch2_akola_to_bhandara.csv,150.0,,,,,False
+Bhandara,Media & Entertainment,40.0,,,,,,93,batch2_akola_to_bhandara.csv,120.0,450.0,,,,False
+Bhandara,Plumbing,36.0,,,,,,93,batch2_akola_to_bhandara.csv,60.0,30.0,,,,False
+Bhandara,Retail,,,,,,,93,batch2_akola_to_bhandara.csv,60.0,,0.0,True,True,True
+Bhandara,Sports,112.0,,,,,,93,batch2_akola_to_bhandara.csv,60.0,20.0,,,,False
+Buldhana,Agriculture,284.0,291.0,15.0,,,,100,batch3_buldhana_to_hingoli.csv,850.0,30.0,510.0,True,False,True
+Buldhana,Apparel,126.0,,,,,,100,batch3_buldhana_to_hingoli.csv,300.0,380.0,,,,False
+Buldhana,Automotive,92.0,769.0,6.0,,,,100,batch3_buldhana_to_hingoli.csv,90.0,75.0,,,,False
+Buldhana,Beauty & Wellness,163.0,516.0,2.0,,,,100,batch3_buldhana_to_hingoli.csv,120.0,119.0,,,,False
+Buldhana,BFSI,302.0,2920.0,6.0,,,,101,batch3_buldhana_to_hingoli.csv,180.0,,,,,False
+Buldhana,Capital Goods,14.0,92.0,6.0,,,,101,batch3_buldhana_to_hingoli.csv,1459.0,,,,,False
+Buldhana,Electronics,393.0,146.0,3.0,,,,101,batch3_buldhana_to_hingoli.csv,0.0,320.0,340.0,True,False,True
+Buldhana,Green Jobs,66.0,,,,,,101,batch3_buldhana_to_hingoli.csv,,,0.0,True,True,True
+Buldhana,Healthcare,464.0,,,,,,102,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Buldhana,Iron & Steel,48.0,253.0,2.0,,,,102,batch3_buldhana_to_hingoli.csv,,,,,,False
+Buldhana,IT/ITeS,485.0,5.0,5.0,,,,102,batch3_buldhana_to_hingoli.csv,210.0,173.0,0.0,True,True,True
+Buldhana,Logistics,2.0,,1.0,,,,102,batch3_buldhana_to_hingoli.csv,150.0,,,,,False
+Buldhana,Management,162.0,199.0,10.0,,,,103,batch3_buldhana_to_hingoli.csv,,,,,,False
+Buldhana,Media & Entertainment,65.0,,,,,,103,batch3_buldhana_to_hingoli.csv,180.0,120.0,,,,False
+Buldhana,Persons with Disability,,,,,,,103,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Buldhana,Plumbing,,,,,,,103,batch3_buldhana_to_hingoli.csv,60.0,49.0,,,,False
+Buldhana,Retail,,,,,,,103,batch3_buldhana_to_hingoli.csv,150.0,,0.0,True,True,True
+Buldhana,Rubber,2.0,50.0,1.0,,,,104,batch3_buldhana_to_hingoli.csv,,,,,,False
+Buldhana,Telecom,15.0,40.0,1.0,,,,104,batch3_buldhana_to_hingoli.csv,150.0,150.0,0.0,True,True,True
+Buldhana,Tourism & Hospitality,126.0,,1.0,,,,104,batch3_buldhana_to_hingoli.csv,210.0,524.0,,,,False
+Chandrapur,Aerospace & Aviation,92.0,,,,,,110,batch3_buldhana_to_hingoli.csv,,,,False,True,False
+Chandrapur,Agriculture,286.0,37.0,5.0,,,,110,batch3_buldhana_to_hingoli.csv,300.0,,230.0,True,False,True
+Chandrapur,Automotive,176.0,2832.0,11.0,,,,111,batch3_buldhana_to_hingoli.csv,360.0,49.0,,,,False
+Chandrapur,Beauty & Wellness,269.0,,1.0,,,,111,batch3_buldhana_to_hingoli.csv,180.0,270.0,,,,False
+Chandrapur,BFSI,263.0,3111.0,8.0,,,,111,batch3_buldhana_to_hingoli.csv,,,,,,False
+Chandrapur,Construction,406.0,88.0,3.0,,,,111,batch3_buldhana_to_hingoli.csv,90.0,,630.0,True,False,True
+Chandrapur,Electronics,448.0,29.0,2.0,,,,112,batch3_buldhana_to_hingoli.csv,90.0,342.0,0.0,True,True,True
+Chandrapur,Green Jobs,69.0,,,,,,112,batch3_buldhana_to_hingoli.csv,120.0,150.0,0.0,True,True,True
+Chandrapur,Handicraft & Carpet,33.0,,,,,,112,batch3_buldhana_to_hingoli.csv,120.0,,,,,False
+Chandrapur,Iron & Steel,51.0,254.0,2.0,,,,112,batch3_buldhana_to_hingoli.csv,360.0,,,,,False
+Chandrapur,Logistics,19.0,,,,,,112,batch3_buldhana_to_hingoli.csv,90.0,,,,,False
+Chandrapur,Management,99.0,158.0,3.0,,,,113,batch3_buldhana_to_hingoli.csv,210.0,,,,,False
+Chandrapur,Mining,62.0,,,,,,113,batch3_buldhana_to_hingoli.csv,1100.0,,,,,False
+Chandrapur,Paints & Coatings,12.0,,,,,,113,batch3_buldhana_to_hingoli.csv,120.0,,,,,False
+Chandrapur,Power,148.0,,,,,,113,batch3_buldhana_to_hingoli.csv,90.0,118.0,,,,False
+Dhule,Agriculture,105.0,56.0,3.0,,,,123,batch3_buldhana_to_hingoli.csv,750.0,368.0,400.0,True,False,True
+Dhule,Apparel,84.0,1.0,2.0,,,,123,batch3_buldhana_to_hingoli.csv,780.0,368.0,,,,False
+Dhule,Automotive,80.0,663.0,3.0,,,,123,batch3_buldhana_to_hingoli.csv,330.0,60.0,,,,False
+Dhule,Beauty & Wellness,134.0,0.0,1.0,,,,123,batch3_buldhana_to_hingoli.csv,240.0,250.0,,,,False
+Dhule,BFSI,216.0,2920.0,6.0,,,,123,batch3_buldhana_to_hingoli.csv,150.0,61.0,,,,False
+Dhule,Capital Goods,10.0,,,,,,124,batch3_buldhana_to_hingoli.csv,570.0,232.0,,,,False
+Dhule,Construction,98.0,23.0,1.0,,,,124,batch3_buldhana_to_hingoli.csv,270.0,,300.0,True,False,True
+Dhule,Electronics,139.0,1.0,1.0,,,,124,batch3_buldhana_to_hingoli.csv,1290.0,1052.0,0.0,True,True,True
+Dhule,Food Processing,105.0,504.0,2.0,,,,124,batch3_buldhana_to_hingoli.csv,360.0,120.0,,,,False
+Dhule,Green Jobs,22.0,,,,,,124,batch3_buldhana_to_hingoli.csv,120.0,60.0,0.0,True,True,True
+Dhule,Healthcare,269.0,,,,,,125,batch3_buldhana_to_hingoli.csv,780.0,,,,,False
+Dhule,Iron & Steel,7.0,250.0,1.0,,,,125,batch3_buldhana_to_hingoli.csv,,,,,,False
+Dhule,IT/ITeS,678.0,4.0,2.0,,,,125,batch3_buldhana_to_hingoli.csv,450.0,120.0,0.0,True,True,True
+Dhule,Life Science,129.0,,,,,,125,batch3_buldhana_to_hingoli.csv,270.0,30.0,,,,False
+Dhule,Logistics,4.0,,,,,,125,batch3_buldhana_to_hingoli.csv,240.0,120.0,,,,False
+Dhule,Management,73.0,1058.0,3.0,,,,126,batch3_buldhana_to_hingoli.csv,90.0,90.0,,,,False
+Dhule,Media & Entertainment,98.0,,,,,,126,batch3_buldhana_to_hingoli.csv,420.0,540.0,,,,False
+Dhule,Paints & Coatings,6.0,,,,,,126,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Dhule,Plumbing,10.0,,,,,,126,batch3_buldhana_to_hingoli.csv,90.0,30.0,,,,False
+Dhule,Power,65.0,,,,,,126,batch3_buldhana_to_hingoli.csv,150.0,90.0,,,,False
+Dhule,Retail,,,,,,,127,batch3_buldhana_to_hingoli.csv,120.0,,0.0,True,True,True
+Dhule,Sports,64.0,,,,,,127,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Dhule,Telecom,7.0,,,,,,127,batch3_buldhana_to_hingoli.csv,120.0,390.0,0.0,True,True,True
+Dhule,Textile,12.0,,1.0,,,,127,batch3_buldhana_to_hingoli.csv,630.0,150.0,,,,False
+Dhule,Tourism & Hospitality,17.0,,,,,,127,batch3_buldhana_to_hingoli.csv,90.0,450.0,,,,False
+Gadchiroli,Agriculture,142.0,26.0,3.0,,,,134,batch3_buldhana_to_hingoli.csv,600.0,202.0,1561.0,True,False,True
+Gadchiroli,Apparel,83.0,,,,,,134,batch3_buldhana_to_hingoli.csv,180.0,143.0,,,,False
+Gadchiroli,Automotive,28.0,1450.0,4.0,,,,134,batch3_buldhana_to_hingoli.csv,330.0,163.0,,,,False
+Gadchiroli,Beauty & Wellness,71.0,,1.0,,,,134,batch3_buldhana_to_hingoli.csv,30.0,56.0,,,,False
+Gadchiroli,BFSI,51.0,2920.0,6.0,,,,135,batch3_buldhana_to_hingoli.csv,,,,,,False
+Gadchiroli,Capital Goods,3.0,27.0,1.0,,,,135,batch3_buldhana_to_hingoli.csv,60.0,60.0,,,,False
+Gadchiroli,Electronics,116.0,1.0,2.0,,,,135,batch3_buldhana_to_hingoli.csv,210.0,60.0,0.0,True,True,True
+Gadchiroli,Furniture & Fittings,4.0,3.0,1.0,,,,135,batch3_buldhana_to_hingoli.csv,60.0,30.0,,,,False
+Gadchiroli,Green Jobs,23.0,,,,,,135,batch3_buldhana_to_hingoli.csv,,,0.0,True,True,True
+Gadchiroli,Iron & Steel,16.0,250.0,1.0,,,,136,batch3_buldhana_to_hingoli.csv,,,,,,False
+Gadchiroli,IT/ITeS,86.0,,1.0,,,,136,batch3_buldhana_to_hingoli.csv,450.0,232.0,0.0,True,True,True
+Gadchiroli,Logistics,2.0,,,,,,136,batch3_buldhana_to_hingoli.csv,120.0,,,,,False
+Gadchiroli,Management,38.0,183.0,4.0,,,,136,batch3_buldhana_to_hingoli.csv,60.0,50.0,,,,False
+Gadchiroli,Power,19.0,,,,,,137,batch3_buldhana_to_hingoli.csv,120.0,111.0,,,,False
+Gadchiroli,Tourism & Hospitality,26.0,8.0,1.0,,,,137,batch3_buldhana_to_hingoli.csv,,270.0,,,,False
+Gondia,Agriculture,88.0,37.0,2.0,,,,145,batch3_buldhana_to_hingoli.csv,420.0,,0.0,True,True,True
+Gondia,Apparel,12.0,,,,,,145,batch3_buldhana_to_hingoli.csv,150.0,1303.0,,,,False
+Gondia,Automotive,93.0,3215.0,4.0,,,,146,batch3_buldhana_to_hingoli.csv,240.0,53.0,,,,False
+Gondia,Beauty & Wellness,12.0,,1.0,,,,146,batch3_buldhana_to_hingoli.csv,150.0,470.0,,,,False
+Gondia,BFSI,51.0,698.0,5.0,,,,146,batch3_buldhana_to_hingoli.csv,,,,,,False
+Gondia,Capital Goods,4.0,,,,,,146,batch3_buldhana_to_hingoli.csv,210.0,399.0,,,,False
+Gondia,Construction,82.0,23.0,1.0,,,,147,batch3_buldhana_to_hingoli.csv,240.0,,30.0,True,False,True
+Gondia,Domestic Workers,5.0,,,,,,147,batch3_buldhana_to_hingoli.csv,180.0,135.0,,,,False
+Gondia,Electronics,159.0,1.0,1.0,,,,147,batch3_buldhana_to_hingoli.csv,300.0,414.0,0.0,True,True,True
+Gondia,Furniture & Fittings,,,,,,,147,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Gondia,Green Jobs,13.0,,,,,,148,batch3_buldhana_to_hingoli.csv,60.0,30.0,0.0,True,True,True
+Gondia,Healthcare,80.0,8.0,1.0,,,,148,batch3_buldhana_to_hingoli.csv,270.0,,,,,False
+Gondia,Iron & Steel,16.0,250.0,1.0,,,,148,batch3_buldhana_to_hingoli.csv,,,,,,False
+Gondia,IT/ITeS,84.0,,,,,,148,batch3_buldhana_to_hingoli.csv,120.0,90.0,0.0,True,True,True
+Gondia,Logistics,2.0,,,,,,149,batch3_buldhana_to_hingoli.csv,210.0,411.0,,,,False
+Gondia,Management,37.0,158.0,3.0,,,,149,batch3_buldhana_to_hingoli.csv,210.0,90.0,,,,False
+Gondia,Media & Entertainment,8.0,,,,,,149,batch3_buldhana_to_hingoli.csv,,930.0,,,,False
+Gondia,Paints & Coatings,2.0,,,,,,149,batch3_buldhana_to_hingoli.csv,90.0,,,,,False
+Gondia,Plumbing,3.0,,,,,,150,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Gondia,Power,59.0,,,,,,150,batch3_buldhana_to_hingoli.csv,120.0,110.0,,,,False
+Gondia,Telecom,6.0,,,,,,150,batch3_buldhana_to_hingoli.csv,,120.0,0.0,True,True,True
+Gondia,Tourism & Hospitality,20.0,,,,,,150,batch3_buldhana_to_hingoli.csv,,300.0,,,,False
+Hingoli,Agriculture,204.0,309.0,5.0,,,,157,batch3_buldhana_to_hingoli.csv,600.0,,180.0,True,False,True
+Hingoli,Apparel,113.0,,,,,,158,batch3_buldhana_to_hingoli.csv,,90.0,,,,False
+Hingoli,Automotive,123.0,494.0,5.0,,,,158,batch3_buldhana_to_hingoli.csv,540.0,,,,,False
+Hingoli,Beauty & Wellness,128.0,667.0,2.0,,,,158,batch3_buldhana_to_hingoli.csv,,21.0,,,,False
+Hingoli,BFSI,250.0,817.0,10.0,,,,159,batch3_buldhana_to_hingoli.csv,,30.0,,,,False
+Hingoli,Capital Goods,491.0,,,,,,159,batch3_buldhana_to_hingoli.csv,,250.0,,,,False
+Hingoli,Construction,108.0,,,,,,159,batch3_buldhana_to_hingoli.csv,600.0,,600.0,True,False,True
+Hingoli,Electronics,993.0,,,,,,159,batch3_buldhana_to_hingoli.csv,720.0,510.0,0.0,True,True,True
+Hingoli,Food Processing,188.0,1588.0,12.0,,,,159,batch3_buldhana_to_hingoli.csv,120.0,76.0,,,,False
+Hingoli,Green Jobs,51.0,,,,,,160,batch3_buldhana_to_hingoli.csv,240.0,,0.0,True,True,True
+Hingoli,Healthcare,215.0,4.0,1.0,,,,160,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Hingoli,Iron & Steel,15.0,280.0,2.0,,,,160,batch3_buldhana_to_hingoli.csv,,,,,,False
+Hingoli,IT/ITeS,206.0,60.0,2.0,,,,160,batch3_buldhana_to_hingoli.csv,240.0,178.0,0.0,True,True,True
+Hingoli,Life Science,43.0,,,,,,161,batch3_buldhana_to_hingoli.csv,360.0,,,,,False
+Hingoli,Media & Entertainment,63.0,,,,,,161,batch3_buldhana_to_hingoli.csv,960.0,540.0,,,,False
+Hingoli,Plumbing,14.0,,,,,,161,batch3_buldhana_to_hingoli.csv,120.0,,,,,False
+Hingoli,Power,24.0,,,,,,161,batch3_buldhana_to_hingoli.csv,,90.0,,,,False
+Hingoli,Sports,53.0,,,,,,161,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Hingoli,Telecom,23.0,,,,,,162,batch3_buldhana_to_hingoli.csv,120.0,270.0,0.0,True,True,True
+Hingoli,Textile,15.0,61.0,3.0,,,,162,batch3_buldhana_to_hingoli.csv,420.0,,,,,False
+Hingoli,Tourism & Hospitality,19.0,,1.0,,,,162,batch3_buldhana_to_hingoli.csv,120.0,150.0,,,,False
+Jalgaon,Agriculture,161.0,194.0,11.0,,,,168,batch4_jalgaon_to_nagpur.csv,360.0,30.0,90.0,True,False,True
+Jalgaon,Apparel,145.0,13.0,3.0,,,,168,batch4_jalgaon_to_nagpur.csv,270.0,430.0,,,,False
+Jalgaon,Automotive,86.0,2087.0,7.0,,,,168,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Jalgaon,Beauty & Wellness,223.0,,1.0,,,,169,batch4_jalgaon_to_nagpur.csv,180.0,180.0,,,,False
+Jalgaon,BFSI,319.0,2920.0,8.0,,,,169,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Jalgaon,Capital Goods,14.0,293.0,2.0,,,,169,batch4_jalgaon_to_nagpur.csv,,60.0,,,,False
+Jalgaon,Construction,59.0,35.0,3.0,,,,169,batch4_jalgaon_to_nagpur.csv,60.0,,300.0,True,False,True
+Jalgaon,Electronics,292.0,1545.0,6.0,,,,169,batch4_jalgaon_to_nagpur.csv,570.0,330.0,0.0,True,True,True
+Jalgaon,Green Jobs,61.0,,,,,,170,batch4_jalgaon_to_nagpur.csv,120.0,,0.0,True,True,True
+Jalgaon,Healthcare,294.0,53.0,2.0,,,,170,batch4_jalgaon_to_nagpur.csv,270.0,,,,,False
+Jalgaon,Instrumentation,,,,,,,170,batch4_jalgaon_to_nagpur.csv,210.0,150.0,,,,False
+Jalgaon,Iron & Steel,57.0,420.0,2.0,,,,170,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Jalgaon,IT/ITeS,830.0,4.0,3.0,,,,170,batch4_jalgaon_to_nagpur.csv,540.0,320.0,0.0,True,True,True
+Jalgaon,Logistics,3.0,,1.0,,,,171,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Jalgaon,Management,194.0,1070.0,4.0,,,,171,batch4_jalgaon_to_nagpur.csv,270.0,,,,,False
+Jalgaon,Media & Entertainment,57.0,17.0,1.0,,,,171,batch4_jalgaon_to_nagpur.csv,180.0,180.0,,,,False
+Jalgaon,Power,42.0,,,,,,171,batch4_jalgaon_to_nagpur.csv,60.0,127.0,,,,False
+Jalgaon,Retail,,,,,,,171,batch4_jalgaon_to_nagpur.csv,60.0,,0.0,True,True,True
+Jalgaon,Telecom,15.0,40.0,1.0,,,,171,batch4_jalgaon_to_nagpur.csv,90.0,90.0,0.0,True,True,True
+Jalgaon,Tourism & Hospitality,26.0,,,,,,171,batch4_jalgaon_to_nagpur.csv,30.0,300.0,,,,False
+Jalna,Agriculture,277.0,35.0,2.0,,,,178,batch4_jalgaon_to_nagpur.csv,720.0,290.0,360.0,True,False,True
+Jalna,Apparel,214.0,840.0,7.0,,,,178,batch4_jalgaon_to_nagpur.csv,960.0,2474.0,,,,False
+Jalna,Automotive,125.0,4789.0,17.0,,,,178,batch4_jalgaon_to_nagpur.csv,450.0,,,,,False
+Jalna,Beauty & Wellness,355.0,,1.0,,,,178,batch4_jalgaon_to_nagpur.csv,330.0,425.0,,,,False
+Jalna,BFSI,1578.0,2948.0,8.0,,,,178,batch4_jalgaon_to_nagpur.csv,240.0,450.0,,,,False
+Jalna,Capital Goods,50.0,3413.0,61.0,,,,179,batch4_jalgaon_to_nagpur.csv,420.0,943.0,,,,False
+Jalna,Construction,110.0,291.0,7.0,,,,179,batch4_jalgaon_to_nagpur.csv,360.0,,120.0,True,False,True
+Jalna,Electronics,394.0,110.0,3.0,,,,179,batch4_jalgaon_to_nagpur.csv,780.0,1741.0,0.0,True,True,True
+Jalna,Food Processing,230.0,447.0,5.0,,,,179,batch4_jalgaon_to_nagpur.csv,240.0,570.0,,,,False
+Jalna,Furniture & Fittings,14.0,55.0,3.0,,,,180,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Jalna,Gem & Jewellery,102.0,,,,,,180,batch4_jalgaon_to_nagpur.csv,90.0,335.0,,,,False
+Jalna,Green Jobs,75.0,,,,,,180,batch4_jalgaon_to_nagpur.csv,30.0,,0.0,True,True,True
+Jalna,Handicraft & Carpet,43.0,15.0,1.0,,,,180,batch4_jalgaon_to_nagpur.csv,90.0,,,,,False
+Jalna,Healthcare,435.0,153.0,3.0,,,,180,batch4_jalgaon_to_nagpur.csv,750.0,60.0,,,,False
+Jalna,Hydrocarbon,16.0,,,,,,181,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Jalna,Iron & Steel,16.0,2052.0,13.0,,,,181,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Jalna,IT/ITeS,1824.0,32.0,7.0,,,,181,batch4_jalgaon_to_nagpur.csv,690.0,450.0,0.0,True,True,True
+Jalna,Life Science,199.0,195.0,4.0,,,,181,batch4_jalgaon_to_nagpur.csv,30.0,,,,,False
+Jalna,Logistics,4.0,529.0,4.0,,,,181,batch4_jalgaon_to_nagpur.csv,240.0,,,,,False
+Jalna,Management,561.0,4171.0,6.0,,,,182,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Jalna,Media & Entertainment,161.0,,,,,,182,batch4_jalgaon_to_nagpur.csv,270.0,1710.0,,,,False
+Jalna,Paints & Coatings,24.0,300.0,1.0,,,,182,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Jalna,Plumbing,8.0,,,,,,182,batch4_jalgaon_to_nagpur.csv,120.0,60.0,,,,False
+Jalna,Power,47.0,40.0,1.0,,,,182,batch4_jalgaon_to_nagpur.csv,120.0,120.0,,,,False
+Jalna,Retail,,,,,,,183,batch4_jalgaon_to_nagpur.csv,60.0,,0.0,True,True,True
+Jalna,Telecom,31.0,,,,,,183,batch4_jalgaon_to_nagpur.csv,150.0,360.0,0.0,True,True,True
+Jalna,Textile,63.0,792.0,5.0,,,,183,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Jalna,Tourism & Hospitality,132.0,611.0,13.0,,,,183,batch4_jalgaon_to_nagpur.csv,240.0,990.0,,,,False
+Kolhapur,Agriculture,277.0,35.0,2.0,,,,192,batch4_jalgaon_to_nagpur.csv,720.0,290.0,549.0,True,False,True
+Kolhapur,Apparel,214.0,840.0,7.0,,,,192,batch4_jalgaon_to_nagpur.csv,960.0,2474.0,,,,False
+Kolhapur,Automotive,125.0,4789.0,17.0,,,,193,batch4_jalgaon_to_nagpur.csv,450.0,,,,,False
+Kolhapur,Beauty & Wellness,355.0,,1.0,,,,193,batch4_jalgaon_to_nagpur.csv,330.0,425.0,,,,False
+Kolhapur,BFSI,1578.0,2948.0,8.0,,,,193,batch4_jalgaon_to_nagpur.csv,240.0,450.0,,,,False
+Kolhapur,Capital Goods,50.0,3413.0,61.0,,,,193,batch4_jalgaon_to_nagpur.csv,420.0,943.0,,,,False
+Kolhapur,Construction,110.0,291.0,7.0,,,,194,batch4_jalgaon_to_nagpur.csv,360.0,,1236.0,True,False,True
+Kolhapur,Electronics,394.0,110.0,3.0,,,,194,batch4_jalgaon_to_nagpur.csv,780.0,1741.0,0.0,True,True,True
+Kolhapur,Food Processing,230.0,447.0,5.0,,,,194,batch4_jalgaon_to_nagpur.csv,240.0,570.0,,,,False
+Kolhapur,Furniture & Fittings,14.0,55.0,3.0,,,,194,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Kolhapur,Gem & Jewellery,102.0,,,,,,194,batch4_jalgaon_to_nagpur.csv,90.0,335.0,,,,False
+Kolhapur,Green Jobs,75.0,,,,,,194,batch4_jalgaon_to_nagpur.csv,30.0,,0.0,True,True,True
+Kolhapur,Handicraft & Carpet,43.0,15.0,1.0,,,,195,batch4_jalgaon_to_nagpur.csv,90.0,,,,,False
+Kolhapur,Healthcare,435.0,153.0,3.0,,,,195,batch4_jalgaon_to_nagpur.csv,750.0,60.0,,,,False
+Kolhapur,Hydrocarbon,16.0,0.0,,,,,195,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Kolhapur,Iron & Steel,16.0,2052.0,13.0,,,,195,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Kolhapur,IT/ITeS,1824.0,32.0,7.0,,,,195,batch4_jalgaon_to_nagpur.csv,690.0,450.0,0.0,True,True,True
+Kolhapur,Life Science,199.0,195.0,4.0,,,,195,batch4_jalgaon_to_nagpur.csv,30.0,,,,,False
+Kolhapur,Logistics,4.0,529.0,4.0,,,,196,batch4_jalgaon_to_nagpur.csv,240.0,,,,,False
+Kolhapur,Management,561.0,4171.0,6.0,,,,196,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Kolhapur,Media & Entertainment,161.0,,,,,,196,batch4_jalgaon_to_nagpur.csv,270.0,1710.0,,,,False
+Kolhapur,Paints & Coatings,24.0,300.0,1.0,,,,196,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Kolhapur,Plumbing,8.0,,,,,,196,batch4_jalgaon_to_nagpur.csv,120.0,60.0,,,,False
+Kolhapur,Power,47.0,40.0,1.0,,,,196,batch4_jalgaon_to_nagpur.csv,120.0,120.0,,,,False
+Kolhapur,Retail,,,,,,,196,batch4_jalgaon_to_nagpur.csv,60.0,,0.0,True,True,True
+Kolhapur,Telecom,31.0,,,,,,197,batch4_jalgaon_to_nagpur.csv,150.0,360.0,0.0,True,True,True
+Kolhapur,Textile,63.0,792.0,5.0,,,,197,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Kolhapur,Tourism & Hospitality,132.0,611.0,13.0,,,,197,batch4_jalgaon_to_nagpur.csv,240.0,990.0,,,,False
+Latur,Agriculture,142.0,5689.0,61.0,,,,205,batch4_jalgaon_to_nagpur.csv,810.0,120.0,169.0,True,False,True
+Latur,Apparel,176.0,56.0,7.0,,,,205,batch4_jalgaon_to_nagpur.csv,1260.0,1030.0,,,,False
+Latur,Automotive,60.0,3492.0,29.0,,,,205,batch4_jalgaon_to_nagpur.csv,510.0,72.0,,,,False
+Latur,Beauty & Wellness,69.0,47.0,4.0,,,,205,batch4_jalgaon_to_nagpur.csv,150.0,320.0,,,,False
+Latur,BFSI,205.0,2935.0,8.0,,,,205,batch4_jalgaon_to_nagpur.csv,390.0,60.0,,,,False
+Latur,Capital Goods,10.0,58.0,4.0,,,,206,batch4_jalgaon_to_nagpur.csv,480.0,,,,,False
+Latur,Construction,118.0,93.0,8.0,,,,206,batch4_jalgaon_to_nagpur.csv,300.0,,394.0,True,False,True
+Latur,Electronics,482.0,29.0,6.0,,,,206,batch4_jalgaon_to_nagpur.csv,720.0,1081.0,0.0,True,True,True
+Latur,Food Processing,48.0,1084.0,8.0,,,,206,batch4_jalgaon_to_nagpur.csv,390.0,300.0,,,,False
+Latur,Green Jobs,22.0,,,,,,206,batch4_jalgaon_to_nagpur.csv,120.0,60.0,0.0,True,True,True
+Latur,Healthcare,267.0,4.0,1.0,,,,207,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Latur,Iron & Steel,11.0,273.0,3.0,,,,207,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Latur,IT/ITeS,524.0,,1.0,,,,207,batch4_jalgaon_to_nagpur.csv,1110.0,134.0,0.0,True,True,True
+Latur,Logistics,5.0,,,,,,207,batch4_jalgaon_to_nagpur.csv,330.0,240.0,,,,False
+Latur,Management,110.0,239.0,9.0,,,,207,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Latur,Media & Entertainment,112.0,7.0,3.0,,,,207,batch4_jalgaon_to_nagpur.csv,360.0,900.0,,,,False
+Latur,Paints & Coatings,9.0,,,,,,208,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Latur,Plumbing,2.0,,,,,,208,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Latur,Power,50.0,,,,,,208,batch4_jalgaon_to_nagpur.csv,270.0,172.0,,,,False
+Latur,Telecom,168.0,10.0,2.0,,,,208,batch4_jalgaon_to_nagpur.csv,90.0,260.0,0.0,True,True,True
+Latur,Tourism & Hospitality,138.0,32.0,4.0,,,,208,batch4_jalgaon_to_nagpur.csv,210.0,440.0,,,,False
+Mumbai City,Aerospace & Aviation,235.0,900.0,1.0,,,,219,batch4_jalgaon_to_nagpur.csv,90.0,,,False,True,False
+Mumbai City,Agriculture,97.0,,,,,,219,batch4_jalgaon_to_nagpur.csv,120.0,,0.0,True,True,True
+Mumbai City,Apparel,117.0,3.0,2.0,,,,219,batch4_jalgaon_to_nagpur.csv,510.0,571.0,,,,False
+Mumbai City,Automotive,93.0,1295.0,3.0,,,,220,batch4_jalgaon_to_nagpur.csv,235.0,,,,,False
+Mumbai City,Beauty & Wellness,661.0,18.0,3.0,,,,220,batch4_jalgaon_to_nagpur.csv,560.0,322.0,,,,False
+Mumbai City,BFSI,2701.0,29014.0,8.0,,,,220,batch4_jalgaon_to_nagpur.csv,1220.0,270.0,,,,False
+Mumbai City,Capital Goods,41.0,,,,,,220,batch4_jalgaon_to_nagpur.csv,410.0,102.0,,,,False
+Mumbai City,Construction,80.0,29.0,2.0,,,,220,batch4_jalgaon_to_nagpur.csv,270.0,,2415.0,True,False,True
+Mumbai City,Domestic Workers,11.0,8.0,1.0,,,,221,batch4_jalgaon_to_nagpur.csv,60.0,9.0,,,,False
+Mumbai City,Electronics,272.0,603.0,4.0,,,,221,batch4_jalgaon_to_nagpur.csv,870.0,30.0,0.0,True,True,True
+Mumbai City,Food Processing,285.0,,,,,,221,batch4_jalgaon_to_nagpur.csv,300.0,,,,,False
+Mumbai City,Furniture & Fittings,26.0,,,,,,221,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Mumbai City,Gem & Jewellery,140.0,742.0,2.0,,,,221,batch4_jalgaon_to_nagpur.csv,400.0,,,,,False
+Mumbai City,Green Jobs,46.0,,,,,,222,batch4_jalgaon_to_nagpur.csv,120.0,,0.0,True,True,True
+Mumbai City,Healthcare,570.0,20.0,5.0,,,,222,batch4_jalgaon_to_nagpur.csv,1330.0,,,,,False
+Mumbai City,IT/ITeS,1724.0,6094.0,16.0,,,,222,batch4_jalgaon_to_nagpur.csv,1150.0,270.0,0.0,True,True,True
+Mumbai City,Leather,3.0,,,,,,222,batch4_jalgaon_to_nagpur.csv,390.0,,,,,False
+Mumbai City,Logistics,107.0,793.0,5.0,,,,222,batch4_jalgaon_to_nagpur.csv,690.0,,,,,False
+Mumbai City,Management,1350.0,10117.0,9.0,,,,222,batch4_jalgaon_to_nagpur.csv,360.0,,,,,False
+Mumbai City,Media & Entertainment,881.0,215.0,4.0,,,,223,batch4_jalgaon_to_nagpur.csv,670.0,,,,,False
+Mumbai City,Persons with Disability,,,,,,,223,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Mumbai City,Power,32.0,,,,,,223,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Mumbai City,Retail,,,,,,,223,batch4_jalgaon_to_nagpur.csv,180.0,,5954.0,True,False,True
+Mumbai City,Rubber,5.0,,,,,,223,batch4_jalgaon_to_nagpur.csv,420.0,,,,,False
+Mumbai City,Telecom,24.0,2.0,1.0,,,,223,batch4_jalgaon_to_nagpur.csv,400.0,270.0,0.0,True,True,True
+Mumbai City,Textile,73.0,,,,,,224,batch4_jalgaon_to_nagpur.csv,150.0,,,,,False
+Mumbai City,Tourism & Hospitality,344.0,12515.0,5.0,,,,224,batch4_jalgaon_to_nagpur.csv,540.0,60.0,,,,False
+Mumbai Suburban,Aerospace & Aviation,292.0,,,,,,224,batch4_jalgaon_to_nagpur.csv,930.0,240.0,,False,True,False
+Mumbai Suburban,Agriculture,125.0,0.0,0.0,,,,225,batch4_jalgaon_to_nagpur.csv,240.0,,0.0,True,True,True
+Mumbai Suburban,Apparel,95.0,2.0,3.0,,,,225,batch4_jalgaon_to_nagpur.csv,750.0,179.0,,,,False
+Mumbai Suburban,Automotive,157.0,1233.0,,,,,225,batch4_jalgaon_to_nagpur.csv,180.0,150.0,,,,False
+Mumbai Suburban,Beauty & Wellness,497.0,8.0,2.0,,,,225,batch4_jalgaon_to_nagpur.csv,720.0,,,,,False
+Mumbai Suburban,BFSI,4521.0,28278.0,20.0,,,,225,batch4_jalgaon_to_nagpur.csv,420.0,31.0,,,,False
+Mumbai Suburban,Capital Goods,45.0,,1.0,,,,226,batch4_jalgaon_to_nagpur.csv,180.0,20.0,,,,False
+Mumbai Suburban,Construction,91.0,2.0,3.0,,,,226,batch4_jalgaon_to_nagpur.csv,390.0,,905.0,True,False,True
+Mumbai Suburban,Electronics,277.0,922.0,11.0,,,,226,batch4_jalgaon_to_nagpur.csv,1230.0,630.0,80.0,True,False,True
+Mumbai Suburban,Food Processing,304.0,,2.0,,,,226,batch4_jalgaon_to_nagpur.csv,180.0,27.0,,,,False
+Mumbai Suburban,Furniture & Fittings,24.0,,,,,,226,batch4_jalgaon_to_nagpur.csv,240.0,120.0,,,,False
+Mumbai Suburban,Gem & Jewellery,110.0,912.0,13.0,,,,227,batch4_jalgaon_to_nagpur.csv,720.0,,,,,False
+Mumbai Suburban,Green Jobs,47.0,,,,,,227,batch4_jalgaon_to_nagpur.csv,180.0,30.0,0.0,True,True,True
+Mumbai Suburban,Healthcare,547.0,8.0,5.0,,,,227,batch4_jalgaon_to_nagpur.csv,1320.0,,,,,False
+Mumbai Suburban,Iron & Steel,28.0,250.0,1.0,,,,227,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Mumbai Suburban,IT/ITeS,2357.0,5782.0,17.0,,,,227,batch4_jalgaon_to_nagpur.csv,1130.0,240.0,0.0,True,True,True
+Mumbai Suburban,Leather,5.0,,,,,,228,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Mumbai Suburban,Logistics,116.0,768.0,4.0,,,,228,batch4_jalgaon_to_nagpur.csv,360.0,88.0,,,,False
+Mumbai Suburban,Management,1977.0,10619.0,9.0,,,,228,batch4_jalgaon_to_nagpur.csv,330.0,,,,,False
+Mumbai Suburban,Media & Entertainment,1057.0,205.0,4.0,,,,228,batch4_jalgaon_to_nagpur.csv,1230.0,940.0,,,,False
+Mumbai Suburban,Paints & Coatings,68.0,,1.0,,,,228,batch4_jalgaon_to_nagpur.csv,360.0,,,,,False
+Mumbai Suburban,Plumbing,7.0,,,,,,228,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Mumbai Suburban,Power,34.0,42.0,1.0,,,,229,batch4_jalgaon_to_nagpur.csv,270.0,153.0,,,,False
+Mumbai Suburban,Retail,,,,,,,229,batch4_jalgaon_to_nagpur.csv,450.0,,2233.0,True,False,True
+Mumbai Suburban,Rubber,6.0,,,,,,229,batch4_jalgaon_to_nagpur.csv,240.0,,,,,False
+Mumbai Suburban,Sports,620.0,,,,,,229,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Mumbai Suburban,Telecom,26.0,2.0,2.0,,,,229,batch4_jalgaon_to_nagpur.csv,250.0,,50.0,True,False,True
+Mumbai Suburban,Textile,55.0,,,,,,229,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Mumbai Suburban,Tourism & Hospitality,338.0,12515.0,5.0,,,,229,batch4_jalgaon_to_nagpur.csv,720.0,80.0,,,,False
+Nagpur,Aerospace & Aviation,132.0,,,,,,238,batch4_jalgaon_to_nagpur.csv,60.0,299.0,,False,True,False
+Nagpur,Agriculture,499.0,37.0,4.0,,,,239,batch4_jalgaon_to_nagpur.csv,140.0,1290.0,100.0,True,False,True
+Nagpur,Apparel,107.0,1.0,1.0,,,,239,batch4_jalgaon_to_nagpur.csv,300.0,1070.0,,,,False
+Nagpur,Automotive,269.0,2694.0,6.0,,,,239,batch4_jalgaon_to_nagpur.csv,80.0,50.0,,,,False
+Nagpur,Beauty & Wellness,342.0,,1.0,,,,239,batch4_jalgaon_to_nagpur.csv,160.0,479.0,,,,False
+Nagpur,BFSI,393.0,3207.0,10.0,,,,239,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Nagpur,Capital Goods,11.0,27.0,1.0,,,,240,batch4_jalgaon_to_nagpur.csv,160.0,190.0,,,,False
+Nagpur,Construction,163.0,25.0,1.0,,,,240,batch4_jalgaon_to_nagpur.csv,160.0,,270.0,True,False,True
+Nagpur,Domestic Workers,31.0,,,,,,240,batch4_jalgaon_to_nagpur.csv,60.0,150.0,,,,False
+Nagpur,Electronics,607.0,168.0,4.0,,,,240,batch4_jalgaon_to_nagpur.csv,220.0,399.0,90.0,True,False,True
+Nagpur,Food Processing,134.0,23.0,2.0,,,,240,batch4_jalgaon_to_nagpur.csv,120.0,150.0,,,,False
+Nagpur,Gem & Jewellery,17.0,,,,,,241,batch4_jalgaon_to_nagpur.csv,,685.0,,,,False
+Nagpur,Green Jobs,56.0,,,,,,241,batch4_jalgaon_to_nagpur.csv,80.0,200.0,0.0,True,True,True
+Nagpur,Instrumentation,,,,,,,241,batch4_jalgaon_to_nagpur.csv,,3875.0,,,,False
+Nagpur,Iron & Steel,40.0,850.0,2.0,,,,241,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Nagpur,IT/ITeS,895.0,5551.0,7.0,,,,241,batch4_jalgaon_to_nagpur.csv,180.0,400.0,0.0,True,True,True
+Nagpur,Life Science,80.0,,,,,,241,batch4_jalgaon_to_nagpur.csv,60.0,60.0,,,,False
+Nagpur,Logistics,10.0,125.0,1.0,,,,242,batch4_jalgaon_to_nagpur.csv,180.0,0.0,,,,False
+Nagpur,Management,291.0,222.0,5.0,,,,242,batch4_jalgaon_to_nagpur.csv,120.0,330.0,,,,False
+Nagpur,Media & Entertainment,359.0,,,,,,242,batch4_jalgaon_to_nagpur.csv,250.0,2810.0,,,,False
+Nagpur,Power,131.0,,,,,,242,batch4_jalgaon_to_nagpur.csv,100.0,260.0,,,,False
+Nagpur,Telecom,28.0,,,,,,242,batch4_jalgaon_to_nagpur.csv,120.0,530.0,0.0,True,True,True
+Nanded,Agriculture,288.0,98.0,9.0,,,,250,batch5_nanded_to_pune_proper_clean.csv,600.0,,3391.0,True,False,True
+Nanded,Apparel,529.0,20.0,3.0,,,,250,batch5_nanded_to_pune_proper_clean.csv,840.0,561.0,,,,False
+Nanded,Automotive,84.0,,1.0,,,,250,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Nanded,Beauty & Wellness,748.0,673.0,,,,,250,batch5_nanded_to_pune_proper_clean.csv,120.0,30.0,,,,False
+Nanded,BFSI,521.0,296.0,10.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Nanded,Capital Goods,60.0,529.0,21.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,240.0,510.0,,,,False
+Nanded,Construction,124.0,45.0,9.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,120.0,,3220.0,True,False,True
+Nanded,Electronics,2393.0,127.0,11.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,810.0,810.0,0.0,True,True,True
+Nanded,Food Processing,71.0,50.0,10.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,240.0,,,,,False
+Nanded,Infrastructure,15.0,162.0,3.0,,,,252,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Nanded,Logistics,7.0,,12.0,,,,252,batch5_nanded_to_pune_proper_clean.csv,240.0,54.0,,,,False
+Nanded,Media & Entertainment,572.0,6.0,8.0,,,,252,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Nanded,Plumbing,9.0,,,,,,253,batch5_nanded_to_pune_proper_clean.csv,150.0,90.0,,,,False
+Nanded,Power,73.0,30.0,3.0,,,,253,batch5_nanded_to_pune_proper_clean.csv,360.0,30.0,,,,False
+Nanded,Retail,,,,,,,253,batch5_nanded_to_pune_proper_clean.csv,120.0,,0.0,True,True,True
+Nanded,Telecom,596.0,2.0,2.0,,,,253,batch5_nanded_to_pune_proper_clean.csv,117.0,540.0,0.0,True,True,True
+Nanded,Tourism & Hospitality,593.0,,2.0,,,,253,batch5_nanded_to_pune_proper_clean.csv,390.0,600.0,,,,False
+Nandurbar,Agriculture,505.0,241.0,11.0,,,,260,batch5_nanded_to_pune_proper_clean.csv,600.0,60.0,120.0,True,False,True
+Nandurbar,Apparel,247.0,1.0,1.0,,,,260,batch5_nanded_to_pune_proper_clean.csv,240.0,210.0,,,,False
+Nandurbar,Automotive,76.0,113.0,1.0,,,,260,batch5_nanded_to_pune_proper_clean.csv,420.0,,,,,False
+Nandurbar,Beauty & Wellness,507.0,,2.0,,,,260,batch5_nanded_to_pune_proper_clean.csv,90.0,90.0,,,,False
+Nandurbar,Capital Goods,3.0,,,,,,261,batch5_nanded_to_pune_proper_clean.csv,180.0,120.0,,,,False
+Nandurbar,Construction,46.0,,,,,,261,batch5_nanded_to_pune_proper_clean.csv,150.0,,90.0,True,False,True
+Nandurbar,Electronics,425.0,,2.0,,,,261,batch5_nanded_to_pune_proper_clean.csv,420.0,540.0,0.0,True,True,True
+Nandurbar,Food Processing,45.0,331.0,17.0,,,,261,batch5_nanded_to_pune_proper_clean.csv,420.0,180.0,,,,False
+Nandurbar,Furniture & Fittings,10.0,,,,,,261,batch5_nanded_to_pune_proper_clean.csv,180.0,,,,,False
+Nandurbar,Green Jobs,80.0,,,,,,261,batch5_nanded_to_pune_proper_clean.csv,60.0,,0.0,True,True,True
+Nandurbar,Handicraft & Carpet,12.0,,,,,,262,batch5_nanded_to_pune_proper_clean.csv,60.0,,,,,False
+Nandurbar,Healthcare,655.0,100.0,1.0,,,,262,batch5_nanded_to_pune_proper_clean.csv,330.0,,,,,False
+Nandurbar,Iron & Steel,9.0,250.0,1.0,,,,262,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Nandurbar,Logistics,2.0,,,,,,262,batch5_nanded_to_pune_proper_clean.csv,60.0,20.0,,,,False
+Nandurbar,Management,92.0,58.0,2.0,,,,262,batch5_nanded_to_pune_proper_clean.csv,180.0,,,,,False
+Nandurbar,Media & Entertainment,54.0,,,,,,262,batch5_nanded_to_pune_proper_clean.csv,120.0,60.0,,,,False
+Nandurbar,Plumbing,17.0,,,,,,263,batch5_nanded_to_pune_proper_clean.csv,120.0,30.0,,,,False
+Nandurbar,Power,17.0,,,,,,263,batch5_nanded_to_pune_proper_clean.csv,180.0,60.0,,,,False
+Nandurbar,Textile,25.0,32.0,16.0,,,,263,batch5_nanded_to_pune_proper_clean.csv,420.0,,,,,False
+Nandurbar,Tourism & Hospitality,25.0,220.0,17.0,,,,263,batch5_nanded_to_pune_proper_clean.csv,120.0,300.0,,,,False
+Nashik,Agriculture,450.0,1058.0,5.0,,,,272,batch5_nanded_to_pune_proper_clean.csv,2850.0,,200.0,True,False,True
+Nashik,Apparel,168.0,2.0,2.0,,,,272,batch5_nanded_to_pune_proper_clean.csv,540.0,145.0,,,,False
+Nashik,Automotive,298.0,11687.0,10.0,,,,272,batch5_nanded_to_pune_proper_clean.csv,420.0,90.0,,,,False
+Nashik,Capital Goods,32.0,1521.0,8.0,,,,273,batch5_nanded_to_pune_proper_clean.csv,640.0,389.0,,,,False
+Nashik,Construction,253.0,,,,,,273,batch5_nanded_to_pune_proper_clean.csv,540.0,,210.0,True,False,True
+Nashik,Domestic Workers,44.0,,,,,,273,batch5_nanded_to_pune_proper_clean.csv,1540.0,24.0,,,,False
+Nashik,Electronics,460.0,1060.0,7.0,,,,274,batch5_nanded_to_pune_proper_clean.csv,840.0,240.0,180.0,True,False,True
+Nashik,Food Processing,154.0,900.0,1.0,,,,274,batch5_nanded_to_pune_proper_clean.csv,1140.0,434.0,,,,False
+Nashik,Furniture & Fittings,33.0,5.0,1.0,,,,274,batch5_nanded_to_pune_proper_clean.csv,790.0,,,,,False
+Nashik,Green Jobs,111.0,,,,,,274,batch5_nanded_to_pune_proper_clean.csv,520.0,,0.0,True,True,True
+Nashik,Handicraft & Carpet,25.0,,,,,,275,batch5_nanded_to_pune_proper_clean.csv,1020.0,,,,,False
+Nashik,Healthcare,686.0,,1.0,,,,275,batch5_nanded_to_pune_proper_clean.csv,1230.0,90.0,,,,False
+Nashik,Hydrocarbon,19.0,,,,,,275,batch5_nanded_to_pune_proper_clean.csv,240.0,120.0,,,,False
+Nashik,Infrastructure,11.0,37.0,1.0,,,,275,batch5_nanded_to_pune_proper_clean.csv,240.0,,,,,False
+Nashik,Iron & Steel,41.0,264.0,3.0,,,,275,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Nashik,Leather,18.0,,,,,,276,batch5_nanded_to_pune_proper_clean.csv,240.0,30.0,,,,False
+Nashik,Life Science,344.0,,,,,,276,batch5_nanded_to_pune_proper_clean.csv,210.0,40.0,,,,False
+Nashik,Logistics,13.0,,,,,,276,batch5_nanded_to_pune_proper_clean.csv,480.0,20.0,,,,False
+Nashik,Management,541.0,1099.0,6.0,,,,276,batch5_nanded_to_pune_proper_clean.csv,1220.0,23.0,,,,False
+Nashik,Media & Entertainment,207.0,,,,,,276,batch5_nanded_to_pune_proper_clean.csv,330.0,180.0,,,,False
+Nashik,Paints & Coatings,27.0,50.0,1.0,,,,277,batch5_nanded_to_pune_proper_clean.csv,310.0,,,,,False
+Nashik,Plumbing,10.0,,,,,,277,batch5_nanded_to_pune_proper_clean.csv,480.0,3.0,,,,False
+Nashik,Power,112.0,,,,,,277,batch5_nanded_to_pune_proper_clean.csv,340.0,233.0,,,,False
+Nashik,Retail,,,,,,,277,batch5_nanded_to_pune_proper_clean.csv,300.0,,400.0,True,False,True
+Nashik,Rubber,3.0,133.0,1.0,,,,277,batch5_nanded_to_pune_proper_clean.csv,240.0,,,,,False
+Nashik,Sports,249.0,,,,,,277,batch5_nanded_to_pune_proper_clean.csv,270.0,,,,,False
+Nashik,Tourism & Hospitality,111.0,8333.0,1.0,,,,278,batch5_nanded_to_pune_proper_clean.csv,630.0,62.0,,,,False
+Dharashiv,Agriculture,237.0,1286.0,11.0,,,,285,batch5_nanded_to_pune_proper_clean.csv,540.0,,196.0,True,False,True
+Dharashiv,Apparel,243.0,208.0,4.0,,,,285,batch5_nanded_to_pune_proper_clean.csv,620.0,585.0,,,,False
+Dharashiv,Automotive,57.0,1244.0,4.0,,,,285,batch5_nanded_to_pune_proper_clean.csv,180.0,30.0,,,,False
+Dharashiv,Capital Goods,24.0,61.0,3.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Dharashiv,Construction,61.0,43.0,3.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,270.0,,180.0,True,False,True
+Dharashiv,Electronics,230.0,1.0,1.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,360.0,284.0,0.0,True,True,True
+Dharashiv,Food Processing,21.0,298.0,4.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,270.0,60.0,,,,False
+Dharashiv,Healthcare,160.0,10.0,1.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,180.0,,,,,False
+Dharashiv,Life Science,54.0,330.0,1.0,,,,287,batch5_nanded_to_pune_proper_clean.csv,60.0,,,,,False
+Dharashiv,Logistics,2.0,7.0,1.0,,,,287,batch5_nanded_to_pune_proper_clean.csv,180.0,145.0,,,,False
+Dharashiv,Management,93.0,58.0,3.0,,,,287,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Dharashiv,Media & Entertainment,97.0,,1.0,,,,287,batch5_nanded_to_pune_proper_clean.csv,270.0,450.0,,,,False
+Dharashiv,Paints & Coatings,11.0,,,,,,287,batch5_nanded_to_pune_proper_clean.csv,60.0,,,,,False
+Dharashiv,Telecom,20.0,,,,,,288,batch5_nanded_to_pune_proper_clean.csv,120.0,150.0,0.0,True,True,True
+Dharashiv,Tourism & Hospitality,24.0,,,,,,288,batch5_nanded_to_pune_proper_clean.csv,240.0,422.0,,,,False
+Parbhani,Apparel,654.0,0.0,1.0,,,,296,batch5_nanded_to_pune_proper_clean.csv,960.0,338.0,,,,False
+Parbhani,Automotive,126.0,75.0,3.0,,,,296,batch5_nanded_to_pune_proper_clean.csv,450.0,30.0,,,,False
+Parbhani,Beauty & Wellness,727.0,667.0,2.0,,,,296,batch5_nanded_to_pune_proper_clean.csv,330.0,180.0,,,,False
+Parbhani,Capital Goods,95.0,41.0,3.0,,,,296,batch5_nanded_to_pune_proper_clean.csv,420.0,50.0,,,,False
+Parbhani,Construction,117.0,0.0,0.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,360.0,0.0,120.0,True,False,True
+Parbhani,Domestic Workers,53.0,0.0,0.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,30.0,0.0,,,,False
+Parbhani,Electronics,1582.0,11.0,2.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,780.0,655.0,0.0,True,True,True
+Parbhani,Food Processing,298.0,8.0,1.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,240.0,240.0,,,,False
+Parbhani,Furniture & Fittings,29.0,14.0,2.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,60.0,0.0,,,,False
+Parbhani,Gem & Jewellery,26.0,1.0,1.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,90.0,0.0,,,,False
+Parbhani,Green Jobs,53.0,0.0,0.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,30.0,0.0,0.0,True,True,True
+Parbhani,Handicraft & Carpet,18.0,0.0,0.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,90.0,0.0,,,,False
+Parbhani,Healthcare,233.0,1.0,1.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,750.0,120.0,,,,False
+Parbhani,Hydrocarbon,15.0,0.0,0.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,60.0,0.0,,,,False
+Parbhani,Iron & Steel,7.0,276.0,2.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,60.0,0.0,,,,False
+Parbhani,Leather,7.0,0.0,0.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,30.0,0.0,,,,False
+Parbhani,Life Science,61.0,0.0,0.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,30.0,0.0,,,,False
+Parbhani,Logistics,4.0,0.0,0.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,240.0,115.0,,,,False
+Parbhani,Management,134.0,71.0,3.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,180.0,0.0,,,,False
+Parbhani,Media & Entertainment,444.0,0.0,1.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,270.0,450.0,,,,False
+Parbhani,Plumbing,18.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,120.0,0.0,,,,False
+Parbhani,Power,37.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,120.0,60.0,,,,False
+Parbhani,Retail,0.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,60.0,0.0,0.0,True,True,True
+Parbhani,Telecom,593.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,150.0,500.0,0.0,True,True,True
+Parbhani,Textile,22.0,645.0,2.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,120.0,0.0,,,,False
+Parbhani,Tourism & Hospitality,159.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,240.0,170.0,,,,False
+Pune,Apparel,173.0,1576.0,9.0,,,,310,batch5_nanded_to_pune_proper_clean.csv,210.0,2870.0,,,,False
+Pune,Automotive,375.0,19022.0,36.0,,,,310,batch5_nanded_to_pune_proper_clean.csv,930.0,,,,,False
+Pune,Beauty & Wellness,426.0,25.0,7.0,,,,310,batch5_nanded_to_pune_proper_clean.csv,270.0,831.0,,,,False
+Pune,Capital Goods,48.0,2577.0,20.0,,,,311,batch5_nanded_to_pune_proper_clean.csv,930.0,1451.0,,,,False
+Pune,Construction,314.0,13.0,2.0,,,,311,batch5_nanded_to_pune_proper_clean.csv,270.0,,169.0,True,False,True
+Pune,Domestic Workers,33.0,,,,,,311,batch5_nanded_to_pune_proper_clean.csv,150.0,738.0,,,,False
+Pune,Electronics,606.0,2247.0,19.0,,,,311,batch5_nanded_to_pune_proper_clean.csv,960.0,1561.0,338.0,True,False,True
+Pune,Food Processing,236.0,3920.0,3.0,,,,311,batch5_nanded_to_pune_proper_clean.csv,330.0,3011.0,,,,False
+Pune,Furniture & Fittings,33.0,5.0,1.0,,,,312,batch5_nanded_to_pune_proper_clean.csv,240.0,,,,,False
+Pune,Gem & Jewellery,45.0,,,,,,312,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Pune,Handicraft & Carpet,26.0,,,,,,312,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Pune,Healthcare,614.0,402.0,3.0,,,,312,batch5_nanded_to_pune_proper_clean.csv,360.0,,,,,False
+Pune,Hydrocarbon,21.0,,,,,,312,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Pune,Infrastructure,14.0,37.0,1.0,,,,312,batch5_nanded_to_pune_proper_clean.csv,90.0,0.0,,,,False
+Pune,Iron & Steel,74.0,1260.0,7.0,,,,313,batch5_nanded_to_pune_proper_clean.csv,210.0,0.0,,,,False
+Pune,Life Science,180.0,20444.0,4.0,,,,313,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Pune,Logistics,48.0,1278.0,5.0,,,,313,batch5_nanded_to_pune_proper_clean.csv,360.0,395.0,,,,False
+Pune,Management,463.0,800.0,12.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,300.0,,,,,False
+Pune,Media & Entertainment,205.0,4.0,1.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,720.0,1500.0,,,,False
+Pune,Mining,5.0,160.0,1.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Pune,Paints & Coatings,12.0,110.0,1.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Pune,Plumbing,2.0,,,,,,314,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Pune,Power,70.0,17005.0,2.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,600.0,,,,,False
+Pune,Retail,,,,,,,315,batch5_nanded_to_pune_proper_clean.csv,210.0,,113.0,True,False,True
+Pune,Rubber,3.0,350.0,1.0,,,,315,batch5_nanded_to_pune_proper_clean.csv,540.0,60.0,,,,False
+Pune,Telecom,45.0,,,,,,315,batch5_nanded_to_pune_proper_clean.csv,390.0,660.0,0.0,True,True,True
+Pune,Textile,40.0,1500.0,1.0,,,,315,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Pune,Tourism & Hospitality,129.0,24526.0,7.0,,,,315,batch5_nanded_to_pune_proper_clean.csv,510.0,52.0,,,,False
+Raigad,Agriculture,60.0,28.0,2.0,,,,323,batch6_raigad_to_solapur_proper.csv,570.0,,256.0,True,False,True
+Raigad,Apparel,87.0,2.0,1.0,,,,323,batch6_raigad_to_solapur_proper.csv,270.0,527.0,,,,False
+Raigad,Automotive,42.0,2449.0,1.0,,,,323,batch6_raigad_to_solapur_proper.csv,480.0,,,,,False
+Raigad,Capital Goods,9.0,166.0,4.0,,,,324,batch6_raigad_to_solapur_proper.csv,390.0,360.0,,,,False
+Raigad,Electronics,166.0,4.0,3.0,,,,324,batch6_raigad_to_solapur_proper.csv,330.0,510.0,0.0,True,True,True
+Raigad,Green Jobs,21.0,,,,,,325,batch6_raigad_to_solapur_proper.csv,630.0,111.0,0.0,True,True,True
+Raigad,Healthcare,133.0,16.0,3.0,,,,325,batch6_raigad_to_solapur_proper.csv,450.0,,,,,False
+Raigad,Iron & Steel,68.0,251.0,2.0,,,,325,batch6_raigad_to_solapur_proper.csv,90.0,,,,,False
+Raigad,Logistics,118.0,508.0,6.0,,,,325,batch6_raigad_to_solapur_proper.csv,630.0,105.0,,,,False
+Raigad,Plumbing,25.0,161.0,2.0,,,,326,batch6_raigad_to_solapur_proper.csv,120.0,,,,,False
+Raigad,Power,19.0,140.0,2.0,,,,326,batch6_raigad_to_solapur_proper.csv,120.0,22.0,,,,False
+Raigad,Telecom,10.0,,,,,,326,batch6_raigad_to_solapur_proper.csv,60.0,,0.0,True,True,True
+Raigad,Textile,5.0,,,,,,326,batch6_raigad_to_solapur_proper.csv,210.0,,,,,False
+Ratnagiri,Agriculture,195.0,248.0,2.0,,,,335,batch6_raigad_to_solapur_proper.csv,840.0,470.0,289.0,True,False,True
+Ratnagiri,Apparel,156.0,880.0,2.0,,,,335,batch6_raigad_to_solapur_proper.csv,570.0,253.0,,,,False
+Ratnagiri,Automotive,227.0,2537.0,5.0,,,,335,batch6_raigad_to_solapur_proper.csv,330.0,20.0,,,,False
+Ratnagiri,Capital Goods,7.0,644.0,3.0,,,,336,batch6_raigad_to_solapur_proper.csv,300.0,,,,,False
+Ratnagiri,Construction,40.0,8.0,1.0,,,,336,batch6_raigad_to_solapur_proper.csv,330.0,,100.0,True,False,True
+Ratnagiri,Electronics,468.0,148.0,3.0,,,,336,batch6_raigad_to_solapur_proper.csv,150.0,270.0,100.0,True,False,True
+Ratnagiri,Green Jobs,35.0,,,,,,336,batch6_raigad_to_solapur_proper.csv,180.0,,0.0,True,True,True
+Ratnagiri,Healthcare,141.0,,,,,,337,batch6_raigad_to_solapur_proper.csv,180.0,30.0,,,,False
+Ratnagiri,Logistics,74.0,,,,,,337,batch6_raigad_to_solapur_proper.csv,60.0,,,,,False
+Ratnagiri,Management,371.0,96.0,4.0,,,,337,batch6_raigad_to_solapur_proper.csv,30.0,,,,,False
+Ratnagiri,Plumbing,27.0,,,,,,337,batch6_raigad_to_solapur_proper.csv,90.0,,,,,False
+Ratnagiri,Power,73.0,161.0,1.0,,,,338,batch6_raigad_to_solapur_proper.csv,30.0,,,,,False
+Sangli,Agriculture,673.0,37.0,3.0,,,,346,batch6_raigad_to_solapur_proper.csv,1860.0,,56.0,True,False,True
+Sangli,Apparel,319.0,300.0,3.0,,,,346,batch6_raigad_to_solapur_proper.csv,1320.0,900.0,,,,False
+Sangli,Automotive,362.0,3390.0,14.0,,,,346,batch6_raigad_to_solapur_proper.csv,1260.0,60.0,,,,False
+Sangli,Capital Goods,47.0,534.0,7.0,,,,346,batch6_raigad_to_solapur_proper.csv,900.0,88.0,,,,False
+Sangli,Construction,313.0,136.0,15.0,,,,347,batch6_raigad_to_solapur_proper.csv,960.0,,168.0,True,False,True
+Sangli,Electronics,905.0,10.0,1.0,,,,347,batch6_raigad_to_solapur_proper.csv,1170.0,970.0,56.0,True,False,True
+Sangli,Green Jobs,168.0,,3.0,,,,348,batch6_raigad_to_solapur_proper.csv,120.0,,0.0,True,True,True
+Sangli,Healthcare,1034.0,,4.0,,,,348,batch6_raigad_to_solapur_proper.csv,900.0,,,,,False
+Sangli,Iron & Steel,74.0,609.0,9.0,,,,348,batch6_raigad_to_solapur_proper.csv,60.0,,,,,False
+Sangli,Logistics,14.0,,,,,,348,batch6_raigad_to_solapur_proper.csv,420.0,,,,,False
+Sangli,Management,828.0,75.0,5.0,,,,349,batch6_raigad_to_solapur_proper.csv,240.0,,,,,False
+Sangli,Plumbing,30.0,,0.0,,,,349,batch6_raigad_to_solapur_proper.csv,120.0,60.0,,,,False
+Sangli,Power,204.0,,2.0,,,,349,batch6_raigad_to_solapur_proper.csv,300.0,44.0,,,,False
+Sangli,Retail,,,,,,,349,batch6_raigad_to_solapur_proper.csv,60.0,,56.0,True,False,True
+Sangli,Telecom,35.0,,,,,,350,batch6_raigad_to_solapur_proper.csv,300.0,,0.0,True,True,True
+Sangli,Textile,55.0,200.0,1.0,,,,350,batch6_raigad_to_solapur_proper.csv,60.0,,,,,False
+Satara,Agriculture,649.0,475.0,13.0,,,,358,batch6_raigad_to_solapur_proper.csv,1260.0,180.0,200.0,True,False,True
+Satara,Apparel,924.0,155.0,4.0,,,,358,batch6_raigad_to_solapur_proper.csv,240.0,390.0,,,,False
+Satara,Automotive,775.0,9098.0,21.0,,,,358,batch6_raigad_to_solapur_proper.csv,510.0,180.0,,,,False
+Satara,Capital Goods,175.0,3414.0,28.0,,,,359,batch6_raigad_to_solapur_proper.csv,2850.0,190.0,,,,False
+Satara,Construction,144.0,296.0,13.0,,,,359,batch6_raigad_to_solapur_proper.csv,60.0,,169.0,True,False,True
+Satara,Electronics,718.0,291.0,8.0,,,,359,batch6_raigad_to_solapur_proper.csv,390.0,179.0,38.0,True,False,True
+Satara,Green Jobs,121.0,70.0,2.0,,,,360,batch6_raigad_to_solapur_proper.csv,,,0.0,True,True,True
+Satara,Healthcare,688.0,200.0,1.0,,,,360,batch6_raigad_to_solapur_proper.csv,330.0,,,,,False
+Satara,Iron & Steel,47.0,2533.0,17.0,,,,360,batch6_raigad_to_solapur_proper.csv,30.0,,,,,False
+Satara,Logistics,25.0,65.0,4.0,,,,361,batch6_raigad_to_solapur_proper.csv,210.0,,,,,False
+Satara,Management,491.0,725.0,26.0,,,,361,batch6_raigad_to_solapur_proper.csv,60.0,30.0,,,,False
+Satara,Metal Products,,,,,,,361,batch6_raigad_to_solapur_proper.csv,480.0,,,,,False
+Satara,Plumbing,18.0,,,,,,361,batch6_raigad_to_solapur_proper.csv,60.0,30.0,,,,False
+Satara,Power,303.0,,,,,,362,batch6_raigad_to_solapur_proper.csv,300.0,270.0,,,,False
+Satara,Retail,,,,,,,362,batch6_raigad_to_solapur_proper.csv,60.0,,38.0,True,False,True
+Satara,Rubber,11.0,395.0,4.0,,,,362,batch6_raigad_to_solapur_proper.csv,30.0,11.0,,,,False
+Satara,Telecom,32.0,,,,,,362,batch6_raigad_to_solapur_proper.csv,300.0,240.0,0.0,True,True,True
+Satara,Textile,40.0,5000.0,1.0,,,,362,batch6_raigad_to_solapur_proper.csv,1440.0,,,,,False
+Sindhudurg,Agriculture,83.0,69.0,5.0,,,,369,batch6_raigad_to_solapur_proper.csv,870.0,60.0,120.0,True,False,True
+Sindhudurg,Apparel,36.0,,,,,,369,batch6_raigad_to_solapur_proper.csv,390.0,60.0,,,,False
+Sindhudurg,Automotive,115.0,2596.0,8.0,,,,369,batch6_raigad_to_solapur_proper.csv,660.0,,,,,False
+Sindhudurg,Construction,18.0,100.0,1.0,,,,370,batch6_raigad_to_solapur_proper.csv,300.0,,120.0,True,False,True
+Sindhudurg,Electronics,135.0,82.0,5.0,,,,370,batch6_raigad_to_solapur_proper.csv,330.0,60.0,0.0,True,True,True
+Sindhudurg,Green Jobs,26.0,,,,,,371,batch6_raigad_to_solapur_proper.csv,60.0,,0.0,True,True,True
+Sindhudurg,Healthcare,77.0,50.0,1.0,,,,371,batch6_raigad_to_solapur_proper.csv,360.0,,,,,False
+Sindhudurg,Hydrocarbon,,,,,,,371,batch6_raigad_to_solapur_proper.csv,120.0,,,,,False
+Sindhudurg,Life Science,20.0,12.0,2.0,,,,371,batch6_raigad_to_solapur_proper.csv,60.0,,,,,False
+Sindhudurg,Logistics,2.0,,,,,,372,batch6_raigad_to_solapur_proper.csv,270.0,,,,,False
+Sindhudurg,Plumbing,4.0,,,,,,372,batch6_raigad_to_solapur_proper.csv,60.0,80.0,,,,False
+Sindhudurg,Retail,,,,,,,372,batch6_raigad_to_solapur_proper.csv,60.0,,30.0,True,False,True
+Solapur,Agriculture,392.0,947.0,17.0,,,,382,batch6_raigad_to_solapur_proper.csv,2340.0,180.0,56.0,True,False,True
+Solapur,Apparel,258.0,105.0,2.0,,,,382,batch6_raigad_to_solapur_proper.csv,1260.0,3951.0,,,,False
+Solapur,Automotive,271.0,2861.0,7.0,,,,382,batch6_raigad_to_solapur_proper.csv,150.0,60.0,,,,False
+Solapur,Capital Goods,56.0,767.0,8.0,,,,383,batch6_raigad_to_solapur_proper.csv,1140.0,1310.0,,,,False
+Solapur,Construction,211.0,1848.0,15.0,,,,383,batch6_raigad_to_solapur_proper.csv,960.0,,526.0,True,False,True
+Solapur,Electronics,731.0,350.0,9.0,,,,383,batch6_raigad_to_solapur_proper.csv,1500.0,2611.0,0.0,True,True,True
+Solapur,Green Jobs,82.0,,,,,,383,batch6_raigad_to_solapur_proper.csv,120.0,30.0,0.0,True,True,True
+Solapur,Healthcare,515.0,1201.0,10.0,,,,384,batch6_raigad_to_solapur_proper.csv,1860.0,,,,,False
+Solapur,Logistics,16.0,,,,,,384,batch6_raigad_to_solapur_proper.csv,1560.0,540.0,,,,False
+Solapur,Management,362.0,133.0,6.0,,,,384,batch6_raigad_to_solapur_proper.csv,1080.0,874.0,,,,False
+Solapur,Plumbing,5.0,110.0,1.0,,,,385,batch6_raigad_to_solapur_proper.csv,180.0,,,,,False
+Solapur,Power,93.0,,,,,,385,batch6_raigad_to_solapur_proper.csv,330.0,60.0,,,,False
+Solapur,Retail,,,,,,,385,batch6_raigad_to_solapur_proper.csv,300.0,,38.0,True,False,True
+Solapur,Textile,39.0,228.0,6.0,,,,385,batch6_raigad_to_solapur_proper.csv,390.0,,,,,False
+Thane,Agriculture,146.0,126.0,2.0,,,,393,batch7_thane_to_palghar_source_verified.csv,360.0,,133.0,True,False,True
+Thane,Apparel,88.0,3.0,5.0,,,,393,batch7_thane_to_palghar_source_verified.csv,1050.0,1152.0,,,,False
+Thane,Automotive,292.0,2530.0,6.0,,,,393,batch7_thane_to_palghar_source_verified.csv,60.0,43.0,,,,False
+Thane,Beauty & Wellness,269.0,18.0,5.0,,,,393,batch7_thane_to_palghar_source_verified.csv,540.0,570.0,,,,False
+Thane,BFSI,1152.0,16804.0,11.0,,,,393,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Thane,Capital Goods,80.0,1339.0,39.0,,,,393,batch7_thane_to_palghar_source_verified.csv,1020.0,360.0,,,,False
+Thane,Construction,252.0,34.0,7.0,,,,394,batch7_thane_to_palghar_source_verified.csv,390.0,,1445.0,True,False,True
+Thane,Domestic Workers,12.0,53.0,2.0,,,,394,batch7_thane_to_palghar_source_verified.csv,,367.0,,,,False
+Thane,Electronics,767.0,632.0,13.0,,,,394,batch7_thane_to_palghar_source_verified.csv,960.0,592.0,77.0,True,False,True
+Thane,Food Processing,91.0,428.0,8.0,,,,394,batch7_thane_to_palghar_source_verified.csv,330.0,450.0,,,,False
+Thane,Furniture & Fittings,23.0,155.0,6.0,,,,394,batch7_thane_to_palghar_source_verified.csv,660.0,,,,,False
+Thane,Gem & Jewellery,52.0,10.0,1.0,,,,395,batch7_thane_to_palghar_source_verified.csv,,240.0,,,,False
+Thane,Green Jobs,43.0,,,,,,395,batch7_thane_to_palghar_source_verified.csv,210.0,,0.0,True,True,True
+Thane,Handicraft & Carpet,21.0,,,,,,395,batch7_thane_to_palghar_source_verified.csv,300.0,,,,,False
+Thane,Healthcare,360.0,93.0,22.0,,,,395,batch7_thane_to_palghar_source_verified.csv,2010.0,,,,,False
+Thane,Iron & Steel,197.0,552.0,5.0,,,,395,batch7_thane_to_palghar_source_verified.csv,150.0,,,,,False
+Thane,IT/ITeS,1338.0,84.0,18.0,,,,396,batch7_thane_to_palghar_source_verified.csv,1140.0,360.0,0.0,True,True,True
+Thane,Logistics,49.0,906.0,9.0,,,,396,batch7_thane_to_palghar_source_verified.csv,1580.0,90.0,,,,False
+Thane,Media & Entertainment,285.0,20.0,7.0,,,,396,batch7_thane_to_palghar_source_verified.csv,240.0,1423.0,,,,False
+Thane,Metal Products,,,,,,,396,batch7_thane_to_palghar_source_verified.csv,810.0,,,,,False
+Thane,Persons with Disability,,,,,,,396,batch7_thane_to_palghar_source_verified.csv,970.0,,,,,False
+Thane,Plumbing,11.0,,,,,,396,batch7_thane_to_palghar_source_verified.csv,730.0,,,,,False
+Thane,Power,149.0,,,,,,397,batch7_thane_to_palghar_source_verified.csv,180.0,23.0,,,,False
+Thane,Retail,,,,,,,397,batch7_thane_to_palghar_source_verified.csv,300.0,,394.0,True,False,True
+Thane,Telecom,15.0,9.0,5.0,,,,397,batch7_thane_to_palghar_source_verified.csv,540.0,180.0,0.0,True,True,True
+Thane,Textile,26.0,267.0,8.0,,,,397,batch7_thane_to_palghar_source_verified.csv,2450.0,,,,,False
+Thane,Tourism & Hospitality,155.0,12500.0,5.0,,,,397,batch7_thane_to_palghar_source_verified.csv,360.0,,,,,False
+Wardha,Agriculture,158.0,1374.0,13.0,,,,404,batch7_thane_to_palghar_source_verified.csv,860.0,20.0,90.0,True,False,True
+Wardha,Apparel,125.0,,1.0,,,,404,batch7_thane_to_palghar_source_verified.csv,820.0,419.0,,,,False
+Wardha,Automotive,89.0,2643.0,7.0,,,,404,batch7_thane_to_palghar_source_verified.csv,450.0,172.0,,,,False
+Wardha,Beauty & Wellness,66.0,,1.0,,,,404,batch7_thane_to_palghar_source_verified.csv,200.0,,,,,False
+Wardha,BFSI,127.0,2989.0,15.0,,,,405,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Wardha,Capital Goods,10.0,52.0,4.0,,,,405,batch7_thane_to_palghar_source_verified.csv,220.0,20.0,,,,False
+Wardha,Construction,41.0,58.0,6.0,,,,405,batch7_thane_to_palghar_source_verified.csv,310.0,,0.0,True,True,True
+Wardha,Electronics,336.0,412.0,10.0,,,,405,batch7_thane_to_palghar_source_verified.csv,540.0,180.0,0.0,True,True,True
+Wardha,Food Processing,27.0,41.0,5.0,,,,405,batch7_thane_to_palghar_source_verified.csv,235.0,30.0,,,,False
+Wardha,Green Jobs,19.0,,,,,,405,batch7_thane_to_palghar_source_verified.csv,60.0,30.0,0.0,True,True,True
+Wardha,Iron & Steel,37.0,282.0,3.0,,,,405,batch7_thane_to_palghar_source_verified.csv,120.0,,,,,False
+Wardha,IT/ITeS,574.0,13.0,3.0,,,,406,batch7_thane_to_palghar_source_verified.csv,740.0,256.0,75.0,True,False,True
+Wardha,Life Science,52.0,158.0,5.0,,,,406,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Wardha,Logistics,8.0,,,,,,406,batch7_thane_to_palghar_source_verified.csv,120.0,,,,,False
+Wardha,Media & Entertainment,552.0,,,,,,406,batch7_thane_to_palghar_source_verified.csv,410.0,480.0,,,,False
+Wardha,Persons with Disability,,,,,,,406,batch7_thane_to_palghar_source_verified.csv,80.0,,,,,False
+Wardha,Plumbing,13.0,,,,,,406,batch7_thane_to_palghar_source_verified.csv,100.0,70.0,,,,False
+Wardha,Power,31.0,,,,,,406,batch7_thane_to_palghar_source_verified.csv,30.0,,,,,False
+Wardha,Retail,,,,,,,407,batch7_thane_to_palghar_source_verified.csv,110.0,,0.0,True,True,True
+Wardha,Textile,9.0,79.0,3.0,,,,407,batch7_thane_to_palghar_source_verified.csv,420.0,,,,,False
+Wardha,Tourism & Hospitality,13.0,15.0,2.0,,,,407,batch7_thane_to_palghar_source_verified.csv,240.0,420.0,,,,False
+Washim,Agriculture,137.0,1309.0,5.0,,,,414,batch7_thane_to_palghar_source_verified.csv,2730.0,30.0,300.0,True,False,True
+Washim,Apparel,204.0,,,,,,414,batch7_thane_to_palghar_source_verified.csv,210.0,112.0,,,,False
+Washim,Automotive,66.0,1224.0,2.0,,,,414,batch7_thane_to_palghar_source_verified.csv,870.0,101.0,,,,False
+Washim,Beauty & Wellness,114.0,,1.0,,,,414,batch7_thane_to_palghar_source_verified.csv,150.0,90.0,,,,False
+Washim,BFSI,207.0,2920.0,5.0,,,,414,batch7_thane_to_palghar_source_verified.csv,90.0,30.0,,,,False
+Washim,Capital Goods,9.0,9.0,1.0,,,,415,batch7_thane_to_palghar_source_verified.csv,60.0,60.0,,,,False
+Washim,Construction,41.0,,,,,,415,batch7_thane_to_palghar_source_verified.csv,120.0,,0.0,True,True,True
+Washim,Electronics,192.0,29.0,2.0,,,,415,batch7_thane_to_palghar_source_verified.csv,780.0,300.0,60.0,True,False,True
+Washim,Food Processing,162.0,,,,,,415,batch7_thane_to_palghar_source_verified.csv,540.0,780.0,,,,False
+Washim,Green Jobs,35.0,,,,,,415,batch7_thane_to_palghar_source_verified.csv,120.0,,0.0,True,True,True
+Washim,Handicraft & Carpet,12.0,,,,,,415,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Washim,Healthcare,279.0,45.0,2.0,,,,416,batch7_thane_to_palghar_source_verified.csv,750.0,30.0,,,,False
+Washim,Hydrocarbon,5.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,240.0,,,,,False
+Washim,IT/ITeS,248.0,1.0,1.0,,,,416,batch7_thane_to_palghar_source_verified.csv,240.0,,0.0,True,True,True
+Washim,Life Science,81.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Washim,Logistics,7.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,120.0,,,,,False
+Washim,Management,95.0,81.0,3.0,,,,416,batch7_thane_to_palghar_source_verified.csv,150.0,30.0,,,,False
+Washim,Media & Entertainment,42.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,270.0,260.0,,,,False
+Washim,Plumbing,11.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,90.0,,,,,False
+Washim,Telecom,23.0,,,,,,417,batch7_thane_to_palghar_source_verified.csv,210.0,180.0,0.0,True,True,True
+Washim,Tourism & Hospitality,30.0,,,,,,417,batch7_thane_to_palghar_source_verified.csv,180.0,360.0,,,,False
+Yavatmal,Agriculture,798.0,1407.0,14.0,,,,424,batch7_thane_to_palghar_source_verified.csv,1280.0,180.0,350.0,True,False,True
+Yavatmal,Apparel,297.0,,,,,,424,batch7_thane_to_palghar_source_verified.csv,210.0,390.0,,,,False
+Yavatmal,Automotive,234.0,1503.0,14.0,,,,424,batch7_thane_to_palghar_source_verified.csv,650.0,176.0,,,,False
+Yavatmal,Beauty & Wellness,666.0,,1.0,,,,425,batch7_thane_to_palghar_source_verified.csv,,192.0,,,,False
+Yavatmal,BFSI,810.0,2941.0,12.0,,,,425,batch7_thane_to_palghar_source_verified.csv,180.0,,,,,False
+Yavatmal,Capital Goods,28.0,36.0,6.0,,,,425,batch7_thane_to_palghar_source_verified.csv,180.0,120.0,,,,False
+Yavatmal,Construction,157.0,52.0,7.0,,,,425,batch7_thane_to_palghar_source_verified.csv,240.0,,550.0,True,False,True
+Yavatmal,Electronics,698.0,65.0,9.0,,,,425,batch7_thane_to_palghar_source_verified.csv,570.0,303.0,0.0,True,True,True
+Yavatmal,Food Processing,85.0,106.0,15.0,,,,425,batch7_thane_to_palghar_source_verified.csv,150.0,,,,,False
+Yavatmal,Green Jobs,131.0,,,,,,425,batch7_thane_to_palghar_source_verified.csv,,120.0,0.0,True,True,True
+Yavatmal,Handicraft & Carpet,33.0,,1.0,,,,426,batch7_thane_to_palghar_source_verified.csv,90.0,,,,,False
+Yavatmal,Healthcare,553.0,36.0,8.0,,,,426,batch7_thane_to_palghar_source_verified.csv,1150.0,,,,,False
+Yavatmal,Hydrocarbon,2.0,14.0,1.0,,,,426,batch7_thane_to_palghar_source_verified.csv,180.0,,,,,False
+Yavatmal,Iron & Steel,56.0,342.0,3.0,,,,426,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Yavatmal,IT/ITeS,785.0,,1.0,,,,426,batch7_thane_to_palghar_source_verified.csv,270.0,178.0,0.0,True,True,True
+Yavatmal,Logistics,4.0,,,,,,426,batch7_thane_to_palghar_source_verified.csv,210.0,60.0,,,,False
+Yavatmal,Mining,37.0,,3.0,,,,427,batch7_thane_to_palghar_source_verified.csv,180.0,120.0,,,,False
+Yavatmal,Plumbing,34.0,,,,,,427,batch7_thane_to_palghar_source_verified.csv,90.0,30.0,,,,False
+Yavatmal,Power,110.0,,,,,,427,batch7_thane_to_palghar_source_verified.csv,450.0,80.0,,,,False
+Yavatmal,Telecom,29.0,,,,,,427,batch7_thane_to_palghar_source_verified.csv,120.0,180.0,0.0,True,True,True
+Yavatmal,Textile,45.0,180.0,22.0,,,,427,batch7_thane_to_palghar_source_verified.csv,240.0,,,,,False
+Yavatmal,Tourism & Hospitality,85.0,,,,,,427,batch7_thane_to_palghar_source_verified.csv,90.0,300.0,,,,False
+Palghar,Aerospace & Aviation,112.0,,,,,,434,batch7_thane_to_palghar_source_verified.csv,,,,False,True,False
+Palghar,Agriculture,136.0,26.0,1.0,,,,434,batch7_thane_to_palghar_source_verified.csv,270.0,60.0,60.0,True,False,True
+Palghar,Apparel,83.0,30.0,1.0,,,,434,batch7_thane_to_palghar_source_verified.csv,120.0,558.0,,,,False
+Palghar,Automotive,97.0,1610.0,4.0,,,,434,batch7_thane_to_palghar_source_verified.csv,90.0,51.0,,,,False
+Palghar,Beauty & Wellness,247.0,,1.0,,,,434,batch7_thane_to_palghar_source_verified.csv,60.0,270.0,,,,False
+Palghar,BFSI,1245.0,16889.0,8.0,,,,435,batch7_thane_to_palghar_source_verified.csv,120.0,178.0,,,,False
+Palghar,Capital Goods,34.0,74.0,4.0,,,,435,batch7_thane_to_palghar_source_verified.csv,60.0,60.0,,,,False
+Palghar,Construction,94.0,30.0,1.0,,,,435,batch7_thane_to_palghar_source_verified.csv,60.0,,0.0,True,True,True
+Palghar,Electronics,390.0,936.0,6.0,,,,435,batch7_thane_to_palghar_source_verified.csv,,148.0,0.0,True,True,True
+Palghar,Food Processing,103.0,30.0,1.0,,,,435,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Palghar,Green Jobs,78.0,,,,,,436,batch7_thane_to_palghar_source_verified.csv,60.0,20.0,0.0,True,True,True
+Palghar,Healthcare,325.0,,1.0,,,,436,batch7_thane_to_palghar_source_verified.csv,,30.0,,,,False
+Palghar,Iron & Steel,49.0,561.0,6.0,,,,436,batch7_thane_to_palghar_source_verified.csv,,,,,,False
+Palghar,IT/ITeS,971.0,85.0,4.0,,,,436,batch7_thane_to_palghar_source_verified.csv,,31.0,0.0,True,True,True
+Palghar,Life Science,204.0,892.0,8.0,,,,436,batch7_thane_to_palghar_source_verified.csv,,,,,,False
+Palghar,Logistics,22.0,30.0,1.0,,,,437,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Palghar,Management,475.0,411.0,7.0,,,,437,batch7_thane_to_palghar_source_verified.csv,,,,,,False
+Palghar,Media & Entertainment,324.0,,,,,,437,batch7_thane_to_palghar_source_verified.csv,90.0,270.0,,,,False
+Palghar,Plumbing,9.0,,,,,,437,batch7_thane_to_palghar_source_verified.csv,120.0,60.0,,,,False
+Palghar,Power,22.0,68.0,1.0,,,,437,batch7_thane_to_palghar_source_verified.csv,240.0,60.0,,,,False
+Palghar,Rubber,8.0,35.0,2.0,,,,437,batch7_thane_to_palghar_source_verified.csv,,48.0,,,,False
+Palghar,Telecom,16.0,,,,,,437,batch7_thane_to_palghar_source_verified.csv,,60.0,0.0,True,True,True
+Palghar,Textile,29.0,2500.0,5.0,,,,438,batch7_thane_to_palghar_source_verified.csv,,,,,,False
+Palghar,Tourism & Hospitality,119.0,7.0,1.0,,,,438,batch7_thane_to_palghar_source_verified.csv,,60.0,,,,False
