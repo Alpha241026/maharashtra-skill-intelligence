@@ -60,6 +60,18 @@
     /** True when running locally */
     IS_LOCAL: isLocal,
 
+    /** Groq Cloud API configuration for static host conversation synthesis */
+    GROQ_API_KEY: (function () {
+      try {
+        return (typeof window !== 'undefined' && window.SIH_GROQ_KEY)
+          || (typeof localStorage !== 'undefined' ? localStorage.getItem('SIH_GROQ_KEY') : '')
+          || '';
+      } catch (e) {
+        return '';
+      }
+    })(),
+    GROQ_MODEL: "openai/gpt-oss-120b",
+
     /** Firebase Web Client Configuration */
     FIREBASE: {
       apiKey: "AIzaSyBOw8GbxDMV_gZzaeMezRcimDKdaAa4qpc",

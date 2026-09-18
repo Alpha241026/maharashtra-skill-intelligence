@@ -884,34 +884,240 @@
   }
 
   /* ══════════════════════════════════════════════════════════════
-     04 — GROUNDED SKILL ASSISTANT  (POST /api/chat)
+     04 — GROUNDED SKILL ASSISTANT  (FastAPI & Client Groq Engine)
+     Supports both FastAPI backend and standalone GitHub Pages static deployment.
      ══════════════════════════════════════════════════════════════ */
+
+  function formatMarkdownAnswer(text) {
+    if (!text) return '';
+    var s = esc(text);
+    s = s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/(?:^|\n)[•\-\*]\s+(.*?)(?=\n|$)/g, '<li style="margin-left:16px;list-style-type:disc;">$1</li>');
+    s = s.replace(/\n\n+/g, '<br><br>').replace(/\n/g, '<br>');
+    return s;
+  }
+
+  async function queryStaticChatbot(question, activeDistrict) {
+    var qLower = (question || '').toLowerCase().trim();
+    activeDistrict = activeDistrict || 'Pune';
+
+    // 1. Greetings & Conversation
+    var greetings = ["hello", "hi", "hey", "namaste", "good morning", "good afternoon", "good evening", "how are you"];
+    for (var i = 0; i < greetings.length; i++) {
+      var g = greetings[i];
+      if (qLower === g || qLower.startsWith(g + " ") || qLower.endsWith(" " + g) || qLower.startsWith(g + "!")) {
+        return {
+          query: question,
+          status: "greeting",
+          matched_district: null,
+          matched_sector: null,
+          answer: "Hello! 👋 I'm the Maharashtra Skill Intelligence Assistant. I can help you explore Maharashtra skill-development data, projected training demand, ITI capacity, sector rankings, trade supply, and training-alignment insights for Pune, Nashik, and statewide."
+        };
+      }
+    }
+
+    if (qLower.indexOf("who are you") !== -1 || qLower.indexOf("what can you do") !== -1 || qLower === "help") {
+      return {
+        query: question,
+        status: "conversation",
+        matched_district: null,
+        matched_sector: null,
+        answer: "I am the specialized Maharashtra Skill Intelligence Assistant. I can help you with:\n• District-level projected training demand & sector rankings\n• ITI training capacity & trade supply lookup\n• Potential training-capacity alignment gaps\n\nYou can ask me about districts (e.g. Pune, Nashik), sectors (e.g. Construction, Agriculture), or ITI trades (e.g. Electrician, Welder)."
+      };
+    }
+
+    if (qLower.indexOf("capital of india") !== -1) {
+      return { query: question, status: "conversation", matched_district: null, matched_sector: null, answer: "New Delhi. I can also help you explore Maharashtra skill-development data, projected training demand, or ITI capacity." };
+    }
+    if (qLower.indexOf("capital of maharashtra") !== -1) {
+      return { query: question, status: "conversation", matched_district: null, matched_sector: null, answer: "Mumbai. I can also help you explore Maharashtra skill-development data, projected training demand, or ITI capacity." };
+    }
+
+    // 2. Entity Extraction
+    var matchedDistrict = null;
+    for (var d = 0; d < FALLBACK_DISTRICTS.length; d++) {
+      var dName = FALLBACK_DISTRICTS[d];
+      if (new RegExp('\\b' + dName.toLowerCase() + '\\b').test(qLower)) {
+        matchedDistrict = dName;
+        break;
+      }
+    }
+    if (!matchedDistrict && (qLower.indexOf('nasik') !== -1)) matchedDistrict = 'Nashik';
+    var effectiveDistrict = matchedDistrict || activeDistrict;
+    var dEffLow = effectiveDistrict.toLowerCase();
+
+    // Resolve datasets from static baselines or active runtime state
+    var demandData = (dEffLow === 'nashik' || dEffLow === 'nasik')
+      ? NASHIK_STATIC_DEMAND
+      : ((dEffLow === 'pune') ? PUNE_STATIC_DEMAND : { district: effectiveDistrict, sectors: (state.demandSectors || []) });
+
+    var itiData = (dEffLow === 'nashik' || dEffLow === 'nasik')
+      ? NASHIK_STATIC_ITI
+      : ((dEffLow === 'pune') ? PUNE_STATIC_ITI : { total_intake: state.itiTotalIntake || 0, trades: state.itiTrades || [] });
+
+    // Sector matching
+    var knownSectors = ['Construction', 'Electronics', 'Retail', 'Telecom', 'Agriculture', 'Green Jobs', 'BFSI', 'Automotive', 'Healthcare'];
+    var matchedSector = null;
+    for (var s = 0; s < knownSectors.length; s++) {
+      if (new RegExp('\\b' + knownSectors[s].toLowerCase() + '\\b').test(qLower)) {
+        matchedSector = knownSectors[s];
+        break;
+      }
+    }
+
+    // Trade matching
+    var knownTrades = ['Welder', 'Electrician', 'Fitter', 'Mechanic Diesel', 'Diesel Mechanic', 'Computer Operator', 'COPA', 'Wireman', 'Motor Vehicle'];
+    var matchedTrade = null;
+    for (var t = 0; t < knownTrades.length; t++) {
+      if (new RegExp('\\b' + knownTrades[t].toLowerCase() + '\\b').test(qLower)) {
+        matchedTrade = knownTrades[t];
+        break;
+      }
+    }
+
+    // 3. Build Evidence Context & Fallback Answer
+    var evidenceText = "";
+    var fallbackAnswer = "";
+
+    // Single District + Sector
+    if (matchedSector) {
+      var foundSec = null;
+      for (var j = 0; j < demandData.sectors.length; j++) {
+        if (demandData.sectors[j].sector.toLowerCase() === matchedSector.toLowerCase()) {
+          foundSec = demandData.sectors[j];
+          break;
+        }
+      }
+      if (foundSec) {
+        fallbackAnswer = "In " + effectiveDistrict + ", the projected training requirement for the " + foundSec.sector + " sector is estimated at about " + Math.round(foundSec.projected_training) + " trainees (" + foundSec.demand_band + " Demand Band) (Data coverage: " + Math.round(foundSec.evidence_confidence * 100) + "%).";
+        evidenceText = "District: " + effectiveDistrict + "\n"
+          + "Sector: " + foundSec.sector + "\n"
+          + "Predicted Projected Training Requirement: ~" + Math.round(foundSec.projected_training) + " trainees\n"
+          + "Demand Band: " + foundSec.demand_band + "\n"
+          + "Evidence Confidence / Data Coverage: " + Math.round(foundSec.evidence_confidence * 100) + "%\n"
+          + "Source: Official DSDP/MSSDS training records and candidate aspiration data.";
+      } else {
+        fallbackAnswer = "In " + effectiveDistrict + ", no verified projected training demand record is available for the " + matchedSector + " sector.";
+        evidenceText = "District: " + effectiveDistrict + "\nSector: " + matchedSector + "\nStatus: Insufficient data for this sector in " + effectiveDistrict + ".";
+      }
+    }
+    // Supply Follow-up
+    else if (qLower.indexOf("supply") !== -1 || qLower.indexOf("capacity") !== -1) {
+      var totDemand = demandData.sectors.reduce(function(acc, item) { return acc + item.projected_training; }, 0);
+      var totCap = itiData.total_intake;
+      var gap = totCap - totDemand;
+      fallbackAnswer = "In " + effectiveDistrict + ", the total ITI intake capacity is " + totCap + " seats against an estimated total projected training demand of ~" + Math.round(totDemand) + " trainees (Potential Training-Capacity Alignment Gap: " + (gap >= 0 ? "+" : "") + Math.round(gap) + ").";
+      evidenceText = "District: " + effectiveDistrict + "\n"
+        + "Total ITI Intake Capacity: " + totCap + " seats\n"
+        + "Total Projected Training Demand: ~" + Math.round(totDemand) + " trainees\n"
+        + "Training-Capacity Alignment Gap: " + (gap >= 0 ? "+" : "") + Math.round(gap) + " seats (surplus)\n"
+        + "Note: Potential training-capacity alignment signal, not an exact employment or job-shortage figure.";
+    }
+    // ITI Trades
+    else if (matchedTrade || qLower.indexOf("trade") !== -1 || qLower.indexOf("taught") !== -1) {
+      var tradeList = itiData.trades.slice(0, 5).map(function(tr, idx) {
+        return (idx + 1) + ". " + tr.trade + ": " + tr.intake + " seats";
+      }).join("\n");
+      fallbackAnswer = "In " + effectiveDistrict + " ITIs, " + itiData.trades.length + " trades are currently offered with a total intake of " + itiData.total_intake + " seats.\nTop trades by intake capacity:\n" + tradeList;
+      evidenceText = "District: " + effectiveDistrict + "\n"
+        + "Total ITI Trades Offered: " + itiData.trades.length + "\n"
+        + "Total Intake Capacity: " + itiData.total_intake + " seats\n"
+        + "Top Trades by Intake:\n" + tradeList;
+    }
+    // District Overview
+    else {
+      var totDemand = demandData.sectors.reduce(function(acc, item) { return acc + item.projected_training; }, 0);
+      var secLines = demandData.sectors.map(function(s, idx) {
+        return (idx + 1) + ". " + s.sector + ": Estimated ~" + Math.round(s.projected_training) + " trainees (" + s.demand_band + " Demand Band)";
+      }).join("\n");
+      var gap = itiData.total_intake - totDemand;
+      fallbackAnswer = "Sure! Here's a quick look at " + effectiveDistrict + "'s skill and training situation:\n"
+        + secLines + "\n"
+        + effectiveDistrict + " has about " + itiData.total_intake + " ITI intake seats, compared with an estimated total projected training requirement of about " + Math.round(totDemand) + " trainees (Alignment Gap: " + (gap >= 0 ? "+" : "") + Math.round(gap) + ").";
+      evidenceText = "District: " + effectiveDistrict + "\n"
+        + "Top Ranked Sectors by Projected Training Demand:\n" + secLines + "\n"
+        + "District ITI Intake Capacity: " + itiData.total_intake + " seats\n"
+        + "Total Projected Training Demand: ~" + Math.round(totDemand) + " trainees\n"
+        + "Training-Capacity Alignment Gap: " + (gap >= 0 ? "+" : "") + Math.round(gap) + "\n"
+        + "Note: Potential training-capacity alignment signal, not an exact employment or job-shortage figure.";
+    }
+
+    // 4. Groq Natural Language Generation Layer
+    var groqApiKey = (window.SIH_ENV && window.SIH_ENV.GROQ_API_KEY)
+      || (typeof window !== 'undefined' && window.SIH_GROQ_KEY)
+      || (typeof localStorage !== 'undefined' ? localStorage.getItem('SIH_GROQ_KEY') : '')
+      || '';
+    var groqModel = (window.SIH_ENV && window.SIH_ENV.GROQ_MODEL) || 'openai/gpt-oss-120b';
+
+    if (groqApiKey) {
+      try {
+        var groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + groqApiKey
+          },
+          body: JSON.stringify({
+            model: groqModel,
+            messages: [
+              {
+                role: "system",
+                content: "You are the Maharashtra Skill Intelligence Assistant.\n"
+                  + "Answer using ONLY the verified evidence supplied below.\n"
+                  + "The backend evidence is the sole source of truth.\n\n"
+                  + "Rules:\n"
+                  + "- Do not invent values, sources, projections, or recommendations.\n"
+                  + "- Clearly distinguish source facts from model-derived values.\n"
+                  + "- If evidence is insufficient, say so honestly.\n"
+                  + "- Use terms like 'Projected Training Demand' not 'skill shortage'.\n"
+                  + "- Do not guess employment outcomes or placement rates.\n"
+                  + "- Explain the evidence in clear, professional language.\n"
+                  + "- Keep answers concise and well-structured.\n"
+                  + "- Do not use outside knowledge to fill in missing project-specific facts.\n"
+                  + "- Do not fabricate numbers or data sources."
+              },
+              {
+                role: "user",
+                content: "User question: " + question + "\n\n"
+                  + "=== VERIFIED BACKEND EVIDENCE (source of truth) ===\n"
+                  + evidenceText + "\n"
+                  + "=== END OF EVIDENCE ===\n\n"
+                  + "Answer the user's question using only the evidence above."
+              }
+            ],
+            temperature: 0.3,
+            max_tokens: 1024
+          })
+        });
+
+        if (groqRes.ok) {
+          var data = await groqRes.json();
+          if (data.choices && data.choices.length > 0 && data.choices[0].message && data.choices[0].message.content) {
+            return {
+              query: question,
+              status: "success",
+              matched_district: effectiveDistrict,
+              matched_sector: matchedSector,
+              answer: data.choices[0].message.content.trim()
+            };
+          }
+        }
+      } catch (e) {
+        console.warn("[SIH] Client-side Groq call failed, using grounded fallback:", e.message);
+      }
+    }
+
+    return {
+      query: question,
+      status: "success",
+      matched_district: effectiveDistrict,
+      matched_sector: matchedSector,
+      answer: fallbackAnswer
+    };
+  }
+
   async function queryChat(question) {
     if (!el.assistantBox) return;
-
-    // ── Static host (GitHub Pages): chatbot backend not available ──
-    if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
-      var dName = (state.activeDistrict || 'Pune');
-      var dLow = dName.toLowerCase();
-      var summaryHtml = (dLow === 'nashik' || dLow === 'nasik')
-        ? 'The Nashik district shows <strong>5 calibrated sectors</strong> with a total projected training demand of <strong>990 trainees</strong> '
-          + '(Retail: 400 • Construction: 210 • Agriculture: 200 • Electronics: 180 • Green Jobs: 0). '
-          + 'High-confidence sectors: Electronics (100%), Agriculture (83%). '
-          + 'ITI sanctioned seat capacity: <strong>8,236 seats</strong> across 50 trades (Top trades: Electrician, Fitter, Welder, COPA).'
-        : 'The Pune district shows <strong>4 calibrated sectors</strong> with a total projected training demand of <strong>383 trainees</strong> '
-          + '(Construction • Electronics • Retail • Telecom). '
-          + 'High-confidence sectors: Electronics (100%), Construction (83%). '
-          + 'ITI sanctioned seat capacity: <strong>10,688 seats</strong> across 10 trades.';
-
-      el.assistantBox.innerHTML =
-        '<div class="assistant-answer-block">'
-        + '<span class="assistant-badge">Static Deployment • ' + esc(dName) + '</span>'
-        + '<p class="assistant-lead-text">The Grounded Skill Intelligence Assistant requires the FastAPI backend, which is not available in the GitHub Pages static deployment.</p>'
-        + '<p class="assistant-lead-text" style="margin-top:8px;font-size:0.8125rem;color:var(--color-text-subdued);">'
-        + summaryHtml + '</p>'
-        + '</div>';
-      return;
-    }
 
     el.assistantBox.innerHTML =
       '<div class="state-container state-loading" style="min-height:70px;padding:var(--space-2);">'
@@ -919,6 +1125,19 @@
       + '<div class="state-loading-text" style="font-size:0.75rem;">Querying Grounded Chatbot Engine…</div>'
       + '</div>';
 
+    // 1. If running on static host (GitHub Pages) or no custom API URL: query client-side Groq engine directly
+    if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
+      try {
+        var staticData = await queryStaticChatbot(question, state.activeDistrict);
+        renderChatSuccess(staticData);
+      } catch (err) {
+        console.warn('[SIH] Static assistant error:', err.message);
+        renderChatError(err.message, question);
+      }
+      return;
+    }
+
+    // 2. Otherwise try local / cloud FastAPI backend
     try {
       var res = await fetch(API + '/api/chat', {
         method: 'POST',
@@ -931,8 +1150,13 @@
       renderChatSuccess(data);
 
     } catch (err) {
-      console.warn('[SIH] Assistant feed error:', err.message);
-      renderChatError(err.message, question);
+      console.warn('[SIH] Backend assistant feed error, attempting client-side fallback:', err.message);
+      try {
+        var fallbackData = await queryStaticChatbot(question, state.activeDistrict);
+        renderChatSuccess(fallbackData);
+      } catch (fallbackErr) {
+        renderChatError(err.message, question);
+      }
     }
   }
 
@@ -940,11 +1164,14 @@
     if (!el.assistantBox) return;
     var answer   = data.answer || 'No response generated for query.';
     var district = data.matched_district || state.activeDistrict || 'Maharashtra';
+    var sourceTag = (window.SIH_ENV && window.SIH_ENV.IS_STATIC)
+      ? 'Grounded Pipeline Evidence &bull; ' + esc(district)
+      : 'Grounded Pipeline Evidence &bull; ' + esc(district);
 
     el.assistantBox.innerHTML =
       '<div class="assistant-answer-block">'
-      + '<span class="assistant-badge">Grounded Pipeline Evidence &bull; ' + esc(district) + '</span>'
-      + '<p class="assistant-lead-text">' + esc(answer) + '</p>'
+      + '<span class="assistant-badge">' + sourceTag + '</span>'
+      + '<div class="assistant-lead-text" style="line-height:1.55;font-size:0.875rem;">' + formatMarkdownAnswer(answer) + '</div>'
       + '</div>';
   }
 
@@ -963,11 +1190,6 @@
   }
 
   function loadInitialChat(district) {
-    // Skip auto-query on static hosts — queryChat will show static panel if called manually
-    if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
-      queryChat('What are the projected training demand requirements for ' + district + '?');
-      return;
-    }
     queryChat('What are the projected training demand requirements for ' + district + '?');
   }
 
