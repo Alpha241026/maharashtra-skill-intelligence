@@ -251,7 +251,7 @@ body::before {
 .summary-peak-highlight { background:#fef7e0; color:#92711a; border-color:#f9cb65; }
 
 /* ITI TABLE SCROLL & BALANCED HEIGHT */
-.iti-table-scroll-container { overflow-x:auto; overflow-y:auto; max-height:285px; flex:1; scrollbar-width:thin; scrollbar-color:var(--color-border-main) transparent; }
+.iti-table-scroll-container { overflow-x:auto; overflow-y:auto; flex:1; min-height:0; scrollbar-width:thin; scrollbar-color:var(--color-border-main) transparent; }
 .iti-table-scroll-container::-webkit-scrollbar { width:5px; height:5px; }
 .iti-table-scroll-container::-webkit-scrollbar-track { background:var(--color-surface-subtle); }
 .iti-table-scroll-container::-webkit-scrollbar-thumb { background:var(--color-border-main); border-radius:4px; }

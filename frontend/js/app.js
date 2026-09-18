@@ -56,6 +56,39 @@
     ]
   };
 
+  /* ── Verified Live MSSDS & DVET Baseline for Nashik ── */
+  var NASHIK_STATIC_DEMAND = {
+    district: "Nashik",
+    sectors: [
+      { sector: "Retail", projected_training: 400.0, demand_band: "High", evidence_confidence: 0.33 },
+      { sector: "Construction", projected_training: 210.0, demand_band: "Moderate", evidence_confidence: 0.5 },
+      { sector: "Agriculture", projected_training: 200.0, demand_band: "Moderate", evidence_confidence: 0.83 },
+      { sector: "Electronics", projected_training: 180.0, demand_band: "Moderate", evidence_confidence: 1.0 },
+      { sector: "Green Jobs", projected_training: 0.0, demand_band: "Low", evidence_confidence: 0.5 }
+    ]
+  };
+
+  var NASHIK_STATIC_ITI = {
+    total_intake: 8236,
+    trades: [
+      { trade: "Electrician (NSQF)", intake: 1180 },
+      { trade: "Fitter (NSQF)", intake: 1180 },
+      { trade: "Welder (NSQF)", intake: 920 },
+      { trade: "Computer Operator and Programming Assistant (NSQF)", intake: 816 },
+      { trade: "Mechanic Motor Vehicle (NSQF)", intake: 504 },
+      { trade: "Wireman (NSQF)", intake: 300 },
+      { trade: "Dress Making (NSQF)", intake: 280 },
+      { trade: "Electronics Mechanic (NSQF)", intake: 240 },
+      { trade: "Mechanic Diesel (NSQF)", intake: 240 },
+      { trade: "Turner (NSQF)", intake: 240 },
+      { trade: "Cosmetology (NSQF)", intake: 144 },
+      { trade: "Plumber (NSQF)", intake: 144 },
+      { trade: "Wood Work Technician (NSQF)", intake: 144 },
+      { trade: "Fashion Design and Technology (NSQF)", intake: 140 },
+      { trade: "Machinist (NSQF)", intake: 140 }
+    ]
+  };
+
   /* ── Fallback Maharashtra District Registry (Official 36 Districts) ── */
   var FALLBACK_DISTRICTS = [
     'Ahmednagar', 'Akola', 'Amravati', 'Beed', 'Bhandara', 'Buldhana',
@@ -242,12 +275,22 @@
     // Preserve full district registry in application state
     state.allDistricts = names.slice();
 
-    // 1. Primary visible option: Pune (Default Baseline Pilot)
+    // 1. Primary visible options with live calibrated MSSDS data: Pune & Nashik
     var puneOpt = document.createElement('option');
     puneOpt.value = 'Pune';
     puneOpt.textContent = 'Pune (Baseline Pilot — Live MSSDS Data)';
-    puneOpt.selected = true;
+    if (!state.activeDistrict || state.activeDistrict.toLowerCase() === 'pune') {
+      puneOpt.selected = true;
+    }
     el.districtSelect.appendChild(puneOpt);
+
+    var nashikOpt = document.createElement('option');
+    nashikOpt.value = 'Nashik';
+    nashikOpt.textContent = 'Nashik (Live MSSDS Data)';
+    if (state.activeDistrict && (state.activeDistrict.toLowerCase() === 'nashik' || state.activeDistrict.toLowerCase() === 'nasik')) {
+      nashikOpt.selected = true;
+    }
+    el.districtSelect.appendChild(nashikOpt);
 
     // 2. Preserve all other districts in DOM, but keep them hidden as requested
     var hiddenGroup = document.createElement('optgroup');
@@ -258,7 +301,8 @@
     hiddenGroup.style.display = 'none';
 
     names.forEach(function(name) {
-      if (name.toLowerCase() === 'pune') return;
+      var nLow = name.toLowerCase();
+      if (nLow === 'pune' || nLow === 'nashik' || nLow === 'nasik') return;
       var opt = document.createElement('option');
       opt.value = name;
       opt.textContent = name;
@@ -273,6 +317,9 @@
 
   function onDistrictChange(district) {
     if (!district) return;
+    if (district.toLowerCase() === 'nasik') {
+      district = 'Nashik';
+    }
     state.activeDistrict = district;
     state.activeFilter   = 'all';
 
@@ -280,6 +327,11 @@
       el.filterChips.forEach(function(c) {
         c.classList.toggle('is-active', c.getAttribute('data-filter') === 'all');
       });
+    }
+
+    var locationTag = document.querySelector('.location-tag-pill');
+    if (locationTag) {
+      locationTag.textContent = (district.toLowerCase() === 'pune') ? 'Baseline Pilot' : 'Calibrated Live Data';
     }
 
     if (el.scopeDivision) setText(el.scopeDivision, district + ' District — Maharashtra');
@@ -306,9 +358,10 @@
 
     // ── Static host (GitHub Pages): skip API, use verified MSSDS baseline directly ──
     if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
-      var staticSectors = district.toLowerCase() === 'pune'
+      var dLow = district.toLowerCase();
+      var staticSectors = (dLow === 'pune')
         ? PUNE_STATIC_DEMAND.sectors
-        : [];
+        : ((dLow === 'nashik' || dLow === 'nasik') ? NASHIK_STATIC_DEMAND.sectors : []);
       state.demandSectors = staticSectors;
       state.syncStatus.demand = 'synced';
       updateGlobalSyncStatus();
@@ -317,7 +370,7 @@
         updateKPIs_demandSuccess(staticSectors);
         renderSectorDrivers(staticSectors);
       } else {
-        showDemandEmpty('Live district intelligence is only available for the Pune baseline pilot in the static deployment.');
+        showDemandEmpty('Live district intelligence is currently calibrated for Pune and Nashik in the static deployment.');
         updateKPIs_demandEmpty();
         renderSectorDrivers([]);
       }
@@ -350,8 +403,9 @@
 
     } catch (err) {
       console.warn('[SIH] Demand feed error:', err.message);
-      if (district.toLowerCase() === 'pune') {
-        var staticSectors = PUNE_STATIC_DEMAND.sectors;
+      var dLow = district.toLowerCase();
+      if (dLow === 'pune' || dLow === 'nashik' || dLow === 'nasik') {
+        var staticSectors = (dLow === 'pune') ? PUNE_STATIC_DEMAND.sectors : NASHIK_STATIC_DEMAND.sectors;
         state.demandSectors = staticSectors;
         state.syncStatus.demand = 'synced';
         updateGlobalSyncStatus();
@@ -584,7 +638,10 @@
 
     // ── Static host (GitHub Pages): skip API, use verified DVET baseline directly ──
     if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
-      var staticData = district.toLowerCase() === 'pune' ? PUNE_STATIC_ITI : { total_intake: 0, trades: [] };
+      var dLow = district.toLowerCase();
+      var staticData = (dLow === 'pune')
+        ? PUNE_STATIC_ITI
+        : ((dLow === 'nashik' || dLow === 'nasik') ? NASHIK_STATIC_ITI : { total_intake: 0, trades: [] });
       state.itiTrades      = staticData.trades;
       state.itiTotalIntake = staticData.total_intake;
       state.syncStatus.iti = 'synced';
@@ -593,7 +650,7 @@
         renderITI(staticData.trades, staticData.total_intake);
         updateKPIs_itiSuccess(staticData.trades, staticData.total_intake);
       } else {
-        showITIEmpty('Live ITI data is only available for the Pune baseline pilot in the static deployment.');
+        showITIEmpty('Live ITI data is currently calibrated for Pune and Nashik in the static deployment.');
         updateKPIs_itiEmpty();
       }
       return;
@@ -628,9 +685,10 @@
 
     } catch (err) {
       console.warn('[SIH] ITI feed error:', err.message);
-      if (district.toLowerCase() === 'pune') {
-        var staticTrades = PUNE_STATIC_ITI.trades;
-        var staticTotal  = PUNE_STATIC_ITI.total_intake;
+      var dLow = district.toLowerCase();
+      if (dLow === 'pune' || dLow === 'nashik' || dLow === 'nasik') {
+        var staticTrades = (dLow === 'pune') ? PUNE_STATIC_ITI.trades : NASHIK_STATIC_ITI.trades;
+        var staticTotal  = (dLow === 'pune') ? PUNE_STATIC_ITI.total_intake : NASHIK_STATIC_ITI.total_intake;
         state.itiTrades      = staticTrades;
         state.itiTotalIntake = staticTotal;
         state.syncStatus.iti = 'synced';
@@ -833,15 +891,24 @@
 
     // ── Static host (GitHub Pages): chatbot backend not available ──
     if (window.SIH_ENV && window.SIH_ENV.IS_STATIC) {
+      var dName = (state.activeDistrict || 'Pune');
+      var dLow = dName.toLowerCase();
+      var summaryHtml = (dLow === 'nashik' || dLow === 'nasik')
+        ? 'The Nashik district shows <strong>5 calibrated sectors</strong> with a total projected training demand of <strong>990 trainees</strong> '
+          + '(Retail: 400 • Construction: 210 • Agriculture: 200 • Electronics: 180 • Green Jobs: 0). '
+          + 'High-confidence sectors: Electronics (100%), Agriculture (83%). '
+          + 'ITI sanctioned seat capacity: <strong>8,236 seats</strong> across 50 trades (Top trades: Electrician, Fitter, Welder, COPA).'
+        : 'The Pune district shows <strong>4 calibrated sectors</strong> with a total projected training demand of <strong>383 trainees</strong> '
+          + '(Construction • Electronics • Retail • Telecom). '
+          + 'High-confidence sectors: Electronics (100%), Construction (83%). '
+          + 'ITI sanctioned seat capacity: <strong>10,688 seats</strong> across 10 trades.';
+
       el.assistantBox.innerHTML =
         '<div class="assistant-answer-block">'
-        + '<span class="assistant-badge">Static Deployment • ' + esc(state.activeDistrict || 'Pune') + '</span>'
+        + '<span class="assistant-badge">Static Deployment • ' + esc(dName) + '</span>'
         + '<p class="assistant-lead-text">The Grounded Skill Intelligence Assistant requires the FastAPI backend, which is not available in the GitHub Pages static deployment.</p>'
         + '<p class="assistant-lead-text" style="margin-top:8px;font-size:0.8125rem;color:var(--color-text-subdued);">'
-        + 'The Pune district shows <strong>4 calibrated sectors</strong> with a total projected training demand of <strong>383 trainees</strong> '
-        + '(Construction • Electronics • Retail • Telecom). '
-        + 'High-confidence sectors: Electronics (100%), Construction (83%). '
-        + 'ITI sanctioned seat capacity: <strong>10,688 seats</strong> across 10 trades.</p>'
+        + summaryHtml + '</p>'
         + '</div>';
       return;
     }
