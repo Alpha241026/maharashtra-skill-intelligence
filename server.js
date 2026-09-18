@@ -61,6 +61,8 @@ function startBackend() {
     '--with', 'numpy',
     '--with', 'scikit-learn',
     '--with', 'joblib',
+    '--with', 'groq',
+    '--with', 'python-dotenv',
     'python',
     '-m', 'uvicorn',
     'backend.main:app',

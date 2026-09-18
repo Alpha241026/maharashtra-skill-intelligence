@@ -1,5 +1,14 @@
-"""Grounded Chatbot Engine querying ProjectedTrainingIntelligence, SupplyAlignmentEngine, ITI Supply, and Official Reference data."""
+"""Grounded Chatbot Engine querying ProjectedTrainingIntelligence, SupplyAlignmentEngine, ITI Supply, and Official Reference data.
 
+Groq Integration:
+    GroqAnswerGenerator is the ONLY component that calls the Groq API.
+    It receives pre-retrieved, verified evidence from the existing data engines
+    and converts it into natural-language answers.  It never queries databases,
+    runs ML models, or invents data.
+"""
+
+import logging
+import os
 import re
 from pathlib import Path
 from typing import Dict, Any, Optional, Tuple, List, Set
@@ -11,6 +20,97 @@ from engines.ml.projected_training_intelligence import (
     DEFAULT_MODEL_PATH,
 )
 from engines.ml.supply_alignment import SupplyAlignmentEngine, DEFAULT_ITI_PATH
+
+logger = logging.getLogger("maharashtra_skill_intelligence")
+
+# ---------------------------------------------------------------------------
+# Groq system prompt — enforces grounding on backend evidence only
+# ---------------------------------------------------------------------------
+_GROQ_SYSTEM_PROMPT = (
+    "You are the Maharashtra Skill Intelligence Assistant.\n"
+    "Answer using ONLY the verified evidence supplied below.\n"
+    "The backend evidence is the sole source of truth.\n\n"
+    "Rules:\n"
+    "- Do not invent values, sources, projections, or recommendations.\n"
+    "- Clearly distinguish source facts from model-derived values.\n"
+    "- If evidence is insufficient, say so honestly.\n"
+    "- Use terms like 'Projected Training Demand' not 'skill shortage'.\n"
+    "- Do not guess employment outcomes or placement rates.\n"
+    "- Explain the evidence in clear, professional language.\n"
+    "- Keep answers concise and well-structured.\n"
+    "- Do not use outside knowledge to fill in missing project-specific facts.\n"
+    "- Do not fabricate numbers or data sources.\n"
+)
+
+
+class GroqAnswerGenerator:
+    """Thin wrapper around the Groq API used exclusively for natural-language generation.
+
+    Responsibilities:
+        - Convert structured backend evidence into readable answers.
+        - Enforce grounding via the system prompt.
+
+    NOT responsible for:
+        - Database queries, ML inference, entity extraction, or context tracking.
+    """
+
+    def __init__(self) -> None:
+        self.api_key: Optional[str] = os.environ.get("GROQ_API_KEY")
+        self.model: str = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
+        self._client: Any = None
+        self._available: Optional[bool] = None
+
+        if self.api_key:
+            try:
+                from groq import Groq  # type: ignore
+                self._client = Groq(api_key=self.api_key)
+                self._available = True
+                logger.info("[GroqAnswerGenerator] Groq client initialised (model=%s)", self.model)
+            except Exception as exc:
+                logger.warning("[GroqAnswerGenerator] Could not initialise Groq client: %s", exc)
+                self._available = False
+        else:
+            logger.warning("[GroqAnswerGenerator] GROQ_API_KEY not set — Groq generation disabled")
+            self._available = False
+
+    @property
+    def is_available(self) -> bool:
+        return bool(self._available and self._client)
+
+    def generate(self, question: str, evidence_context: str) -> Optional[str]:
+        """Send the user question + compact evidence context to Groq and return the answer.
+
+        Returns ``None`` if Groq is unavailable or the request fails — the caller
+        should fall back to the existing deterministic answer.
+        """
+        if not self.is_available:
+            return None
+
+        user_message = (
+            f"User question: {question}\n\n"
+            f"=== VERIFIED BACKEND EVIDENCE (source of truth) ===\n"
+            f"{evidence_context}\n"
+            f"=== END OF EVIDENCE ===\n\n"
+            f"Answer the user's question using only the evidence above."
+        )
+
+        try:
+            logger.info("[Groq] Request started — model=%s, question=%r", self.model, question[:80])
+            response = self._client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": _GROQ_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_message},
+                ],
+                temperature=0.3,
+                max_tokens=1024,
+            )
+            answer = response.choices[0].message.content.strip()
+            logger.info("[Groq] Response received — %d chars", len(answer))
+            return answer
+        except Exception as exc:
+            logger.error("[Groq] API call failed: %s", exc)
+            return None
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_REF_PATH = PROJECT_ROOT / "data" / "processed" / "training" / "official_trade_skills_reference.csv"
@@ -82,6 +182,7 @@ class GroundedChatbotEngine:
         }
 
         self._load_vocabularies()
+        self._groq = GroqAnswerGenerator()
 
     def reset_context(self) -> None:
         """Reset internal session context."""
@@ -92,6 +193,25 @@ class GroundedChatbotEngine:
             "last_intent": None,
             "last_result": None,
         }
+
+    def _generate_grounded_answer(
+        self,
+        query: str,
+        evidence_context: str,
+        fallback_answer: str,
+    ) -> str:
+        """Generate a natural-language answer with Groq grounded strictly in evidence.
+
+        If Groq is disabled, unavailable, or encounters an API error, returns fallback_answer.
+        """
+        if not self._groq.is_available:
+            return fallback_answer
+
+        groq_ans = self._groq.generate(query, evidence_context)
+        if groq_ans and groq_ans.strip():
+            return groq_ans.strip()
+
+        return fallback_answer
 
     def _normalize_query(self, query: str) -> str:
         """Normalize casual spellings, punctuation, and common chat abbreviations."""
@@ -338,11 +458,19 @@ class GroundedChatbotEngine:
                     tot_dem = alignment_res["predicted_total_training_demand"]
                     gap = alignment_res["alignment_gap"]
                     status_lbl = alignment_res["alignment_status"]
-                    answer = (
+                    fallback_answer = (
                         f"In {active_dist}, the total ITI intake capacity is {tot_cap:.0f} seats "
                         f"against an estimated total projected training demand of ~{tot_dem:.0f} trainees "
                         f"(Potential Training-Capacity Alignment Gap: {gap:+.0f}, Status: {status_lbl})."
                     )
+                    evidence_text = (
+                        f"District: {active_dist}\n"
+                        f"Total ITI Intake Capacity: {tot_cap:.0f} seats\n"
+                        f"Estimated Total Projected Training Demand: ~{tot_dem:.0f} trainees\n"
+                        f"Training-Capacity Alignment Gap: {gap:+.0f}\n"
+                        f"Alignment Status: {status_lbl}"
+                    )
+                    answer = self._generate_grounded_answer(query, evidence_text, fallback_answer)
                     return {
                         "query": query,
                         "status": "success",
@@ -361,7 +489,14 @@ class GroundedChatbotEngine:
                 if intel["status"] == "success" and intel.get("predicted_projected_training") is not None:
                     pred_val = intel["predicted_projected_training"]
                     band = intel["demand_band"]
-                    answer = f"In {active_dist}, estimated projected training demand for {active_sec} is ~{pred_val:.0f} trainees ({band} Demand Band)."
+                    fallback_answer = f"In {active_dist}, estimated projected training demand for {active_sec} is ~{pred_val:.0f} trainees ({band} Demand Band)."
+                    evidence_text = (
+                        f"District: {active_dist}\n"
+                        f"Sector: {active_sec}\n"
+                        f"Projected Training Demand: ~{pred_val:.0f} trainees\n"
+                        f"Demand Band: {band}"
+                    )
+                    answer = self._generate_grounded_answer(query, evidence_text, fallback_answer)
                     return {
                         "query": query,
                         "status": "success",
@@ -429,7 +564,14 @@ class GroundedChatbotEngine:
 
             total_intake = int(match["intake"].sum())
             inst_count = int(match["iti_name"].nunique())
-            answer = f"In {district}, the ITI trade '{trade}' has a total intake capacity of {total_intake} seats across {inst_count} ITIs."
+            fallback_answer = f"In {district}, the ITI trade '{trade}' has a total intake capacity of {total_intake} seats across {inst_count} ITIs."
+            evidence_text = (
+                f"District: {district}\n"
+                f"Trade: {trade}\n"
+                f"Total ITI Intake Capacity: {total_intake} seats\n"
+                f"Number of Offering ITIs: {inst_count}"
+            )
+            answer = self._generate_grounded_answer(query, evidence_text, fallback_answer)
             return {
                 "query": query,
                 "status": "success",
@@ -468,10 +610,17 @@ class GroundedChatbotEngine:
             dist_list_str = ", ".join(top_districts)
             total_intake = int(match["intake"].sum())
 
-            answer = (
+            fallback_answer = (
                 f"The trade '{trade}' is offered across {district_summary['district'].nunique()} districts in Maharashtra "
                 f"with a total intake capacity of {total_intake} seats. Top offering districts include: {dist_list_str}."
             )
+            evidence_text = (
+                f"Trade: {trade}\n"
+                f"Districts Offering Trade: {district_summary['district'].nunique()}\n"
+                f"Total Statewide Intake Capacity: {total_intake} seats\n"
+                f"Top Offering Districts: {dist_list_str}"
+            )
+            answer = self._generate_grounded_answer(query, evidence_text, fallback_answer)
             return {
                 "query": query,
                 "status": "success",
@@ -515,7 +664,15 @@ class GroundedChatbotEngine:
                 tcap = int(r[1]["intake"])
                 lines.append(f"{idx}. {tname}: {tcap} seats")
 
-            answer = "\n".join(lines)
+            fallback_answer = "\n".join(lines)
+            top_trades_detail = "\n".join(f"- {r['trade_name']}: {int(r['intake'])} seats" for _, r in top_trades.iterrows())
+            evidence_text = (
+                f"District: {district}\n"
+                f"Total ITI Trades Offered: {total_trades}\n"
+                f"Total Intake Capacity: {total_intake} seats\n"
+                f"Top Trades by Intake Capacity:\n{top_trades_detail}"
+            )
+            answer = self._generate_grounded_answer(query, evidence_text, fallback_answer)
             return {
                 "query": query,
                 "status": "success",
@@ -559,7 +716,13 @@ class GroundedChatbotEngine:
         comp = row["competency_summary"]
         source = row["official_source"]
 
-        answer = f"Official curriculum competencies for {row['trade']} (Source: {source}): {comp}"
+        fallback_answer = f"Official curriculum competencies for {row['trade']} (Source: {source}): {comp}"
+        evidence_text = (
+            f"Trade: {row['trade']}\n"
+            f"Official Source: {source}\n"
+            f"Curriculum Competency Summary: {comp}"
+        )
+        answer = self._generate_grounded_answer(query, evidence_text, fallback_answer)
         return {
             "query": query,
             "status": "success",
@@ -678,7 +841,33 @@ class GroundedChatbotEngine:
             f"• how specific sector demand compares with training capacity."
         )
 
-        answer = "\n".join(lines)
+        fallback_answer = "\n".join(lines)
+
+        # Compact structured evidence for Groq
+        evidence_lines = [
+            f"District: {district}",
+            "Top Ranked Sectors by Projected Training Demand:",
+        ]
+        for idx, item in enumerate(top_5, 1):
+            evidence_lines.append(
+                f"  {idx}. {item['sector']}: Estimated requirement of ~{item['predicted_projected_training']:.0f} trainees ({item['demand_band']} Demand Band)"
+            )
+        if alignment_res["status"] == "success":
+            evidence_lines.extend([
+                f"District ITI Intake Capacity: {alignment_res['total_iti_capacity']:.0f} seats",
+                f"Total Projected Training Demand: {alignment_res['predicted_total_training_demand']:.0f} trainees",
+                f"Training-Capacity Alignment Gap: {alignment_res['alignment_gap']:+.0f} (Status: {alignment_res['alignment_status']})",
+            ])
+        if top_factors_aggregate:
+            evidence_lines.append(f"Top Model Features: {', '.join(top_factors_aggregate[:4])}")
+        evidence_lines.append("Note: Potential training-capacity alignment signal, not an exact employment or job-shortage figure.")
+
+        evidence_text = "\n".join(evidence_lines)
+        answer = self._generate_grounded_answer(
+            f"Provide a skill and training intelligence overview for {district}",
+            evidence_text,
+            fallback_answer,
+        )
 
         return {
             "query_type": "comprehensive_district_analysis",
@@ -857,10 +1046,25 @@ class GroundedChatbotEngine:
 
         conf_str = f" (Data coverage: {conf * 100:.0f}%)" if conf is not None else ""
 
-        answer = (
+        fallback_answer = (
             f"In {district}, the projected training requirement for the {sector} sector is estimated at "
             f"about {pred_val:.0f} trainees ({band} Demand Band){conf_str}.{factor_str}"
         )
+
+        top_feature_names = [format_readable_feature_name(f["feature"]) for f in top_factors[:3]] if top_factors else []
+        evidence_lines = [
+            f"District: {district}",
+            f"Sector: {sector}",
+            f"Predicted Projected Training Requirement: ~{pred_val:.0f} trainees",
+            f"Demand Band: {band}",
+            f"Data Evidence Confidence / Coverage: {conf * 100:.0f}%" if conf is not None else "Data Evidence Confidence: N/A",
+        ]
+        if top_feature_names:
+            evidence_lines.append(f"Top Influencing Features: {', '.join(top_feature_names)}")
+        evidence_lines.append("Note: Source facts are derived from official DSDP/MSSDS training records and candidate aspiration data.")
+
+        evidence_text = "\n".join(evidence_lines)
+        answer = self._generate_grounded_answer(query, evidence_text, fallback_answer)
 
         res = {
             "query": query,
