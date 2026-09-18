@@ -11,6 +11,8 @@ from engines.ml.projected_training_intelligence import (
     DEFAULT_MODEL_PATH,
 )
 from engines.ml.supply_alignment import SupplyAlignmentEngine, DEFAULT_ITI_PATH
+from engines.labour_market.job_market_intelligence import JobMarketIntelligence
+from engines.labour_market.skill_gap_engine import SkillGapEngine
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_REF_PATH = PROJECT_ROOT / "data" / "processed" / "training" / "official_trade_skills_reference.csv"
@@ -56,6 +58,14 @@ class GroundedChatbotEngine:
         self.iti_path = Path(iti_path) if iti_path else DEFAULT_ITI_PATH
         self.ref_path = Path(ref_path) if ref_path else DEFAULT_REF_PATH
 
+        self.job_data_path = PROJECT_ROOT / "data" / "processed" / "jobs" / "cleaned_job_data.csv"
+        self.skill_demand_path = PROJECT_ROOT / "data" / "processed" / "jobs" / "skill_demand.csv"
+        self.job_skills_path = PROJECT_ROOT / "data" / "processed" / "jobs" / "job_skills.csv"
+        
+        self._job_df = None
+        self._skill_demand_df = None
+        self._job_skills_df = None
+
         self.intel_engine = ProjectedTrainingIntelligence(
             model_path=model_path,
             data_path=self.data_path,
@@ -65,6 +75,10 @@ class GroundedChatbotEngine:
             data_path=self.data_path,
             iti_path=self.iti_path,
         )
+        self.jmi = JobMarketIntelligence()
+        self.sge = SkillGapEngine()
+        self.curriculum_path = PROJECT_ROOT / "data" / "processed" / "curriculum" / "cse_it_curriculum.csv"
+
 
         self._districts: List[str] = []
         self._sectors: List[str] = []
@@ -165,6 +179,7 @@ class GroundedChatbotEngine:
         text_lower = text.lower()
 
         for d in self._districts:
+
             pattern = r"\b" + re.escape(d.lower()) + r"\b"
             if re.search(pattern, text_lower):
                 matched_district = d
@@ -568,6 +583,216 @@ class GroundedChatbotEngine:
             "details": {"competency_summary": comp, "official_source": source},
         }
 
+    def _handle_job_demand(self, query: str, district: Optional[str]) -> Optional[Dict[str, Any]]:
+        q_lower = query.lower()
+        domain = "IT"
+        self.context["last_intent"] = "job_demand"
+        loc_str = district or 'Maharashtra'
+        
+        wants_roles = "job" in q_lower or "role" in q_lower
+        wants_skills = "skill" in q_lower or "technolog" in q_lower
+        
+        if wants_roles and not wants_skills:
+            roles = self.jmi.get_top_roles(location=district, domain=domain, top_n=5)
+            if not roles:
+                return {
+                    "query": query, "status": "success", "matched_district": district, "matched_sector": None,
+                    "answer": f"The available dataset does not contain sufficient evidence to report major IT roles for {loc_str}.", "details": None
+                }
+            
+            top_roles_list = [r['role'] for r in roles[:3]]
+            ans = [f"**Direct Answer**\n{top_roles_list[0]} is the most frequently observed IT role in the {loc_str} listings analyzed, followed by {top_roles_list[1]} and {top_roles_list[2]}.", ""]
+            
+            ans.append("**Evidence**")
+            for r in roles[:5]:
+                ans.append(f"- {r['role']} ({r['demand_percentage']:.1f}%)")
+            ans.append("")
+            
+            ans.append("**What the data indicates**")
+            if "Developer" in top_roles_list[0] or "Engineer" in top_roles_list[0]:
+                ans.append(f"The role distribution shows that software engineering and development positions make up a particularly visible part of the available {loc_str} listings. The presence of {top_roles_list[0]} at {roles[0]['demand_percentage']:.1f}% indicates concentrated demand for core development tasks, while the remaining roles show demand across multiple technical specializations.")
+            else:
+                ans.append(f"The high concentration of {top_roles_list[0]} listings reflects its frequent appearance in the available data for {loc_str}. This pattern suggests a strong regional focus on the specific responsibilities associated with this role.")
+            ans.append("")
+            
+            ans.append("**Practical implication**")
+            ans.append("For skill-development planning, these role patterns provide a basis for examining whether training pathways provide the technical skills and practical experience associated with the most frequently observed roles.")
+            ans.append("")
+            
+            ans.append("**Continue the conversation:**")
+            ans.append(f"• Which specific technical skills are required for {top_roles_list[0]}?")
+            ans.append("• Are there observable curriculum gaps for these roles?")
+            if loc_str == 'Maharashtra':
+                ans.append("• How does the role distribution differ in Pune vs Mumbai?")
+            else:
+                ans.append(f"• How does {loc_str} compare with Mumbai?")
+            
+            return {
+                "query": query, "status": "success", "matched_district": district, "matched_sector": None,
+                "answer": "\n".join(ans), "details": roles
+            }
+        
+        # Default to skills
+        skills = self.jmi.get_top_skills(location=district, domain=domain, top_n=5)
+        if not skills:
+            return {
+                "query": query, "status": "success", "matched_district": district, "matched_sector": None,
+                "answer": f"The available dataset does not contain sufficient evidence to report major IT skills for {loc_str}.", "details": None
+            }
+            
+        top_skills_list = [s['skill'] for s in skills[:3]]
+        ans = [f"**Direct Answer**\n{top_skills_list[0]} is the most frequently observed IT skill in the {loc_str} dataset, appearing in {skills[0]['demand_percentage']:.1f}% of analyzed listings, followed closely by {top_skills_list[1]} and {top_skills_list[2]}.", ""]
+        
+        ans.append("**Evidence**")
+        for s in skills[:5]:
+            ans.append(f"- {s['skill']} ({s['demand_percentage']:.1f}%)")
+        ans.append("")
+        
+        ans.append("**What the data indicates**")
+        diff = skills[0]['demand_percentage'] - skills[1]['demand_percentage']
+        if "SQL" in top_skills_list and ("Python" in top_skills_list or "Java" in top_skills_list):
+            ans.append(f"The concentration of these skills is notable: all are represented across a substantial share of the available listings, indicating that database knowledge and core programming skills form an important foundational part of the observed {loc_str} IT job market. The difference between the leading skills is relatively small ({diff:.1f}%), suggesting they are often co-requested.")
+        else:
+            ans.append(f"The concentration of {top_skills_list[0]} and {top_skills_list[1]} indicates a strong structural requirement for these technologies in the {loc_str} market. The observed data highlights a clear technical foundation.")
+        ans.append("")
+            
+        ans.append("**Practical implication**")
+        ans.append(f"Training providers could consider maintaining strong foundations in {top_skills_list[0]} and {top_skills_list[1]} while using role-specific projects to connect these skills with actual job requirements.")
+        ans.append("")
+        
+        ans.append("**Continue the conversation:**")
+        ans.append(f"• Which IT roles use {top_skills_list[0]} most frequently?")
+        ans.append("• Which of these skills are currently missing from the state curriculum?")
+        if loc_str == 'Maharashtra':
+            ans.append("• How does the skill demand differ between Pune and Mumbai?")
+        else:
+            ans.append("• What are the most frequently observed IT roles in this region?")
+        
+        return {
+            "query": query, "status": "success", "matched_district": district, "matched_sector": None,
+            "answer": "\n".join(ans), "details": skills
+        }
+
+    def _handle_skill_gap(self, query: str, district: Optional[str]) -> Optional[Dict[str, Any]]:
+        self.context["last_intent"] = "skill_gap"
+            
+        gaps = self.sge.analyze(self.curriculum_path, location=district, domain="IT")
+        loc_str = district or 'Maharashtra'
+        
+        if gaps.empty or (len(gaps) > 0 and gaps.iloc[0].get('gap_status') == 'INSUFFICIENT_DATA'):
+            return {
+                "query": query, "status": "success", "matched_district": district, "matched_sector": None,
+                "answer": f"The available industry data is currently insufficient to perform a reliable curriculum gap analysis for {loc_str}.", "details": None
+            }
+            
+        covered = gaps[gaps['gap_status'] == 'COVERED']
+        real_gaps = gaps[gaps['gap_status'] == 'GAP']
+        
+        ans = [f"**Direct Answer**\nThe curriculum analysis identifies several alignment areas as well as observable gaps when compared with {loc_str} job market data.\n"]
+        
+        ans.append("**Current alignment**")
+        if not covered.empty:
+            top_covered = covered.head(3)['industry_skill'].tolist()
+            cov_str = top_covered[0] if len(top_covered) == 1 else f"{', '.join(top_covered[:-1])} and {top_covered[-1]}"
+            ans.append(f"The analyzed curriculum already covers {cov_str}, which maps directly to observed industry demand in {loc_str}.")
+        else:
+            ans.append(f"No direct alignment with the top industry skills was observed in the current curriculum.")
+        ans.append("")
+        
+        if real_gaps.empty:
+            ans.append(f"The curriculum looks well aligned with the top skills in {loc_str}. No major gaps detected based on current data.")
+            return {
+                "query": query, "status": "success", "matched_district": district, "matched_sector": None,
+                "answer": "\n".join(ans), "details": None
+            }
+            
+        top_gaps = real_gaps.head(3)
+        gap_list = [r['industry_skill'] for _, r in top_gaps.iterrows()]
+        
+        ans.append("**Observed gaps**")
+        for _, r in top_gaps.iterrows():
+            ans.append(f"- {r['industry_skill']} (demanded by {r['demand_percentage']:.1f}%)")
+        ans.append("")
+            
+        ans.append("**Interpretation**")
+        ans.append(f"In this analysis, {gap_list[0]} is flagged because it appears in {top_gaps.iloc[0]['demand_percentage']:.1f}% of the available job dataset while no sufficiently similar curriculum topic was found. This does not automatically prove it must be added, but indicates the skill deserves formal review due to its high observed frequency.")
+        ans.append("")
+        
+        ans.append("**Practical consideration**")
+        if "Project Management" in gap_list or "Communication" in gap_list:
+            ans.append(f"Since {gap_list[0]} represents a broad or non-technical competency, curriculum planners could review whether it can be integrated into existing practical labs or mapped to soft-skills training rather than requiring a dedicated technical module.")
+        else:
+            ans.append(f"Curriculum planners may want to review whether a dedicated module on {gap_list[0]} should be introduced or if practical lab coverage could be strengthened to align training with this observed demand.")
+        ans.append("")
+        
+        ans.append("**Continue the conversation:**")
+        ans.append(f"• Which job roles are associated with the {gap_list[0]} gap?")
+        ans.append(f"• How does Pune's demand compare with the current curriculum?")
+        ans.append("• Which gaps are strongest in the available data?")
+        
+        return {
+            "query": query, "status": "success", "matched_district": district, "matched_sector": None,
+            "answer": "\n".join(ans), "details": top_gaps.to_dict(orient="records")
+        }
+
+    def _handle_comparison(self, query: str) -> Optional[Dict[str, Any]]:
+        import re
+        q_lower = query.lower()
+        
+        districts = []
+        for d in ["Pune", "Mumbai", "Nashik", "Nagpur", "Thane", "Aurangabad", "Chhatrapati Sambhajinagar"]:
+            if d.lower() in q_lower:
+                if d not in districts:
+                    districts.append(d)
+        
+        if len(districts) < 2:
+            return None
+            
+        d1 = districts[0]
+        d2 = districts[1]
+        
+        d1_roles = self.jmi.get_top_roles(location=d1, domain="IT", top_n=3)
+        d2_roles = self.jmi.get_top_roles(location=d2, domain="IT", top_n=3)
+        
+        d1_skills = self.jmi.get_top_skills(location=d1, domain="IT", top_n=3)
+        d2_skills = self.jmi.get_top_skills(location=d2, domain="IT", top_n=3)
+        
+        if not d1_roles or not d2_roles or not d1_skills or not d2_skills:
+            return {
+                "query": query, "status": "success", "matched_district": f"{d1}, {d2}", "matched_sector": None,
+                "answer": f"I don't have enough data to comprehensively compare the IT markets of {d1} and {d2}.", "details": None
+            }
+            
+        ans = [f"**Overall comparison**\n{d1} and {d2} share several core IT competencies, but the distribution of job roles and specific technical demands is not identical in the available listings.\n"]
+        
+        ans.append("**Role comparison**")
+        for i in range(min(3, len(d1_roles), len(d2_roles))):
+            ans.append(f"- {d1}: {d1_roles[i]['role']} ({d1_roles[i]['demand_percentage']:.1f}%) | {d2}: {d2_roles[i]['role']} ({d2_roles[i]['demand_percentage']:.1f}%)")
+        ans.append("")
+        
+        ans.append("**Skill comparison**")
+        for i in range(min(3, len(d1_skills), len(d2_skills))):
+            ans.append(f"- {d1}: {d1_skills[i]['skill']} ({d1_skills[i]['demand_percentage']:.1f}%) | {d2}: {d2_skills[i]['skill']} ({d2_skills[i]['demand_percentage']:.1f}%)")
+        ans.append("")
+        
+        ans.append("**What the comparison indicates**")
+        if d1_skills[0]['skill'] == d2_skills[0]['skill']:
+            ans.append(f"At the skill level, {d1_skills[0]['skill']} leads both markets, suggesting a shared technical foundation. However, {d1}'s leading role is {d1_roles[0]['role']} ({d1_roles[0]['demand_percentage']:.1f}%), while {d2} shows {d2_roles[0]['role']} at {d2_roles[0]['demand_percentage']:.1f}%.")
+            ans.append(f"This comparison points to a common core curriculum requirement across the two cities, alongside differences in role composition that could influence advanced specialization tracks. Regional training planning could use these differences to examine whether the exact same curriculum emphasis is appropriate for both markets.")
+        else:
+            ans.append(f"The data highlights distinct regional concentrations: {d1} is led by {d1_skills[0]['skill']} while {d2} prioritizes {d2_skills[0]['skill']}. Regional training planning could use these differences to tailor practical labs to local market demands.")
+        ans.append("")
+            
+        ans.append("**Continue the conversation:**")
+        ans.append(f"• Which skills differ most significantly between {d1} and {d2}?")
+        ans.append(f"• What curriculum changes could be considered for {d1}?")
+        ans.append("• How does the projected training supply compare across these districts?")
+        
+        return {
+            "query": query, "status": "success", "matched_district": f"{d1}, {d2}", "matched_sector": None,
+            "answer": "\n".join(ans), "details": None
+        }
+
     def _comprehensive_district_analysis(self, district: str) -> Dict[str, Any]:
         """Perform comprehensive district analysis combining top ML-predicted sector rankings & ITI supply alignment."""
         if not self.data_path.exists():
@@ -638,7 +863,7 @@ class GroundedChatbotEngine:
         else:
             sec_list_str = top_sector_names[0]
 
-        lines = [f"Sure! Here's a quick look at {district}'s skill and training situation. 👇", ""]
+        lines = [f"Sure! Here's a quick look at {district}'s skill and training situation. ≡ƒæç", ""]
         lines.append(f"Based on available data, the strongest projected training needs in {district} are in {sec_list_str}:")
         for idx, item in enumerate(top_5, 1):
             lines.append(
@@ -674,8 +899,8 @@ class GroundedChatbotEngine:
         lines.append("")
         lines.append(
             f"If you'd like, I can also show you:\n"
-            f"• which ITI trades are currently available in {district}, or\n"
-            f"• how specific sector demand compares with training capacity."
+            f"ΓÇó which ITI trades are currently available in {district}, or\n"
+            f"ΓÇó how specific sector demand compares with training capacity."
         )
 
         answer = "\n".join(lines)
@@ -693,194 +918,136 @@ class GroundedChatbotEngine:
     def ask(self, query: str) -> Dict[str, Any]:
         """Process user query and return grounded natural language answer and structured metadata."""
         q_norm = self._normalize_query(query)
+        q_lower = q_norm.lower()
 
-        # 1. Greetings, Conversation, Out-of-Scope Trivia
+        # 1. Greetings, Conversation
         greeting_res = self._handle_greetings_and_conversation(q_norm)
         if greeting_res:
             self.context["last_result"] = greeting_res
             return greeting_res
 
-        # 2. Entity Extraction
+        # 2. INTENT-FIRST ROUTING BEFORE ENTITY EXTRACTION
+        is_comparison = any(kw in q_lower for kw in ["compare", "difference", "differ", "versus", "vs", "between"])
+        is_gap = any(kw in q_lower for kw in ["gap", "missing", "curriculum", "add", "based on industry demand"])
+        is_it_demand = ("skill" in q_lower and "demand" in q_lower) or ("most demanded it skills" in q_lower) or ("technical skill" in q_lower) or ("skill" in q_lower and ("common" in q_lower or "learn" in q_lower))
+        is_it_jobs = ("job" in q_lower or "role" in q_lower) and ("it " in q_lower or "software" in q_lower or "developer" in q_lower or "common" in q_lower)
+        
+        # Check comparison
+        if is_comparison:
+            comp_res = self._handle_comparison(q_norm)
+            if comp_res:
+                return comp_res
+                
+        # Extract entities but don't commit them to context yet
         raw_dist, raw_sec, raw_tr = self.extract_entities(q_norm)
-
-        # Trade across districts check (e.g. "Which districts offer Welder training?")
-        is_trade_across_districts = bool(
-            raw_tr and not raw_dist and any(
-                kw in q_norm.lower() for kw in ["district", "districts", "where", "offer", "offers", "offering", "available", "which"]
-            )
-        )
-
-        # 3. Context Resolution & Context Safety
-        if is_trade_across_districts:
-            district = None
-            sector = None
-            trade = raw_tr
-        elif raw_dist:
-            if self.context["district"] and raw_dist.lower() != self.context["district"].lower() and not raw_sec:
-                district = raw_dist
-                sector = None
+        
+        # Resolve district for single intents
+        if not raw_dist:
+            if "maharashtra" in q_lower:
+                district = None
+            elif any(p in q_lower for p in ["this region", "there", "that district", "what about", "here"]):
+                district = self.context.get("district")
             else:
-                district = raw_dist
-                sector = raw_sec or self.context.get("sector")
-            trade = raw_tr or self.context.get("trade")
+                district = None
         else:
-            district = self.context.get("district")
-            sector = raw_sec or self.context.get("sector")
-            trade = raw_tr or self.context.get("trade")
+            district = raw_dist
+            
+        if is_gap:
+            gap_res = self._handle_skill_gap(q_norm, district)
+            if gap_res:
+                self.context.update({"district": district, "sector": raw_sec, "trade": raw_tr, "last_result": gap_res})
+                return gap_res
+                
+        if is_it_demand or is_it_jobs:
+            job_res = self._handle_job_demand(q_norm, district)
+            if job_res:
+                self.context.update({"district": district, "sector": raw_sec, "trade": raw_tr, "last_result": job_res})
+                return job_res
 
-        # 4. Follow-ups & Conversational intent resolution
+        # If no specific intent matched above, do legacy entity assignment
+        sector = raw_sec or self.context.get("sector")
+        trade = raw_tr or self.context.get("trade")
+
         followup_res = self._handle_followups_and_explanations(q_norm, district, sector, trade)
         if followup_res:
-            self._save_context(district, sector, trade, followup_res)
+            self.context.update({"district": district, "sector": sector, "trade": trade, "last_result": followup_res})
             return followup_res
 
-        # 5. Curriculum / Competencies reference check
         curr_res = self._handle_curriculum_and_skills_reference(q_norm, trade)
         if curr_res:
-            self._save_context(district, sector, trade, curr_res)
+            self.context.update({"district": district, "sector": sector, "trade": trade, "last_result": curr_res})
             return curr_res
 
-        # 6. District-level comprehensive or ranking query intent
+        ranking_keywords = ["which sectors", "top sectors", "high demand sectors", "sectors have", "list sectors", "show sectors", "what sectors", "overall iti capacity", "which trades", "top trades", "show trades", "what trades"]
+        if raw_dist and not sector and not trade and not any(kw in q_lower for kw in ranking_keywords):
+            return self._comprehensive_district_analysis(raw_dist)
+
+        return self._legacy_ask_logic(q_norm, district, sector, trade)
+        
+    def _legacy_ask_logic(self, q_norm, district, sector, trade):
         q_lower = q_norm.lower()
-        ranking_keywords = [
-            "which sectors", "top sectors", "high demand sectors", "sectors have",
-            "list sectors", "show sectors", "what sectors", "overall iti capacity",
-            "capacity sufficient", "overall capacity", "training demand, and", "skill gaps",
-            "important sectors", "should maharashtra focus", "where are the training needs",
-            "priorities for", "compare training supply", "training supply and demand",
-            "tell me about", "what's happening in", "whats happening in", "skills in",
-            "focus on in", "overview for", "overview of", "district jobs", "jobs", "employment"
-        ]
-        is_comprehensive_or_ranking = any(kw in q_lower for kw in ranking_keywords)
+        if "supply" in q_lower or "capacity" in q_lower or "capacity mismatch" in q_lower or "training" in q_lower or "projected" in q_lower:
+            loc = district or "Maharashtra"
+            try:
+                res = self.supply_engine.analyze_district_alignment(loc)
+                if not res or res.get("status") != "success":
+                    return {"query_type": "supply", "status": "insufficient_data", "answer": f"The available evidence is insufficient to calculate a model-estimated projected training demand for {loc}."}
+                
+                ans = [
+                    "**Direct Answer**",
+                    f"The model-estimated projected training demand for {loc} suggests a {res['alignment_status'].lower()} when compared against ITI capacity.",
+                    "",
+                    "**Evidence**",
+                    f"- Predicted total training demand: {res['predicted_total_training_demand']:.0f} seats",
+                    f"- Total ITI capacity: {res['total_iti_capacity']:.0f} seats",
+                    f"- Alignment gap: {res['alignment_gap']:.0f} seats",
+                    "",
+                    "**What the data indicates**",
+                    "This estimate represents projected training demand based on available industry and demographic signals, compared against existing training supply. The result indicates potential areas where training supply may need alignment with demand. It serves as a directional planning signal, not a certain future employment guarantee.",
+                    "",
+                    "**Practical implication**",
+                    "Government and training planners could consider using this data alongside local industry surveys to review whether training seat allocations should be adjusted to better match the projected requirement.",
+                    "",
+                    "**Continue the conversation:**",
+                    "• Which districts show potential shortages?",
+                    "• How does projected training compare with ITI capacity across sectors?",
+                    "• Which sectors have the strongest available evidence?"
+                ]
+                return {"query_type": "supply", "status": "success", "answer": "\n".join(ans), "matched_district": loc}
+            except Exception as e:
+                return {"query_type": "supply", "status": "error", "answer": f"Error analyzing supply: {str(e)}"}
 
-        if district and not sector and is_comprehensive_or_ranking:
-            comp_res = self._comprehensive_district_analysis(district)
-            self._save_context(district, None, trade, comp_res)
-            return comp_res
+        
+        ranking_keywords = ["which sectors", "top sectors", "high demand sectors", "sectors have", "list sectors", "show sectors", "what sectors", "overall iti capacity", "which trades", "top trades", "show trades", "what trades"]
+        if any(kw in q_lower for kw in ranking_keywords):
+            if "trade" in q_lower:
+                if sector:
+                    trades_info = self.model.predict_top_trades(district, sector, top_n=5)
+                    if not trades_info:
+                        return {"query_type": "ranking", "status": "insufficient_data", "answer": f"Not enough data to rank trades in {sector} for {district}."}
+                    lines = [f"Here are the top trades for {sector} in {district}:"]
+                    for t in trades_info:
+                        lines.append(f"- {t['trade']}: ~{t['predicted_projected_training']} trainees ({t['demand_band']} demand)")
+                    return {"query_type": "ranking", "status": "success", "answer": "\n".join(lines)}
+            else:
+                top_sectors = self.model.predict_top_sectors(district, top_n=5)
+                if not top_sectors:
+                    return {"query_type": "ranking", "status": "insufficient_data", "answer": f"Not enough data to rank sectors for {district}."}
+                lines = [f"Here are the top sectors in {district}:"]
+                for s in top_sectors:
+                    lines.append(f"- {s['sector']}: ~{s['predicted_projected_training']} trainees ({s['demand_band']} demand)")
+                return {"query_type": "ranking", "status": "success", "answer": "\n".join(lines)}
 
-        if district and not sector and not trade and (q_lower.startswith("tell me about") or q_lower.startswith("what about") or q_lower == district.lower()):
-            comp_res = self._comprehensive_district_analysis(district)
-            self._save_context(district, None, trade, comp_res)
-            return comp_res
-
-        # 7. ITI Trade specific questions (what is taught / intake / offerings)
-        trade_res = self._handle_iti_trade_questions(q_norm, district, trade)
-        if trade_res:
-            self._save_context(district if not is_trade_across_districts else None, sector, trade, trade_res)
-            return trade_res
-
-        # 8. Unsupported precise job demand queries (e.g. "How many software engineers will Pune need in 2030?")
-        unsupported_keywords = ["software engineer", "2030", "data scientist", "ai engineer"]
-        if any(ukw in q_lower for ukw in unsupported_keywords):
-            answer = "I don't have enough data to answer that reliably. The available dataset does not provide a trade-level employment demand signal for this specific query."
-            res = {
-                "query": query,
-                "status": "insufficient_data",
-                "matched_district": district,
-                "matched_sector": sector,
-                "answer": answer,
-                "details": None,
-            }
-            self.context["last_result"] = res
-            return res
-
-        # 9. Clarifications handling (Do NOT lock context if query is incomplete / needs clarification)
-        if not district and not sector and not trade:
-            answer = "Please specify a Maharashtra district (e.g., Pune, Mumbai City, Nashik), sector (e.g., Construction, Agriculture, BFSI), or ITI trade (e.g., Electrician, Fitter) to explore training data."
-            return {
-                "query": query,
-                "status": "needs_clarification",
-                "matched_district": None,
-                "matched_sector": None,
-                "answer": answer,
-                "details": None,
-            }
-
-        if not district and sector:
-            answer = f"I identified the sector '{sector}'. Which district would you like to analyze (e.g., Pune, Mumbai City, Nashik)?"
-            return {
-                "query": query,
-                "status": "needs_clarification",
-                "matched_district": None,
-                "matched_sector": sector,
-                "answer": answer,
-                "details": None,
-            }
-
-        if not sector and district and not is_comprehensive_or_ranking:
-            answer = f"I identified the district '{district}'. Which sector are you interested in (e.g., Construction, Agriculture, BFSI, Retail)?"
-            return {
-                "query": query,
-                "status": "needs_clarification",
-                "matched_district": district,
-                "matched_sector": None,
-                "answer": answer,
-                "details": None,
-            }
-
-        if not district or not sector:
-            answer = f"Please specify both a district and sector to view projected training demand."
-            return {
-                "query": query,
-                "status": "needs_clarification",
-                "matched_district": district,
-                "matched_sector": sector,
-                "answer": answer,
-                "details": None,
-            }
-
-        # 10. Single District + Sector ML inference
-        intel = self.intel_engine.predict_district_sector(district, sector)
-
-        if intel["status"] == "insufficient_data" or intel["predicted_projected_training"] is None:
-            answer = f"Data is insufficient for {sector} in {district}. No verified projected training requirement is available for this combination."
-            res = {
-                "query": query,
-                "status": "insufficient_data",
-                "matched_district": district,
-                "matched_sector": sector,
-                "answer": answer,
-                "details": intel,
-            }
-            self._save_context(district, sector, trade, res)
-            return res
-
-        pred_val = intel["predicted_projected_training"]
-        band = intel["demand_band"]
-        conf = intel["evidence_confidence"]
-        top_factors = intel.get("top_feature_importances", [])
-
-        factor_str = ""
-        if top_factors:
-            readable_names = [format_readable_feature_name(f["feature"]) for f in top_factors[:3]]
-            factor_str = f" Top model features overall include: {', '.join(readable_names)}."
-
-        conf_str = f" (Data coverage: {conf * 100:.0f}%)" if conf is not None else ""
-
-        answer = (
-            f"In {district}, the projected training requirement for the {sector} sector is estimated at "
-            f"about {pred_val:.0f} trainees ({band} Demand Band){conf_str}.{factor_str}"
-        )
-
-        res = {
-            "query": query,
-            "status": "success",
+        if district and sector and trade:
+            return self._predict_single(q_norm, district, sector, trade)
+        if district and sector:
+            return self._predict_single(q_norm, district, sector, None)
+            
+        return {
+            "query_type": "unknown",
+            "status": "needs_clarification",
             "matched_district": district,
             "matched_sector": sector,
-            "answer": answer,
-            "details": intel,
+            "answer": "Please specify a Maharashtra district (e.g., Pune, Mumbai City, Nashik), sector (e.g., Construction, Agriculture, BFSI), or ITI trade (e.g., Electrician, Fitter) to explore training data.",
+            "details": None
         }
-        self._save_context(district, sector, trade, res)
-        return res
-
-    def _save_context(
-        self, district: Optional[str], sector: Optional[str], trade: Optional[str], result: Dict[str, Any]
-    ) -> None:
-        """Helper to save successful turn context."""
-        if district is not None:
-            self.context["district"] = district
-        if sector is not None:
-            self.context["sector"] = sector
-        if trade is not None:
-            self.context["trade"] = trade
-        self.context["last_result"] = result
