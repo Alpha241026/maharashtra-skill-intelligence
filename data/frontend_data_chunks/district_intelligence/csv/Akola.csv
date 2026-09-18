@@ -1,0 +1,20 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Akola,Agriculture,363.0,79.0,6.0,,,,47,batch2_akola_to_bhandara.csv,360.0,87.0,120.0,True,False,True
+Akola,Apparel,137.0,,,,,,47,batch2_akola_to_bhandara.csv,60.0,110.0,,,,False
+Akola,Automotive,201.0,2059.0,7.0,,,,47,batch2_akola_to_bhandara.csv,270.0,90.0,,,,False
+Akola,BFSI,637.0,698.0,4.0,,,,48,batch2_akola_to_bhandara.csv,,,,,,False
+Akola,Capital Goods,33.0,36.0,2.0,,,,48,batch2_akola_to_bhandara.csv,180.0,120.0,,,,False
+Akola,Construction,131.0,33.0,2.0,,,,48,batch2_akola_to_bhandara.csv,120.0,,180.0,True,False,True
+Akola,Electronics,639.0,50.0,3.0,,,,48,batch2_akola_to_bhandara.csv,180.0,180.0,180.0,True,False,True
+Akola,Food Processing,119.0,15.0,1.0,,,,49,batch2_akola_to_bhandara.csv,120.0,913.0,,,,False
+Akola,Green Jobs,80.0,,,,,,49,batch2_akola_to_bhandara.csv,30.0,,0.0,True,True,True
+Akola,Healthcare,761.0,2.0,2.0,,,,49,batch2_akola_to_bhandara.csv,180.0,30.0,,,,False
+Akola,Iron & Steel,44.0,270.0,2.0,,,,49,batch2_akola_to_bhandara.csv,,,,,,False
+Akola,IT/ITeS,732.0,67.0,7.0,,,,49,batch2_akola_to_bhandara.csv,120.0,170.0,0.0,True,True,True
+Akola,Logistics,18.0,,,,,,49,batch2_akola_to_bhandara.csv,60.0,90.0,,,,False
+Akola,Management,324.0,170.0,4.0,,,,50,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Akola,Plumbing,62.0,,,,,,50,batch2_akola_to_bhandara.csv,60.0,30.0,,,,False
+Akola,Power,147.0,,,,,,50,batch2_akola_to_bhandara.csv,60.0,55.0,,,,False
+Akola,Telecom,78.0,40.0,1.0,,,,50,batch2_akola_to_bhandara.csv,30.0,120.0,60.0,True,False,True
+Akola,Textile,50.0,,,,,,50,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Akola,Tourism & Hospitality,70.0,,1.0,,,,50,batch2_akola_to_bhandara.csv,90.0,1606.0,,,,False

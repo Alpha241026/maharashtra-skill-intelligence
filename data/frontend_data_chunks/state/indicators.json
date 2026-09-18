@@ -1,0 +1,56 @@
+[
+  {
+    "geography": "Maharashtra",
+    "indicator": "Current openings",
+    "value": 638310,
+    "unit": "count",
+    "source": "Mahaswayam",
+    "date_or_qualification": "indexed snapshot; not a dated statewide job-post extract",
+    "source_url": "https://www.mahaswayam.gov.in/index_inner"
+  },
+  {
+    "geography": "Maharashtra",
+    "indicator": "Job seekers",
+    "value": 3660769,
+    "unit": "count",
+    "source": "Mahaswayam",
+    "date_or_qualification": "indexed snapshot",
+    "source_url": "https://www.mahaswayam.gov.in/index_inner"
+  },
+  {
+    "geography": "Maharashtra",
+    "indicator": "Employers",
+    "value": 120877,
+    "unit": "count",
+    "source": "Mahaswayam",
+    "date_or_qualification": "indexed snapshot",
+    "source_url": "https://www.mahaswayam.gov.in/index_inner"
+  },
+  {
+    "geography": "India / NCS",
+    "indicator": "Active vacancies",
+    "value": 1768000,
+    "unit": "count",
+    "source": "National Career Service / PIB",
+    "date_or_qualification": "as of 15-07-2026",
+    "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294658&lang=1&reg=22"
+  },
+  {
+    "geography": "India / NCS",
+    "indicator": "Active jobseekers",
+    "value": 28900000,
+    "unit": "count",
+    "source": "National Career Service / PIB",
+    "date_or_qualification": "as of 15-07-2026",
+    "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294658&lang=1&reg=22"
+  },
+  {
+    "geography": "India / NCS",
+    "indicator": "Vacancies mobilized since inception",
+    "value": 100500000,
+    "unit": "count",
+    "source": "National Career Service / PIB",
+    "date_or_qualification": "since inception; cumulative",
+    "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294658&lang=1&reg=22"
+  }
+]

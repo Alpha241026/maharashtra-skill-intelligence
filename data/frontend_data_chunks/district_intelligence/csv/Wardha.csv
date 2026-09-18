@@ -1,0 +1,22 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Wardha,Agriculture,158.0,1374.0,13.0,,,,404,batch7_thane_to_palghar_source_verified.csv,860.0,20.0,90.0,True,False,True
+Wardha,Apparel,125.0,,1.0,,,,404,batch7_thane_to_palghar_source_verified.csv,820.0,419.0,,,,False
+Wardha,Automotive,89.0,2643.0,7.0,,,,404,batch7_thane_to_palghar_source_verified.csv,450.0,172.0,,,,False
+Wardha,Beauty & Wellness,66.0,,1.0,,,,404,batch7_thane_to_palghar_source_verified.csv,200.0,,,,,False
+Wardha,BFSI,127.0,2989.0,15.0,,,,405,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Wardha,Capital Goods,10.0,52.0,4.0,,,,405,batch7_thane_to_palghar_source_verified.csv,220.0,20.0,,,,False
+Wardha,Construction,41.0,58.0,6.0,,,,405,batch7_thane_to_palghar_source_verified.csv,310.0,,0.0,True,True,True
+Wardha,Electronics,336.0,412.0,10.0,,,,405,batch7_thane_to_palghar_source_verified.csv,540.0,180.0,0.0,True,True,True
+Wardha,Food Processing,27.0,41.0,5.0,,,,405,batch7_thane_to_palghar_source_verified.csv,235.0,30.0,,,,False
+Wardha,Green Jobs,19.0,,,,,,405,batch7_thane_to_palghar_source_verified.csv,60.0,30.0,0.0,True,True,True
+Wardha,Iron & Steel,37.0,282.0,3.0,,,,405,batch7_thane_to_palghar_source_verified.csv,120.0,,,,,False
+Wardha,IT/ITeS,574.0,13.0,3.0,,,,406,batch7_thane_to_palghar_source_verified.csv,740.0,256.0,75.0,True,False,True
+Wardha,Life Science,52.0,158.0,5.0,,,,406,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Wardha,Logistics,8.0,,,,,,406,batch7_thane_to_palghar_source_verified.csv,120.0,,,,,False
+Wardha,Media & Entertainment,552.0,,,,,,406,batch7_thane_to_palghar_source_verified.csv,410.0,480.0,,,,False
+Wardha,Persons with Disability,,,,,,,406,batch7_thane_to_palghar_source_verified.csv,80.0,,,,,False
+Wardha,Plumbing,13.0,,,,,,406,batch7_thane_to_palghar_source_verified.csv,100.0,70.0,,,,False
+Wardha,Power,31.0,,,,,,406,batch7_thane_to_palghar_source_verified.csv,30.0,,,,,False
+Wardha,Retail,,,,,,,407,batch7_thane_to_palghar_source_verified.csv,110.0,,0.0,True,True,True
+Wardha,Textile,9.0,79.0,3.0,,,,407,batch7_thane_to_palghar_source_verified.csv,420.0,,,,,False
+Wardha,Tourism & Hospitality,13.0,15.0,2.0,,,,407,batch7_thane_to_palghar_source_verified.csv,240.0,420.0,,,,False

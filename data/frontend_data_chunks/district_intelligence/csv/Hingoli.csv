@@ -1,0 +1,22 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Hingoli,Agriculture,204.0,309.0,5.0,,,,157,batch3_buldhana_to_hingoli.csv,600.0,,180.0,True,False,True
+Hingoli,Apparel,113.0,,,,,,158,batch3_buldhana_to_hingoli.csv,,90.0,,,,False
+Hingoli,Automotive,123.0,494.0,5.0,,,,158,batch3_buldhana_to_hingoli.csv,540.0,,,,,False
+Hingoli,Beauty & Wellness,128.0,667.0,2.0,,,,158,batch3_buldhana_to_hingoli.csv,,21.0,,,,False
+Hingoli,BFSI,250.0,817.0,10.0,,,,159,batch3_buldhana_to_hingoli.csv,,30.0,,,,False
+Hingoli,Capital Goods,491.0,,,,,,159,batch3_buldhana_to_hingoli.csv,,250.0,,,,False
+Hingoli,Construction,108.0,,,,,,159,batch3_buldhana_to_hingoli.csv,600.0,,600.0,True,False,True
+Hingoli,Electronics,993.0,,,,,,159,batch3_buldhana_to_hingoli.csv,720.0,510.0,0.0,True,True,True
+Hingoli,Food Processing,188.0,1588.0,12.0,,,,159,batch3_buldhana_to_hingoli.csv,120.0,76.0,,,,False
+Hingoli,Green Jobs,51.0,,,,,,160,batch3_buldhana_to_hingoli.csv,240.0,,0.0,True,True,True
+Hingoli,Healthcare,215.0,4.0,1.0,,,,160,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Hingoli,Iron & Steel,15.0,280.0,2.0,,,,160,batch3_buldhana_to_hingoli.csv,,,,,,False
+Hingoli,IT/ITeS,206.0,60.0,2.0,,,,160,batch3_buldhana_to_hingoli.csv,240.0,178.0,0.0,True,True,True
+Hingoli,Life Science,43.0,,,,,,161,batch3_buldhana_to_hingoli.csv,360.0,,,,,False
+Hingoli,Media & Entertainment,63.0,,,,,,161,batch3_buldhana_to_hingoli.csv,960.0,540.0,,,,False
+Hingoli,Plumbing,14.0,,,,,,161,batch3_buldhana_to_hingoli.csv,120.0,,,,,False
+Hingoli,Power,24.0,,,,,,161,batch3_buldhana_to_hingoli.csv,,90.0,,,,False
+Hingoli,Sports,53.0,,,,,,161,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Hingoli,Telecom,23.0,,,,,,162,batch3_buldhana_to_hingoli.csv,120.0,270.0,0.0,True,True,True
+Hingoli,Textile,15.0,61.0,3.0,,,,162,batch3_buldhana_to_hingoli.csv,420.0,,,,,False
+Hingoli,Tourism & Hospitality,19.0,,1.0,,,,162,batch3_buldhana_to_hingoli.csv,120.0,150.0,,,,False

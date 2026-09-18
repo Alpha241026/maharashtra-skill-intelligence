@@ -1,0 +1,23 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Yavatmal,Agriculture,798.0,1407.0,14.0,,,,424,batch7_thane_to_palghar_source_verified.csv,1280.0,180.0,350.0,True,False,True
+Yavatmal,Apparel,297.0,,,,,,424,batch7_thane_to_palghar_source_verified.csv,210.0,390.0,,,,False
+Yavatmal,Automotive,234.0,1503.0,14.0,,,,424,batch7_thane_to_palghar_source_verified.csv,650.0,176.0,,,,False
+Yavatmal,Beauty & Wellness,666.0,,1.0,,,,425,batch7_thane_to_palghar_source_verified.csv,,192.0,,,,False
+Yavatmal,BFSI,810.0,2941.0,12.0,,,,425,batch7_thane_to_palghar_source_verified.csv,180.0,,,,,False
+Yavatmal,Capital Goods,28.0,36.0,6.0,,,,425,batch7_thane_to_palghar_source_verified.csv,180.0,120.0,,,,False
+Yavatmal,Construction,157.0,52.0,7.0,,,,425,batch7_thane_to_palghar_source_verified.csv,240.0,,550.0,True,False,True
+Yavatmal,Electronics,698.0,65.0,9.0,,,,425,batch7_thane_to_palghar_source_verified.csv,570.0,303.0,0.0,True,True,True
+Yavatmal,Food Processing,85.0,106.0,15.0,,,,425,batch7_thane_to_palghar_source_verified.csv,150.0,,,,,False
+Yavatmal,Green Jobs,131.0,,,,,,425,batch7_thane_to_palghar_source_verified.csv,,120.0,0.0,True,True,True
+Yavatmal,Handicraft & Carpet,33.0,,1.0,,,,426,batch7_thane_to_palghar_source_verified.csv,90.0,,,,,False
+Yavatmal,Healthcare,553.0,36.0,8.0,,,,426,batch7_thane_to_palghar_source_verified.csv,1150.0,,,,,False
+Yavatmal,Hydrocarbon,2.0,14.0,1.0,,,,426,batch7_thane_to_palghar_source_verified.csv,180.0,,,,,False
+Yavatmal,Iron & Steel,56.0,342.0,3.0,,,,426,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Yavatmal,IT/ITeS,785.0,,1.0,,,,426,batch7_thane_to_palghar_source_verified.csv,270.0,178.0,0.0,True,True,True
+Yavatmal,Logistics,4.0,,,,,,426,batch7_thane_to_palghar_source_verified.csv,210.0,60.0,,,,False
+Yavatmal,Mining,37.0,,3.0,,,,427,batch7_thane_to_palghar_source_verified.csv,180.0,120.0,,,,False
+Yavatmal,Plumbing,34.0,,,,,,427,batch7_thane_to_palghar_source_verified.csv,90.0,30.0,,,,False
+Yavatmal,Power,110.0,,,,,,427,batch7_thane_to_palghar_source_verified.csv,450.0,80.0,,,,False
+Yavatmal,Telecom,29.0,,,,,,427,batch7_thane_to_palghar_source_verified.csv,120.0,180.0,0.0,True,True,True
+Yavatmal,Textile,45.0,180.0,22.0,,,,427,batch7_thane_to_palghar_source_verified.csv,240.0,,,,,False
+Yavatmal,Tourism & Hospitality,85.0,,,,,,427,batch7_thane_to_palghar_source_verified.csv,90.0,300.0,,,,False

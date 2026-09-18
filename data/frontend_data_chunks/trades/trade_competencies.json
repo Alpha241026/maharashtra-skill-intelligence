@@ -1,0 +1,66 @@
+[
+  {
+    "trade": "Electrician",
+    "competency_summary": "Electrical safety and PPE; electrical measurements; wiring and installation; electrical machines and motors; basic electronics; installation/testing and troubleshooting.",
+    "official_source": "Bharat Skills / DGT Electrician study material and curriculum",
+    "source_url": "https://bharatskills.gov.in/Home/StudyMaterial?var=WSdYV6aWadK8jUuNKxoBWg%3D%3D",
+    "source_type": "DGT curriculum/study material",
+    "evidence": "2022 New Syllabus trade practical/theory; safety, tools, measurements and electrical installation topics are explicitly covered."
+  },
+  {
+    "trade": "Fitter",
+    "competency_summary": "Fitting and assembly; marking, hacksawing, chiselling, filing and drilling; surface finishing; fastening; dimensional accuracy and tolerances; power-tool operation.",
+    "official_source": "Bharat Skills / DGT Fitter syllabus",
+    "source_url": "https://bharatskills.gov.in/pdf/E_Books/CTS/34/Assamese/TP/Fitter%20-%202nd%20Year%20-%20Trade%20Practical%20-%20Assamese.pdf",
+    "source_type": "DGT curriculum",
+    "evidence": "Official syllabus lists fitting/assembly, surface finishing, fastening tools and specified tolerances."
+  },
+  {
+    "trade": "Welder",
+    "competency_summary": "Gas welding; SMAW/arc welding; oxy-acetylene cutting; welding different joint types and positions; welding equipment setup; safety; inspection/testing.",
+    "official_source": "Bharat Skills / DGT Welder syllabus",
+    "source_url": "https://bharatskills.gov.in/pdf/Curriculum/CTS/English/Welder.pdf",
+    "source_type": "DGT curriculum",
+    "evidence": "Official one-year Welder syllabus lists gas welding, SMAW joints, oxy-acetylene equipment/cutting and safety."
+  },
+  {
+    "trade": "Computer Operator and Programming Assistant (COPA)",
+    "competency_summary": "Computer operation; programming assistance; computer programs and updates; web-page development; cybersecurity concepts; cloud concepts/services; documentation.",
+    "official_source": "NCVET National Qualification Register / DGT COPA qualification file",
+    "source_url": "https://nqr.gov.in/sites/default/files/34.%20QF_COPA_CTS2.0_NSQF-3.pdf",
+    "source_type": "NCVET qualification file",
+    "evidence": "Official qualification file states COPA covers computer operation/programming assistance, web pages, cybersecurity concepts and cloud concepts/services."
+  },
+  {
+    "trade": "Electronics Mechanic",
+    "competency_summary": "Electronic equipment servicing; measurement and testing; soldering/desoldering; electronic component handling; troubleshooting; installation/configuration; repair and maintenance.",
+    "official_source": "Bharat Skills / DGT Electronics Mechanic study material",
+    "source_url": "https://bharatskills.gov.in/Home/StudyMaterial?Default=No&var=CaklmiQC3MzQgfUBpEM%2Bwg%3D%3D",
+    "source_type": "DGT study material",
+    "evidence": "Official DGT portal provides 2022 New Syllabus practical/theory materials for Electronics Mechanic."
+  },
+  {
+    "trade": "Plumber",
+    "competency_summary": "Pipe marking, shaping, fabrication, fitting and assembly; use of hand/power tools; pipework systems; safety; basic fitting operations; dimensional checking and threading.",
+    "official_source": "NCVET National Qualification Register / Bharat Skills",
+    "source_url": "https://nqr.gov.in/qualifications/1071",
+    "source_type": "NCVET qualification record",
+    "evidence": "NQR learning modules explicitly cover pipe fitting/assembly, safety and working effectively with others."
+  },
+  {
+    "trade": "Aerospace Structure and Equipment Fitter",
+    "competency_summary": "Aircraft structural assembly; interpretation of assembly drawings; drilling; riveting; reaming; structural fitting; safety/security; 5S.",
+    "official_source": "NCVET National Qualification Register",
+    "source_url": "https://www.nqr.gov.in/qualifications/13837",
+    "source_type": "NCVET qualification record",
+    "evidence": "NQR explicitly lists assembly drawings, drilling, riveting and reaming modules."
+  },
+  {
+    "trade": "Draughtsman (Civil)",
+    "competency_summary": "Technical drawing and drafting; drawing-sheet/layout standards; civil drafting practice; engineering drawing; CAD-oriented drafting study material.",
+    "official_source": "Bharat Skills / DGT Draughtsman (Civil)",
+    "source_url": "https://bharatskills.gov.in/Home/StudyMaterial?Default=YES&var=EDAGX24jKCO%2F9o2J0MaRDg%3D%3D",
+    "source_type": "DGT study material",
+    "evidence": "Official DGT portal provides 2022 New Syllabus practical/theory material and engineering drawing resources."
+  }
+]

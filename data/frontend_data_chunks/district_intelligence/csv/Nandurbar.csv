@@ -1,0 +1,21 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Nandurbar,Agriculture,505.0,241.0,11.0,,,,260,batch5_nanded_to_pune_proper_clean.csv,600.0,60.0,120.0,True,False,True
+Nandurbar,Apparel,247.0,1.0,1.0,,,,260,batch5_nanded_to_pune_proper_clean.csv,240.0,210.0,,,,False
+Nandurbar,Automotive,76.0,113.0,1.0,,,,260,batch5_nanded_to_pune_proper_clean.csv,420.0,,,,,False
+Nandurbar,Beauty & Wellness,507.0,,2.0,,,,260,batch5_nanded_to_pune_proper_clean.csv,90.0,90.0,,,,False
+Nandurbar,Capital Goods,3.0,,,,,,261,batch5_nanded_to_pune_proper_clean.csv,180.0,120.0,,,,False
+Nandurbar,Construction,46.0,,,,,,261,batch5_nanded_to_pune_proper_clean.csv,150.0,,90.0,True,False,True
+Nandurbar,Electronics,425.0,,2.0,,,,261,batch5_nanded_to_pune_proper_clean.csv,420.0,540.0,0.0,True,True,True
+Nandurbar,Food Processing,45.0,331.0,17.0,,,,261,batch5_nanded_to_pune_proper_clean.csv,420.0,180.0,,,,False
+Nandurbar,Furniture & Fittings,10.0,,,,,,261,batch5_nanded_to_pune_proper_clean.csv,180.0,,,,,False
+Nandurbar,Green Jobs,80.0,,,,,,261,batch5_nanded_to_pune_proper_clean.csv,60.0,,0.0,True,True,True
+Nandurbar,Handicraft & Carpet,12.0,,,,,,262,batch5_nanded_to_pune_proper_clean.csv,60.0,,,,,False
+Nandurbar,Healthcare,655.0,100.0,1.0,,,,262,batch5_nanded_to_pune_proper_clean.csv,330.0,,,,,False
+Nandurbar,Iron & Steel,9.0,250.0,1.0,,,,262,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Nandurbar,Logistics,2.0,,,,,,262,batch5_nanded_to_pune_proper_clean.csv,60.0,20.0,,,,False
+Nandurbar,Management,92.0,58.0,2.0,,,,262,batch5_nanded_to_pune_proper_clean.csv,180.0,,,,,False
+Nandurbar,Media & Entertainment,54.0,,,,,,262,batch5_nanded_to_pune_proper_clean.csv,120.0,60.0,,,,False
+Nandurbar,Plumbing,17.0,,,,,,263,batch5_nanded_to_pune_proper_clean.csv,120.0,30.0,,,,False
+Nandurbar,Power,17.0,,,,,,263,batch5_nanded_to_pune_proper_clean.csv,180.0,60.0,,,,False
+Nandurbar,Textile,25.0,32.0,16.0,,,,263,batch5_nanded_to_pune_proper_clean.csv,420.0,,,,,False
+Nandurbar,Tourism & Hospitality,25.0,220.0,17.0,,,,263,batch5_nanded_to_pune_proper_clean.csv,120.0,300.0,,,,False

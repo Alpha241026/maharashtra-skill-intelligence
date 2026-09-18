@@ -1,0 +1,22 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Washim,Agriculture,137.0,1309.0,5.0,,,,414,batch7_thane_to_palghar_source_verified.csv,2730.0,30.0,300.0,True,False,True
+Washim,Apparel,204.0,,,,,,414,batch7_thane_to_palghar_source_verified.csv,210.0,112.0,,,,False
+Washim,Automotive,66.0,1224.0,2.0,,,,414,batch7_thane_to_palghar_source_verified.csv,870.0,101.0,,,,False
+Washim,Beauty & Wellness,114.0,,1.0,,,,414,batch7_thane_to_palghar_source_verified.csv,150.0,90.0,,,,False
+Washim,BFSI,207.0,2920.0,5.0,,,,414,batch7_thane_to_palghar_source_verified.csv,90.0,30.0,,,,False
+Washim,Capital Goods,9.0,9.0,1.0,,,,415,batch7_thane_to_palghar_source_verified.csv,60.0,60.0,,,,False
+Washim,Construction,41.0,,,,,,415,batch7_thane_to_palghar_source_verified.csv,120.0,,0.0,True,True,True
+Washim,Electronics,192.0,29.0,2.0,,,,415,batch7_thane_to_palghar_source_verified.csv,780.0,300.0,60.0,True,False,True
+Washim,Food Processing,162.0,,,,,,415,batch7_thane_to_palghar_source_verified.csv,540.0,780.0,,,,False
+Washim,Green Jobs,35.0,,,,,,415,batch7_thane_to_palghar_source_verified.csv,120.0,,0.0,True,True,True
+Washim,Handicraft & Carpet,12.0,,,,,,415,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Washim,Healthcare,279.0,45.0,2.0,,,,416,batch7_thane_to_palghar_source_verified.csv,750.0,30.0,,,,False
+Washim,Hydrocarbon,5.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,240.0,,,,,False
+Washim,IT/ITeS,248.0,1.0,1.0,,,,416,batch7_thane_to_palghar_source_verified.csv,240.0,,0.0,True,True,True
+Washim,Life Science,81.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Washim,Logistics,7.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,120.0,,,,,False
+Washim,Management,95.0,81.0,3.0,,,,416,batch7_thane_to_palghar_source_verified.csv,150.0,30.0,,,,False
+Washim,Media & Entertainment,42.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,270.0,260.0,,,,False
+Washim,Plumbing,11.0,,,,,,416,batch7_thane_to_palghar_source_verified.csv,90.0,,,,,False
+Washim,Telecom,23.0,,,,,,417,batch7_thane_to_palghar_source_verified.csv,210.0,180.0,0.0,True,True,True
+Washim,Tourism & Hospitality,30.0,,,,,,417,batch7_thane_to_palghar_source_verified.csv,180.0,360.0,,,,False

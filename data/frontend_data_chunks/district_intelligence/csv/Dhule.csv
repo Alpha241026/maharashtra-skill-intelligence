@@ -1,0 +1,26 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Dhule,Agriculture,105.0,56.0,3.0,,,,123,batch3_buldhana_to_hingoli.csv,750.0,368.0,400.0,True,False,True
+Dhule,Apparel,84.0,1.0,2.0,,,,123,batch3_buldhana_to_hingoli.csv,780.0,368.0,,,,False
+Dhule,Automotive,80.0,663.0,3.0,,,,123,batch3_buldhana_to_hingoli.csv,330.0,60.0,,,,False
+Dhule,Beauty & Wellness,134.0,0.0,1.0,,,,123,batch3_buldhana_to_hingoli.csv,240.0,250.0,,,,False
+Dhule,BFSI,216.0,2920.0,6.0,,,,123,batch3_buldhana_to_hingoli.csv,150.0,61.0,,,,False
+Dhule,Capital Goods,10.0,,,,,,124,batch3_buldhana_to_hingoli.csv,570.0,232.0,,,,False
+Dhule,Construction,98.0,23.0,1.0,,,,124,batch3_buldhana_to_hingoli.csv,270.0,,300.0,True,False,True
+Dhule,Electronics,139.0,1.0,1.0,,,,124,batch3_buldhana_to_hingoli.csv,1290.0,1052.0,0.0,True,True,True
+Dhule,Food Processing,105.0,504.0,2.0,,,,124,batch3_buldhana_to_hingoli.csv,360.0,120.0,,,,False
+Dhule,Green Jobs,22.0,,,,,,124,batch3_buldhana_to_hingoli.csv,120.0,60.0,0.0,True,True,True
+Dhule,Healthcare,269.0,,,,,,125,batch3_buldhana_to_hingoli.csv,780.0,,,,,False
+Dhule,Iron & Steel,7.0,250.0,1.0,,,,125,batch3_buldhana_to_hingoli.csv,,,,,,False
+Dhule,IT/ITeS,678.0,4.0,2.0,,,,125,batch3_buldhana_to_hingoli.csv,450.0,120.0,0.0,True,True,True
+Dhule,Life Science,129.0,,,,,,125,batch3_buldhana_to_hingoli.csv,270.0,30.0,,,,False
+Dhule,Logistics,4.0,,,,,,125,batch3_buldhana_to_hingoli.csv,240.0,120.0,,,,False
+Dhule,Management,73.0,1058.0,3.0,,,,126,batch3_buldhana_to_hingoli.csv,90.0,90.0,,,,False
+Dhule,Media & Entertainment,98.0,,,,,,126,batch3_buldhana_to_hingoli.csv,420.0,540.0,,,,False
+Dhule,Paints & Coatings,6.0,,,,,,126,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Dhule,Plumbing,10.0,,,,,,126,batch3_buldhana_to_hingoli.csv,90.0,30.0,,,,False
+Dhule,Power,65.0,,,,,,126,batch3_buldhana_to_hingoli.csv,150.0,90.0,,,,False
+Dhule,Retail,,,,,,,127,batch3_buldhana_to_hingoli.csv,120.0,,0.0,True,True,True
+Dhule,Sports,64.0,,,,,,127,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Dhule,Telecom,7.0,,,,,,127,batch3_buldhana_to_hingoli.csv,120.0,390.0,0.0,True,True,True
+Dhule,Textile,12.0,,1.0,,,,127,batch3_buldhana_to_hingoli.csv,630.0,150.0,,,,False
+Dhule,Tourism & Hospitality,17.0,,,,,,127,batch3_buldhana_to_hingoli.csv,90.0,450.0,,,,False

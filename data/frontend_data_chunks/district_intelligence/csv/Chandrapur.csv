@@ -1,0 +1,16 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Chandrapur,Aerospace & Aviation,92.0,,,,,,110,batch3_buldhana_to_hingoli.csv,,,,False,True,False
+Chandrapur,Agriculture,286.0,37.0,5.0,,,,110,batch3_buldhana_to_hingoli.csv,300.0,,230.0,True,False,True
+Chandrapur,Automotive,176.0,2832.0,11.0,,,,111,batch3_buldhana_to_hingoli.csv,360.0,49.0,,,,False
+Chandrapur,Beauty & Wellness,269.0,,1.0,,,,111,batch3_buldhana_to_hingoli.csv,180.0,270.0,,,,False
+Chandrapur,BFSI,263.0,3111.0,8.0,,,,111,batch3_buldhana_to_hingoli.csv,,,,,,False
+Chandrapur,Construction,406.0,88.0,3.0,,,,111,batch3_buldhana_to_hingoli.csv,90.0,,630.0,True,False,True
+Chandrapur,Electronics,448.0,29.0,2.0,,,,112,batch3_buldhana_to_hingoli.csv,90.0,342.0,0.0,True,True,True
+Chandrapur,Green Jobs,69.0,,,,,,112,batch3_buldhana_to_hingoli.csv,120.0,150.0,0.0,True,True,True
+Chandrapur,Handicraft & Carpet,33.0,,,,,,112,batch3_buldhana_to_hingoli.csv,120.0,,,,,False
+Chandrapur,Iron & Steel,51.0,254.0,2.0,,,,112,batch3_buldhana_to_hingoli.csv,360.0,,,,,False
+Chandrapur,Logistics,19.0,,,,,,112,batch3_buldhana_to_hingoli.csv,90.0,,,,,False
+Chandrapur,Management,99.0,158.0,3.0,,,,113,batch3_buldhana_to_hingoli.csv,210.0,,,,,False
+Chandrapur,Mining,62.0,,,,,,113,batch3_buldhana_to_hingoli.csv,1100.0,,,,,False
+Chandrapur,Paints & Coatings,12.0,,,,,,113,batch3_buldhana_to_hingoli.csv,120.0,,,,,False
+Chandrapur,Power,148.0,,,,,,113,batch3_buldhana_to_hingoli.csv,90.0,118.0,,,,False

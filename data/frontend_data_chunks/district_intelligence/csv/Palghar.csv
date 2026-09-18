@@ -1,0 +1,25 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Palghar,Aerospace & Aviation,112.0,,,,,,434,batch7_thane_to_palghar_source_verified.csv,,,,False,True,False
+Palghar,Agriculture,136.0,26.0,1.0,,,,434,batch7_thane_to_palghar_source_verified.csv,270.0,60.0,60.0,True,False,True
+Palghar,Apparel,83.0,30.0,1.0,,,,434,batch7_thane_to_palghar_source_verified.csv,120.0,558.0,,,,False
+Palghar,Automotive,97.0,1610.0,4.0,,,,434,batch7_thane_to_palghar_source_verified.csv,90.0,51.0,,,,False
+Palghar,Beauty & Wellness,247.0,,1.0,,,,434,batch7_thane_to_palghar_source_verified.csv,60.0,270.0,,,,False
+Palghar,BFSI,1245.0,16889.0,8.0,,,,435,batch7_thane_to_palghar_source_verified.csv,120.0,178.0,,,,False
+Palghar,Capital Goods,34.0,74.0,4.0,,,,435,batch7_thane_to_palghar_source_verified.csv,60.0,60.0,,,,False
+Palghar,Construction,94.0,30.0,1.0,,,,435,batch7_thane_to_palghar_source_verified.csv,60.0,,0.0,True,True,True
+Palghar,Electronics,390.0,936.0,6.0,,,,435,batch7_thane_to_palghar_source_verified.csv,,148.0,0.0,True,True,True
+Palghar,Food Processing,103.0,30.0,1.0,,,,435,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Palghar,Green Jobs,78.0,,,,,,436,batch7_thane_to_palghar_source_verified.csv,60.0,20.0,0.0,True,True,True
+Palghar,Healthcare,325.0,,1.0,,,,436,batch7_thane_to_palghar_source_verified.csv,,30.0,,,,False
+Palghar,Iron & Steel,49.0,561.0,6.0,,,,436,batch7_thane_to_palghar_source_verified.csv,,,,,,False
+Palghar,IT/ITeS,971.0,85.0,4.0,,,,436,batch7_thane_to_palghar_source_verified.csv,,31.0,0.0,True,True,True
+Palghar,Life Science,204.0,892.0,8.0,,,,436,batch7_thane_to_palghar_source_verified.csv,,,,,,False
+Palghar,Logistics,22.0,30.0,1.0,,,,437,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Palghar,Management,475.0,411.0,7.0,,,,437,batch7_thane_to_palghar_source_verified.csv,,,,,,False
+Palghar,Media & Entertainment,324.0,,,,,,437,batch7_thane_to_palghar_source_verified.csv,90.0,270.0,,,,False
+Palghar,Plumbing,9.0,,,,,,437,batch7_thane_to_palghar_source_verified.csv,120.0,60.0,,,,False
+Palghar,Power,22.0,68.0,1.0,,,,437,batch7_thane_to_palghar_source_verified.csv,240.0,60.0,,,,False
+Palghar,Rubber,8.0,35.0,2.0,,,,437,batch7_thane_to_palghar_source_verified.csv,,48.0,,,,False
+Palghar,Telecom,16.0,,,,,,437,batch7_thane_to_palghar_source_verified.csv,,60.0,0.0,True,True,True
+Palghar,Textile,29.0,2500.0,5.0,,,,438,batch7_thane_to_palghar_source_verified.csv,,,,,,False
+Palghar,Tourism & Hospitality,119.0,7.0,1.0,,,,438,batch7_thane_to_palghar_source_verified.csv,,60.0,,,,False

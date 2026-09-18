@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Ahmednagar",
+    "file": "district_intelligence/json/Ahmednagar.json"
+  },
+  {
+    "name": "Akola",
+    "file": "district_intelligence/json/Akola.json"
+  },
+  {
+    "name": "Amravati",
+    "file": "district_intelligence/json/Amravati.json"
+  },
+  {
+    "name": "Beed",
+    "file": "district_intelligence/json/Beed.json"
+  },
+  {
+    "name": "Bhandara",
+    "file": "district_intelligence/json/Bhandara.json"
+  },
+  {
+    "name": "Buldhana",
+    "file": "district_intelligence/json/Buldhana.json"
+  },
+  {
+    "name": "Chandrapur",
+    "file": "district_intelligence/json/Chandrapur.json"
+  },
+  {
+    "name": "Chhatrapati Sambhajinagar",
+    "file": "district_intelligence/json/Chhatrapati_Sambhajinagar.json"
+  },
+  {
+    "name": "Dharashiv",
+    "file": "district_intelligence/json/Dharashiv.json"
+  },
+  {
+    "name": "Dhule",
+    "file": "district_intelligence/json/Dhule.json"
+  },
+  {
+    "name": "Gadchiroli",
+    "file": "district_intelligence/json/Gadchiroli.json"
+  },
+  {
+    "name": "Gondia",
+    "file": "district_intelligence/json/Gondia.json"
+  },
+  {
+    "name": "Hingoli",
+    "file": "district_intelligence/json/Hingoli.json"
+  },
+  {
+    "name": "Jalgaon",
+    "file": "district_intelligence/json/Jalgaon.json"
+  },
+  {
+    "name": "Jalna",
+    "file": "district_intelligence/json/Jalna.json"
+  },
+  {
+    "name": "Kolhapur",
+    "file": "district_intelligence/json/Kolhapur.json"
+  },
+  {
+    "name": "Latur",
+    "file": "district_intelligence/json/Latur.json"
+  },
+  {
+    "name": "Mumbai City",
+    "file": "district_intelligence/json/Mumbai_City.json"
+  },
+  {
+    "name": "Mumbai Suburban",
+    "file": "district_intelligence/json/Mumbai_Suburban.json"
+  },
+  {
+    "name": "Nagpur",
+    "file": "district_intelligence/json/Nagpur.json"
+  },
+  {
+    "name": "Nanded",
+    "file": "district_intelligence/json/Nanded.json"
+  },
+  {
+    "name": "Nandurbar",
+    "file": "district_intelligence/json/Nandurbar.json"
+  },
+  {
+    "name": "Nashik",
+    "file": "district_intelligence/json/Nashik.json"
+  },
+  {
+    "name": "Palghar",
+    "file": "district_intelligence/json/Palghar.json"
+  },
+  {
+    "name": "Parbhani",
+    "file": "district_intelligence/json/Parbhani.json"
+  },
+  {
+    "name": "Pune",
+    "file": "district_intelligence/json/Pune.json"
+  },
+  {
+    "name": "Raigad",
+    "file": "district_intelligence/json/Raigad.json"
+  },
+  {
+    "name": "Ratnagiri",
+    "file": "district_intelligence/json/Ratnagiri.json"
+  },
+  {
+    "name": "Sangli",
+    "file": "district_intelligence/json/Sangli.json"
+  },
+  {
+    "name": "Satara",
+    "file": "district_intelligence/json/Satara.json"
+  },
+  {
+    "name": "Sindhudurg",
+    "file": "district_intelligence/json/Sindhudurg.json"
+  },
+  {
+    "name": "Solapur",
+    "file": "district_intelligence/json/Solapur.json"
+  },
+  {
+    "name": "Thane",
+    "file": "district_intelligence/json/Thane.json"
+  },
+  {
+    "name": "Wardha",
+    "file": "district_intelligence/json/Wardha.json"
+  },
+  {
+    "name": "Washim",
+    "file": "district_intelligence/json/Washim.json"
+  },
+  {
+    "name": "Yavatmal",
+    "file": "district_intelligence/json/Yavatmal.json"
+  }
+]

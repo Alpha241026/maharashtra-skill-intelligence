@@ -1,0 +1,35 @@
+{
+  "purpose": "Frontend scanning/consumption chunks derived from the four supplied AI data CSVs.",
+  "source_preservation": "source_originals/ contains unchanged copies of the four supplied datasets.",
+  "datasets": {
+    "state_indicators": {
+      "rows": 6,
+      "files": [
+        "state/indicators.csv",
+        "state/indicators.json"
+      ]
+    },
+    "trade_competencies": {
+      "rows": 8,
+      "files": [
+        "trades/trade_competencies.csv",
+        "trades/trade_competencies.json"
+      ]
+    },
+    "ncs_job_listings": {
+      "rows": 17,
+      "files": [
+        "jobs/ncs_job_listings.csv",
+        "jobs/ncs_job_listings.json"
+      ],
+      "district_chunks": 8
+    },
+    "district_sector_intelligence": {
+      "rows": 760,
+      "districts": 36,
+      "csv_dir": "district_intelligence/csv",
+      "json_dir": "district_intelligence/json"
+    }
+  },
+  "frontend_note": "Use JSON files for fetch()/JavaScript. Use CSV files when humans need to scan/filter in Excel. No values were invented or filled in."
+}

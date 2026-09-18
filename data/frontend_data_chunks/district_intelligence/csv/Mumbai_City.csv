@@ -1,0 +1,28 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Mumbai City,Aerospace & Aviation,235.0,900.0,1.0,,,,219,batch4_jalgaon_to_nagpur.csv,90.0,,,False,True,False
+Mumbai City,Agriculture,97.0,,,,,,219,batch4_jalgaon_to_nagpur.csv,120.0,,0.0,True,True,True
+Mumbai City,Apparel,117.0,3.0,2.0,,,,219,batch4_jalgaon_to_nagpur.csv,510.0,571.0,,,,False
+Mumbai City,Automotive,93.0,1295.0,3.0,,,,220,batch4_jalgaon_to_nagpur.csv,235.0,,,,,False
+Mumbai City,Beauty & Wellness,661.0,18.0,3.0,,,,220,batch4_jalgaon_to_nagpur.csv,560.0,322.0,,,,False
+Mumbai City,BFSI,2701.0,29014.0,8.0,,,,220,batch4_jalgaon_to_nagpur.csv,1220.0,270.0,,,,False
+Mumbai City,Capital Goods,41.0,,,,,,220,batch4_jalgaon_to_nagpur.csv,410.0,102.0,,,,False
+Mumbai City,Construction,80.0,29.0,2.0,,,,220,batch4_jalgaon_to_nagpur.csv,270.0,,2415.0,True,False,True
+Mumbai City,Domestic Workers,11.0,8.0,1.0,,,,221,batch4_jalgaon_to_nagpur.csv,60.0,9.0,,,,False
+Mumbai City,Electronics,272.0,603.0,4.0,,,,221,batch4_jalgaon_to_nagpur.csv,870.0,30.0,0.0,True,True,True
+Mumbai City,Food Processing,285.0,,,,,,221,batch4_jalgaon_to_nagpur.csv,300.0,,,,,False
+Mumbai City,Furniture & Fittings,26.0,,,,,,221,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Mumbai City,Gem & Jewellery,140.0,742.0,2.0,,,,221,batch4_jalgaon_to_nagpur.csv,400.0,,,,,False
+Mumbai City,Green Jobs,46.0,,,,,,222,batch4_jalgaon_to_nagpur.csv,120.0,,0.0,True,True,True
+Mumbai City,Healthcare,570.0,20.0,5.0,,,,222,batch4_jalgaon_to_nagpur.csv,1330.0,,,,,False
+Mumbai City,IT/ITeS,1724.0,6094.0,16.0,,,,222,batch4_jalgaon_to_nagpur.csv,1150.0,270.0,0.0,True,True,True
+Mumbai City,Leather,3.0,,,,,,222,batch4_jalgaon_to_nagpur.csv,390.0,,,,,False
+Mumbai City,Logistics,107.0,793.0,5.0,,,,222,batch4_jalgaon_to_nagpur.csv,690.0,,,,,False
+Mumbai City,Management,1350.0,10117.0,9.0,,,,222,batch4_jalgaon_to_nagpur.csv,360.0,,,,,False
+Mumbai City,Media & Entertainment,881.0,215.0,4.0,,,,223,batch4_jalgaon_to_nagpur.csv,670.0,,,,,False
+Mumbai City,Persons with Disability,,,,,,,223,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Mumbai City,Power,32.0,,,,,,223,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Mumbai City,Retail,,,,,,,223,batch4_jalgaon_to_nagpur.csv,180.0,,5954.0,True,False,True
+Mumbai City,Rubber,5.0,,,,,,223,batch4_jalgaon_to_nagpur.csv,420.0,,,,,False
+Mumbai City,Telecom,24.0,2.0,1.0,,,,223,batch4_jalgaon_to_nagpur.csv,400.0,270.0,0.0,True,True,True
+Mumbai City,Textile,73.0,,,,,,224,batch4_jalgaon_to_nagpur.csv,150.0,,,,,False
+Mumbai City,Tourism & Hospitality,344.0,12515.0,5.0,,,,224,batch4_jalgaon_to_nagpur.csv,540.0,60.0,,,,False

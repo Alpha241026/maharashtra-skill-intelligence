@@ -1,0 +1,28 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Thane,Agriculture,146.0,126.0,2.0,,,,393,batch7_thane_to_palghar_source_verified.csv,360.0,,133.0,True,False,True
+Thane,Apparel,88.0,3.0,5.0,,,,393,batch7_thane_to_palghar_source_verified.csv,1050.0,1152.0,,,,False
+Thane,Automotive,292.0,2530.0,6.0,,,,393,batch7_thane_to_palghar_source_verified.csv,60.0,43.0,,,,False
+Thane,Beauty & Wellness,269.0,18.0,5.0,,,,393,batch7_thane_to_palghar_source_verified.csv,540.0,570.0,,,,False
+Thane,BFSI,1152.0,16804.0,11.0,,,,393,batch7_thane_to_palghar_source_verified.csv,60.0,,,,,False
+Thane,Capital Goods,80.0,1339.0,39.0,,,,393,batch7_thane_to_palghar_source_verified.csv,1020.0,360.0,,,,False
+Thane,Construction,252.0,34.0,7.0,,,,394,batch7_thane_to_palghar_source_verified.csv,390.0,,1445.0,True,False,True
+Thane,Domestic Workers,12.0,53.0,2.0,,,,394,batch7_thane_to_palghar_source_verified.csv,,367.0,,,,False
+Thane,Electronics,767.0,632.0,13.0,,,,394,batch7_thane_to_palghar_source_verified.csv,960.0,592.0,77.0,True,False,True
+Thane,Food Processing,91.0,428.0,8.0,,,,394,batch7_thane_to_palghar_source_verified.csv,330.0,450.0,,,,False
+Thane,Furniture & Fittings,23.0,155.0,6.0,,,,394,batch7_thane_to_palghar_source_verified.csv,660.0,,,,,False
+Thane,Gem & Jewellery,52.0,10.0,1.0,,,,395,batch7_thane_to_palghar_source_verified.csv,,240.0,,,,False
+Thane,Green Jobs,43.0,,,,,,395,batch7_thane_to_palghar_source_verified.csv,210.0,,0.0,True,True,True
+Thane,Handicraft & Carpet,21.0,,,,,,395,batch7_thane_to_palghar_source_verified.csv,300.0,,,,,False
+Thane,Healthcare,360.0,93.0,22.0,,,,395,batch7_thane_to_palghar_source_verified.csv,2010.0,,,,,False
+Thane,Iron & Steel,197.0,552.0,5.0,,,,395,batch7_thane_to_palghar_source_verified.csv,150.0,,,,,False
+Thane,IT/ITeS,1338.0,84.0,18.0,,,,396,batch7_thane_to_palghar_source_verified.csv,1140.0,360.0,0.0,True,True,True
+Thane,Logistics,49.0,906.0,9.0,,,,396,batch7_thane_to_palghar_source_verified.csv,1580.0,90.0,,,,False
+Thane,Media & Entertainment,285.0,20.0,7.0,,,,396,batch7_thane_to_palghar_source_verified.csv,240.0,1423.0,,,,False
+Thane,Metal Products,,,,,,,396,batch7_thane_to_palghar_source_verified.csv,810.0,,,,,False
+Thane,Persons with Disability,,,,,,,396,batch7_thane_to_palghar_source_verified.csv,970.0,,,,,False
+Thane,Plumbing,11.0,,,,,,396,batch7_thane_to_palghar_source_verified.csv,730.0,,,,,False
+Thane,Power,149.0,,,,,,397,batch7_thane_to_palghar_source_verified.csv,180.0,23.0,,,,False
+Thane,Retail,,,,,,,397,batch7_thane_to_palghar_source_verified.csv,300.0,,394.0,True,False,True
+Thane,Telecom,15.0,9.0,5.0,,,,397,batch7_thane_to_palghar_source_verified.csv,540.0,180.0,0.0,True,True,True
+Thane,Textile,26.0,267.0,8.0,,,,397,batch7_thane_to_palghar_source_verified.csv,2450.0,,,,,False
+Thane,Tourism & Hospitality,155.0,12500.0,5.0,,,,397,batch7_thane_to_palghar_source_verified.csv,360.0,,,,,False

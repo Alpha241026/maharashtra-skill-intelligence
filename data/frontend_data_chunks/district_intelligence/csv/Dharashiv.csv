@@ -1,0 +1,16 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Dharashiv,Agriculture,237.0,1286.0,11.0,,,,285,batch5_nanded_to_pune_proper_clean.csv,540.0,,196.0,True,False,True
+Dharashiv,Apparel,243.0,208.0,4.0,,,,285,batch5_nanded_to_pune_proper_clean.csv,620.0,585.0,,,,False
+Dharashiv,Automotive,57.0,1244.0,4.0,,,,285,batch5_nanded_to_pune_proper_clean.csv,180.0,30.0,,,,False
+Dharashiv,Capital Goods,24.0,61.0,3.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Dharashiv,Construction,61.0,43.0,3.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,270.0,,180.0,True,False,True
+Dharashiv,Electronics,230.0,1.0,1.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,360.0,284.0,0.0,True,True,True
+Dharashiv,Food Processing,21.0,298.0,4.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,270.0,60.0,,,,False
+Dharashiv,Healthcare,160.0,10.0,1.0,,,,286,batch5_nanded_to_pune_proper_clean.csv,180.0,,,,,False
+Dharashiv,Life Science,54.0,330.0,1.0,,,,287,batch5_nanded_to_pune_proper_clean.csv,60.0,,,,,False
+Dharashiv,Logistics,2.0,7.0,1.0,,,,287,batch5_nanded_to_pune_proper_clean.csv,180.0,145.0,,,,False
+Dharashiv,Management,93.0,58.0,3.0,,,,287,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Dharashiv,Media & Entertainment,97.0,,1.0,,,,287,batch5_nanded_to_pune_proper_clean.csv,270.0,450.0,,,,False
+Dharashiv,Paints & Coatings,11.0,,,,,,287,batch5_nanded_to_pune_proper_clean.csv,60.0,,,,,False
+Dharashiv,Telecom,20.0,,,,,,288,batch5_nanded_to_pune_proper_clean.csv,120.0,150.0,0.0,True,True,True
+Dharashiv,Tourism & Hospitality,24.0,,,,,,288,batch5_nanded_to_pune_proper_clean.csv,240.0,422.0,,,,False

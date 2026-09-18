@@ -1,0 +1,27 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Chhatrapati Sambhajinagar,Aerospace & Aviation,88.0,45.0,1.0,,,,69,batch2_akola_to_bhandara.csv,60.0,,,False,True,False
+Chhatrapati Sambhajinagar,Agriculture,142.0,37.0,2.0,,,,69,batch2_akola_to_bhandara.csv,1643.0,60.0,90.0,True,False,True
+Chhatrapati Sambhajinagar,Automotive,172.0,6146.0,30.0,,,,69,batch2_akola_to_bhandara.csv,980.0,20.0,,,,False
+Chhatrapati Sambhajinagar,BFSI,212.0,3120.0,7.0,,,,70,batch2_akola_to_bhandara.csv,150.0,,,,,False
+Chhatrapati Sambhajinagar,Capital Goods,36.0,2150.0,18.0,,,,70,batch2_akola_to_bhandara.csv,680.0,207.0,,,,False
+Chhatrapati Sambhajinagar,Construction,161.0,200.0,1.0,,,,70,batch2_akola_to_bhandara.csv,180.0,,300.0,True,False,True
+Chhatrapati Sambhajinagar,Domestic Workers,11.0,,,,,,70,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Chhatrapati Sambhajinagar,Electronics,314.0,284.0,5.0,,,,70,batch2_akola_to_bhandara.csv,640.0,90.0,210.0,True,False,True
+Chhatrapati Sambhajinagar,Food Processing,52.0,483.0,6.0,,,,70,batch2_akola_to_bhandara.csv,240.0,,,,,False
+Chhatrapati Sambhajinagar,Green Jobs,29.0,,1.0,,,,71,batch2_akola_to_bhandara.csv,90.0,30.0,0.0,True,True,True
+Chhatrapati Sambhajinagar,Healthcare,348.0,76.0,2.0,,,,71,batch2_akola_to_bhandara.csv,120.0,,,,,False
+Chhatrapati Sambhajinagar,Hydrocarbon,4.0,50.0,2.0,,,,71,batch2_akola_to_bhandara.csv,130.0,,,,,False
+Chhatrapati Sambhajinagar,Iron & Steel,31.0,479.0,4.0,,,,71,batch2_akola_to_bhandara.csv,,,,,,False
+Chhatrapati Sambhajinagar,IT/ITeS,1742.0,17.0,5.0,,,,71,batch2_akola_to_bhandara.csv,420.0,,0.0,True,True,True
+Chhatrapati Sambhajinagar,Leather,3.0,878.0,6.0,,,,71,batch2_akola_to_bhandara.csv,,,,,,False
+Chhatrapati Sambhajinagar,Life Science,132.0,531.0,4.0,,,,71,batch2_akola_to_bhandara.csv,150.0,50.0,,,,False
+Chhatrapati Sambhajinagar,Logistics,6.0,999.0,4.0,,,,72,batch2_akola_to_bhandara.csv,40.0,29.0,,,,False
+Chhatrapati Sambhajinagar,Management,264.0,1259.0,10.0,,,,72,batch2_akola_to_bhandara.csv,180.0,,,,,False
+Chhatrapati Sambhajinagar,Paints & Coatings,10.0,1280.0,7.0,,,,72,batch2_akola_to_bhandara.csv,270.0,,,,,False
+Chhatrapati Sambhajinagar,Plumbing,17.0,,,,,,72,batch2_akola_to_bhandara.csv,150.0,,,,,False
+Chhatrapati Sambhajinagar,Power,46.0,,,,,,72,batch2_akola_to_bhandara.csv,210.0,90.0,,,,False
+Chhatrapati Sambhajinagar,Retail,,,,,,,73,batch2_akola_to_bhandara.csv,90.0,,150.0,True,False,True
+Chhatrapati Sambhajinagar,Rubber,1.0,36.0,2.0,,,,73,batch2_akola_to_bhandara.csv,1620.0,,,,,False
+Chhatrapati Sambhajinagar,Telecom,25.0,,,,,,73,batch2_akola_to_bhandara.csv,170.0,120.0,0.0,True,True,True
+Chhatrapati Sambhajinagar,Textile,4.0,480.0,2.0,,,,73,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Chhatrapati Sambhajinagar,Tourism & Hospitality,39.0,1667.0,1.0,,,,73,batch2_akola_to_bhandara.csv,330.0,628.0,,,,False

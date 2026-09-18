@@ -1,0 +1,29 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Pune,Apparel,173.0,1576.0,9.0,,,,310,batch5_nanded_to_pune_proper_clean.csv,210.0,2870.0,,,,False
+Pune,Automotive,375.0,19022.0,36.0,,,,310,batch5_nanded_to_pune_proper_clean.csv,930.0,,,,,False
+Pune,Beauty & Wellness,426.0,25.0,7.0,,,,310,batch5_nanded_to_pune_proper_clean.csv,270.0,831.0,,,,False
+Pune,Capital Goods,48.0,2577.0,20.0,,,,311,batch5_nanded_to_pune_proper_clean.csv,930.0,1451.0,,,,False
+Pune,Construction,314.0,13.0,2.0,,,,311,batch5_nanded_to_pune_proper_clean.csv,270.0,,169.0,True,False,True
+Pune,Domestic Workers,33.0,,,,,,311,batch5_nanded_to_pune_proper_clean.csv,150.0,738.0,,,,False
+Pune,Electronics,606.0,2247.0,19.0,,,,311,batch5_nanded_to_pune_proper_clean.csv,960.0,1561.0,338.0,True,False,True
+Pune,Food Processing,236.0,3920.0,3.0,,,,311,batch5_nanded_to_pune_proper_clean.csv,330.0,3011.0,,,,False
+Pune,Furniture & Fittings,33.0,5.0,1.0,,,,312,batch5_nanded_to_pune_proper_clean.csv,240.0,,,,,False
+Pune,Gem & Jewellery,45.0,,,,,,312,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Pune,Handicraft & Carpet,26.0,,,,,,312,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Pune,Healthcare,614.0,402.0,3.0,,,,312,batch5_nanded_to_pune_proper_clean.csv,360.0,,,,,False
+Pune,Hydrocarbon,21.0,,,,,,312,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Pune,Infrastructure,14.0,37.0,1.0,,,,312,batch5_nanded_to_pune_proper_clean.csv,90.0,0.0,,,,False
+Pune,Iron & Steel,74.0,1260.0,7.0,,,,313,batch5_nanded_to_pune_proper_clean.csv,210.0,0.0,,,,False
+Pune,Life Science,180.0,20444.0,4.0,,,,313,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Pune,Logistics,48.0,1278.0,5.0,,,,313,batch5_nanded_to_pune_proper_clean.csv,360.0,395.0,,,,False
+Pune,Management,463.0,800.0,12.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,300.0,,,,,False
+Pune,Media & Entertainment,205.0,4.0,1.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,720.0,1500.0,,,,False
+Pune,Mining,5.0,160.0,1.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Pune,Paints & Coatings,12.0,110.0,1.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Pune,Plumbing,2.0,,,,,,314,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Pune,Power,70.0,17005.0,2.0,,,,314,batch5_nanded_to_pune_proper_clean.csv,600.0,,,,,False
+Pune,Retail,,,,,,,315,batch5_nanded_to_pune_proper_clean.csv,210.0,,113.0,True,False,True
+Pune,Rubber,3.0,350.0,1.0,,,,315,batch5_nanded_to_pune_proper_clean.csv,540.0,60.0,,,,False
+Pune,Telecom,45.0,,,,,,315,batch5_nanded_to_pune_proper_clean.csv,390.0,660.0,0.0,True,True,True
+Pune,Textile,40.0,1500.0,1.0,,,,315,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Pune,Tourism & Hospitality,129.0,24526.0,7.0,,,,315,batch5_nanded_to_pune_proper_clean.csv,510.0,52.0,,,,False

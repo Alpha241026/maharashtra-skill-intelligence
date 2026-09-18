@@ -1,0 +1,29 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Amravati,Agriculture,188.0,45.0,4.0,,,,57,batch2_akola_to_bhandara.csv,1560.0,0.0,840.0,True,False,True
+Amravati,Apparel,97.0,21.0,2.0,,,,57,batch2_akola_to_bhandara.csv,1020.0,285.0,,,,False
+Amravati,Automotive,134.0,2885.0,6.0,,,,57,batch2_akola_to_bhandara.csv,390.0,90.0,,,,False
+Amravati,Beauty & Wellness,148.0,0.0,1.0,,,,57,batch2_akola_to_bhandara.csv,360.0,180.0,,,,False
+Amravati,BFSI,455.0,2926.0,8.0,,,,58,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Amravati,Capital Goods,6.0,36.0,2.0,,,,58,batch2_akola_to_bhandara.csv,300.0,,,,,False
+Amravati,Construction,195.0,32.0,3.0,,,,58,batch2_akola_to_bhandara.csv,1320.0,,360.0,True,False,True
+Amravati,Electronics,298.0,29.0,2.0,,,,58,batch2_akola_to_bhandara.csv,360.0,90.0,60.0,True,False,True
+Amravati,Food Processing,65.0,,,,,,59,batch2_akola_to_bhandara.csv,450.0,450.0,,,,False
+Amravati,Furniture & Fittings,15.0,14.0,1.0,,,,59,batch2_akola_to_bhandara.csv,120.0,0.0,,,,False
+Amravati,Green Jobs,48.0,179.0,2.0,,,,59,batch2_akola_to_bhandara.csv,270.0,60.0,0.0,True,True,True
+Amravati,Handicraft & Carpet,17.0,,,,,,59,batch2_akola_to_bhandara.csv,240.0,,,,,False
+Amravati,Healthcare,283.0,219.0,7.0,,,,60,batch2_akola_to_bhandara.csv,570.0,0.0,,,,False
+Amravati,Infrastructure,9.0,37.0,1.0,,,,60,batch2_akola_to_bhandara.csv,180.0,,,,,False
+Amravati,Iron & Steel,32.0,250.0,1.0,,,,60,batch2_akola_to_bhandara.csv,300.0,,,,,False
+Amravati,IT/ITeS,966.0,55.0,9.0,,,,60,batch2_akola_to_bhandara.csv,1050.0,202.0,0.0,True,True,True
+Amravati,Life Science,67.0,3.0,3.0,,,,61,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Amravati,Logistics,12.0,1.0,2.0,,,,61,batch2_akola_to_bhandara.csv,330.0,90.0,,,,False
+Amravati,Management,254.0,170.0,4.0,,,,61,batch2_akola_to_bhandara.csv,420.0,,,,,False
+Amravati,Media & Entertainment,85.0,,,,,,61,batch2_akola_to_bhandara.csv,120.0,,,,,False
+Amravati,Paints & Coatings,7.0,,,,,,62,batch2_akola_to_bhandara.csv,60.0,,,,,False
+Amravati,Persons with Disability,,,,,,,62,batch2_akola_to_bhandara.csv,120.0,100.0,,,,False
+Amravati,Plumbing,15.0,,,,,,62,batch2_akola_to_bhandara.csv,90.0,,,,,False
+Amravati,Power,92.0,,,,,,62,batch2_akola_to_bhandara.csv,60.0,60.0,,,,False
+Amravati,Retail,,,,,,,62,batch2_akola_to_bhandara.csv,300.0,,180.0,True,False,True
+Amravati,Telecom,39.0,40.0,1.0,,,,63,batch2_akola_to_bhandara.csv,390.0,300.0,0.0,True,True,True
+Amravati,Textile,31.0,200.0,1.0,,,,63,batch2_akola_to_bhandara.csv,630.0,,,,,False
+Amravati,Tourism & Hospitality,65.0,,1.0,,,,63,batch2_akola_to_bhandara.csv,480.0,30.0,,,,False

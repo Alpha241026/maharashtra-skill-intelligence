@@ -1,0 +1,23 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Gondia,Agriculture,88.0,37.0,2.0,,,,145,batch3_buldhana_to_hingoli.csv,420.0,,0.0,True,True,True
+Gondia,Apparel,12.0,,,,,,145,batch3_buldhana_to_hingoli.csv,150.0,1303.0,,,,False
+Gondia,Automotive,93.0,3215.0,4.0,,,,146,batch3_buldhana_to_hingoli.csv,240.0,53.0,,,,False
+Gondia,Beauty & Wellness,12.0,,1.0,,,,146,batch3_buldhana_to_hingoli.csv,150.0,470.0,,,,False
+Gondia,BFSI,51.0,698.0,5.0,,,,146,batch3_buldhana_to_hingoli.csv,,,,,,False
+Gondia,Capital Goods,4.0,,,,,,146,batch3_buldhana_to_hingoli.csv,210.0,399.0,,,,False
+Gondia,Construction,82.0,23.0,1.0,,,,147,batch3_buldhana_to_hingoli.csv,240.0,,30.0,True,False,True
+Gondia,Domestic Workers,5.0,,,,,,147,batch3_buldhana_to_hingoli.csv,180.0,135.0,,,,False
+Gondia,Electronics,159.0,1.0,1.0,,,,147,batch3_buldhana_to_hingoli.csv,300.0,414.0,0.0,True,True,True
+Gondia,Furniture & Fittings,,,,,,,147,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Gondia,Green Jobs,13.0,,,,,,148,batch3_buldhana_to_hingoli.csv,60.0,30.0,0.0,True,True,True
+Gondia,Healthcare,80.0,8.0,1.0,,,,148,batch3_buldhana_to_hingoli.csv,270.0,,,,,False
+Gondia,Iron & Steel,16.0,250.0,1.0,,,,148,batch3_buldhana_to_hingoli.csv,,,,,,False
+Gondia,IT/ITeS,84.0,,,,,,148,batch3_buldhana_to_hingoli.csv,120.0,90.0,0.0,True,True,True
+Gondia,Logistics,2.0,,,,,,149,batch3_buldhana_to_hingoli.csv,210.0,411.0,,,,False
+Gondia,Management,37.0,158.0,3.0,,,,149,batch3_buldhana_to_hingoli.csv,210.0,90.0,,,,False
+Gondia,Media & Entertainment,8.0,,,,,,149,batch3_buldhana_to_hingoli.csv,,930.0,,,,False
+Gondia,Paints & Coatings,2.0,,,,,,149,batch3_buldhana_to_hingoli.csv,90.0,,,,,False
+Gondia,Plumbing,3.0,,,,,,150,batch3_buldhana_to_hingoli.csv,60.0,,,,,False
+Gondia,Power,59.0,,,,,,150,batch3_buldhana_to_hingoli.csv,120.0,110.0,,,,False
+Gondia,Telecom,6.0,,,,,,150,batch3_buldhana_to_hingoli.csv,,120.0,0.0,True,True,True
+Gondia,Tourism & Hospitality,20.0,,,,,,150,batch3_buldhana_to_hingoli.csv,,300.0,,,,False

@@ -1,0 +1,22 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Latur,Agriculture,142.0,5689.0,61.0,,,,205,batch4_jalgaon_to_nagpur.csv,810.0,120.0,169.0,True,False,True
+Latur,Apparel,176.0,56.0,7.0,,,,205,batch4_jalgaon_to_nagpur.csv,1260.0,1030.0,,,,False
+Latur,Automotive,60.0,3492.0,29.0,,,,205,batch4_jalgaon_to_nagpur.csv,510.0,72.0,,,,False
+Latur,Beauty & Wellness,69.0,47.0,4.0,,,,205,batch4_jalgaon_to_nagpur.csv,150.0,320.0,,,,False
+Latur,BFSI,205.0,2935.0,8.0,,,,205,batch4_jalgaon_to_nagpur.csv,390.0,60.0,,,,False
+Latur,Capital Goods,10.0,58.0,4.0,,,,206,batch4_jalgaon_to_nagpur.csv,480.0,,,,,False
+Latur,Construction,118.0,93.0,8.0,,,,206,batch4_jalgaon_to_nagpur.csv,300.0,,394.0,True,False,True
+Latur,Electronics,482.0,29.0,6.0,,,,206,batch4_jalgaon_to_nagpur.csv,720.0,1081.0,0.0,True,True,True
+Latur,Food Processing,48.0,1084.0,8.0,,,,206,batch4_jalgaon_to_nagpur.csv,390.0,300.0,,,,False
+Latur,Green Jobs,22.0,,,,,,206,batch4_jalgaon_to_nagpur.csv,120.0,60.0,0.0,True,True,True
+Latur,Healthcare,267.0,4.0,1.0,,,,207,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Latur,Iron & Steel,11.0,273.0,3.0,,,,207,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Latur,IT/ITeS,524.0,,1.0,,,,207,batch4_jalgaon_to_nagpur.csv,1110.0,134.0,0.0,True,True,True
+Latur,Logistics,5.0,,,,,,207,batch4_jalgaon_to_nagpur.csv,330.0,240.0,,,,False
+Latur,Management,110.0,239.0,9.0,,,,207,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Latur,Media & Entertainment,112.0,7.0,3.0,,,,207,batch4_jalgaon_to_nagpur.csv,360.0,900.0,,,,False
+Latur,Paints & Coatings,9.0,,,,,,208,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Latur,Plumbing,2.0,,,,,,208,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Latur,Power,50.0,,,,,,208,batch4_jalgaon_to_nagpur.csv,270.0,172.0,,,,False
+Latur,Telecom,168.0,10.0,2.0,,,,208,batch4_jalgaon_to_nagpur.csv,90.0,260.0,0.0,True,True,True
+Latur,Tourism & Hospitality,138.0,32.0,4.0,,,,208,batch4_jalgaon_to_nagpur.csv,210.0,440.0,,,,False

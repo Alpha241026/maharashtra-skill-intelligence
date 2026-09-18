@@ -1,0 +1,7 @@
+geography,indicator,value,unit,source,date_or_qualification,source_url
+Maharashtra,Current openings,638310,count,Mahaswayam,indexed snapshot; not a dated statewide job-post extract,https://www.mahaswayam.gov.in/index_inner
+Maharashtra,Job seekers,3660769,count,Mahaswayam,indexed snapshot,https://www.mahaswayam.gov.in/index_inner
+Maharashtra,Employers,120877,count,Mahaswayam,indexed snapshot,https://www.mahaswayam.gov.in/index_inner
+India / NCS,Active vacancies,1768000,count,National Career Service / PIB,as of 15-07-2026,https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294658&lang=1&reg=22
+India / NCS,Active jobseekers,28900000,count,National Career Service / PIB,as of 15-07-2026,https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294658&lang=1&reg=22
+India / NCS,Vacancies mobilized since inception,100500000,count,National Career Service / PIB,since inception; cumulative,https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294658&lang=1&reg=22

@@ -1,0 +1,18 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Nanded,Agriculture,288.0,98.0,9.0,,,,250,batch5_nanded_to_pune_proper_clean.csv,600.0,,3391.0,True,False,True
+Nanded,Apparel,529.0,20.0,3.0,,,,250,batch5_nanded_to_pune_proper_clean.csv,840.0,561.0,,,,False
+Nanded,Automotive,84.0,,1.0,,,,250,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Nanded,Beauty & Wellness,748.0,673.0,,,,,250,batch5_nanded_to_pune_proper_clean.csv,120.0,30.0,,,,False
+Nanded,BFSI,521.0,296.0,10.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Nanded,Capital Goods,60.0,529.0,21.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,240.0,510.0,,,,False
+Nanded,Construction,124.0,45.0,9.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,120.0,,3220.0,True,False,True
+Nanded,Electronics,2393.0,127.0,11.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,810.0,810.0,0.0,True,True,True
+Nanded,Food Processing,71.0,50.0,10.0,,,,251,batch5_nanded_to_pune_proper_clean.csv,240.0,,,,,False
+Nanded,Infrastructure,15.0,162.0,3.0,,,,252,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Nanded,Logistics,7.0,,12.0,,,,252,batch5_nanded_to_pune_proper_clean.csv,240.0,54.0,,,,False
+Nanded,Media & Entertainment,572.0,6.0,8.0,,,,252,batch5_nanded_to_pune_proper_clean.csv,120.0,,,,,False
+Nanded,Plumbing,9.0,,,,,,253,batch5_nanded_to_pune_proper_clean.csv,150.0,90.0,,,,False
+Nanded,Power,73.0,30.0,3.0,,,,253,batch5_nanded_to_pune_proper_clean.csv,360.0,30.0,,,,False
+Nanded,Retail,,,,,,,253,batch5_nanded_to_pune_proper_clean.csv,120.0,,0.0,True,True,True
+Nanded,Telecom,596.0,2.0,2.0,,,,253,batch5_nanded_to_pune_proper_clean.csv,117.0,540.0,0.0,True,True,True
+Nanded,Tourism & Hospitality,593.0,,2.0,,,,253,batch5_nanded_to_pune_proper_clean.csv,390.0,600.0,,,,False

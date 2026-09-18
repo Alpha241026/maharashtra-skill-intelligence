@@ -1,0 +1,27 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Parbhani,Apparel,654.0,0.0,1.0,,,,296,batch5_nanded_to_pune_proper_clean.csv,960.0,338.0,,,,False
+Parbhani,Automotive,126.0,75.0,3.0,,,,296,batch5_nanded_to_pune_proper_clean.csv,450.0,30.0,,,,False
+Parbhani,Beauty & Wellness,727.0,667.0,2.0,,,,296,batch5_nanded_to_pune_proper_clean.csv,330.0,180.0,,,,False
+Parbhani,Capital Goods,95.0,41.0,3.0,,,,296,batch5_nanded_to_pune_proper_clean.csv,420.0,50.0,,,,False
+Parbhani,Construction,117.0,0.0,0.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,360.0,0.0,120.0,True,False,True
+Parbhani,Domestic Workers,53.0,0.0,0.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,30.0,0.0,,,,False
+Parbhani,Electronics,1582.0,11.0,2.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,780.0,655.0,0.0,True,True,True
+Parbhani,Food Processing,298.0,8.0,1.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,240.0,240.0,,,,False
+Parbhani,Furniture & Fittings,29.0,14.0,2.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,60.0,0.0,,,,False
+Parbhani,Gem & Jewellery,26.0,1.0,1.0,,,,297,batch5_nanded_to_pune_proper_clean.csv,90.0,0.0,,,,False
+Parbhani,Green Jobs,53.0,0.0,0.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,30.0,0.0,0.0,True,True,True
+Parbhani,Handicraft & Carpet,18.0,0.0,0.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,90.0,0.0,,,,False
+Parbhani,Healthcare,233.0,1.0,1.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,750.0,120.0,,,,False
+Parbhani,Hydrocarbon,15.0,0.0,0.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,60.0,0.0,,,,False
+Parbhani,Iron & Steel,7.0,276.0,2.0,,,,298,batch5_nanded_to_pune_proper_clean.csv,60.0,0.0,,,,False
+Parbhani,Leather,7.0,0.0,0.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,30.0,0.0,,,,False
+Parbhani,Life Science,61.0,0.0,0.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,30.0,0.0,,,,False
+Parbhani,Logistics,4.0,0.0,0.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,240.0,115.0,,,,False
+Parbhani,Management,134.0,71.0,3.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,180.0,0.0,,,,False
+Parbhani,Media & Entertainment,444.0,0.0,1.0,,,,299,batch5_nanded_to_pune_proper_clean.csv,270.0,450.0,,,,False
+Parbhani,Plumbing,18.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,120.0,0.0,,,,False
+Parbhani,Power,37.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,120.0,60.0,,,,False
+Parbhani,Retail,0.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,60.0,0.0,0.0,True,True,True
+Parbhani,Telecom,593.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,150.0,500.0,0.0,True,True,True
+Parbhani,Textile,22.0,645.0,2.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,120.0,0.0,,,,False
+Parbhani,Tourism & Hospitality,159.0,0.0,0.0,,,,300,batch5_nanded_to_pune_proper_clean.csv,240.0,170.0,,,,False

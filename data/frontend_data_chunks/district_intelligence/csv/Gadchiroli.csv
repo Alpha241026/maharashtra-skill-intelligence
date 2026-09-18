@@ -1,0 +1,16 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Gadchiroli,Agriculture,142.0,26.0,3.0,,,,134,batch3_buldhana_to_hingoli.csv,600.0,202.0,1561.0,True,False,True
+Gadchiroli,Apparel,83.0,,,,,,134,batch3_buldhana_to_hingoli.csv,180.0,143.0,,,,False
+Gadchiroli,Automotive,28.0,1450.0,4.0,,,,134,batch3_buldhana_to_hingoli.csv,330.0,163.0,,,,False
+Gadchiroli,Beauty & Wellness,71.0,,1.0,,,,134,batch3_buldhana_to_hingoli.csv,30.0,56.0,,,,False
+Gadchiroli,BFSI,51.0,2920.0,6.0,,,,135,batch3_buldhana_to_hingoli.csv,,,,,,False
+Gadchiroli,Capital Goods,3.0,27.0,1.0,,,,135,batch3_buldhana_to_hingoli.csv,60.0,60.0,,,,False
+Gadchiroli,Electronics,116.0,1.0,2.0,,,,135,batch3_buldhana_to_hingoli.csv,210.0,60.0,0.0,True,True,True
+Gadchiroli,Furniture & Fittings,4.0,3.0,1.0,,,,135,batch3_buldhana_to_hingoli.csv,60.0,30.0,,,,False
+Gadchiroli,Green Jobs,23.0,,,,,,135,batch3_buldhana_to_hingoli.csv,,,0.0,True,True,True
+Gadchiroli,Iron & Steel,16.0,250.0,1.0,,,,136,batch3_buldhana_to_hingoli.csv,,,,,,False
+Gadchiroli,IT/ITeS,86.0,,1.0,,,,136,batch3_buldhana_to_hingoli.csv,450.0,232.0,0.0,True,True,True
+Gadchiroli,Logistics,2.0,,,,,,136,batch3_buldhana_to_hingoli.csv,120.0,,,,,False
+Gadchiroli,Management,38.0,183.0,4.0,,,,136,batch3_buldhana_to_hingoli.csv,60.0,50.0,,,,False
+Gadchiroli,Power,19.0,,,,,,137,batch3_buldhana_to_hingoli.csv,120.0,111.0,,,,False
+Gadchiroli,Tourism & Hospitality,26.0,8.0,1.0,,,,137,batch3_buldhana_to_hingoli.csv,,270.0,,,,False

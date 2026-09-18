@@ -1,0 +1,30 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Mumbai Suburban,Aerospace & Aviation,292.0,,,,,,224,batch4_jalgaon_to_nagpur.csv,930.0,240.0,,False,True,False
+Mumbai Suburban,Agriculture,125.0,0.0,0.0,,,,225,batch4_jalgaon_to_nagpur.csv,240.0,,0.0,True,True,True
+Mumbai Suburban,Apparel,95.0,2.0,3.0,,,,225,batch4_jalgaon_to_nagpur.csv,750.0,179.0,,,,False
+Mumbai Suburban,Automotive,157.0,1233.0,,,,,225,batch4_jalgaon_to_nagpur.csv,180.0,150.0,,,,False
+Mumbai Suburban,Beauty & Wellness,497.0,8.0,2.0,,,,225,batch4_jalgaon_to_nagpur.csv,720.0,,,,,False
+Mumbai Suburban,BFSI,4521.0,28278.0,20.0,,,,225,batch4_jalgaon_to_nagpur.csv,420.0,31.0,,,,False
+Mumbai Suburban,Capital Goods,45.0,,1.0,,,,226,batch4_jalgaon_to_nagpur.csv,180.0,20.0,,,,False
+Mumbai Suburban,Construction,91.0,2.0,3.0,,,,226,batch4_jalgaon_to_nagpur.csv,390.0,,905.0,True,False,True
+Mumbai Suburban,Electronics,277.0,922.0,11.0,,,,226,batch4_jalgaon_to_nagpur.csv,1230.0,630.0,80.0,True,False,True
+Mumbai Suburban,Food Processing,304.0,,2.0,,,,226,batch4_jalgaon_to_nagpur.csv,180.0,27.0,,,,False
+Mumbai Suburban,Furniture & Fittings,24.0,,,,,,226,batch4_jalgaon_to_nagpur.csv,240.0,120.0,,,,False
+Mumbai Suburban,Gem & Jewellery,110.0,912.0,13.0,,,,227,batch4_jalgaon_to_nagpur.csv,720.0,,,,,False
+Mumbai Suburban,Green Jobs,47.0,,,,,,227,batch4_jalgaon_to_nagpur.csv,180.0,30.0,0.0,True,True,True
+Mumbai Suburban,Healthcare,547.0,8.0,5.0,,,,227,batch4_jalgaon_to_nagpur.csv,1320.0,,,,,False
+Mumbai Suburban,Iron & Steel,28.0,250.0,1.0,,,,227,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Mumbai Suburban,IT/ITeS,2357.0,5782.0,17.0,,,,227,batch4_jalgaon_to_nagpur.csv,1130.0,240.0,0.0,True,True,True
+Mumbai Suburban,Leather,5.0,,,,,,228,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Mumbai Suburban,Logistics,116.0,768.0,4.0,,,,228,batch4_jalgaon_to_nagpur.csv,360.0,88.0,,,,False
+Mumbai Suburban,Management,1977.0,10619.0,9.0,,,,228,batch4_jalgaon_to_nagpur.csv,330.0,,,,,False
+Mumbai Suburban,Media & Entertainment,1057.0,205.0,4.0,,,,228,batch4_jalgaon_to_nagpur.csv,1230.0,940.0,,,,False
+Mumbai Suburban,Paints & Coatings,68.0,,1.0,,,,228,batch4_jalgaon_to_nagpur.csv,360.0,,,,,False
+Mumbai Suburban,Plumbing,7.0,,,,,,228,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Mumbai Suburban,Power,34.0,42.0,1.0,,,,229,batch4_jalgaon_to_nagpur.csv,270.0,153.0,,,,False
+Mumbai Suburban,Retail,,,,,,,229,batch4_jalgaon_to_nagpur.csv,450.0,,2233.0,True,False,True
+Mumbai Suburban,Rubber,6.0,,,,,,229,batch4_jalgaon_to_nagpur.csv,240.0,,,,,False
+Mumbai Suburban,Sports,620.0,,,,,,229,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Mumbai Suburban,Telecom,26.0,2.0,2.0,,,,229,batch4_jalgaon_to_nagpur.csv,250.0,,50.0,True,False,True
+Mumbai Suburban,Textile,55.0,,,,,,229,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Mumbai Suburban,Tourism & Hospitality,338.0,12515.0,5.0,,,,229,batch4_jalgaon_to_nagpur.csv,720.0,80.0,,,,False

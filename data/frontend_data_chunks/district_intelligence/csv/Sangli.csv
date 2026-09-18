@@ -1,0 +1,17 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Sangli,Agriculture,673.0,37.0,3.0,,,,346,batch6_raigad_to_solapur_proper.csv,1860.0,,56.0,True,False,True
+Sangli,Apparel,319.0,300.0,3.0,,,,346,batch6_raigad_to_solapur_proper.csv,1320.0,900.0,,,,False
+Sangli,Automotive,362.0,3390.0,14.0,,,,346,batch6_raigad_to_solapur_proper.csv,1260.0,60.0,,,,False
+Sangli,Capital Goods,47.0,534.0,7.0,,,,346,batch6_raigad_to_solapur_proper.csv,900.0,88.0,,,,False
+Sangli,Construction,313.0,136.0,15.0,,,,347,batch6_raigad_to_solapur_proper.csv,960.0,,168.0,True,False,True
+Sangli,Electronics,905.0,10.0,1.0,,,,347,batch6_raigad_to_solapur_proper.csv,1170.0,970.0,56.0,True,False,True
+Sangli,Green Jobs,168.0,,3.0,,,,348,batch6_raigad_to_solapur_proper.csv,120.0,,0.0,True,True,True
+Sangli,Healthcare,1034.0,,4.0,,,,348,batch6_raigad_to_solapur_proper.csv,900.0,,,,,False
+Sangli,Iron & Steel,74.0,609.0,9.0,,,,348,batch6_raigad_to_solapur_proper.csv,60.0,,,,,False
+Sangli,Logistics,14.0,,,,,,348,batch6_raigad_to_solapur_proper.csv,420.0,,,,,False
+Sangli,Management,828.0,75.0,5.0,,,,349,batch6_raigad_to_solapur_proper.csv,240.0,,,,,False
+Sangli,Plumbing,30.0,,0.0,,,,349,batch6_raigad_to_solapur_proper.csv,120.0,60.0,,,,False
+Sangli,Power,204.0,,2.0,,,,349,batch6_raigad_to_solapur_proper.csv,300.0,44.0,,,,False
+Sangli,Retail,,,,,,,349,batch6_raigad_to_solapur_proper.csv,60.0,,56.0,True,False,True
+Sangli,Telecom,35.0,,,,,,350,batch6_raigad_to_solapur_proper.csv,300.0,,0.0,True,True,True
+Sangli,Textile,55.0,200.0,1.0,,,,350,batch6_raigad_to_solapur_proper.csv,60.0,,,,,False

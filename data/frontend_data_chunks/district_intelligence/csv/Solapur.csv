@@ -1,0 +1,15 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Solapur,Agriculture,392.0,947.0,17.0,,,,382,batch6_raigad_to_solapur_proper.csv,2340.0,180.0,56.0,True,False,True
+Solapur,Apparel,258.0,105.0,2.0,,,,382,batch6_raigad_to_solapur_proper.csv,1260.0,3951.0,,,,False
+Solapur,Automotive,271.0,2861.0,7.0,,,,382,batch6_raigad_to_solapur_proper.csv,150.0,60.0,,,,False
+Solapur,Capital Goods,56.0,767.0,8.0,,,,383,batch6_raigad_to_solapur_proper.csv,1140.0,1310.0,,,,False
+Solapur,Construction,211.0,1848.0,15.0,,,,383,batch6_raigad_to_solapur_proper.csv,960.0,,526.0,True,False,True
+Solapur,Electronics,731.0,350.0,9.0,,,,383,batch6_raigad_to_solapur_proper.csv,1500.0,2611.0,0.0,True,True,True
+Solapur,Green Jobs,82.0,,,,,,383,batch6_raigad_to_solapur_proper.csv,120.0,30.0,0.0,True,True,True
+Solapur,Healthcare,515.0,1201.0,10.0,,,,384,batch6_raigad_to_solapur_proper.csv,1860.0,,,,,False
+Solapur,Logistics,16.0,,,,,,384,batch6_raigad_to_solapur_proper.csv,1560.0,540.0,,,,False
+Solapur,Management,362.0,133.0,6.0,,,,384,batch6_raigad_to_solapur_proper.csv,1080.0,874.0,,,,False
+Solapur,Plumbing,5.0,110.0,1.0,,,,385,batch6_raigad_to_solapur_proper.csv,180.0,,,,,False
+Solapur,Power,93.0,,,,,,385,batch6_raigad_to_solapur_proper.csv,330.0,60.0,,,,False
+Solapur,Retail,,,,,,,385,batch6_raigad_to_solapur_proper.csv,300.0,,38.0,True,False,True
+Solapur,Textile,39.0,228.0,6.0,,,,385,batch6_raigad_to_solapur_proper.csv,390.0,,,,,False

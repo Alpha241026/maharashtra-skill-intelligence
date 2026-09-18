@@ -1,0 +1,28 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Nashik,Agriculture,450.0,1058.0,5.0,,,,272,batch5_nanded_to_pune_proper_clean.csv,2850.0,,200.0,True,False,True
+Nashik,Apparel,168.0,2.0,2.0,,,,272,batch5_nanded_to_pune_proper_clean.csv,540.0,145.0,,,,False
+Nashik,Automotive,298.0,11687.0,10.0,,,,272,batch5_nanded_to_pune_proper_clean.csv,420.0,90.0,,,,False
+Nashik,Capital Goods,32.0,1521.0,8.0,,,,273,batch5_nanded_to_pune_proper_clean.csv,640.0,389.0,,,,False
+Nashik,Construction,253.0,,,,,,273,batch5_nanded_to_pune_proper_clean.csv,540.0,,210.0,True,False,True
+Nashik,Domestic Workers,44.0,,,,,,273,batch5_nanded_to_pune_proper_clean.csv,1540.0,24.0,,,,False
+Nashik,Electronics,460.0,1060.0,7.0,,,,274,batch5_nanded_to_pune_proper_clean.csv,840.0,240.0,180.0,True,False,True
+Nashik,Food Processing,154.0,900.0,1.0,,,,274,batch5_nanded_to_pune_proper_clean.csv,1140.0,434.0,,,,False
+Nashik,Furniture & Fittings,33.0,5.0,1.0,,,,274,batch5_nanded_to_pune_proper_clean.csv,790.0,,,,,False
+Nashik,Green Jobs,111.0,,,,,,274,batch5_nanded_to_pune_proper_clean.csv,520.0,,0.0,True,True,True
+Nashik,Handicraft & Carpet,25.0,,,,,,275,batch5_nanded_to_pune_proper_clean.csv,1020.0,,,,,False
+Nashik,Healthcare,686.0,,1.0,,,,275,batch5_nanded_to_pune_proper_clean.csv,1230.0,90.0,,,,False
+Nashik,Hydrocarbon,19.0,,,,,,275,batch5_nanded_to_pune_proper_clean.csv,240.0,120.0,,,,False
+Nashik,Infrastructure,11.0,37.0,1.0,,,,275,batch5_nanded_to_pune_proper_clean.csv,240.0,,,,,False
+Nashik,Iron & Steel,41.0,264.0,3.0,,,,275,batch5_nanded_to_pune_proper_clean.csv,,,,,,False
+Nashik,Leather,18.0,,,,,,276,batch5_nanded_to_pune_proper_clean.csv,240.0,30.0,,,,False
+Nashik,Life Science,344.0,,,,,,276,batch5_nanded_to_pune_proper_clean.csv,210.0,40.0,,,,False
+Nashik,Logistics,13.0,,,,,,276,batch5_nanded_to_pune_proper_clean.csv,480.0,20.0,,,,False
+Nashik,Management,541.0,1099.0,6.0,,,,276,batch5_nanded_to_pune_proper_clean.csv,1220.0,23.0,,,,False
+Nashik,Media & Entertainment,207.0,,,,,,276,batch5_nanded_to_pune_proper_clean.csv,330.0,180.0,,,,False
+Nashik,Paints & Coatings,27.0,50.0,1.0,,,,277,batch5_nanded_to_pune_proper_clean.csv,310.0,,,,,False
+Nashik,Plumbing,10.0,,,,,,277,batch5_nanded_to_pune_proper_clean.csv,480.0,3.0,,,,False
+Nashik,Power,112.0,,,,,,277,batch5_nanded_to_pune_proper_clean.csv,340.0,233.0,,,,False
+Nashik,Retail,,,,,,,277,batch5_nanded_to_pune_proper_clean.csv,300.0,,400.0,True,False,True
+Nashik,Rubber,3.0,133.0,1.0,,,,277,batch5_nanded_to_pune_proper_clean.csv,240.0,,,,,False
+Nashik,Sports,249.0,,,,,,277,batch5_nanded_to_pune_proper_clean.csv,270.0,,,,,False
+Nashik,Tourism & Hospitality,111.0,8333.0,1.0,,,,278,batch5_nanded_to_pune_proper_clean.csv,630.0,62.0,,,,False

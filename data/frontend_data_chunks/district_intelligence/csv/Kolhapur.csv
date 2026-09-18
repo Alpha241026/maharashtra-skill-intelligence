@@ -1,0 +1,29 @@
+district,sector,candidate_aspiration,industry_size,organization_count,dsdp,mssds_trained,inference,pdf_page,source_batch,dsdp_training,mssds_trained_2022_23,projected_training,projection_available,projection_value_is_zero,projection_matched
+Kolhapur,Agriculture,277.0,35.0,2.0,,,,192,batch4_jalgaon_to_nagpur.csv,720.0,290.0,549.0,True,False,True
+Kolhapur,Apparel,214.0,840.0,7.0,,,,192,batch4_jalgaon_to_nagpur.csv,960.0,2474.0,,,,False
+Kolhapur,Automotive,125.0,4789.0,17.0,,,,193,batch4_jalgaon_to_nagpur.csv,450.0,,,,,False
+Kolhapur,Beauty & Wellness,355.0,,1.0,,,,193,batch4_jalgaon_to_nagpur.csv,330.0,425.0,,,,False
+Kolhapur,BFSI,1578.0,2948.0,8.0,,,,193,batch4_jalgaon_to_nagpur.csv,240.0,450.0,,,,False
+Kolhapur,Capital Goods,50.0,3413.0,61.0,,,,193,batch4_jalgaon_to_nagpur.csv,420.0,943.0,,,,False
+Kolhapur,Construction,110.0,291.0,7.0,,,,194,batch4_jalgaon_to_nagpur.csv,360.0,,1236.0,True,False,True
+Kolhapur,Electronics,394.0,110.0,3.0,,,,194,batch4_jalgaon_to_nagpur.csv,780.0,1741.0,0.0,True,True,True
+Kolhapur,Food Processing,230.0,447.0,5.0,,,,194,batch4_jalgaon_to_nagpur.csv,240.0,570.0,,,,False
+Kolhapur,Furniture & Fittings,14.0,55.0,3.0,,,,194,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Kolhapur,Gem & Jewellery,102.0,,,,,,194,batch4_jalgaon_to_nagpur.csv,90.0,335.0,,,,False
+Kolhapur,Green Jobs,75.0,,,,,,194,batch4_jalgaon_to_nagpur.csv,30.0,,0.0,True,True,True
+Kolhapur,Handicraft & Carpet,43.0,15.0,1.0,,,,195,batch4_jalgaon_to_nagpur.csv,90.0,,,,,False
+Kolhapur,Healthcare,435.0,153.0,3.0,,,,195,batch4_jalgaon_to_nagpur.csv,750.0,60.0,,,,False
+Kolhapur,Hydrocarbon,16.0,0.0,,,,,195,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Kolhapur,Iron & Steel,16.0,2052.0,13.0,,,,195,batch4_jalgaon_to_nagpur.csv,60.0,,,,,False
+Kolhapur,IT/ITeS,1824.0,32.0,7.0,,,,195,batch4_jalgaon_to_nagpur.csv,690.0,450.0,0.0,True,True,True
+Kolhapur,Life Science,199.0,195.0,4.0,,,,195,batch4_jalgaon_to_nagpur.csv,30.0,,,,,False
+Kolhapur,Logistics,4.0,529.0,4.0,,,,196,batch4_jalgaon_to_nagpur.csv,240.0,,,,,False
+Kolhapur,Management,561.0,4171.0,6.0,,,,196,batch4_jalgaon_to_nagpur.csv,180.0,,,,,False
+Kolhapur,Media & Entertainment,161.0,,,,,,196,batch4_jalgaon_to_nagpur.csv,270.0,1710.0,,,,False
+Kolhapur,Paints & Coatings,24.0,300.0,1.0,,,,196,batch4_jalgaon_to_nagpur.csv,,,,,,False
+Kolhapur,Plumbing,8.0,,,,,,196,batch4_jalgaon_to_nagpur.csv,120.0,60.0,,,,False
+Kolhapur,Power,47.0,40.0,1.0,,,,196,batch4_jalgaon_to_nagpur.csv,120.0,120.0,,,,False
+Kolhapur,Retail,,,,,,,196,batch4_jalgaon_to_nagpur.csv,60.0,,0.0,True,True,True
+Kolhapur,Telecom,31.0,,,,,,197,batch4_jalgaon_to_nagpur.csv,150.0,360.0,0.0,True,True,True
+Kolhapur,Textile,63.0,792.0,5.0,,,,197,batch4_jalgaon_to_nagpur.csv,120.0,,,,,False
+Kolhapur,Tourism & Hospitality,132.0,611.0,13.0,,,,197,batch4_jalgaon_to_nagpur.csv,240.0,990.0,,,,False
