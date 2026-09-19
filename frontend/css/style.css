@@ -1680,7 +1680,6 @@ p:hover,
 .login-persona-tab.is-active { color:#fff; background:#155e75; box-shadow:0 2px 5px rgba(15,43,72,0.14); }
 .login-persona-heading { padding-bottom:2px; }.login-persona-heading p { margin-top:4px; color:#64748b; font-size:0.72rem; line-height:1.45; }
 .government-login-panel { padding:20px 24px 24px; }.government-login-panel .btn-google-auth { width:100%; }
-.login-persona-note { padding:0 24px 18px; color:#64748b; text-align:center; font-size:0.67rem; }.login-persona-note strong { color:#155e75; font-family:var(--font-mono); }
 .student-login-submit { background:linear-gradient(135deg,#155e75 0%,#0f766e 100%); }
 
 .form-field-group {
