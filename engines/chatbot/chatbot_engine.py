@@ -1,4 +1,4 @@
-"""Grounded Chatbot Engine querying ProjectedTrainingIntelligence, SupplyAlignmentEngine, ITI Supply, and Official Reference data."""
+﻿"""Grounded Chatbot Engine querying ProjectedTrainingIntelligence, SupplyAlignmentEngine, ITI Supply, and Official Reference data."""
 
 import re
 from pathlib import Path
@@ -13,6 +13,7 @@ from engines.ml.projected_training_intelligence import (
 from engines.ml.supply_alignment import SupplyAlignmentEngine, DEFAULT_ITI_PATH
 from engines.labour_market.job_market_intelligence import JobMarketIntelligence
 from engines.labour_market.skill_gap_engine import SkillGapEngine
+from engines.chatbot.ollama_client import OllamaClient
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 DEFAULT_REF_PATH = PROJECT_ROOT / "data" / "processed" / "training" / "official_trade_skills_reference.csv"
@@ -78,6 +79,7 @@ class GroundedChatbotEngine:
         self.jmi = JobMarketIntelligence()
         self.sge = SkillGapEngine()
         self.curriculum_path = PROJECT_ROOT / "data" / "processed" / "curriculum" / "cse_it_curriculum.csv"
+        self.ollama = OllamaClient()
 
 
         self._districts: List[str] = []
@@ -103,6 +105,7 @@ class GroundedChatbotEngine:
             "district": None,
             "sector": None,
             "trade": None,
+            "subject": None,
             "last_intent": None,
             "last_result": None,
         }
@@ -244,13 +247,13 @@ class GroundedChatbotEngine:
             }
 
         for g in greetings:
-            if q_lower == g or q_lower.startswith(g + " ") or q_lower.endswith(" " + g) or q_lower == (g + " 👋"):
+            if q_lower == g or q_lower.startswith(g + " ") or q_lower.endswith(" " + g) or q_lower == (g + " ðŸ‘‹"):
                 return {
                     "query": query,
                     "status": "greeting",
                     "matched_district": self.context.get("district"),
                     "matched_sector": self.context.get("sector"),
-                    "answer": "Hello! 👋 I'm the Maharashtra Skill Intelligence Assistant. I can help you explore Maharashtra skill-development data, projected training demand, ITI capacity, sector rankings, trade supply, competencies, and training-alignment insights.",
+                    "answer": "Hello! ðŸ‘‹ I'm the Maharashtra Skill Intelligence Assistant. I can help you explore Maharashtra skill-development data, projected training demand, ITI capacity, sector rankings, trade supply, competencies, and training-alignment insights.",
                     "details": None,
                 }
 
@@ -263,10 +266,10 @@ class GroundedChatbotEngine:
                     "matched_sector": self.context.get("sector"),
                     "answer": (
                         "I am the specialized Maharashtra Skill Intelligence Assistant. I can help you with:\n"
-                        "• District-level projected training demand & sector rankings\n"
-                        "• ITI training capacity & trade supply lookup\n"
-                        "• Potential training-capacity alignment gaps\n"
-                        "• Official ITI trade curriculum competencies\n"
+                        "â€¢ District-level projected training demand & sector rankings\n"
+                        "â€¢ ITI training capacity & trade supply lookup\n"
+                        "â€¢ Potential training-capacity alignment gaps\n"
+                        "â€¢ Official ITI trade curriculum competencies\n"
                         "\nYou can ask me about any district (e.g. Pune, Nashik, Mumbai City), sector (e.g. Construction, Agriculture), or ITI trade (e.g. Electrician, Welder)."
                     ),
                     "details": None,
@@ -584,93 +587,93 @@ class GroundedChatbotEngine:
         }
 
     def _handle_job_demand(self, query: str, district: Optional[str]) -> Optional[Dict[str, Any]]:
-        q_lower = query.lower()
+        """Return factual IT job-role demand evidence."""
         domain = "IT"
         self.context["last_intent"] = "job_demand"
-        loc_str = district or 'Maharashtra'
-        
-        wants_roles = "job" in q_lower or "role" in q_lower
-        wants_skills = "skill" in q_lower or "technolog" in q_lower
-        
-        if wants_roles and not wants_skills:
-            roles = self.jmi.get_top_roles(location=district, domain=domain, top_n=5)
-            if not roles:
-                return {
-                    "query": query, "status": "success", "matched_district": district, "matched_sector": None,
-                    "answer": f"The available dataset does not contain sufficient evidence to report major IT roles for {loc_str}.", "details": None
-                }
-            
-            top_roles_list = [r['role'] for r in roles[:3]]
-            ans = [f"**Direct Answer**\n{top_roles_list[0]} is the most frequently observed IT role in the {loc_str} listings analyzed, followed by {top_roles_list[1]} and {top_roles_list[2]}.", ""]
-            
-            ans.append("**Evidence**")
-            for r in roles[:5]:
-                ans.append(f"- {r['role']} ({r['demand_percentage']:.1f}%)")
-            ans.append("")
-            
-            ans.append("**What the data indicates**")
-            if "Developer" in top_roles_list[0] or "Engineer" in top_roles_list[0]:
-                ans.append(f"The role distribution shows that software engineering and development positions make up a particularly visible part of the available {loc_str} listings. The presence of {top_roles_list[0]} at {roles[0]['demand_percentage']:.1f}% indicates concentrated demand for core development tasks, while the remaining roles show demand across multiple technical specializations.")
-            else:
-                ans.append(f"The high concentration of {top_roles_list[0]} listings reflects its frequent appearance in the available data for {loc_str}. This pattern suggests a strong regional focus on the specific responsibilities associated with this role.")
-            ans.append("")
-            
-            ans.append("**Practical implication**")
-            ans.append("For skill-development planning, these role patterns provide a basis for examining whether training pathways provide the technical skills and practical experience associated with the most frequently observed roles.")
-            ans.append("")
-            
-            ans.append("**Continue the conversation:**")
-            ans.append(f"• Which specific technical skills are required for {top_roles_list[0]}?")
-            ans.append("• Are there observable curriculum gaps for these roles?")
-            if loc_str == 'Maharashtra':
-                ans.append("• How does the role distribution differ in Pune vs Mumbai?")
-            else:
-                ans.append(f"• How does {loc_str} compare with Mumbai?")
-            
+        loc_str = district or "Maharashtra"
+
+        roles = self.jmi.get_top_roles(
+            location=district,
+            domain=domain,
+            top_n=5,
+        )
+
+        if not roles:
             return {
-                "query": query, "status": "success", "matched_district": district, "matched_sector": None,
-                "answer": "\n".join(ans), "details": roles
+                "query": query,
+                "status": "success",
+                "matched_district": district,
+                "matched_sector": None,
+                "answer": (
+                    f"The available dataset does not contain sufficient evidence "
+                    f"to report IT job roles for {loc_str}."
+                ),
+                "details": None,
             }
-        
-        # Default to skills
-        skills = self.jmi.get_top_skills(location=district, domain=domain, top_n=5)
+
+        role_evidence = []
+        for role in roles:
+            role_evidence.append({
+                "role": role.get("role"),
+                "job_count": role.get("job_count"),
+                "demand_percentage": round(
+                    float(role.get("demand_percentage", 0)),
+                    2,
+                ),
+            })
+
+        return {
+            "query": query,
+            "status": "success",
+            "matched_district": district,
+            "matched_sector": None,
+            "answer": f"The supplied IT job data for {loc_str} contains observed job-role demand data.",
+            "details": role_evidence,
+        }
+
+    def _handle_skill_demand(self, query: str, district: Optional[str]) -> Optional[Dict[str, Any]]:
+        """Return factual IT skill-demand evidence."""
+        domain = "IT"
+        self.context["last_intent"] = "skill_demand"
+        loc_str = district or "Maharashtra"
+
+        skills = self.jmi.get_top_skills(
+            location=district,
+            domain=domain,
+            top_n=5,
+        )
+
         if not skills:
             return {
-                "query": query, "status": "success", "matched_district": district, "matched_sector": None,
-                "answer": f"The available dataset does not contain sufficient evidence to report major IT skills for {loc_str}.", "details": None
+                "query": query,
+                "status": "success",
+                "matched_district": district,
+                "matched_sector": None,
+                "answer": (
+                    f"The available dataset does not contain sufficient evidence "
+                    f"to report IT skill demand for {loc_str}."
+                ),
+                "details": None,
             }
-            
-        top_skills_list = [s['skill'] for s in skills[:3]]
-        ans = [f"**Direct Answer**\n{top_skills_list[0]} is the most frequently observed IT skill in the {loc_str} dataset, appearing in {skills[0]['demand_percentage']:.1f}% of analyzed listings, followed closely by {top_skills_list[1]} and {top_skills_list[2]}.", ""]
-        
-        ans.append("**Evidence**")
-        for s in skills[:5]:
-            ans.append(f"- {s['skill']} ({s['demand_percentage']:.1f}%)")
-        ans.append("")
-        
-        ans.append("**What the data indicates**")
-        diff = skills[0]['demand_percentage'] - skills[1]['demand_percentage']
-        if "SQL" in top_skills_list and ("Python" in top_skills_list or "Java" in top_skills_list):
-            ans.append(f"The concentration of these skills is notable: all are represented across a substantial share of the available listings, indicating that database knowledge and core programming skills form an important foundational part of the observed {loc_str} IT job market. The difference between the leading skills is relatively small ({diff:.1f}%), suggesting they are often co-requested.")
-        else:
-            ans.append(f"The concentration of {top_skills_list[0]} and {top_skills_list[1]} indicates a strong structural requirement for these technologies in the {loc_str} market. The observed data highlights a clear technical foundation.")
-        ans.append("")
-            
-        ans.append("**Practical implication**")
-        ans.append(f"Training providers could consider maintaining strong foundations in {top_skills_list[0]} and {top_skills_list[1]} while using role-specific projects to connect these skills with actual job requirements.")
-        ans.append("")
-        
-        ans.append("**Continue the conversation:**")
-        ans.append(f"• Which IT roles use {top_skills_list[0]} most frequently?")
-        ans.append("• Which of these skills are currently missing from the state curriculum?")
-        if loc_str == 'Maharashtra':
-            ans.append("• How does the skill demand differ between Pune and Mumbai?")
-        else:
-            ans.append("• What are the most frequently observed IT roles in this region?")
-        
+
+        skill_evidence = []
+        for skill in skills:
+            skill_evidence.append({
+                "skill": skill.get("skill"),
+                "job_count": skill.get("job_count"),
+                "demand_percentage": round(
+                    float(skill.get("demand_percentage", 0)),
+                    2,
+                ),
+            })
+
         return {
-            "query": query, "status": "success", "matched_district": district, "matched_sector": None,
-            "answer": "\n".join(ans), "details": skills
+            "query": query,
+            "status": "success",
+            "matched_district": district,
+            "matched_sector": None,
+            "answer": "In " + loc_str + ", the observed IT skill-demand data includes: " + "; ".join(f"{item['skill']} ({item['job_count']} listings, {item['demand_percentage']:.2f}%)" for item in skill_evidence[:5]) + ".",
+            "details": skill_evidence,
         }
 
     def _handle_skill_gap(self, query: str, district: Optional[str]) -> Optional[Dict[str, Any]]:
@@ -726,9 +729,9 @@ class GroundedChatbotEngine:
         ans.append("")
         
         ans.append("**Continue the conversation:**")
-        ans.append(f"• Which job roles are associated with the {gap_list[0]} gap?")
-        ans.append(f"• How does Pune's demand compare with the current curriculum?")
-        ans.append("• Which gaps are strongest in the available data?")
+        ans.append(f"â€¢ Which job roles are associated with the {gap_list[0]} gap?")
+        ans.append(f"â€¢ How does Pune's demand compare with the current curriculum?")
+        ans.append("â€¢ Which gaps are strongest in the available data?")
         
         return {
             "query": query, "status": "success", "matched_district": district, "matched_sector": None,
@@ -784,9 +787,9 @@ class GroundedChatbotEngine:
         ans.append("")
             
         ans.append("**Continue the conversation:**")
-        ans.append(f"• Which skills differ most significantly between {d1} and {d2}?")
-        ans.append(f"• What curriculum changes could be considered for {d1}?")
-        ans.append("• How does the projected training supply compare across these districts?")
+        ans.append(f"â€¢ Which skills differ most significantly between {d1} and {d2}?")
+        ans.append(f"â€¢ What curriculum changes could be considered for {d1}?")
+        ans.append("â€¢ How does the projected training supply compare across these districts?")
         
         return {
             "query": query, "status": "success", "matched_district": f"{d1}, {d2}", "matched_sector": None,
@@ -863,7 +866,7 @@ class GroundedChatbotEngine:
         else:
             sec_list_str = top_sector_names[0]
 
-        lines = [f"Sure! Here's a quick look at {district}'s skill and training situation. ≡ƒæç", ""]
+        lines = [f"Sure! Here's a quick look at {district}'s skill and training situation. â‰¡Æ’Ã¦Ã§", ""]
         lines.append(f"Based on available data, the strongest projected training needs in {district} are in {sec_list_str}:")
         for idx, item in enumerate(top_5, 1):
             lines.append(
@@ -899,8 +902,8 @@ class GroundedChatbotEngine:
         lines.append("")
         lines.append(
             f"If you'd like, I can also show you:\n"
-            f"ΓÇó which ITI trades are currently available in {district}, or\n"
-            f"ΓÇó how specific sector demand compares with training capacity."
+            f"Î“Ã‡Ã³ which ITI trades are currently available in {district}, or\n"
+            f"Î“Ã‡Ã³ how specific sector demand compares with training capacity."
         )
 
         answer = "\n".join(lines)
@@ -926,7 +929,115 @@ class GroundedChatbotEngine:
             self.context["last_result"] = greeting_res
             return greeting_res
 
-        # 2. INTENT-FIRST ROUTING BEFORE ENTITY EXTRACTION
+        # 2. Try Ollama Intent Understanding
+        intent_data = self.ollama.parse_intent(q_norm, self.context)
+        
+        if intent_data:
+            intent = intent_data.get("intent")
+            district = intent_data.get("district")
+            if district and district.lower() == "maharashtra":
+                district = None
+            subject = intent_data.get("subject")
+            
+            # Intercept explicit job demand queries that Ollama might misclassify
+            job_keywords = ["it jobs", "most demanded it jobs", "top it jobs", "job roles", "most demanded job roles"]
+            if any(k in q_lower for k in job_keywords):
+                intent = "job_demand"
+            
+            previous_intent = self.context.get("last_intent")
+            previous_result = self.context.get("last_result")
+            previous_district = previous_result.get("matched_district") if previous_result else self.context.get("district")
+            
+            is_new_district_followup = (
+                (intent in {"followup", "explanation"} or intent_data.get("context_reference") == "previous_result" or "what about" in q_lower)
+                and district
+                and previous_district
+                and str(district).strip().lower() != str(previous_district).strip().lower()
+                and previous_intent in {"job_demand", "skill_demand", "skill_gap"}
+            )
+            
+            if is_new_district_followup:
+                # Recompute deterministic result for new district using the PREVIOUS intent
+                res = None
+                if previous_intent == "job_demand":
+                    res = self._handle_job_demand(q_norm, district)
+                elif previous_intent == "skill_demand":
+                    res = self._handle_skill_demand(q_norm, district)
+                elif previous_intent == "skill_gap":
+                    res = self._handle_skill_gap(q_norm, district)
+                    
+                if res:
+                    self.context.update({
+                        "district": district,
+                        "subject": subject,
+                        "last_intent": previous_intent, # PRESERVE real intent
+                        "last_result": res,
+                    })
+                    # RETURN FRESH DETERMINISTIC RESULT IMMEDIATELY to avoid stale final_answer
+                    return res
+            
+            # Resolve district for normal flow
+            if intent_data.get("context_reference") == "previous_result":
+                if not district:
+                    district = self.context.get("district")
+                if not subject:
+                    subject = self.context.get("subject")
+                
+            if not district:
+                district = self.context.get("district")
+                
+            # DO NOT overwrite last_intent with followup/explanation
+            new_intent_to_save = intent if intent not in {"followup", "explanation"} else (previous_intent or intent)
+            self.context.update({"district": district, "subject": subject, "last_intent": new_intent_to_save})
+            
+            res = None
+            if intent == "job_demand":
+                res = self._handle_job_demand(q_norm, district)
+            elif intent == "skill_demand":
+                res = self._handle_skill_demand(q_norm, district)
+            elif intent == "curriculum_gap":
+                res = self._handle_skill_gap(q_norm, district)
+            elif intent == "general_information":
+                # General questions are answered by Ollama when project data
+                # does not provide a specific Maharashtra-grounded answer.
+                res = {
+                    "query": query,
+                    "status": "general_information",
+                    "matched_district": district,
+                    "matched_sector": None,
+                    "answer": None,
+                    "details": None
+                }
+                final_answer = self.ollama.generate_final_answer(q_norm, {}, intent_data)
+                if final_answer:
+                    res["answer"] = final_answer
+                else:
+                    res["answer"] = "I could not generate an answer right now."
+                self.context["last_result"] = res
+                return res
+
+            elif intent == "comparison":
+                res = self._handle_comparison(q_norm)
+            elif intent == "explanation" or intent == "followup":
+                res = self._handle_followups_and_explanations(q_norm, district, None, None)
+                if not res and subject:
+                    # Generic fallback if explanation not found
+                    res = {
+                        "query": query, "status": "success", "matched_district": district, "matched_sector": None,
+                        "answer": f"Let me explain more about {subject} in {district or 'Maharashtra'}.", "details": self.context.get("last_result", {}).get("details")
+                    }
+            
+            if res and intent != "unknown":
+                self.context["last_result"] = res
+                
+                # 3. Use Ollama for final answer generation if available
+                final_answer = self.ollama.generate_final_answer(q_norm, res.get("details", {}), intent_data)
+                if final_answer:
+                    res["answer"] = final_answer
+                    
+                return res
+
+        # 4. Fallback to existing deterministic routing if Ollama is disabled, fails, or returns unknown
         is_comparison = any(kw in q_lower for kw in ["compare", "difference", "differ", "versus", "vs", "between"])
         is_gap = any(kw in q_lower for kw in ["gap", "missing", "curriculum", "add", "based on industry demand"])
         is_it_demand = ("skill" in q_lower and "demand" in q_lower) or ("most demanded it skills" in q_lower) or ("technical skill" in q_lower) or ("skill" in q_lower and ("common" in q_lower or "learn" in q_lower))
@@ -958,7 +1069,13 @@ class GroundedChatbotEngine:
                 self.context.update({"district": district, "sector": raw_sec, "trade": raw_tr, "last_result": gap_res})
                 return gap_res
                 
-        if is_it_demand or is_it_jobs:
+        if is_it_demand:
+            skill_res = self._handle_skill_demand(q_norm, district)
+            if skill_res:
+                self.context.update({"district": district, "sector": raw_sec, "trade": raw_tr, "last_result": skill_res})
+                return skill_res
+
+        if is_it_jobs:
             job_res = self._handle_job_demand(q_norm, district)
             if job_res:
                 self.context.update({"district": district, "sector": raw_sec, "trade": raw_tr, "last_result": job_res})
@@ -1009,9 +1126,9 @@ class GroundedChatbotEngine:
                     "Government and training planners could consider using this data alongside local industry surveys to review whether training seat allocations should be adjusted to better match the projected requirement.",
                     "",
                     "**Continue the conversation:**",
-                    "• Which districts show potential shortages?",
-                    "• How does projected training compare with ITI capacity across sectors?",
-                    "• Which sectors have the strongest available evidence?"
+                    "â€¢ Which districts show potential shortages?",
+                    "â€¢ How does projected training compare with ITI capacity across sectors?",
+                    "â€¢ Which sectors have the strongest available evidence?"
                 ]
                 return {"query_type": "supply", "status": "success", "answer": "\n".join(ans), "matched_district": loc}
             except Exception as e:
