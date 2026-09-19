@@ -346,6 +346,10 @@
     if (el.districtSelect && el.districtSelect.value !== district) {
       el.districtSelect.value = district;
     }
+    if (el.assistantInput) {
+      el.assistantInput.value = '';
+      el.assistantInput.placeholder = 'Ask a question (e.g., What skills are in demand in ' + district + '?)';
+    }
 
     state.syncStatus.demand = 'syncing';
     state.syncStatus.iti    = 'syncing';
@@ -923,24 +927,27 @@
       var bandClass = band === 'high' ? 'band-high' : band === 'moderate' ? 'band-moderate' : 'band-low';
       var bandLabel = band.charAt(0).toUpperCase() + band.slice(1);
 
-      // Confidence bar width
+      // Confidence bar: color by confidence level
       var confBar = Math.min(100, confPct);
       var confColor = confPct >= 80 ? 'var(--status-green-bar)' : confPct >= 60 ? 'var(--status-amber-bar)' : 'var(--status-blue-bar)';
 
       return '<div class="cluster-card">'
         + '<div class="cluster-card-head">'
         +   '<span class="cluster-name">' + esc(s.sector) + '</span>'
-        +   '<span class="cluster-scale ' + bandClass + '">' + bandLabel + ' Demand</span>'
+        +   '<span class="badge-band ' + bandClass + '">' + bandLabel + ' Demand</span>'
         + '</div>'
         + '<p class="cluster-focus">'
         +   'MSSDS econometric model projects <strong>' + demandVal + ' trainees</strong> projected training requirement in ' + esc(state.activeDistrict) + '.'
         + '</p>'
-        + '<div class="cluster-metrics-subline">'
-        +   '<span>Confidence: <strong>' + confPct + '%</strong></span>'
-        +   '&bull;<span>Evidence: <strong>MSSDS Calibrated</strong></span>'
+        + '<div class="cluster-conf-line">'
+        +   'Confidence: <strong>' + confPct + '%</strong>'
+        +   ' <span class="cluster-conf-arrow">&rsaquo;</span>'
         + '</div>'
-        + '<div style="height:3px;background:var(--color-border-subtle);border-radius:2px;overflow:hidden;margin-top:4px;">'
-        +   '<div style="height:100%;width:' + confBar + '%;background:' + confColor + ';border-radius:2px;animation:bar-grow 0.8s ease both;"></div>'
+        + '<div class="cluster-conf-bar-track">'
+        +   '<div class="cluster-conf-bar-fill" style="width:' + confBar + '%;background:' + confColor + ';"></div>'
+        + '</div>'
+        + '<div class="cluster-evidence-line">'
+        +   'Evidence: <span class="cluster-evidence-val">MSSDS Calibrated</span>'
         + '</div>'
         + '</div>';
     });
@@ -1081,13 +1088,12 @@
     if (!el.assistantBox) return;
     var answer   = data.answer || 'No response generated.';
     var district = data.matched_district || state.activeDistrict || 'Maharashtra';
-    var evidenceBadge = data.evidence_used ? 'Skill Intelligence' : 'AI Assistant';
-    var sourceTag = evidenceBadge + ' &bull; ' + esc(district);
+    var sourceTag = 'AI ASSISTANT &bull; ' + esc(district).toUpperCase();
 
     el.assistantBox.innerHTML =
       '<div class="assistant-answer-block">'
       + '<span class="assistant-badge">' + sourceTag + '</span>'
-      + '<div class="assistant-lead-text" style="line-height:1.6;font-size:0.875rem;">' + formatMarkdownAnswer(answer) + '</div>'
+      + '<div class="assistant-lead-text">' + formatMarkdownAnswer(answer) + '</div>'
       + '</div>';
   }
 
@@ -1153,7 +1159,10 @@
           question = 'What are the projected growth trends for ' + district + '?';
         }
 
-        if (el.assistantInput) el.assistantInput.value = question;
+        if (el.assistantInput) {
+          el.assistantInput.value = '';
+          el.assistantInput.placeholder = 'Ask a question (e.g., What skills are in demand in ' + district + '?)';
+        }
         queryChat(question);
       });
     });

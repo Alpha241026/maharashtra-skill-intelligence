@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260919d">
+  <link rel="stylesheet" href="css/style.css?v=20260919f">
 </head>
 
 <body>
@@ -703,15 +703,7 @@
           </div>
 
           <div class="directive-content-body">
-            <div class="directive-lead-box">
-              <div class="directive-icon-circle" aria-hidden="true">
-                <img src="assets/icons/directive.svg" alt="" aria-hidden="true">
-              </div>
-              <div class="directive-statement">
-                <span class="directive-lead-label">Prescribed Strategic Intervention:</span>
-                <p class="policy-text" id="policy-directive-text">Synthesizing directive from active district records…</p>
-              </div>
-            </div>
+            <p class="policy-text" id="policy-directive-text">Synthesizing directive from active district records…</p>
 
             <div class="directive-rationale-grid">
               <div class="rationale-block">
@@ -730,7 +722,10 @@
           </div>
 
           <div class="panel-footer-bar directive-footer">
-            <span class="directive-statutory-note">&bull; Directives are dynamically reconciled from live ML demand bands and sanctioned DVET intake.</span>
+            <span class="directive-statutory-note">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:4px;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Directives are dynamically reconciled from live ML demand bands and sanctioned DVET intake.
+            </span>
           </div>
         </article>
 
@@ -749,7 +744,7 @@
 
           <!-- Suggested Investigation Chips -->
           <div class="assistant-controls-wrap">
-            <span class="assistant-prompt-label">Quick Strategic Inquiries:</span>
+            <span class="assistant-prompt-label">Quick Strategic Inquiries</span>
             <div class="query-chip-group" role="group" aria-label="Suggested district queries">
               <button type="button" class="query-chip-btn is-active" data-query="deficit">Deficit Breakdown</button>
               <button type="button" class="query-chip-btn" data-query="intake">Capacity &amp; Intake</button>
