@@ -51,7 +51,11 @@
           <div class="user-session-badge">
             <div class="user-info-text">
               <span class="user-name-label" id="header-user-email">Vivek Sharma</span>
-              <span class="user-role-label">Planning Officer</span>
+              <span class="user-role-label" id="header-user-role">Planning Officer</span>
+            </div>
+            <div class="role-switcher" id="role-switcher" role="group" aria-label="Choose platform persona">
+              <button type="button" class="role-switcher-option is-active" data-role="officer">Government / Planning Officer</button>
+              <button type="button" class="role-switcher-option" data-role="student">Student / Trainee Explorer</button>
             </div>
             <button type="button" class="btn-header-logout" id="btn-header-logout" title="Sign Out of Platform">Sign Out</button>
           </div>
@@ -118,72 +122,69 @@
         <!-- Dynamic Authentication Feedback (Visible only on loading or error) -->
         <div class="auth-status-panel" id="auth-status" role="alert" aria-live="polite" hidden></div>
 
-        <!-- Clean Real HTML Login Form -->
-        <form id="login-form" class="auth-login-form" novalidate>
+        <div class="login-persona-tabs" role="tablist" aria-label="Choose sign-in type">
+          <button type="button" class="login-persona-tab is-active" data-login-persona="student" role="tab" aria-selected="true">Student Explorer</button>
+          <button type="button" class="login-persona-tab" data-login-persona="government" role="tab" aria-selected="false">Government Officer</button>
+        </div>
+
+        <!-- Student demo access: intentionally separate from Firebase government authentication. -->
+        <form id="student-login-form" class="auth-login-form" novalidate>
+          <div class="login-persona-heading">
+            <span class="auth-gate-tag">Student Access</span>
+            <h2 class="auth-gate-title">Explore Skills &amp; Careers</h2>
+            <p>Use the student access ID to explore verified district demand and ITI capacity.</p>
+          </div>
           <div class="form-field-group">
-            <label for="login-email" class="form-field-label">
-              Email <span class="required-indicator" aria-hidden="true">*</span>
+            <label for="student-id" class="form-field-label">
+              Student ID <span class="required-indicator" aria-hidden="true">*</span>
             </label>
             <div class="form-input-shell">
               <svg class="field-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <input
-                type="email"
-                id="login-email"
-                name="email"
-                class="field-input-element"
-                placeholder="officer@maharashtra.gov.in"
-                autocomplete="username"
-                required
-              >
+              <input type="text" id="student-id" name="studentId" class="field-input-element" placeholder="STD001" autocomplete="username" required>
             </div>
           </div>
 
           <div class="form-field-group">
-            <label for="login-password" class="form-field-label">
+            <label for="student-password" class="form-field-label">
               Password <span class="required-indicator" aria-hidden="true">*</span>
             </label>
             <div class="form-input-shell">
-              <svg class="field-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-              <input
-                type="password"
-                id="login-password"
-                name="password"
-                class="field-input-element"
-                placeholder="Enter password"
-                autocomplete="current-password"
-                required
-              >
+              <svg class="field-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <input type="password" id="student-password" name="password" class="field-input-element" placeholder="Enter student password" autocomplete="current-password" required>
             </div>
           </div>
 
-          <button type="submit" class="btn-login-submit" id="btn-login-submit">
-            <span class="btn-login-text">Sign In</span>
-            <span class="btn-spinner" hidden aria-hidden="true"></span>
-          </button>
-
-          <div class="auth-divider-clean" role="separator">
-            <span class="divider-line"></span>
-            <span class="divider-text">OR CONTINUE WITH</span>
-            <span class="divider-line"></span>
-          </div>
-
-          <button type="button" class="btn-google-auth" id="btn-google-signin" title="Authenticate with Official Google Account">
-            <svg class="google-icon-svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/>
-              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.94H1.24v3.15C3.26 21.36 7.34 24 12 24z"/>
-              <path fill="#FBBC05" d="M5.28 14.26c-.25-.72-.38-1.49-.38-2.26s.13-1.54.38-2.26V6.59H1.24C.45 8.16 0 9.94 0 12s.45 3.84 1.24 5.41l4.04-3.15z"/>
-              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.24 6.59l4.04 3.15c.95-2.84 3.6-4.99 6.72-4.99z"/>
-            </svg>
-            <span class="btn-google-text">Sign In with Google</span>
+          <button type="submit" class="btn-login-submit student-login-submit" id="student-login-submit">
+            <span>Enter Student Explorer</span>
           </button>
         </form>
 
+        <!-- Government access remains Firebase Google authentication only. -->
+        <div id="government-login-panel" class="government-login-panel" hidden>
+          <div class="login-persona-heading">
+            <span class="auth-gate-tag">Government Access</span>
+            <h2 class="auth-gate-title">Planning Officer Sign-In</h2>
+            <p>Government users authenticate through the configured Firebase Google provider.</p>
+          </div>
+          <button type="button" class="btn-google-auth" id="btn-google-signin" title="Authenticate with Government Google Account">
+            <svg class="google-icon-svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.94H1.24v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.26c-.25-.72-.38-1.49-.38-2.26s.13-1.54.38-2.26V6.59H1.24C.45 8.16 0 9.94 0 12s.45 3.84 1.24 5.41l4.04-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.24 6.59l4.04 3.15C6.19 6.36 8.84 4.75 12 4.75z"/>
+            </svg>
+            <span class="btn-google-text">Continue with Government Google</span>
+          </button>
+        </div>
+
+        <form id="login-form" class="auth-login-form" hidden novalidate>
+          <input id="login-email" type="email"><input id="login-password" type="password">
+          <button type="submit" id="btn-login-submit"><span class="btn-login-text">Sign In</span><span class="btn-spinner" hidden></span></button>
+        </form>
+        <div class="auth-divider-clean" role="separator">
+          <span class="divider-line"></span><span class="divider-text">SEPARATE PERSONA ACCESS</span><span class="divider-line"></span>
+        </div>
+        <div class="login-persona-note">Student access: <strong>STD001</strong> / <strong>SIH2026</strong> &bull; Government access: Firebase Google</div>
         <div class="login-surface-footer">
           <span class="statutory-notice">OFFICIAL PLANNING CONSOLE &bull; UNAUTHORIZED ACCESS PROHIBITED</span>
         </div>
@@ -341,6 +342,74 @@
       </div>
     </section>
 
+    <div id="student-dashboard-view" class="student-dashboard-view" hidden>
+      <section class="student-hero" aria-labelledby="student-dashboard-title">
+        <div class="student-hero-copy">
+          <span class="student-eyebrow">STUDENT SKILL EXPLORER</span>
+          <h2 id="student-dashboard-title">Find your next skill direction in <span id="student-hero-district">Pune</span></h2>
+          <p>Understand the skills, projected training demand, and ITI training capacity around you in Maharashtra.</p>
+        </div>
+        <div class="student-live-note">
+          <span class="student-live-dot"></span>
+          <strong>Live district view</strong>
+          <span id="student-sync-label">MSSDS &amp; DVET feeds</span>
+        </div>
+      </section>
+
+      <section class="student-section" aria-labelledby="student-sector-title">
+        <div class="student-section-heading">
+          <div>
+            <span class="student-section-kicker">01 / EXPLORE</span>
+            <h2 id="student-sector-title">What should I explore?</h2>
+          </div>
+          <p>Projected training demand is a planning signal, not a list of open jobs or a placement guarantee.</p>
+        </div>
+        <div id="student-sector-cards" class="student-sector-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="student-section student-capacity-section" aria-labelledby="student-capacity-title">
+        <div class="student-section-heading">
+          <div>
+            <span class="student-section-kicker">02 / TRAINING</span>
+            <h2 id="student-capacity-title">What training exists in your district?</h2>
+          </div>
+          <div class="student-capacity-total"><span id="student-total-intake">—</span><small>sanctioned ITI seats</small></div>
+        </div>
+        <p class="student-section-intro">These are sanctioned vocational training seats reported through DVET. Capacity shows what is available locally; it does not promise admission or employment.</p>
+        <div id="student-iti-grid" class="student-iti-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="student-assistant-card" aria-labelledby="student-assistant-title">
+        <div class="student-assistant-heading">
+          <span class="student-section-kicker">03 / ASK</span>
+          <h2 id="student-assistant-title">Ask the Skill Assistant</h2>
+          <p>Ask about the live demand and training records for your district in plain language.</p>
+        </div>
+        <div class="student-prompt-chips" id="student-prompt-chips" role="group" aria-label="Student starter questions">
+          <button type="button" class="student-prompt-chip">What vocational skills are most in demand in this district?</button>
+          <button type="button" class="student-prompt-chip">What ITI trades have the highest training capacity in this district?</button>
+          <button type="button" class="student-prompt-chip">What does Moderate demand mean?</button>
+          <button type="button" class="student-prompt-chip">Which sectors are emerging in this district?</button>
+        </div>
+        <form class="student-assistant-form" id="student-assistant-form">
+          <input type="text" id="student-assistant-input" placeholder="Ask about skills, sectors, or ITI trades" aria-label="Ask the student skill assistant">
+          <button type="submit" class="student-assistant-submit">Ask assistant</button>
+        </form>
+        <div class="student-assistant-response" id="student-assistant-response" role="region" aria-live="polite"></div>
+      </section>
+
+      <div class="student-explore-drawer" id="student-explore-drawer" hidden role="dialog" aria-modal="true" aria-labelledby="student-drawer-title">
+        <div class="student-drawer-panel">
+          <button type="button" class="student-drawer-close" id="student-drawer-close" aria-label="Close sector details">&times;</button>
+          <span class="student-section-kicker">SECTOR CONTEXT</span>
+          <h2 id="student-drawer-title">Sector details</h2>
+          <div id="student-drawer-content"></div>
+          <button type="button" class="student-drawer-query" id="student-drawer-query">Ask the assistant about this sector</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="officer-dashboard-view">
     <!-- SEGMENT STICKY NAVIGATOR: Smooth Scroll & Segment Focus -->
     <nav class="segment-nav-strip" id="segment-nav-strip" aria-label="Dashboard Intelligence Segments">
       <div class="segment-nav-inner">
@@ -800,6 +869,8 @@
     </section>
 
   </main>
+
+  </div> <!-- /#officer-dashboard-view -->
 
   <!-- CONCISE INSTITUTIONAL FOOTER -->
   <footer class="app-footer" role="contentinfo">

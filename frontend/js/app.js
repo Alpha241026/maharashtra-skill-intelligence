@@ -132,6 +132,7 @@
   /* ── Runtime Application State ── */
   var state = {
     activeDistrict: DEFAULT_DISTRICT,
+    currentRole:    (window.localStorage && window.localStorage.getItem('sih_user_role') === 'student') ? 'student' : 'officer',
     activeFilter:   'all',
     demandSectors:  [],
     itiTrades:      [],
@@ -203,7 +204,33 @@
       assistantForm:        document.getElementById('assistant-query-form'),
       assistantInput:       document.getElementById('assistant-query-input'),
 
+      /* Student Explorer */
+      officerDashboardView: document.getElementById('officer-dashboard-view'),
+      studentDashboardView: document.getElementById('student-dashboard-view'),
+      roleSwitcher:         document.getElementById('role-switcher'),
+      headerUserRole:        document.getElementById('header-user-role'),
+      studentHeroDistrict:  document.getElementById('student-hero-district'),
+      studentSyncLabel:     document.getElementById('student-sync-label'),
+      studentSectorCards:   document.getElementById('student-sector-cards'),
+      studentTotalIntake:   document.getElementById('student-total-intake'),
+      studentItiGrid:       document.getElementById('student-iti-grid'),
+      studentPromptChips:   document.querySelectorAll('.student-prompt-chip'),
+      studentAssistantForm: document.getElementById('student-assistant-form'),
+      studentAssistantInput: document.getElementById('student-assistant-input'),
+      studentAssistantBox:  document.getElementById('student-assistant-response'),
+      studentDrawer:        document.getElementById('student-explore-drawer'),
+      studentDrawerTitle:   document.getElementById('student-drawer-title'),
+      studentDrawerContent: document.getElementById('student-drawer-content'),
+      studentDrawerClose:   document.getElementById('student-drawer-close'),
+      studentDrawerQuery:   document.getElementById('student-drawer-query'),
+
       /* Authentication UI elements */
+      studentLoginForm:       document.getElementById('student-login-form'),
+      studentIdInput:         document.getElementById('student-id'),
+      studentPasswordInput:   document.getElementById('student-password'),
+      studentLoginSubmit:     document.getElementById('student-login-submit'),
+      governmentLoginPanel:   document.getElementById('government-login-panel'),
+      loginPersonaTabs:       document.querySelectorAll('[data-login-persona]'),
       authLoadingView:      document.getElementById('auth-loading-view'),
       loginView:            document.getElementById('login-view'),
       dashboardView:        document.getElementById('dashboard-view'),
@@ -241,6 +268,23 @@
   /* ── Safe Text Setter ── */
   function setText(node, val) {
     if (node) node.textContent = val;
+  }
+
+  function setRole(role) {
+    state.currentRole = role === 'student' ? 'student' : 'officer';
+    try { window.localStorage.setItem('sih_user_role', state.currentRole); } catch (err) {}
+
+    if (el.officerDashboardView) el.officerDashboardView.hidden = state.currentRole !== 'officer';
+    if (el.studentDashboardView) el.studentDashboardView.hidden = state.currentRole !== 'student';
+    if (el.headerUserRole) setText(el.headerUserRole, state.currentRole === 'student' ? 'Student Explorer' : 'Planning Officer');
+    if (el.roleSwitcher) {
+      el.roleSwitcher.querySelectorAll('[data-role]').forEach(function(button) {
+        var active = button.getAttribute('data-role') === state.currentRole;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
+    if (state.currentRole === 'student') renderStudentDashboard();
   }
 
   /* ── Demand Band Marker Markup ── */
@@ -344,6 +388,10 @@
     }
     state.activeDistrict = district;
     state.activeFilter   = 'all';
+    state.demandSectors  = [];
+    state.itiTrades      = [];
+    state.itiTotalIntake = 0;
+    renderStudentDashboard();
 
     if (el.filterChips) {
       el.filterChips.forEach(function(c) {
@@ -489,6 +537,82 @@
     onDistrictChange(name);
   }
 
+  function studentDemandSignal(band) {
+    var normalized = (band || '').toLowerCase();
+    if (normalized === 'high') return 'High Demand Signal';
+    if (normalized === 'moderate') return 'Moderate Demand Signal';
+    return 'Emerging Demand Signal';
+  }
+
+  function renderStudentDashboard() {
+    setText(el.studentHeroDistrict, state.activeDistrict);
+    setText(el.studentSyncLabel, state.syncStatus.demand === 'failed' || state.syncStatus.iti === 'failed'
+      ? 'Some live records unavailable'
+      : 'MSSDS & DVET feeds');
+    renderStudentSectorCards(state.demandSectors);
+    renderStudentITICapacity(state.itiTrades, state.itiTotalIntake);
+  }
+
+  function renderStudentSectorCards(sectors) {
+    if (!el.studentSectorCards) return;
+    if (!sectors.length) {
+      el.studentSectorCards.innerHTML = '<div class="student-empty-state">Waiting for validated sector projections for ' + esc(state.activeDistrict) + '.</div>';
+      return;
+    }
+    el.studentSectorCards.innerHTML = sectors.map(function(sector) {
+      var projected = typeof sector.projected_training === 'number' ? sector.projected_training : 0;
+      var confidence = Math.round((typeof sector.evidence_confidence === 'number' ? sector.evidence_confidence : 0) * 100);
+      return '<article class="student-sector-card">'
+        + '<div class="student-card-topline"><span class="student-demand-signal signal-' + esc((sector.demand_band || 'emerging').toLowerCase()) + '">' + studentDemandSignal(sector.demand_band) + '</span><span class="student-confidence">' + confidence + '% evidence</span></div>'
+        + '<h3>' + esc(sector.sector) + '</h3>'
+        + '<div class="student-projected-value">' + projected.toFixed(2) + ' <small>projected trainees</small></div>'
+        + '<p>Use this projection to understand training demand, not as a direct job listing.</p>'
+        + '<button type="button" class="student-explore-button" data-student-sector="' + esc(sector.sector) + '">Explore sector <span aria-hidden="true">&rarr;</span></button>'
+        + '</article>';
+    }).join('');
+  }
+
+  function renderStudentITICapacity(trades, totalIntake) {
+    if (!el.studentItiGrid) return;
+    setText(el.studentTotalIntake, totalIntake ? totalIntake.toLocaleString('en-IN') : '—');
+    if (!trades.length) {
+      el.studentItiGrid.innerHTML = '<div class="student-empty-state">No validated ITI capacity records are available for this district.</div>';
+      return;
+    }
+    el.studentItiGrid.innerHTML = trades.slice(0, 12).map(function(trade) {
+      return '<article class="student-iti-card"><span class="student-iti-trade">' + esc(trade.trade) + '</span><strong>' + (trade.intake || 0).toLocaleString('en-IN') + '</strong><small>sanctioned seats</small></article>';
+    }).join('');
+  }
+
+  function openStudentSector(sectorName) {
+    var sector = state.demandSectors.find(function(item) { return item.sector === sectorName; });
+    if (!sector || !el.studentDrawer) return;
+    var projected = typeof sector.projected_training === 'number' ? sector.projected_training : 0;
+    var confidence = Math.round((typeof sector.evidence_confidence === 'number' ? sector.evidence_confidence : 0) * 100);
+    setText(el.studentDrawerTitle, sector.sector);
+    el.studentDrawerContent.innerHTML = '<p class="student-drawer-signal">' + studentDemandSignal(sector.demand_band) + '</p>'
+      + '<dl class="student-drawer-facts"><div><dt>Projected training requirement</dt><dd>' + projected.toFixed(2) + ' trainees</dd></div><div><dt>Evidence confidence</dt><dd>' + confidence + '%</dd></div></dl>'
+      + '<p>This is a modeled training requirement from the district demand feed. It is not a promise of employment, salary, or placement.</p>';
+    el.studentDrawerQuery.setAttribute('data-sector-query', sector.sector);
+    el.studentDrawer.hidden = false;
+  }
+
+  function bindStudentExplore() {
+    if (el.studentSectorCards) {
+      el.studentSectorCards.addEventListener('click', function(event) {
+        var button = event.target.closest('[data-student-sector]');
+        if (button) openStudentSector(button.getAttribute('data-student-sector'));
+      });
+    }
+    if (el.studentDrawerClose) el.studentDrawerClose.addEventListener('click', function() { el.studentDrawer.hidden = true; });
+    if (el.studentDrawer) el.studentDrawer.addEventListener('click', function(event) { if (event.target === el.studentDrawer) el.studentDrawer.hidden = true; });
+    if (el.studentDrawerQuery) el.studentDrawerQuery.addEventListener('click', function() {
+      var sector = el.studentDrawerQuery.getAttribute('data-sector-query');
+      el.studentDrawer.hidden = true;
+      queryChat('What does the projected training demand mean for ' + sector + ' in ' + state.activeDistrict + '?', el.studentAssistantBox);
+    });
+  }
+
   /* ══════════════════════════════════════════════════════════════
      02 — PROJECTED TRAINING DEMAND  (GET /api/demand?district=…)
      ══════════════════════════════════════════════════════════════ */
@@ -507,6 +631,7 @@
           : ((dLow === 'mumbai suburban' || dLow === 'mumbai')
             ? MUMBAI_STATIC_DEMAND.sectors : []));
       state.demandSectors = staticSectors;
+      renderStudentDashboard();
       state.syncStatus.demand = 'synced';
       updateGlobalSyncStatus();
       if (staticSectors.length) {
@@ -530,6 +655,7 @@
       var data    = await res.json();
       var sectors = Array.isArray(data.sectors) ? data.sectors : [];
       state.demandSectors = sectors;
+      renderStudentDashboard();
       state.syncStatus.demand = 'synced';
       updateGlobalSyncStatus();
 
@@ -555,6 +681,7 @@
             ? NASHIK_STATIC_DEMAND.sectors
             : MUMBAI_STATIC_DEMAND.sectors);
         state.demandSectors = staticSectors;
+        renderStudentDashboard();
         state.syncStatus.demand = 'synced';
         updateGlobalSyncStatus();
         renderDemand(staticSectors);
@@ -564,6 +691,7 @@
         return;
       }
       state.syncStatus.demand = 'failed';
+      renderStudentDashboard();
       updateGlobalSyncStatus();
       showDemandError(district, err.message);
       updateKPIs_demandOffline(district, err.message);
@@ -800,6 +928,7 @@
             : { total_intake: 0, trades: [] }));
       state.itiTrades      = staticData.trades;
       state.itiTotalIntake = staticData.total_intake;
+      renderStudentDashboard();
       state.syncStatus.iti = 'synced';
       updateGlobalSyncStatus();
       if (staticData.trades.length) {
@@ -822,6 +951,7 @@
 
       state.itiTrades      = trades;
       state.itiTotalIntake = totalIntake;
+      renderStudentDashboard();
       state.syncStatus.iti = 'synced';
       updateGlobalSyncStatus();
 
@@ -855,6 +985,7 @@
             : MUMBAI_STATIC_ITI.total_intake);
         state.itiTrades      = staticTrades;
         state.itiTotalIntake = staticTotal;
+        renderStudentDashboard();
         state.syncStatus.iti = 'synced';
         updateGlobalSyncStatus();
         setText(el.kpiSanctionedSeats, staticTotal.toLocaleString('en-IN'));
@@ -866,6 +997,7 @@
         return;
       }
       state.syncStatus.iti = 'failed';
+      renderStudentDashboard();
       updateGlobalSyncStatus();
       showITIError(district, err.message);
 
@@ -1098,10 +1230,11 @@
     return s;
   }
 
-  async function queryChat(question) {
-    if (!el.assistantBox) return;
+  async function queryChat(question, targetBox) {
+    targetBox = targetBox || el.assistantBox;
+    if (!targetBox) return;
 
-    el.assistantBox.innerHTML =
+    targetBox.innerHTML =
       '<div class="state-container state-loading" style="min-height:70px;padding:var(--space-2);">'
       + '<div class="state-spinner" style="width:18px;height:18px;"></div>'
       + '<div class="state-loading-text" style="font-size:0.75rem;">Analyzing skill records & querying AI…</div>'
@@ -1118,7 +1251,7 @@
       });
       if (res.ok) {
         var data = await res.json();
-        renderChatSuccess(data);
+        renderChatSuccess(data, targetBox);
         backendWorking = true;
         return;
       }
@@ -1132,34 +1265,36 @@
         var result = await window.SIHChatbot.ask(question, {
           activeDistrict: state.activeDistrict
         });
-        renderChatSuccess(result);
+        renderChatSuccess(result, targetBox);
         return;
       } catch (err) {
         console.warn('[SIH] SIHChatbot engine error:', err.message);
-        renderChatError(err.message, question);
+        renderChatError(err.message, question, targetBox);
         return;
       }
     }
 
-    renderChatError('AI engine not loaded. Please refresh the page.', question);
+    renderChatError('AI engine not loaded. Please refresh the page.', question, targetBox);
   }
 
-  function renderChatSuccess(data) {
-    if (!el.assistantBox) return;
+  function renderChatSuccess(data, targetBox) {
+    targetBox = targetBox || el.assistantBox;
+    if (!targetBox) return;
     var answer   = data.answer || 'No response generated.';
     var district = data.matched_district || state.activeDistrict || 'Maharashtra';
     var sourceTag = 'AI ASSISTANT &bull; ' + esc(district).toUpperCase();
 
-    el.assistantBox.innerHTML =
+    targetBox.innerHTML =
       '<div class="assistant-answer-block">'
       + '<span class="assistant-badge">' + sourceTag + '</span>'
       + '<div class="assistant-lead-text">' + formatMarkdownAnswer(answer) + '</div>'
       + '</div>';
   }
 
-  function renderChatError(detail, question) {
-    if (!el.assistantBox) return;
-    el.assistantBox.innerHTML =
+  function renderChatError(detail, question, targetBox) {
+    targetBox = targetBox || el.assistantBox;
+    if (!targetBox) return;
+    targetBox.innerHTML =
       '<div class="state-compact-error" style="margin:0;padding:var(--space-3);">'
       + '<span class="state-error-tag">Assistant Unavailable</span>'
       + '<div class="state-error-title" style="font-size:0.8125rem;">Could Not Reach AI Service</div>'
@@ -1167,7 +1302,7 @@
       + '<button type="button" class="btn-retry-action" id="retry-chat-main">↺ Retry</button>'
       + '</div>';
     var btn = document.getElementById('retry-chat-main');
-    if (btn) btn.addEventListener('click', function () { queryChat(question); });
+    if (btn) btn.addEventListener('click', function () { queryChat(question, targetBox); });
   }
 
   function loadInitialChat(district) {
@@ -1240,6 +1375,33 @@
       }
       queryChat(q);
     });
+  }
+
+  function bindStudentAssistant() {
+    if (el.studentPromptChips) {
+      el.studentPromptChips.forEach(function(chip) {
+        chip.addEventListener('click', function() {
+          var question = this.textContent.replace('this district', state.activeDistrict);
+          if (el.studentAssistantInput) el.studentAssistantInput.value = '';
+          queryChat(question, el.studentAssistantBox);
+        });
+      });
+    }
+    if (el.studentAssistantForm && el.studentAssistantInput) {
+      el.studentAssistantForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var question = el.studentAssistantInput.value.trim();
+        if (question) queryChat(question, el.studentAssistantBox);
+      });
+    }
+  }
+
+  function bindRoleSwitcher() {
+    if (!el.roleSwitcher) return;
+    el.roleSwitcher.querySelectorAll('[data-role]').forEach(function(button) {
+      button.addEventListener('click', function() { setRole(this.getAttribute('data-role')); });
+    });
+    setRole(state.currentRole);
   }
 
   function bindSegmentNavigation() {
@@ -1330,6 +1492,17 @@
   var authState = 'INITIALIZING';
   var dashboardInitialized = false;
 
+  function hasStudentSession() {
+    try { return window.sessionStorage.getItem('sih_student_session') === 'active'; } catch (err) { return false; }
+  }
+
+  function setStudentSession(active) {
+    try {
+      if (active) window.sessionStorage.setItem('sih_student_session', 'active');
+      else window.sessionStorage.removeItem('sih_student_session');
+    } catch (err) {}
+  }
+
   function renderAuthState(targetState, payload) {
     authState = targetState;
 
@@ -1342,6 +1515,10 @@
     }
 
     if (targetState === 'SIGNED_OUT') {
+      if (hasStudentSession()) {
+        renderAuthState('SIGNED_IN', { student: true });
+        return;
+      }
       if (el.authLoadingView) el.authLoadingView.hidden = true;
       if (el.loginView) el.loginView.hidden = false;
       if (el.dashboardView) el.dashboardView.hidden = true;
@@ -1393,9 +1570,8 @@
       if (el.headerAuthContainer) el.headerAuthContainer.hidden = false;
       if (el.authStatus) el.authStatus.hidden = true;
 
-      if (el.headerUserEmail) {
-        el.headerUserEmail.textContent = 'Vivek Sharma';
-      }
+      if (el.headerUserEmail) el.headerUserEmail.textContent = payload && payload.student ? 'Student Explorer' : 'Vivek Sharma';
+      setRole(payload && payload.student ? 'student' : 'officer');
       if (el.btnHeaderLogout) {
         el.btnHeaderLogout.disabled = false;
         el.btnHeaderLogout.textContent = 'Sign Out';
@@ -1438,46 +1614,22 @@
   }
 
   function bindAuthEvents() {
-    // 1. Handle Login Form Submit
-    if (el.loginForm) {
-      el.loginForm.addEventListener('submit', async function(e) {
+    // 1. Handle the separate student access form.
+    if (el.studentLoginForm) {
+      el.studentLoginForm.addEventListener('submit', function(e) {
         e.preventDefault();
-
-        var email = (el.loginEmail ? el.loginEmail.value : '').trim();
-        var password = (el.loginPassword ? el.loginPassword.value : '').trim();
-
-        if (!email || !password) {
-          renderAuthState('AUTH_ERROR', 'Please enter your email and password');
-          if (!email && el.loginEmail) el.loginEmail.focus();
-          else if (el.loginPassword) el.loginPassword.focus();
+        var studentId = el.studentIdInput ? el.studentIdInput.value.trim().toUpperCase() : '';
+        var password = el.studentPasswordInput ? el.studentPasswordInput.value : '';
+        if (studentId !== 'STD001' || password !== 'SIH2026') {
+          renderAuthState('AUTH_ERROR', 'Student ID or password is incorrect');
           return;
         }
-
-        // Email validation check
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          renderAuthState('AUTH_ERROR', 'Please enter a valid email address');
-          if (el.loginEmail) el.loginEmail.focus();
-          return;
-        }
-
-        if (!window.AuthModule || typeof window.AuthModule.signIn !== 'function') {
-          renderAuthState('AUTH_ERROR', 'Authentication service is not ready');
-          return;
-        }
-
-        renderAuthState('SIGNING_IN');
-
-        try {
-          await window.AuthModule.signIn(email, password);
-          // State transition to SIGNED_IN handled by onAuthStateChanged observer
-        } catch (err) {
-          renderAuthState('AUTH_ERROR', err.message || 'Unable to sign in');
-        }
+        setStudentSession(true);
+        renderAuthState('SIGNED_IN', { student: true });
       });
     }
 
-    // 2. Handle Google Sign In
+    // 2. Handle government Google Sign In through Firebase.
     if (el.btnGoogleSignIn) {
       el.btnGoogleSignIn.addEventListener('click', async function() {
         if (!window.AuthModule || typeof window.AuthModule.signInWithGoogle !== 'function') {
@@ -1500,13 +1652,13 @@
       });
     }
 
-    // 3. Connect existing Header Sign Out button
+    // 3. Connect the shared sign-out button for either persona.
     if (el.btnHeaderLogout) {
       el.btnHeaderLogout.addEventListener('click', async function() {
-        if (!window.AuthModule || typeof window.AuthModule.signOutUser !== 'function') return;
         renderAuthState('SIGNING_OUT');
+        setStudentSession(false);
         try {
-          await window.AuthModule.signOutUser();
+          if (window.AuthModule && typeof window.AuthModule.signOutUser === 'function') await window.AuthModule.signOutUser();
           // State transition to SIGNED_OUT handled by onAuthStateChanged observer
         } catch (err) {
           console.warn('[SIH] Sign out error:', err);
@@ -1572,6 +1724,9 @@
     bindFilterChips();
     bindQueryChips();
     bindAssistantForm();
+    bindStudentExplore();
+    bindStudentAssistant();
+    bindRoleSwitcher();
     bindSegmentNavigation();
     bindScrollEffects();
     bindKeyboardShortcuts();
@@ -1614,6 +1769,19 @@
         elem.classList.add('is-scrolled-in');
         elem.classList.remove('is-scrolled-out');
       }
+    });
+
+    if (el.loginPersonaTabs) el.loginPersonaTabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var isStudent = this.getAttribute('data-login-persona') === 'student';
+        el.loginPersonaTabs.forEach(function(item) {
+          var active = item === tab;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        if (el.studentLoginForm) el.studentLoginForm.hidden = !isStudent;
+        if (el.governmentLoginPanel) el.governmentLoginPanel.hidden = isStudent;
+      });
     });
 
     if ('IntersectionObserver' in window) {
