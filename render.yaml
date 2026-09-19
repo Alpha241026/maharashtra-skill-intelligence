@@ -3,7 +3,7 @@
 
 services:
   - type: web
-    name: maharashtra-skill-api
+    name: maharashtra-skill-intelligence
     runtime: python
     region: singapore           # closest to Maharashtra; change to your preferred region
 

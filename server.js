@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, 'frontend');
 
 const MIME_TYPES = {
@@ -48,32 +48,35 @@ function startBackend() {
     backendDir = path.join(__dirname, 'SIH backend', 'maharashtra-skill-intelligence-main');
   }
 
-  const userProfile = process.env.USERPROFILE || '';
-  const uvCandidate = path.join(userProfile, '.local', 'bin', 'uv.exe');
-  const uvCmd = fs.existsSync(uvCandidate) ? uvCandidate : 'uv';
+  const { execSync } = require('child_process');
+  let cmd = null;
+  let args = [];
 
-  const args = [
-    'run',
-    '--with', 'fastapi',
-    '--with', 'uvicorn',
-    '--with', 'pydantic',
-    '--with', 'pandas',
-    '--with', 'numpy',
-    '--with', 'scikit-learn',
-    '--with', 'joblib',
-    '--with', 'groq',
-    '--with', 'python-dotenv',
-    'python',
-    '-m', 'uvicorn',
-    'backend.main:app',
-    '--host', '127.0.0.1',
-    '--port', '8000'
+  const candidates = [
+    { bin: 'python3', args: ['-m', 'uvicorn', 'backend.main:app', '--host', '127.0.0.1', '--port', '8000'] },
+    { bin: 'python',  args: ['-m', 'uvicorn', 'backend.main:app', '--host', '127.0.0.1', '--port', '8000'] },
+    { bin: 'uv',      args: ['run', 'python', '-m', 'uvicorn', 'backend.main:app', '--host', '127.0.0.1', '--port', '8000'] }
   ];
 
-  console.log('[Backend] Starting FastAPI backend on http://127.0.0.1:8000 ...');
-  backendProcess = spawn(uvCmd, args, {
+  for (const c of candidates) {
+    try {
+      execSync(`${c.bin} --version`, { stdio: 'ignore' });
+      cmd = c.bin;
+      args = c.args;
+      break;
+    } catch (_) {}
+  }
+
+  if (!cmd) {
+    console.error('[Backend] Neither python3, python, nor uv found in PATH');
+    return;
+  }
+
+  console.log(`[Backend] Starting FastAPI backend using ${cmd} on http://127.0.0.1:8000 ...`);
+  backendProcess = spawn(cmd, args, {
     cwd: backendDir,
-    stdio: 'inherit'
+    stdio: 'inherit',
+    env: process.env
   });
 
   backendProcess.on('error', (err) => {
@@ -87,6 +90,7 @@ function startBackend() {
     backendProcess = null;
   });
 }
+
 
 function ensureBackend() {
   checkBackend((isRunning) => {

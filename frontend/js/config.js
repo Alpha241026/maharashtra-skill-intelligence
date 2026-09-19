@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Maharashtra Skill Intelligence Platform — Environment Configuration
  *
  * Controls environment detection, API base URL routing, and static host adaptation.
@@ -18,7 +18,8 @@
   // ── Render backend URL ───────────────────────────────────────────────────
   // Replace with your Render service URL after deploying the backend.
   // Leave as empty string "" to use verified MSSDS/DVET static baselines.
-  var RENDER_API = "";   // e.g. "https://maharashtra-skill-api.onrender.com"
+  var RENDER_API = "https://maharashtra-skill-intelligence.onrender.com";
+
 
   var hostname = window.location.hostname;
 
