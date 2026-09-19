@@ -91,6 +91,34 @@
     ]
   };
 
+  /* ── Verified Live MSSDS & DVET Baseline for Mumbai Suburban ── */
+  var MUMBAI_STATIC_DEMAND = {
+    district: "Mumbai Suburban",
+    sectors: [
+      { sector: "Retail",       projected_training: 2233.0, demand_band: "High",     evidence_confidence: 0.33 },
+      { sector: "Construction", projected_training: 905.0,  demand_band: "High",     evidence_confidence: 0.83 },
+      { sector: "Electronics", projected_training: 80.0,   demand_band: "Low",      evidence_confidence: 1.0  },
+      { sector: "Telecom",      projected_training: 50.0,   demand_band: "Low",      evidence_confidence: 0.83 },
+      { sector: "IT/ITeS",      projected_training: 0.0,    demand_band: "Low",      evidence_confidence: 1.0  }
+    ]
+  };
+
+  var MUMBAI_STATIC_ITI = {
+    total_intake: 3448,
+    trades: [
+      { trade: "Electrician (NSQF)",                   intake: 400 },
+      { trade: "Welder (NSQF)",                        intake: 300 },
+      { trade: "Fitter (NSQF)",                        intake: 260 },
+      { trade: "Electronics Mechanic (NSQF)",          intake: 240 },
+      { trade: "Mechanic Motor Vehicle (NSQF)",        intake: 216 },
+      { trade: "Refrigeration and Air Conditioner Technician (NSQF)", intake: 168 },
+      { trade: "Machinist (NSQF)",                     intake: 140 },
+      { trade: "Turner (NSQF)",                        intake: 140 },
+      { trade: "Wireman (NSQF)",                       intake: 100 },
+      { trade: "Food Production (General) (NSQF)",     intake: 96  }
+    ]
+  };
+
   /* ── Fallback Maharashtra District Registry (Official 36 Districts) ── */
   var FALLBACK_DISTRICTS = [
     'Ahmednagar', 'Akola', 'Amravati', 'Beed', 'Bhandara', 'Buldhana',
@@ -289,7 +317,7 @@
     // Preserve full district registry in application state
     state.allDistricts = names.slice();
 
-    // 1. Synchronized hidden select for API/form compatibility (Pune & Nashik only)
+    // 1. Synchronized hidden select for API/form compatibility (Pune, Nashik & Mumbai Suburban)
     var puneOpt = document.createElement('option');
     puneOpt.value = 'Pune';
     puneOpt.textContent = 'Pune (Baseline Pilot — Live MSSDS Data)';
@@ -301,6 +329,12 @@
     nashikOpt.textContent = 'Nashik (Live MSSDS Data)';
     if (state.activeDistrict && (state.activeDistrict.toLowerCase() === 'nashik' || state.activeDistrict.toLowerCase() === 'nasik')) nashikOpt.selected = true;
     el.districtSelect.appendChild(nashikOpt);
+
+    var mumbaiOpt = document.createElement('option');
+    mumbaiOpt.value = 'Mumbai Suburban';
+    mumbaiOpt.textContent = 'Mumbai Suburban (Live DVET Data)';
+    if (state.activeDistrict && (state.activeDistrict.toLowerCase() === 'mumbai suburban' || state.activeDistrict.toLowerCase() === 'mumbai')) mumbaiOpt.selected = true;
+    el.districtSelect.appendChild(mumbaiOpt);
   }
 
   function onDistrictChange(district) {
@@ -323,14 +357,21 @@
     }
     var pilotSub = document.getElementById('scope-pilot-subtext');
     if (pilotSub) {
-      pilotSub.textContent = (district.toLowerCase() === 'pune') ? 'Live MSSDS Feed' : '5 Priority Sectors';
+      var subSectorCount = (district.toLowerCase() === 'pune') ? 'Live MSSDS Feed'
+        : (district.toLowerCase() === 'mumbai suburban' || district.toLowerCase() === 'mumbai') ? '5 Priority Sectors · Financial Capital'
+        : '5 Priority Sectors';
+      pilotSub.textContent = subSectorCount;
     }
 
     // Update custom dropdown trigger visuals
     if (el.triggerDistrictName) setText(el.triggerDistrictName, district);
     if (el.triggerMetaTag) {
-      var isPune = district.toLowerCase() === 'pune';
-      var meta = isPune ? 'Baseline Pilot • Live MSSDS Feed' : 'Calibrated Live Data • 5 Priority Sectors';
+      var dLower = district.toLowerCase();
+      var meta = (dLower === 'pune')
+        ? 'Baseline Pilot • Live MSSDS Feed'
+        : (dLower === 'mumbai suburban' || dLower === 'mumbai')
+          ? 'Calibrated Live Data • Financial Capital Hub'
+          : 'Calibrated Live Data • 5 Priority Sectors';
       setText(el.triggerMetaTag, meta);
     }
 
@@ -461,7 +502,10 @@
       var dLow = district.toLowerCase();
       var staticSectors = (dLow === 'pune')
         ? PUNE_STATIC_DEMAND.sectors
-        : ((dLow === 'nashik' || dLow === 'nasik') ? NASHIK_STATIC_DEMAND.sectors : []);
+        : ((dLow === 'nashik' || dLow === 'nasik')
+          ? NASHIK_STATIC_DEMAND.sectors
+          : ((dLow === 'mumbai suburban' || dLow === 'mumbai')
+            ? MUMBAI_STATIC_DEMAND.sectors : []));
       state.demandSectors = staticSectors;
       state.syncStatus.demand = 'synced';
       updateGlobalSyncStatus();
@@ -470,7 +514,7 @@
         updateKPIs_demandSuccess(staticSectors);
         renderSectorDrivers(staticSectors);
       } else {
-        showDemandEmpty('Live district intelligence is currently calibrated for Pune and Nashik in the static deployment.');
+        showDemandEmpty('Live district intelligence is currently calibrated for Pune, Nashik, and Mumbai Suburban in the static deployment.');
         updateKPIs_demandEmpty();
         renderSectorDrivers([]);
       }
@@ -504,8 +548,12 @@
     } catch (err) {
       console.warn('[SIH] Demand feed error:', err.message);
       var dLow = district.toLowerCase();
-      if (dLow === 'pune' || dLow === 'nashik' || dLow === 'nasik') {
-        var staticSectors = (dLow === 'pune') ? PUNE_STATIC_DEMAND.sectors : NASHIK_STATIC_DEMAND.sectors;
+      if (dLow === 'pune' || dLow === 'nashik' || dLow === 'nasik' || dLow === 'mumbai suburban' || dLow === 'mumbai') {
+        var staticSectors = (dLow === 'pune')
+          ? PUNE_STATIC_DEMAND.sectors
+          : ((dLow === 'nashik' || dLow === 'nasik')
+            ? NASHIK_STATIC_DEMAND.sectors
+            : MUMBAI_STATIC_DEMAND.sectors);
         state.demandSectors = staticSectors;
         state.syncStatus.demand = 'synced';
         updateGlobalSyncStatus();
@@ -745,7 +793,11 @@
       var dLow = district.toLowerCase();
       var staticData = (dLow === 'pune')
         ? PUNE_STATIC_ITI
-        : ((dLow === 'nashik' || dLow === 'nasik') ? NASHIK_STATIC_ITI : { total_intake: 0, trades: [] });
+        : ((dLow === 'nashik' || dLow === 'nasik')
+          ? NASHIK_STATIC_ITI
+          : ((dLow === 'mumbai suburban' || dLow === 'mumbai')
+            ? MUMBAI_STATIC_ITI
+            : { total_intake: 0, trades: [] }));
       state.itiTrades      = staticData.trades;
       state.itiTotalIntake = staticData.total_intake;
       state.syncStatus.iti = 'synced';
@@ -754,7 +806,7 @@
         renderITI(staticData.trades, staticData.total_intake);
         updateKPIs_itiSuccess(staticData.trades, staticData.total_intake);
       } else {
-        showITIEmpty('Live ITI data is currently calibrated for Pune and Nashik in the static deployment.');
+        showITIEmpty('Live ITI data is currently calibrated for Pune, Nashik, and Mumbai Suburban in the static deployment.');
         updateKPIs_itiEmpty();
       }
       return;
@@ -790,9 +842,17 @@
     } catch (err) {
       console.warn('[SIH] ITI feed error:', err.message);
       var dLow = district.toLowerCase();
-      if (dLow === 'pune' || dLow === 'nashik' || dLow === 'nasik') {
-        var staticTrades = (dLow === 'pune') ? PUNE_STATIC_ITI.trades : NASHIK_STATIC_ITI.trades;
-        var staticTotal  = (dLow === 'pune') ? PUNE_STATIC_ITI.total_intake : NASHIK_STATIC_ITI.total_intake;
+      if (dLow === 'pune' || dLow === 'nashik' || dLow === 'nasik' || dLow === 'mumbai suburban' || dLow === 'mumbai') {
+        var staticTrades = (dLow === 'pune')
+          ? PUNE_STATIC_ITI.trades
+          : ((dLow === 'nashik' || dLow === 'nasik')
+            ? NASHIK_STATIC_ITI.trades
+            : MUMBAI_STATIC_ITI.trades);
+        var staticTotal  = (dLow === 'pune')
+          ? PUNE_STATIC_ITI.total_intake
+          : ((dLow === 'nashik' || dLow === 'nasik')
+            ? NASHIK_STATIC_ITI.total_intake
+            : MUMBAI_STATIC_ITI.total_intake);
         state.itiTrades      = staticTrades;
         state.itiTotalIntake = staticTotal;
         state.syncStatus.iti = 'synced';
