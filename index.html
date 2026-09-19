@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maharashtra Skill Intelligence Platform: District-level projected vocational training demand, ITI capacity, and evidence-based workforce intelligence for regional planning.">
+  <meta name="theme-color" content="#0f2b48">
+  <title>Maharashtra Skill Intelligence Platform | District Planning Console</title>
+  <!-- Premium Typography: Inter + JetBrains Mono + Editorial Serif (Newsreader & Playfair) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260919h">
+</head>
+
+<body>
+
+  <!-- HEADER: Institutional identity, platform name, and system metadata -->
+  <header class="app-header" role="banner">
+    <div class="header-inner container">
+      
+      <!-- Left: Official Emblem & Branding -->
+      <div class="header-branding">
+        <div class="emblem-container" aria-hidden="true">
+          <img class="official-emblem-img" src="assets/brand/maharashtra-emblem-gold.png" alt="">
+        </div>
+
+        <div class="brand-text-block">
+          <div class="header-badge-row">
+            <span class="govt-label">Government of Maharashtra &bull; Department of Skill Development</span>
+          </div>
+          <h1 class="platform-title">Maharashtra Skill Intelligence</h1>
+          <div class="platform-subtitle-row">
+            <span class="msi-badge" title="Maharashtra Skill Intelligence">MSI</span>
+            <p class="platform-subtitle">District Skill &amp; Training Intelligence Platform</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Subdued System Context & Officer Gateway -->
+      <div class="header-meta" aria-label="Platform Metadata & Authentication">
+        <div class="meta-item">
+          <span class="meta-label">Intelligence Stream</span>
+          <span class="meta-val">MSSDS &bull; DVET State Engine</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Cycle</span>
+          <span class="meta-val">2025&ndash;2026</span>
+        </div>
+        <div class="header-auth-section" id="header-auth-container" hidden>
+          <div class="user-session-badge">
+            <div class="user-info-text">
+              <span class="user-name-label" id="header-user-email">Vivek Sharma</span>
+              <span class="user-role-label" id="header-user-role">Planning Officer</span>
+            </div>
+            <button type="button" class="btn-header-logout" id="btn-header-logout" title="Sign Out of Platform">Sign Out</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       AUTHENTICATION STATES: INITIALIZING & LOGIN SCREEN
+       ========================================================================== -->
+  <!-- 1. INITIALIZING STATE (Prevents auth flicker) -->
+  <div id="auth-loading-view" class="auth-loading-screen" role="status" aria-live="polite">
+    <div class="auth-loading-card">
+      <div class="state-spinner"></div>
+      <span class="auth-loading-text">Authenticating session clearance…</span>
+      <span class="auth-loading-subtext">Government of Maharashtra &bull; Department of Skill Development</span>
+    </div>
+  </div>
+
+  <!-- 2. LOGIN SCREEN (Matches Maharashtra Skill Intelligence visual language) -->
+  <div id="login-view" class="login-view-wrapper" hidden>
+    <div class="login-card-container">
+      
+      <!-- Brand Crest & Header -->
+      <div class="login-branding-block">
+        <div class="login-emblem-badge" aria-hidden="true">
+          <!-- State Emblem Silhouette -->
+          <svg class="national-emblem-svg" viewBox="0 0 64 80" width="36" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#0f2b48" opacity="0.9">
+              <path d="M12 70h40v4H12zM16 66h32v3H16zM20 62h24v3H20z"/>
+              <circle cx="32" cy="56" r="5" stroke="#0f2b48" stroke-width="1.2" fill="none"/>
+              <circle cx="32" cy="56" r="1.5" fill="#0f2b48"/>
+              <path d="M32 51v10M27 56h10M28.5 52.5l7 7M35.5 52.5l-7 7" stroke="#0f2b48" stroke-width="0.8"/>
+              <path d="M14 55c2-3 5-4 8-3v3c-3 0-5 1-8 0zM50 55c-2-3-5-4-8-3v3c3 0 5 1 8 0z"/>
+              <path d="M28 20c-1-6 2-12 4-15 2 3 5 9 4 15 2 2 4 5 4 9 0 6-3 11-8 11s-8-5-8-11c0-4 2-7 4-9z"/>
+              <circle cx="32" cy="18" r="4.5"/>
+              <path d="M30 23h4v15h-4z"/>
+              <path d="M18 24c-1-5 1-10 3-13 1 3 3 7 2 12-2 1-4 4-4 8 0 5 2 9 6 10-3-1-6-4-7-8 0-4 0-7 0-9z"/>
+              <path d="M20 28h3v10h-3z"/>
+              <path d="M46 24c1-5-1-10-3-13-1 3-3 7-2 12 2 1 4 4 4 8 0 5-2 9-6 10 3-1 6-4 7-8 0-4 0-7 0-9z"/>
+              <path d="M41 28h3v10h-3z"/>
+              <path d="M30 6c1-2 3-2 4 0 1 2 0 4-2 4s-3-2-2-4z"/>
+              <path d="M16 76h32v2H16z"/>
+            </g>
+          </svg>
+        </div>
+        <span class="govt-label">Government of Maharashtra &bull; Department of Skill Development</span>
+        <h1 class="platform-title-login">Maharashtra Skill Intelligence</h1>
+        <div class="platform-subtitle-row platform-subtitle-row-login">
+          <span class="msi-badge msi-badge-login" title="Maharashtra Skill Intelligence">MSI</span>
+          <p class="platform-subtitle-login">District Skill &amp; Training Intelligence Platform</p>
+        </div>
+      </div>
+
+      <!-- Institutional Login Card -->
+      <div class="login-surface-card">
+        <!-- Dynamic Authentication Feedback (Visible only on loading or error) -->
+        <div class="auth-status-panel" id="auth-status" role="alert" aria-live="polite" hidden></div>
+
+        <div class="login-persona-tabs" role="tablist" aria-label="Choose sign-in type">
+          <button type="button" class="login-persona-tab is-active" data-login-persona="student" role="tab" aria-selected="true">Student Explorer</button>
+          <button type="button" class="login-persona-tab" data-login-persona="government" role="tab" aria-selected="false">Government Officer</button>
+        </div>
+
+        <!-- Student demo access: intentionally separate from Firebase government authentication. -->
+        <form id="student-login-form" class="auth-login-form" novalidate>
+          <div class="login-persona-heading">
+            <span class="auth-gate-tag">Student Access</span>
+            <h2 class="auth-gate-title">Explore Skills &amp; Careers</h2>
+            <p>Use the student access ID to explore verified district demand and ITI capacity.</p>
+          </div>
+          <div class="form-field-group">
+            <label for="student-id" class="form-field-label">
+              Student ID <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <div class="form-input-shell">
+              <svg class="field-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <input type="text" id="student-id" name="studentId" class="field-input-element" placeholder="STD001" autocomplete="username" required>
+            </div>
+          </div>
+
+          <div class="form-field-group">
+            <label for="student-password" class="form-field-label">
+              Password <span class="required-indicator" aria-hidden="true">*</span>
+            </label>
+            <div class="form-input-shell">
+              <svg class="field-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <input type="password" id="student-password" name="password" class="field-input-element" placeholder="Enter student password" autocomplete="current-password" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-login-submit student-login-submit" id="student-login-submit">
+            <span>Enter Student Explorer</span>
+          </button>
+        </form>
+
+        <!-- Government access remains Firebase Google authentication only. -->
+        <div id="government-login-panel" class="government-login-panel" hidden>
+          <div class="login-persona-heading">
+            <span class="auth-gate-tag">Government Access</span>
+            <h2 class="auth-gate-title">Planning Officer Sign-In</h2>
+            <p>Government users authenticate through the configured Firebase Google provider.</p>
+          </div>
+          <button type="button" class="btn-google-auth" id="btn-google-signin" title="Authenticate with Government Google Account">
+            <svg class="google-icon-svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.94H1.24v3.15C3.26 21.36 7.34 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.26c-.25-.72-.38-1.49-.38-2.26s.13-1.54.38-2.26V6.59H1.24C.45 8.16 0 9.94 0 12s.45 3.84 1.24 5.41l4.04-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.24 6.59l4.04 3.15C6.19 6.36 8.84 4.75 12 4.75z"/>
+            </svg>
+            <span class="btn-google-text">Continue with Government Google</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DASHBOARD CANVAS (Existing Dashboard Wrapped for Authenticated State) -->
+  <div id="dashboard-view" class="dashboard-content-wrapper" hidden>
+  <main class="app-main container" id="main-content" role="main">
+
+    <!-- USER JOURNEY STEP 1 & 2: WHERE AM I? & IS THE DATA AVAILABLE? -->
+    <section class="dashboard-scope-bar" aria-label="Active District and Synchronization Status">
+      <div class="scope-left-group">
+        
+        <!-- 1. Active District Selector Column -->
+        <div class="scope-select-wrapper" id="custom-district-wrapper">
+          <label class="scope-meta-label" id="district-label">ACTIVE DISTRICT</label>
+          
+          <div class="custom-district-selector" id="custom-district-selector">
+            <button type="button" 
+                    class="custom-district-trigger" 
+                    id="district-custom-trigger" 
+                    aria-haspopup="listbox" 
+                    aria-expanded="false" 
+                    aria-controls="district-dropdown-menu"
+                    aria-labelledby="district-label trigger-district-name">
+              <div class="trigger-left">
+                <div class="trigger-icon-circle">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="trigger-text-group">
+                  <span class="trigger-district-title" id="trigger-district-name">Pune</span>
+                  <span class="trigger-meta-subtitle" id="trigger-meta-tag">Baseline Pilot &bull; Live MSSDS Feed</span>
+                </div>
+              </div>
+              <svg class="trigger-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <!-- Advanced Minimalist Dropdown Popup Menu -->
+            <div class="custom-district-menu" id="district-dropdown-menu" role="listbox" aria-label="Calibrated Maharashtra Districts">
+              <div class="district-menu-header">
+                <span class="district-menu-title">CALIBRATED DISTRICTS</span>
+                <span class="district-menu-count">3 ACTIVE</span>
+              </div>
+
+              <div class="district-options-list" id="district-options-list">
+                <div class="custom-district-option is-selected" data-value="Pune" role="option" aria-selected="true" tabindex="0">
+                  <div class="opt-left-content">
+                    <div class="opt-radio-dot"></div>
+                    <div class="opt-info">
+                      <span class="opt-name">Pune</span>
+                      <span class="opt-desc">Baseline Pilot &bull; Live MSSDS Feed</span>
+                    </div>
+                  </div>
+                  <span class="opt-check-mark">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                </div>
+
+                <div class="custom-district-option" data-value="Nashik" role="option" aria-selected="false" tabindex="0">
+                  <div class="opt-left-content">
+                    <div class="opt-radio-dot"></div>
+                    <div class="opt-info">
+                      <span class="opt-name">Nashik</span>
+                      <span class="opt-desc">Calibrated Live Data &bull; 5 Priority Sectors</span>
+                    </div>
+                  </div>
+                  <span class="opt-check-mark">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                </div>
+
+                <div class="custom-district-option" data-value="Mumbai Suburban" role="option" aria-selected="false" tabindex="0">
+                  <div class="opt-left-content">
+                    <div class="opt-radio-dot"></div>
+                    <div class="opt-info">
+                      <span class="opt-name">Mumbai Suburban</span>
+                      <span class="opt-desc">Calibrated Live Data &bull; Financial Capital Hub</span>
+                    </div>
+                  </div>
+                  <span class="opt-check-mark">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <div class="district-menu-footer">
+                <span>DVET &bull; MSSDS Econometric Engine</span>
+                <span class="district-menu-tag">Phase I Live</span>
+              </div>
+            </div>
+
+            <!-- Synchronized hidden select for API/reset compatibility -->
+            <select id="district-select" name="district" aria-hidden="true" tabindex="-1" style="display:none;">
+              <option value="Pune" selected>Pune (Baseline Pilot — Live MSSDS Data)</option>
+              <option value="Nashik">Nashik (Live MSSDS Data)</option>
+              <option value="Mumbai Suburban">Mumbai Suburban (Live DVET Data)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="scope-divider-vertical" aria-hidden="true"></div>
+
+        <!-- 2. Administrative Context -->
+        <div class="scope-meta-item">
+          <span class="scope-meta-label">ADMINISTRATIVE DIVISION</span>
+          <span class="scope-meta-val scope-division-val" id="scope-division">Pune District — Maharashtra</span>
+        </div>
+
+        <div class="scope-divider-vertical" aria-hidden="true"></div>
+
+        <!-- 3. Truthful Data Freshness & Sync Status -->
+        <div class="scope-meta-item">
+          <span class="scope-meta-label">DATA AVAILABILITY</span>
+          <div class="status-indicator-badge status-synced" id="scope-status-badge">
+            <span class="status-dot" id="scope-status-dot"></span>
+            <span class="scope-meta-val status-text" id="scope-sync">Latest synchronized data</span>
+          </div>
+          <span class="scope-meta-subtext" id="scope-sync-time">Last updated: 18 Sep 2026, 10:24 AM</span>
+        </div>
+
+        <div class="scope-divider-vertical" aria-hidden="true"></div>
+
+        <!-- 4. Pilot Tag Block -->
+        <div class="scope-meta-item scope-pilot-block">
+          <span class="location-tag-pill" id="location-tag-pill">BASELINE PILOT</span>
+          <span class="scope-meta-subtext" id="scope-pilot-subtext">Live MSSDS Feed</span>
+        </div>
+
+      </div>
+
+      <!-- Action Strip -->
+      <div class="scope-actions-group">
+        <button type="button" class="btn-scope-action" onclick="window.print()" title="Print Executive Brief for District Skill Committee">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print Brief
+        </button>
+        <button type="button" class="btn-scope-action" onclick="app.resetDistrict()" title="Reset Selection">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          Reset Baseline
+        </button>
+      </div>
+    </section>
+
+    <div id="student-dashboard-view" class="student-dashboard-view" hidden>
+      <section class="student-hero" aria-labelledby="student-dashboard-title">
+        <div class="student-hero-copy">
+          <span class="student-eyebrow">STUDENT SKILL EXPLORER</span>
+          <h2 id="student-dashboard-title">Find your next skill direction in <span id="student-hero-district">Pune</span></h2>
+          <p>Understand the skills, projected training demand, and ITI training capacity around you in Maharashtra.</p>
+        </div>
+        <div class="student-live-note">
+          <span class="student-live-dot"></span>
+          <strong>Live district view</strong>
+          <span id="student-sync-label">MSSDS &amp; DVET feeds</span>
+        </div>
+      </section>
+
+      <section class="student-section" aria-labelledby="student-sector-title">
+        <div class="student-section-heading">
+          <div>
+            <span class="student-section-kicker">01 / EXPLORE</span>
+            <h2 id="student-sector-title">What should I explore?</h2>
+          </div>
+          <p>Projected training demand is a planning signal, not a list of open jobs or a placement guarantee.</p>
+        </div>
+        <div id="student-sector-cards" class="student-sector-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="student-section student-capacity-section" aria-labelledby="student-capacity-title">
+        <div class="student-section-heading">
+          <div>
+            <span class="student-section-kicker">02 / TRAINING</span>
+            <h2 id="student-capacity-title">What training exists in your district?</h2>
+          </div>
+          <div class="student-capacity-total"><span id="student-total-intake">—</span><small>sanctioned ITI seats</small></div>
+        </div>
+        <p class="student-section-intro">These are sanctioned vocational training seats reported through DVET. Capacity shows what is available locally; it does not promise admission or employment.</p>
+        <div id="student-iti-grid" class="student-iti-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="student-assistant-card" aria-labelledby="student-assistant-title">
+        <div class="student-assistant-heading">
+          <span class="student-section-kicker">03 / ASK</span>
+          <h2 id="student-assistant-title">Ask the Skill Assistant</h2>
+          <p>Ask about the live demand and training records for your district in plain language.</p>
+        </div>
+        <div class="student-prompt-chips" id="student-prompt-chips" role="group" aria-label="Student starter questions">
+          <button type="button" class="student-prompt-chip">What vocational skills are most in demand in this district?</button>
+          <button type="button" class="student-prompt-chip">What ITI trades have the highest training capacity in this district?</button>
+          <button type="button" class="student-prompt-chip">What does Moderate demand mean?</button>
+          <button type="button" class="student-prompt-chip">Which sectors are emerging in this district?</button>
+        </div>
+        <form class="student-assistant-form" id="student-assistant-form">
+          <input type="text" id="student-assistant-input" placeholder="Ask about skills, sectors, or ITI trades" aria-label="Ask the student skill assistant">
+          <button type="submit" class="student-assistant-submit">Ask assistant</button>
+        </form>
+        <div class="student-assistant-response" id="student-assistant-response" role="region" aria-live="polite"></div>
+      </section>
+
+      <div class="student-explore-drawer" id="student-explore-drawer" hidden role="dialog" aria-modal="true" aria-labelledby="student-drawer-title">
+        <div class="student-drawer-panel">
+          <button type="button" class="student-drawer-close" id="student-drawer-close" aria-label="Close sector details">&times;</button>
+          <span class="student-section-kicker">SECTOR CONTEXT</span>
+          <h2 id="student-drawer-title">Sector details</h2>
+          <div id="student-drawer-content"></div>
+          <button type="button" class="student-drawer-query" id="student-drawer-query">Ask the assistant about this sector</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="officer-dashboard-view">
+    <!-- SEGMENT STICKY NAVIGATOR: Smooth Scroll & Segment Focus -->
+    <nav class="segment-nav-strip" id="segment-nav-strip" aria-label="Dashboard Intelligence Segments">
+      <div class="segment-nav-inner">
+        <div class="segment-nav-brand">
+          <div class="segment-nav-brand-icon" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="segment-nav-label">INTELLIGENCE SEGMENTS</span>
+        </div>
+        <div class="segment-nav-links" role="tablist">
+          <a href="#segment-snapshot" class="segment-nav-pill is-active" data-target="segment-snapshot" role="tab" aria-selected="true">
+            <span class="seg-num">01</span> Snapshot
+          </a>
+          <a href="#segment-intelligence" class="segment-nav-pill" data-target="segment-intelligence" role="tab" aria-selected="false">
+            <span class="seg-num">02</span> Training Intelligence
+          </a>
+          <a href="#segment-economic" class="segment-nav-pill" data-target="segment-economic" role="tab" aria-selected="false">
+            <span class="seg-num">03</span> Economic Drivers
+          </a>
+          <a href="#segment-decision" class="segment-nav-pill" data-target="segment-decision" role="tab" aria-selected="false">
+            <span class="seg-num">04</span> Decision &amp; AI
+          </a>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- ==========================================================================
+         SECTION 01 — DISTRICT SNAPSHOT
+         One coherent information family of 4 key analytical metrics
+         ========================================================================== -->
+    <section class="section-container" id="segment-snapshot" aria-labelledby="heading-section-snapshot">
+      <div class="section-label-row snapshot-label-row">
+        <div class="snapshot-header-left">
+          <h2 id="heading-section-snapshot" class="snapshot-title">District Snapshot</h2>
+          <p class="snapshot-subtitle">Aggregated baseline metrics from MSSDS Econometric Models &amp; DVET Capacity Feeds</p>
+        </div>
+        <div class="snapshot-header-right">
+          <div class="snapshot-provenance-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>DVET 2026-27</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="snapshot-metrics-grid" role="region" aria-label="District Key Performance Indicators">
+        
+        <!-- Metric 1: Projected Training Demand -->
+        <article class="snapshot-metric-card" id="card-metric-demand">
+          <div class="metric-head">
+            <div class="metric-icon-box icon-box-blue" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <span class="metric-label">PROJECTED TRAINING DEMAND</span>
+            <span class="metric-status-tag" id="kpi-demand-trend" style="display:none;">MSSDS ML</span>
+          </div>
+          <div class="metric-value-wrap">
+            <div class="metric-main-val" id="kpi-demand-score">—</div>
+            <span class="metric-unit-text" id="kpi-demand-unit">trainees</span>
+          </div>
+          <div class="metric-context-foot" id="kpi-demand-sub">Top: Construction · 383 Total Demand</div>
+          <div class="metric-inline-action" id="kpi-demand-action" hidden></div>
+        </article>
+
+        <!-- Metric 2: Sanctioned ITI Supply -->
+        <article class="snapshot-metric-card" id="card-metric-iti">
+          <div class="metric-head">
+            <div class="metric-icon-box icon-box-green" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"></path>
+              </svg>
+            </div>
+            <span class="metric-label">ITI TRAINING SUPPLY</span>
+            <span class="metric-status-tag" id="kpi-iti-tag" style="display:none;">DVET Intake</span>
+          </div>
+          <div class="metric-value-wrap">
+            <div class="metric-main-val" id="kpi-sanctioned-seats">—</div>
+            <span class="metric-unit-text" id="kpi-sanctioned-unit">seats</span>
+          </div>
+          <div class="metric-context-foot" id="kpi-institutes-count">10 Trades · DVET 2026-27</div>
+          <div class="metric-inline-action" id="kpi-iti-action" hidden></div>
+        </article>
+
+        <!-- Metric 3: Validated Sectors -->
+        <article class="snapshot-metric-card" id="card-metric-sectors">
+          <div class="metric-head">
+            <div class="metric-icon-box icon-box-purple" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+              </svg>
+            </div>
+            <span class="metric-label">VALIDATED SECTORS</span>
+            <span class="metric-status-tag" id="kpi-sectors-tag" style="display:none;">Calibrated</span>
+          </div>
+          <div class="metric-value-wrap">
+            <div class="metric-main-val" id="kpi-capacity-util">—</div>
+            <span class="metric-unit-text">sectors</span>
+          </div>
+          <div class="metric-context-foot" id="kpi-enrolled-meta">Projection-Ready Sectors</div>
+          <div class="metric-progress-track">
+            <div class="metric-progress-fill" id="kpi-capacity-bar" style="width: 40%;"></div>
+          </div>
+        </article>
+
+        <!-- Metric 4: Mean Data / Model Confidence -->
+        <article class="snapshot-metric-card" id="card-metric-confidence">
+          <div class="metric-head">
+            <div class="metric-icon-box icon-box-amber" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <span class="metric-label">DATA CONFIDENCE</span>
+            <span class="metric-status-tag" id="kpi-confidence-badge" style="display:none;">Empirical</span>
+          </div>
+          <div class="metric-value-wrap">
+            <div class="metric-main-val" id="kpi-seat-gap">—</div>
+          </div>
+          <div class="metric-context-foot" id="kpi-confidence">Mean Evidence Calibration</div>
+        </article>
+
+      </div>
+
+      <div class="segment-scroll-footer">
+        <a href="#segment-intelligence" class="btn-scroll-next" data-target="segment-intelligence">
+          <span>Scroll to Segment 02: Training Intelligence</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M12 6v12"/></svg>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 02 — TRAINING INTELLIGENCE
+         Side-by-side: Left (Projected Demand Data) | Right (ITI Supply Capacity)
+         ========================================================================== -->
+    <section class="section-container" id="segment-intelligence" aria-labelledby="heading-section-intelligence">
+      <div class="section-label-row intelligence-section-heading intelligence-report-header">
+        <span class="section-numeric-tag" aria-label="Section 02">02</span>
+        <h2 id="heading-section-intelligence" class="section-title">Training Intelligence</h2>
+        <span class="section-caption">&bull; Sector-wise workforce requirements aligned with institutional technical capacity</span>
+      </div>
+
+      <div class="training-intelligence-grid training-workspace intelligence-report-workspace">
+        
+        <!-- LEFT COLUMN (~55%): PROJECTED VOCATIONAL TRAINING DEMAND BY SECTOR -->
+        <section class="analytical-panel workspace-panel demand-intelligence-panel intelligence-panel" aria-labelledby="heading-demand-panel">
+          
+          <div class="panel-header-bar intelligence-panel-header">
+            <div class="panel-header-titles panel-title-with-icon">
+              <!-- Bar chart icon (inline SVG, dark) -->
+              <svg class="panel-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 20px;margin-top:1px;color:#1e3a5f;">
+                <rect x="3" y="12" width="4" height="8" rx="1"/>
+                <rect x="10" y="7" width="4" height="13" rx="1"/>
+                <rect x="17" y="3" width="4" height="17" rx="1"/>
+              </svg>
+              <div>
+              <h3 id="heading-demand-panel" class="panel-title-primary">Projected Vocational Training Demand by Sector</h3>
+              <p class="panel-subtitle-text">Projected training requirement across sectors derived from MSSDS econometric indicators</p>
+              </div>
+            </div>
+            <!-- Sector Filter Buttons -->
+            <div class="filter-chip-group" role="group" aria-label="Filter sectors by demand band">
+              <button type="button" class="filter-chip-btn is-active" data-filter="all">All Sectors</button>
+              <button type="button" class="filter-chip-btn" data-filter="high">High Demand</button>
+              <button type="button" class="filter-chip-btn" data-filter="moderate">Moderate</button>
+            </div>
+          </div>
+
+          <!-- Table Header -->
+          <div class="precision-table-header intelligence-table-header" role="row">
+            <span>Sector</span>
+            <span>Projected Demand</span>
+            <span class="th-align-center">Demand Level</span>
+            <span class="th-align-right">Confidence</span>
+            <span class="th-align-center">Pipeline</span>
+          </div>
+
+          <!-- Dynamic Sectors List / Owned Failure State -->
+          <div class="precision-sectors-container" id="demand-sectors-list" role="feed" aria-live="polite">
+            <!-- Populated dynamically by app.js from real API -->
+          </div>
+
+          <!-- Demand Band Concentration card — pinned outside scroll area -->
+          <div id="demand-distribution-wrap"></div>
+
+          <!-- Summary data tracked in app state (pills removed) -->
+          <span id="summary-sectors-count" style="display:none"></span>
+          <span id="summary-mean-confidence" style="display:none"></span>
+          <span id="summary-peak-sector" style="display:none"></span>
+
+        </section>
+
+        <!-- RIGHT COLUMN (~45%): ITI SUPPLY & CAPACITY -->
+        <section class="analytical-panel workspace-panel iti-capacity-panel intelligence-panel" aria-labelledby="heading-iti-matrix">
+          
+          <div class="panel-header-bar intelligence-panel-header">
+            <div class="panel-header-titles panel-title-with-icon">
+              <!-- Graduation cap icon (inline SVG, green) -->
+              <svg class="panel-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 20px;margin-top:1px;color:#16a34a;">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/>
+              </svg>
+              <div>
+              <h3 id="heading-iti-matrix" class="panel-title-primary">ITI Trade-wise Capacity &amp; Utilization</h3>
+              <p class="panel-subtitle-text">Sanctioned seats across Craftsmen Training Scheme (CTS) trades</p>
+              </div>
+            </div>
+            <span class="provenance-tag provenance-calendar">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:3px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              DVET 2026&ndash;27
+            </span>
+          </div>
+
+          <!-- Dynamic ITI Table / Owned Failure State -->
+          <div class="iti-table-scroll-container">
+            <table class="iti-table intelligence-register" role="table">
+              <thead>
+                <tr>
+                  <th>Trade Designation</th>
+                  <th class="th-num">Sanctioned Intake</th>
+                  <th class="th-num">Provenance</th>
+                  <th class="th-status">Capacity Share</th>
+                </tr>
+              </thead>
+              <tbody id="iti-table-body">
+                <!-- Populated dynamically by app.js from real API -->
+              </tbody>
+            </table>
+          </div>
+
+
+
+        </section>
+
+      </div>
+
+      <div class="segment-scroll-footer">
+        <a href="#segment-economic" class="btn-scroll-next" data-target="segment-economic">
+          <span>Scroll to Segment 03: Economic Drivers</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M12 6v12"/></svg>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 03 — ECONOMIC CONTEXT & DEMAND DRIVERS
+         Side-by-side: Left (Sector Drivers Data) | Right (Econometric Synthesis Analysis)
+         ========================================================================== -->
+    <section class="section-container" id="segment-economic" aria-labelledby="heading-section-economic">
+      <div class="section-label-row">
+        <span class="section-numeric-tag">03</span>
+        <h2 id="heading-section-economic" class="section-title">Economic Context &amp; Sector Demand Drivers</h2>
+        <span class="section-caption">&bull; Live sector indicators, enterprise drivers &amp; evidence calibration from official MSSDS records</span>
+      </div>
+
+      <div class="economic-intelligence-grid">
+        <!-- LEFT COLUMN (~55%): Verified Sector Drivers Cards -->
+        <section class="analytical-panel economic-drivers-panel">
+          <div class="panel-header-bar">
+            <div class="panel-header-titles panel-title-with-icon">
+              <img class="panel-context-icon" src="assets/icons/industry.svg" alt="" aria-hidden="true">
+              <div>
+                <h3 class="panel-title-primary">Verified Sector Demand Drivers</h3>
+                <p class="panel-subtitle-text">Empirical sector evidence from MSSDS econometric indicators</p>
+              </div>
+            </div>
+            <span class="provenance-tag">MSSDS Verified</span>
+          </div>
+
+          <div class="clusters-grid-scroll-wrap">
+            <div class="clusters-grid" id="clusters-container">
+              <!-- Populated dynamically 100% from real sector intelligence for selected district -->
+            </div>
+          </div>
+
+          <span id="summary-driver-count" style="display:none"></span>
+        </section>
+
+        <!-- RIGHT COLUMN (~45%): Econometric Calibration & Growth Analysis -->
+        <section class="analytical-panel economic-synthesis-panel">
+          <div class="panel-header-bar">
+            <div class="panel-header-titles panel-title-with-icon">
+              <img class="panel-context-icon" src="assets/icons/confidence.svg" alt="" aria-hidden="true">
+              <div>
+                <h3 class="panel-title-primary">Calibration &amp; Growth Analysis</h3>
+                <p class="panel-subtitle-text">Analytical synthesis &amp; statistical alignment across district industries</p>
+              </div>
+            </div>
+            <span class="provenance-tag">Calibration Core</span>
+          </div>
+
+          <div class="economic-synthesis-body" id="economic-synthesis-content">
+            <div class="synthesis-stat-row">
+              <div class="synthesis-card">
+                <span class="synthesis-card-label">High Demand Sectors</span>
+                <div class="synthesis-card-val" id="synth-high-demand">—</div>
+                <span class="synthesis-card-desc">Immediate workforce absorption</span>
+              </div>
+              <div class="synthesis-card">
+                <span class="synthesis-card-label">Moderate Demand</span>
+                <div class="synthesis-card-val" id="synth-mod-demand">—</div>
+                <span class="synthesis-card-desc">Steady pipeline capacity</span>
+              </div>
+            </div>
+
+            <div class="synthesis-insight-box">
+              <div class="synthesis-insight-title">Strategic Growth Takeaway</div>
+              <p class="synthesis-insight-text" id="synth-insight-text">
+                Analyzing district sector distribution and workforce demand signals…
+              </p>
+            </div>
+
+            <div class="synthesis-model-notes">
+              <div class="synthesis-note-item">
+                <span class="synthesis-note-bullet">◈</span>
+                <span><strong>Econometric Model:</strong> Calibrated on MSSDS skilling feeds, DVET apprentice transitions, and industrial cluster censuses.</span>
+              </div>
+              <div class="synthesis-note-item">
+                <span class="synthesis-note-bullet">◈</span>
+                <span><strong>Statistical Baseline:</strong> Evidence calibration confidence meets state benchmarks for actionable district planning.</span>
+              </div>
+            </div>
+          </div>
+
+
+        </section>
+      </div>
+
+      <div class="segment-scroll-footer">
+        <a href="#segment-decision" class="btn-scroll-next" data-target="segment-decision">
+          <span>Scroll to Segment 04: Decision Support &amp; AI</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 13l5 5 5-5M12 6v12"/></svg>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 04 — DECISION SUPPORT & INVESTIGATION
+         Side-by-side: Left (Action Directive) | Right (Grounded AI Assistant)
+         ========================================================================== -->
+    <section class="section-container" id="segment-decision" aria-labelledby="heading-section-decision">
+      <div class="section-label-row">
+        <span class="section-numeric-tag">04</span>
+        <h2 id="heading-section-decision" class="section-title">Decision Support &amp; Investigation</h2>
+        <span class="section-caption">&bull; Prescriptive planning directives derived dynamically from live demand and ITI capacity reconciliation</span>
+      </div>
+
+      <div class="decision-support-grid">
+        
+        <!-- LEFT: DISTRICT SKILL COMMITTEE ACTION DIRECTIVE -->
+        <article class="analytical-panel action-directive-panel" aria-labelledby="heading-action-directive">
+          <div class="panel-header-bar directive-header">
+            <div class="directive-badge-row">
+              <span class="directive-seal-tag">Official Planning Recommendation</span>
+              <span class="provenance-tag">DVET &bull; MSSDS Evidence</span>
+            </div>
+            <h3 id="heading-action-directive" class="directive-main-title">District Skill Committee Action Directive</h3>
+          </div>
+
+          <div class="directive-content-body">
+            <p class="policy-text" id="policy-directive-text">Synthesizing directive from active district records…</p>
+
+            <div class="directive-rationale-grid">
+              <div class="rationale-block">
+                <span class="rationale-label">Targeted Beneficiaries</span>
+                <span class="rationale-val">Apprentices &amp; CTS NSQF Candidates</span>
+              </div>
+              <div class="rationale-block">
+                <span class="rationale-label">Implementing Authority</span>
+                <span class="rationale-val">District Skill Committee (DSC) / DSDP</span>
+              </div>
+              <div class="rationale-block">
+                <span class="rationale-label">Regulatory Alignment</span>
+                <span class="rationale-val">Skill India Mission &bull; Maharashtra Vision 2030</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-footer-bar directive-footer">
+            <span class="directive-statutory-note">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:4px;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Directives are dynamically reconciled from live ML demand bands and sanctioned DVET intake.
+            </span>
+          </div>
+        </article>
+
+        <!-- RIGHT: GROUNDED SKILL INTELLIGENCE ASSISTANT (ANALYSE FURTHER) -->
+        <article class="analytical-panel assistant-investigation-panel" aria-labelledby="heading-assistant">
+          <div class="panel-header-bar">
+            <div class="panel-header-titles panel-title-with-icon">
+              <img class="panel-context-icon" src="assets/icons/assistant.svg" alt="" aria-hidden="true">
+              <div>
+              <h3 id="heading-assistant" class="panel-title-primary">Grounded Skill Intelligence Assistant</h3>
+              <p class="panel-subtitle-text">Investigate district skilling indicators via Verified Retrieval-Augmented Generation (RAG)</p>
+              </div>
+            </div>
+            <span class="provenance-tag tag-rag">Verified RAG</span>
+          </div>
+
+          <!-- Suggested Investigation Chips -->
+          <div class="assistant-controls-wrap">
+            <span class="assistant-prompt-label">Quick Strategic Inquiries</span>
+            <div class="query-chip-group" role="group" aria-label="Suggested district queries">
+              <button type="button" class="query-chip-btn is-active" data-query="deficit">Deficit Breakdown</button>
+              <button type="button" class="query-chip-btn" data-query="intake">Capacity &amp; Intake</button>
+              <button type="button" class="query-chip-btn" data-query="growth">Demand Trend Outlook</button>
+            </div>
+          </div>
+
+          <!-- Free-Form Inquiry Box -->
+          <form class="assistant-custom-query-form" id="assistant-query-form">
+            <input 
+              type="text" 
+              id="assistant-query-input" 
+              class="assistant-query-input" 
+              placeholder="Ask a question (e.g., What skills are in demand in Pune?)"
+              aria-label="Ask about this district's training intelligence"
+            >
+            <button type="submit" class="btn-assistant-submit" id="btn-assistant-submit" title="Send query to Grounded Chatbot Engine">
+              Inquire
+            </button>
+          </form>
+
+          <!-- Assistant Response Box / Owned Error View -->
+          <div class="assistant-response-box" id="assistant-response-box" role="region" aria-live="polite">
+            <!-- Populated dynamically by app.js -->
+          </div>
+
+
+        </article>
+
+      </div>
+
+      <div class="segment-scroll-footer">
+        <a href="#segment-snapshot" class="btn-scroll-next" data-target="segment-snapshot">
+          <span>&uarr; Return to Top: District Snapshot</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  </div> <!-- /#officer-dashboard-view -->
+
+  <!-- CONCISE INSTITUTIONAL FOOTER -->
+  <footer class="app-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-branding-block">
+        <span class="footer-title">Maharashtra Skill Intelligence Platform &bull; Official Decision Support System</span>
+        <p class="copyright-notice">
+          &copy; 2026 Government of Maharashtra &bull; Department of Skill Development, Employment and Entrepreneurship &bull; Maharashtra State Skill Development Society (MSSDS) &bull; Directorate of Vocational Education &amp; Training (DVET).
+        </p>
+      </div>
+      <div class="footer-meta-block">
+        <span class="security-classification">RESTRICTED: OFFICIAL USE ONLY &bull; PILOT PROTOTYPE</span>
+        <span class="status-indicator">Data Integrity: Verified &bull; ISO 27001 Aligned</span>
+      </div>
+    </div>
+  </footer>
+  </div> <!-- /#dashboard-view -->
+
+  <!-- JAVASCRIPT: Environment Config → Firebase Auth → Chatbot Engine → Application Controller -->
+  <script src="js/config.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="js/vendor/marked.umd.js"></script>
+  <script src="js/vendor/purify.min.js"></script>
+  <script src="js/markdown-renderer.js"></script>
+  <!-- Grounded Chatbot Engine: MSSDS dataset + Groq AI -->
+  <script src="js/chatbot.js?v=20260919b"></script>
+  <script src="js/app.js?v=20260919c" defer></script>
+</body>
+</html>
