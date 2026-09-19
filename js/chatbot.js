@@ -116,6 +116,9 @@
         matchedSector = sList[s]; break;
       }
     }
+    if (!matchedSector && /\b(?:it|information technology)\s+(?:jobs?|careers?|sector|skills?|work)\b/.test(lower)) {
+      matchedSector = 'IT/ITeS';
+    }
     return { district: matchedDistrict, sector: matchedSector };
   }
 
@@ -503,7 +506,7 @@
             });
         } else {
           var noKey = ev.evidence ? buildFallbackAnswer(district, sector, ev)
-            : 'Please configure an AI key for dynamic responses. Official skill records are available for Maharashtra districts and sectors.';
+            : 'Static mode can answer official Maharashtra district, sector, training-demand, and ITI questions. Select a district and ask about a supported sector or trade.';
           resolve({ query: question, status: 'no_groq', matched_district: district, matched_sector: sector, answer: noKey, intent: ev.intent });
         }
       });
