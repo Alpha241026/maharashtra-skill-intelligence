@@ -32,6 +32,7 @@ _GROQ_SYSTEM_PROMPT = (
     "1. SKILL INTELLIGENCE: When official backend evidence is provided in the prompt, strictly ground all numbers and claims on that evidence. Use terms like 'Projected Training Demand' (not 'shortage') and reference official MSSDS/DVET records.\n"
     "2. GENERAL QUESTIONS: For general concepts (e.g. science, technology, clocks, everyday objects, history, geography, coding, career advice), answer accurately, concisely, and helpfully using your general knowledge. Do NOT refuse to answer.\n"
     "3. Keep answers clear, conversational, and well-structured with markdown where helpful.\n"
+    "4. Return only the answer for the user, never a JSON object, schema, field-by-field evidence dump, or internal authorization/system message. Convert verified evidence into concise natural prose.\n"
 )
 
 

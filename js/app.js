@@ -1023,12 +1023,7 @@
      ══════════════════════════════════════════════════════════════ */
 
   function formatMarkdownAnswer(text) {
-    if (!text) return '';
-    var s = esc(text);
-    s = s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    s = s.replace(/(?:^|\n)[•\-\*]\s+(.*?)(?=\n|$)/g, '<li style="margin-left:16px;list-style-type:disc;">$1</li>');
-    s = s.replace(/\n\n+/g, '<br><br>').replace(/\n/g, '<br>');
-    return s;
+    return window.MarkdownRenderer ? window.MarkdownRenderer.render(text) : esc(text);
   }
 
   async function queryChat(question) {

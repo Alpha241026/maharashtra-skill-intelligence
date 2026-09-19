@@ -318,7 +318,8 @@
     '- Be precise, natural, and conversational. Not robotic.',
     '- Use bullet points or numbered lists when listing multiple items.',
     '- If a question has both data and general parts, address both.',
-    '- Keep answers concise and well-structured.'
+    '- Keep answers concise and well-structured.',
+    '- Return only user-facing prose. Never return JSON, field-by-field schemas, raw evidence blocks, or internal authorization/system messages.'
   ].join('\n');
 
   function callGroq(question, evidenceText, groqKey, groqModel) {

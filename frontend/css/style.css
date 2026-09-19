@@ -1271,6 +1271,18 @@ html { scroll-behavior: smooth; }
 .assistant-answer-block { padding:0; display:flex; flex-direction:column; gap:8px; animation:fade-in 0.3s ease; }
 .assistant-badge { font-family:var(--font-mono); font-size:0.625rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; background:#f0fdf4; color:#16a34a; border:1px solid #86efac; padding:4px 10px; border-radius:3px; display:block; width:100%; box-sizing:border-box; }
 .assistant-lead-text { font-size:0.8125rem; line-height:1.55; color:#334155; padding:0 2px; }
+.assistant-table-wrap { max-width:100%; overflow-x:auto; margin:8px 0 12px; border:1px solid #94a3b8; border-radius:4px; background:#fff; }
+.assistant-table { width:100%; min-width:560px; table-layout:fixed; border-collapse:collapse; font-size:0.75rem; line-height:1.4; text-align:left; }
+.assistant-table th, .assistant-table td { border:1px solid #cbd5e1; }
+.assistant-table th { padding:8px 10px; background:#e2e8f0; color:#0f2b48; border-bottom:2px solid #94a3b8; font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.04em; white-space:normal; }
+.assistant-table td { padding:8px 10px; color:#334155; vertical-align:top; overflow-wrap:anywhere; }
+.assistant-table tbody tr:nth-child(even) { background:#f8fafc; }
+.chat-table-wrapper { width:100%; max-width:100%; overflow-x:auto; margin:12px 0; border:1px solid #94a3b8; border-radius:4px; background:#fff; }
+.chat-table { width:100%; min-width:420px; table-layout:fixed; border-collapse:collapse; font-size:0.8125rem; line-height:1.45; text-align:left; }
+.chat-table th, .chat-table td { border:1px solid #cbd5e1; padding:10px 12px; vertical-align:top; overflow-wrap:anywhere; }
+.chat-table th { background:#e2e8f0; color:#0f2b48; border-bottom:2px solid #94a3b8; font-weight:700; white-space:normal; }
+.chat-table td { color:#334155; }
+.chat-table tbody tr:nth-child(even) { background:#f8fafc; }
 
 /* STATE COMPONENTS */
 .state-container { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:160px; gap:var(--space-3); padding:var(--space-6); animation:fade-in 0.3s ease; }
