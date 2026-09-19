@@ -18,6 +18,8 @@ def get_demand_by_district(district: str):
     # Normalise alternative spellings
     if norm_input == "nasik":
         target_name = "Nashik"
+    elif norm_input == "mumbai":
+        target_name = "Mumbai City"
     else:
         target_name = district.strip()
 

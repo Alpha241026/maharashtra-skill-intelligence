@@ -8,7 +8,12 @@ ITI_CSV = Path(__file__).resolve().parent.parent.parent / "data" / "processed" /
 
 def get_iti_supply_by_district(district: str):
     norm_input  = district.strip().lower()
-    target_name = "Nashik" if norm_input == "nasik" else district.strip()
+    if norm_input == "nasik":
+        target_name = "Nashik"
+    elif norm_input == "mumbai":
+        target_name = "Mumbai City"
+    else:
+        target_name = district.strip()
 
     # ── Primary: PostgreSQL via DATABASE_URL ──────────────────────────────
     try:

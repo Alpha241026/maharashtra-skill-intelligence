@@ -19,7 +19,15 @@ can fall back to the CSV dataset gracefully.
 """
 
 import os
+from pathlib import Path
+from dotenv import load_dotenv
 import psycopg
+
+_env_path = Path(__file__).resolve().parent.parent.parent / ".env"
+if _env_path.exists():
+    load_dotenv(dotenv_path=_env_path)
+else:
+    load_dotenv()
 
 
 def get_conn() -> psycopg.Connection:
