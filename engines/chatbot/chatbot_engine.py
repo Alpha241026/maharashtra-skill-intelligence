@@ -24,22 +24,14 @@ from engines.ml.supply_alignment import SupplyAlignmentEngine, DEFAULT_ITI_PATH
 logger = logging.getLogger("maharashtra_skill_intelligence")
 
 # ---------------------------------------------------------------------------
-# Groq system prompt — enforces grounding on backend evidence only
+# Groq system prompt — supports verified skill evidence & general knowledge
 # ---------------------------------------------------------------------------
 _GROQ_SYSTEM_PROMPT = (
-    "You are the Maharashtra Skill Intelligence Assistant.\n"
-    "Answer using ONLY the verified evidence supplied below.\n"
-    "The backend evidence is the sole source of truth.\n\n"
-    "Rules:\n"
-    "- Do not invent values, sources, projections, or recommendations.\n"
-    "- Clearly distinguish source facts from model-derived values.\n"
-    "- If evidence is insufficient, say so honestly.\n"
-    "- Use terms like 'Projected Training Demand' not 'skill shortage'.\n"
-    "- Do not guess employment outcomes or placement rates.\n"
-    "- Explain the evidence in clear, professional language.\n"
-    "- Keep answers concise and well-structured.\n"
-    "- Do not use outside knowledge to fill in missing project-specific facts.\n"
-    "- Do not fabricate numbers or data sources.\n"
+    "You are the Maharashtra Skill Intelligence Assistant — an official AI assistant for Maharashtra state skill development, district workforce planning, ITI vocational training, and general knowledge.\n\n"
+    "Guidelines:\n"
+    "1. SKILL INTELLIGENCE: When official backend evidence is provided in the prompt, strictly ground all numbers and claims on that evidence. Use terms like 'Projected Training Demand' (not 'shortage') and reference official MSSDS/DVET records.\n"
+    "2. GENERAL QUESTIONS: For general concepts (e.g. science, technology, clocks, everyday objects, history, geography, coding, career advice), answer accurately, concisely, and helpfully using your general knowledge. Do NOT refuse to answer.\n"
+    "3. Keep answers clear, conversational, and well-structured with markdown where helpful.\n"
 )
 
 
@@ -86,13 +78,19 @@ class GroqAnswerGenerator:
         if not self.is_available:
             return None
 
-        user_message = (
-            f"User question: {question}\n\n"
-            f"=== VERIFIED BACKEND EVIDENCE (source of truth) ===\n"
-            f"{evidence_context}\n"
-            f"=== END OF EVIDENCE ===\n\n"
-            f"Answer the user's question using only the evidence above."
-        )
+        if evidence_context and evidence_context.strip():
+            user_message = (
+                f"User question: {question}\n\n"
+                f"=== VERIFIED BACKEND EVIDENCE (source of truth) ===\n"
+                f"{evidence_context}\n"
+                f"=== END OF EVIDENCE ===\n\n"
+                f"Answer the user's question using the verified evidence above."
+            )
+        else:
+            user_message = (
+                f"User question: {question}\n\n"
+                f"Please answer the user's question clearly, concisely, and helpfully."
+            )
 
         try:
             logger.info("[Groq] Request started — model=%s, question=%r", self.model, question[:80])
@@ -348,16 +346,17 @@ class GroundedChatbotEngine:
                 "details": None,
             }
 
-        for g in greetings:
-            if q_lower == g or q_lower.startswith(g + " ") or q_lower.endswith(" " + g) or q_lower == (g + " 👋"):
-                return {
-                    "query": query,
-                    "status": "greeting",
-                    "matched_district": self.context.get("district"),
-                    "matched_sector": self.context.get("sector"),
-                    "answer": "Hello! 👋 I'm the Maharashtra Skill Intelligence Assistant. I can help you explore Maharashtra skill-development data, projected training demand, ITI capacity, sector rankings, trade supply, competencies, and training-alignment insights.",
-                    "details": None,
-                }
+        q_clean = re.sub(r"[^\w\s]", "", q_lower).strip()
+        pure_greetings = set(greetings) | {"hi", "hello", "hey", "namaste", "hlo", "hii", "heyy", "namaskar"}
+        if q_clean in pure_greetings or q_lower in greetings or any(q_lower == (g + " 👋") for g in greetings):
+            return {
+                "query": query,
+                "status": "greeting",
+                "matched_district": self.context.get("district"),
+                "matched_sector": self.context.get("sector"),
+                "answer": "Hello! 👋 I'm the Maharashtra Skill Intelligence Assistant. I can help you explore Maharashtra skill-development data, projected training demand, ITI capacity, sector rankings, trade supply, competencies, and training-alignment insights.",
+                "details": None,
+            }
 
         for c in capabilities:
             if c in q_lower or q_lower == c:
@@ -889,6 +888,12 @@ class GroundedChatbotEngine:
             self.context["last_result"] = greeting_res
             return greeting_res
 
+        # If query begins with greeting prefix followed by more content (e.g. "hi what is clock-"), strip prefix
+        for g in ["hello", "hi", "hey", "namaste", "good morning", "good afternoon", "good evening", "hlo", "hii"]:
+            if q_norm.lower().startswith(g + " ") or q_norm.lower().startswith(g + ",") or q_norm.lower().startswith(g + "!") or q_norm.lower().startswith(g + "-"):
+                q_norm = re.sub(r"^" + re.escape(g) + r"[\s,!.\-]+", "", q_norm, flags=re.IGNORECASE).strip()
+                break
+
         # 2. Entity Extraction
         raw_dist, raw_sec, raw_tr = self.extract_entities(q_norm)
 
@@ -973,8 +978,22 @@ class GroundedChatbotEngine:
             self.context["last_result"] = res
             return res
 
-        # 9. Clarifications handling (Do NOT lock context if query is incomplete / needs clarification)
+        # 9. General Question Answering via Groq / Clarifications handling
         if not district and not sector and not trade:
+            if self._groq.is_available:
+                groq_ans = self._groq.generate(query, "")
+                if groq_ans and groq_ans.strip():
+                    res = {
+                        "query": query,
+                        "status": "success",
+                        "matched_district": self.context.get("district"),
+                        "matched_sector": None,
+                        "answer": groq_ans.strip(),
+                        "details": None,
+                    }
+                    self.context["last_result"] = res
+                    return res
+
             answer = "Please specify a Maharashtra district (e.g., Pune, Mumbai City, Nashik), sector (e.g., Construction, Agriculture, BFSI), or ITI trade (e.g., Electrician, Fitter) to explore training data."
             return {
                 "query": query,

@@ -366,11 +366,11 @@
   var FAREWELLS = ['bye', 'goodbye', 'see you', 'exit', 'quit', 'cya'];
 
   function checkQuickResponse(query) {
-    var q = query.toLowerCase().trim();
+    var q = query.toLowerCase().trim().replace(/[^\w\s]/g, '');
     var i;
     for (i = 0; i < GREETINGS.length; i++) {
       var g = GREETINGS[i];
-      if (q === g || q.startsWith(g + ' ') || q.startsWith(g + '!') || q.endsWith(' ' + g)) {
+      if (q === g || q === (g + ' there') || q === (g + ' assistant') || q === (g + ' bot')) {
         return 'Hello! \ud83d\udc4b I\'m the **Maharashtra Skill Intelligence Assistant**.\n\nI can help you with:\n\u2022 **District & Skill Analytics**: Projected training demand, sector analysis, and ITI trade data for all 36 Maharashtra districts\n\u2022 **General questions**: Science, history, math, coding, current events \u2014 anything!\n\nJust ask away!';
       }
     }
@@ -452,12 +452,18 @@
 
     return new Promise(function (resolve) {
 
-      // Quick responses (no Groq/dataset)
+      // Quick responses for pure greetings (no Groq/dataset)
       var quick = checkQuickResponse(question);
       if (quick) {
         var qr = { query: question, status: 'greeting', matched_district: _context.district, matched_sector: _context.sector, answer: quick };
         _context.last_result = qr;
         resolve(qr); return;
+      }
+
+      // If question starts with greeting prefix followed by more text, strip prefix so question is answered
+      var strippedQuestion = question.replace(/^(?:hello|hi|hey|good\s+(?:morning|afternoon|evening|night)|namaste|hlo|hii)[\s,!.\-]+/i, '').trim();
+      if (strippedQuestion) {
+        question = strippedQuestion;
       }
 
       // Load dataset then process
