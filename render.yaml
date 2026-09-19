@@ -1,0 +1,27 @@
+# render.yaml — Render.com declarative deployment for Maharashtra Skill Intelligence API
+# Docs: https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: maharashtra-skill-api
+    runtime: python
+    region: singapore           # closest to Maharashtra; change to your preferred region
+
+    buildCommand: pip install -r backend/requirements.txt
+
+    # Render injects $PORT; uvicorn must bind to 0.0.0.0
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+
+    # Health-check path (Render pings this to confirm the service is up)
+    healthCheckPath: /
+
+    envVars:
+      # Set these in the Render Dashboard → Environment tab (NOT hardcoded here):
+      - key: DATABASE_URL
+        sync: false             # secret — set manually in Render dashboard
+
+      - key: GROQ_API_KEY
+        sync: false             # secret — set manually in Render dashboard
+
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b   # public, safe to commit

@@ -1,44 +1,55 @@
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Load .env file from repository root or current directory
+# Load .env from repository root (local dev). On Render, env vars come from the dashboard.
 _env_path = Path(__file__).resolve().parent.parent / ".env"
 if _env_path.exists():
     load_dotenv(dotenv_path=_env_path)
 else:
     load_dotenv()
 
-# import FastAPI class to create the web application
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# import routers
-from backend.routes.demand import router as demand_router
-from backend.routes import iti_supply
-from backend.routes import district
-from backend.routes import chat
+from backend.routes.demand   import router as demand_router
+from backend.routes.iti_supply import router as iti_supply_router
+from backend.routes.district import router as district_router
+from backend.routes.chat     import router as chat_router
+from backend.routes.sectors  import router as sectors_router
 
-# create main FastAPI application instance for Uvicorn to load and run
-app = FastAPI(title="Maharashtra Skill Intelligence API")
+app = FastAPI(
+    title="Maharashtra Skill Intelligence API",
+    description="District-level skill and training intelligence for Maharashtra.",
+    version="1.2.0",
+)
 
-# Enable CORS for frontend integration
+# CORS — allow GitHub Pages frontend and localhost during development.
+# Add your Render URL if you want stricter CORS in production.
+ALLOWED_ORIGINS = [
+    "https://alpha241026.github.io",   # GitHub Pages
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# register the routers with the main FastAPI application
+# Register all route groups
+app.include_router(district_router)
+app.include_router(sectors_router)
 app.include_router(demand_router)
-app.include_router(iti_supply.router)
-app.include_router(district.router)
-app.include_router(chat.router)
+app.include_router(iti_supply_router)
+app.include_router(chat_router)
 
 
-# register below function to handle GET requests sent to "/" root path
 @app.get("/")
 def root():
-    """Simple endpoint to verify that the API is running"""
-    return {"message": "Maharashtra Skill Intelligence API is running"}
+    """Health-check endpoint — confirms API is running."""
+    return {"status": "ok", "message": "Maharashtra Skill Intelligence API is running"}

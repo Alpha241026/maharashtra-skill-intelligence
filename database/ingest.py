@@ -1,18 +1,33 @@
 import os
 import pandas as pd
 import psycopg
+from pathlib import Path
+from dotenv import load_dotenv
 
-DB_CONFIG = {
-    "dbname": "maharashtra_skill_intelligence",
-    "user": "postgres",
-    "password": os.getenv("PGPASSWORD", "YOUR_POSTGRES_PASSWORD"),
-    "host": "localhost",
-    "port": 5432,
-}
+# Load .env from repository root so DATABASE_URL is available when running locally
+_env = Path(__file__).resolve().parent.parent / ".env"
+if _env.exists():
+    load_dotenv(dotenv_path=_env)
+else:
+    load_dotenv()
 
-MSSDS_FILE = "data/outputs/mssds_district_sector_intelligence.csv"
-ITI_FILE = "data/processed/iti/maharashtra_iti_trade_supply_2026.csv"
-TRADE_FILE = "data/processed/training/official_trade_skills_reference.csv"
+# ── Connection ───────────────────────────────────────────────────────────────
+# Set DATABASE_URL in your environment (or .env) before running.
+# Local PostgreSQL example:
+#   DATABASE_URL=postgresql://postgres:password@localhost:5432/maharashtra_skill_intelligence
+# Supabase Session Pooler example (from Project Settings → Connect):
+#   DATABASE_URL=postgresql://postgres.xxxx:PASSWORD@aws-0-ap-south-1.pooler.supabase.com:5432/postgres
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if not DATABASE_URL:
+    raise SystemExit(
+        "ERROR: DATABASE_URL environment variable is not set.\n"
+        "Set it in your .env file or shell before running ingest.py."
+    )
+
+BASE_DIR   = Path(__file__).resolve().parent.parent
+MSSDS_FILE = str(BASE_DIR / "data" / "outputs"   / "mssds_district_sector_intelligence.csv")
+ITI_FILE   = str(BASE_DIR / "data" / "processed" / "iti"      / "maharashtra_iti_trade_supply_2026.csv")
+TRADE_FILE = str(BASE_DIR / "data" / "processed" / "training" / "official_trade_skills_reference.csv")
 
 
 def clean(value):
@@ -26,7 +41,7 @@ def main():
     iti = pd.read_csv(ITI_FILE)
     trade = pd.read_csv(TRADE_FILE)
 
-    with psycopg.connect(**DB_CONFIG) as conn:
+    with psycopg.connect(DATABASE_URL) as conn:
         with conn.cursor() as cur:
 
             # -------------------------------------------------

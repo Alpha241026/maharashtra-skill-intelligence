@@ -1,4 +1,3 @@
-import os
 import csv
 from pathlib import Path
 from collections import defaultdict
@@ -8,107 +7,86 @@ ITI_CSV = Path(__file__).resolve().parent.parent.parent / "data" / "processed" /
 
 
 def get_iti_supply_by_district(district: str):
-    norm_input = district.strip().lower()
+    norm_input  = district.strip().lower()
     target_name = "Nashik" if norm_input == "nasik" else district.strip()
 
+    # ── Primary: PostgreSQL via DATABASE_URL ──────────────────────────────
     try:
-        import psycopg
-        db_config = {
-            "dbname": "maharashtra_skill_intelligence",
-            "user": "postgres",
-            "password": os.getenv("PGPASSWORD"),
-            "host": "localhost",
-            "port": 5432,
-        }
+        from backend.db.connection import get_conn
 
-        district_query = """
-            SELECT name
-            FROM districts
+        district_q = """
+            SELECT name FROM districts
             WHERE LOWER(name) = LOWER(%s)
                OR (LOWER(%s) IN ('nasik', 'nashik') AND LOWER(name) IN ('nasik', 'nashik'))
         """
-
-        total_query = """
+        total_q = """
             SELECT COALESCE(SUM(o.intake), 0)
             FROM iti_offerings o
-            JOIN iti_institutes i
-                ON o.iti_id = i.id
-            JOIN districts d
-                ON i.district_id = d.id
+            JOIN iti_institutes i ON o.iti_id    = i.id
+            JOIN districts      d ON i.district_id = d.id
             WHERE LOWER(d.name) = LOWER(%s)
                OR (LOWER(%s) IN ('nasik', 'nashik') AND LOWER(d.name) IN ('nasik', 'nashik'))
         """
-
-        trade_query = """
-            SELECT
-                o.trade_name,
-                COALESCE(SUM(o.intake), 0) AS total_intake
+        trade_q = """
+            SELECT o.trade_name, COALESCE(SUM(o.intake), 0) AS total_intake
             FROM iti_offerings o
-            JOIN iti_institutes i
-                ON o.iti_id = i.id
-            JOIN districts d
-                ON i.district_id = d.id
+            JOIN iti_institutes i ON o.iti_id    = i.id
+            JOIN districts      d ON i.district_id = d.id
             WHERE LOWER(d.name) = LOWER(%s)
                OR (LOWER(%s) IN ('nasik', 'nashik') AND LOWER(d.name) IN ('nasik', 'nashik'))
             GROUP BY o.trade_name
             ORDER BY total_intake DESC
         """
 
-        with psycopg.connect(**db_config) as conn:
-            with conn.cursor() as cursor:
-                cursor.execute(district_query, (target_name, target_name))
-                district_row = cursor.fetchone()
+        with get_conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(district_q, (target_name, target_name))
+                district_row = cur.fetchone()
 
                 if district_row is not None:
-                    cursor.execute(total_query, (target_name, target_name))
-                    total_intake = cursor.fetchone()[0]
+                    cur.execute(total_q, (target_name, target_name))
+                    total_intake = int(cur.fetchone()[0])
 
-                    cursor.execute(trade_query, (target_name, target_name))
-                    trade_rows = cursor.fetchall()
-
+                    cur.execute(trade_q, (target_name, target_name))
                     trades = [
-                        {
-                            "trade": trade_name,
-                            "intake": int(intake),
-                        }
-                        for trade_name, intake in trade_rows
+                        {"trade": trade_name, "intake": int(intake)}
+                        for trade_name, intake in cur.fetchall()
                     ]
 
                     return {
-                        "district": district_row[0],
-                        "total_intake": int(total_intake),
-                        "trades": trades,
+                        "district":     district_row[0],
+                        "total_intake": total_intake,
+                        "trades":       trades,
                     }
     except Exception:
-        # Fallback to local CSV dataset
         pass
 
+    # ── Fallback: local CSV dataset ───────────────────────────────────────
     if not ITI_CSV.exists():
         raise HTTPException(
             status_code=404,
             detail=f"District {district} not found in database or dataset",
         )
 
-    trade_intake = defaultdict(int)
-    total_intake = 0
+    trade_intake     = defaultdict(int)
+    total_intake     = 0
     display_district = target_name.title()
-    matched = False
+    matched          = False
 
     with open(ITI_CSV, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             d = row.get("district", "").strip().lower()
             if (norm_input in ("nasik", "nashik") and d in ("nasik", "nashik")) or d == norm_input:
-                matched = True
+                matched          = True
                 display_district = row.get("district", display_district).strip()
-                trade = row.get("trade_name", "").strip()
-                intake_raw = row.get("intake", "").strip()
+                trade            = row.get("trade_name", "").strip()
                 try:
-                    intake = int(float(intake_raw))
+                    intake = int(float(row.get("intake", "").strip()))
                 except (ValueError, TypeError):
                     intake = 0
                 trade_intake[trade] += intake
-                total_intake += intake
+                total_intake        += intake
 
     if not matched:
         raise HTTPException(
@@ -123,7 +101,7 @@ def get_iti_supply_by_district(district: str):
     )
 
     return {
-        "district": display_district,
+        "district":     display_district,
         "total_intake": total_intake,
-        "trades": sorted_trades,
+        "trades":       sorted_trades,
     }
